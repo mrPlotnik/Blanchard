@@ -4,55 +4,62 @@
     <meta charset="UTF-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Сеть отелей Lagoona</title>
+    <title>Лагуна - сеть отелей</title>
 </head>
 <body>
 
   <header class="header">
 
-    <div class="container">
+    <div class="container header-container">
 
-      <div class="header-main">
-        <a href="#" class="header-main-logo-link">
-          <img class="header-main-logo-img" src="img/logo.svg" alt="Logo">
+      <div class="header-main flex">
+
+        <a href="#" class="header-logo-link">
+          <img class="header-logo-img" src="img/logo.png" alt="Лагуна - сеть отелей">
         </a>
-        <a class="header-main-tel" href="tel:+74953225448">
-          +7 495 322 54 48
-        </a>
-        <a href="#" class="header-main-link">
-          <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M10.59 1.41L14.17 5H0V7H14.17L10.58 10.59L12 12L18 6L12 0L10.59 1.41ZM19 0V12H21V0H19Z" fill="#CC9933"/> </svg>
-          Личный кабинет
-        </a>
+
+        <div class="header-links-wrap flex">
+
+          <a class="header-link-tel" href="tel:+74953225448">+7 495 322 54 48</a>
+
+          <a href="#" class="header-link-cabinet">
+            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M10.59 1.41L14.17 5H0V7H14.17L10.58 10.59L12 12L18 6L12 0L10.59 1.41ZM19 0V12H21V0H19Z" fill="#CC9933"/> </svg>
+            Личный кабинет
+          </a>
+
+        </div>
+
       </div>
 
-      <nav class="header-nav">
-        <ul class="header-nav-list">
-          <li class="header-nav-list-item">
+      <nav class="header-nav flex">
+        <ul class="header-nav-list list-reset flex">
+          <li class="header-nav-item">
             <a href="#about" class="header-nav-link">О нас</a>
           </li>
-          <li class="header-nav-list-item">
+          <li class="header-nav-item">
             <a href="#services" class="header-nav-link">Услуги</a>
           </li>
-          <li class="header-nav-list-item">
+          <li class="header-nav-item">
             <a href="#advantage" class="header-nav-link">Преимущества</a>
           </li>
-          <li class="header-nav-list-item">
+          <li class="header-nav-item">
             <a href="#placement " class="header-nav-link">Размещение</a>
           </li>
-          <li class="header-nav-list-item">
+          <li class="header-nav-item">
             <a href="#blog" class="header-nav-link">Блог</a>
           </li>
-          <li class="header-nav-list-item">
+          <li class="header-nav-item">
             <a href="#contacts" class="header-nav-link">Контакты</a>
           </li>
         </ul>
 
-        <div class="header-nav-button">
-          <button class="btn header-btn">
+        <div class="header-nav-buttons flex">
+          <button class="btn header-btn btn-reset">
             <a href="#want" class="header-btn-link">Хочу тур</a>
           </button>
-          <button class="btn header-btn">
+          <button class="btn header-btn btn-reset">
             Обратный звонок
           </button>
         </div>
