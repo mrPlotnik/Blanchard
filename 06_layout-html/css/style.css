@@ -73,13 +73,14 @@ body {
 }
 
 .container {
-  width: 1170px;
-  margin: 0 auto
+  width: 1216px;
+  margin: 0 auto;
+  padding: 0 23px;
 }
 
 .section-title {
   margin: 0;
-  margin-left: 40px;
+  padding-left: 40px;
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
@@ -102,6 +103,7 @@ body {
 
 .header-main {
   margin-bottom: 30px;
+  align-items: center;
 }
 
 .header-logo-link {
@@ -112,14 +114,8 @@ body {
 
 }
 
-.header-links-wrap {
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .header-link-tel {
-  padding-left: 34px;
+  margin-left: 34px;
   font-weight: 500;
   font-size: 20px;
   line-height: 20px;
@@ -127,6 +123,7 @@ body {
 }
 
 .header-link-cabinet {
+  margin: 0 0 0 auto;
   color: #cc9933;
 }
 
@@ -139,7 +136,9 @@ body {
 }
 
 .header-nav-list {
-
+  padding: 17px 0;
+  border-right: 1px solid #e1e1e1;
+  line-height: 16px;
 }
 
 .header-nav-item {
@@ -149,7 +148,7 @@ body {
 }
 
 .header-nav-item:last-child {
-  padding-right: 57px;
+  padding-right: 56px;
 }
 
 .header-nav-link {
@@ -159,7 +158,6 @@ body {
 .header-nav-buttons {
   width: 100%;
   justify-content: space-evenly;
-  border-left: 1px solid #e1e1e1;
 }
 
 .header-btn-link {
@@ -307,18 +305,18 @@ body {
 }
 
 .services-item {
-  /* flex: 1 1 48%; */
   width: 573px;
-  /* margin: 0; */
+  margin-right: 23px;
   margin-bottom: 23px;
+  padding: 191px 126px 50px 45px;
   border-radius: 15px;
   background-position: top;
   background-repeat: no-repeat;
   background-color: #fff;
 }
 
-.services-item-content {
-  padding: 191px 126px 50px 45px;
+.services-item:nth-child(even) {
+  margin-right: 0;
 }
 
 .services-item-link {
@@ -370,10 +368,15 @@ body {
 
 .advantage-item {
   width: 275px;
+  margin-right: 23px;
   margin-bottom: 23px;
   padding: 40px 45px;
   border-radius: 15px;
   background-color: #fff;
+}
+
+.advantage-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .advantage-item-descr {
@@ -400,8 +403,13 @@ body {
 .placement-item {
   width: 374px;
   margin-bottom: 23px;
+  margin-right: 23px;
   border-radius: 15px;
   background-color: #fff;
+}
+
+.placement-item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .placement-item-image {
@@ -445,13 +453,15 @@ body {
 }
 
 .placement-item-more {
+  position: relative;
   background-size: cover;
   background-image: url(../img/placement-9.jpg);
 }
 
 .placement-item-more-link {
-  display: block;
-  padding: 373px 55px 27px 55px;
+  position: absolute;
+  bottom: 0;
+  padding: 0 55px 27px 55px;
   font-weight: 500;
   font-size: 20px;
   line-height: 40px;
