@@ -95,10 +95,11 @@ body {
 
 .header {
   padding-top: 30px;
+  margin-bottom: 70px;
 }
 
 .header-container {
-  margin-bottom: 70px;
+
 }
 
 .header-main {
@@ -111,11 +112,10 @@ body {
 }
 
 .header-logo-img {
-
+  margin-right: 34px;
 }
 
 .header-link-tel {
-  margin-left: 34px;
   font-weight: 500;
   font-size: 20px;
   line-height: 20px;
@@ -421,12 +421,26 @@ body {
 }
 
 .placement-item-price {
+  position: relative;
   margin: 0;
   margin-bottom: 16px;
 }
 
-.placement-item-star-wrap {
-  float: right;
+.price-first {
+  color: #999;
+}
+
+.price-number {
+  font-weight: 700;
+}
+
+.price-last {
+
+}
+
+.price-stars {
+  position: absolute;
+  right: 0;
 }
 
 .placement-item-star {
