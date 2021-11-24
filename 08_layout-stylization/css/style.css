@@ -98,9 +98,7 @@ body {
   margin-bottom: 70px;
 }
 
-.header-container {
-
-}
+.header-container {}
 
 .header-main {
   margin-bottom: 30px;
@@ -108,27 +106,38 @@ body {
 }
 
 .header-logo-link {
-
-}
-
-.header-logo-img {
+  min-width: 260px;
   margin-right: 34px;
 }
 
+.header-logo-img {}
+
 .header-link-tel {
+  display: block;
+  margin-right: auto;
   font-weight: 500;
   font-size: 20px;
   line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: #666;
 }
 
 .header-link-cabinet {
-  margin: 0 0 0 auto;
   color: #cc9933;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* overflow: hidden; */
+}
+
+.header-link-cabinet-icon {
+  position: relative;
+  left: -7px;
+  top: 2px;
 }
 
 .header-nav {
-  justify-content: space-between;
   align-items: center;
   padding: 14px 0;
   border-radius: 15px;
@@ -136,41 +145,58 @@ body {
 }
 
 .header-nav-list {
+  width: 100%;
+  max-width: 745px;
   padding: 17px 0;
+  justify-content: space-between;
   border-right: 1px solid #e1e1e1;
   line-height: 16px;
 }
 
 .header-nav-item {
-  padding-left: 45px;
+  max-width: 160px;
+  padding-left: 15px;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
   color: #666;
 }
 
+.header-nav-item:first-child {
+  padding-left: 25px;
+}
+
 .header-nav-item:last-child {
-  padding-right: 56px;
+  padding-right: 25px;
 }
 
-.header-nav-link {
-
-}
+.header-nav-link {}
 
 .header-nav-buttons {
   width: 100%;
+  max-width: 426px ;
   justify-content: space-evenly;
 }
 
 .header-btn-link {
+  max-width: 177px;
   padding: 13px 20px;
   border: 1px solid #cc9933;
   border-radius: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: #cc9933;
 }
 
 .header-btn {
+  max-width: 177px;
   padding: 13px 20px;
   border: 1px solid #cc9933;
   border-radius: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: #cc9933;
 }
 
@@ -178,7 +204,6 @@ body {
 
 .special-title {
   margin-bottom: 20px;
-  text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 }
 
 .special-left-list {
@@ -198,11 +223,13 @@ body {
 }
 
 .special-left-item-title {
+  max-height: 300px;
   margin: 0;
   margin-bottom: 15px;
   font-weight: 700;
   font-size: 40px;
   line-height: 40px;
+  overflow-wrap: break-word;
   color: #fff;
 }
 
@@ -223,6 +250,12 @@ body {
   color: #ffcc66;
 }
 
+.special-left-item-link-icon, .special-right-item-link-icon {
+  position: relative;
+  top: 4px;
+  right: -4px;
+}
+
 .special-left-item-1 {
   background-image: url(../img/special-1.jpg);
 }
@@ -234,7 +267,6 @@ body {
 .special-right-list {
   width: 573px;
   margin: 0;
-  /* vertical-align: top; */
 }
 
 .special-right-item {
@@ -249,6 +281,7 @@ body {
   font-weight: 700;
   font-size: 60px;
   line-height: 60px;
+  overflow-wrap: break-word;
   color: #fff;
 }
 
@@ -258,6 +291,7 @@ body {
   font-weight: 400;
   font-size: 30px;
   line-height: 30px;
+  overflow-wrap: break-word;
   opacity: 80%;
   color: #fff;
 }
@@ -271,13 +305,12 @@ body {
 
 .special-left-item-1, .special-left-item-2, .special-right-item {
   background-size: cover;
+  background-position: center center;
 }
 
 /* about */
 
-.about {
-
-}
+.about {}
 
 .about-title {
   margin-bottom: 20px;
@@ -324,6 +357,12 @@ body {
   font-size: 20px;
   line-height: 40px;
   color: #cc9933;
+}
+
+.services-item-link-icon {
+  position: relative;
+  top: 3px;
+  right: -5px;
 }
 
 .services-item-descr {
@@ -387,12 +426,10 @@ body {
 
 /* placement */
 
-.placement {
-
-}
+.placement {}
 
 .placement-title {
-  padding-bottom: 45px;
+  margin-bottom: 45px;
 }
 
 .placement-list {
@@ -434,18 +471,14 @@ body {
   font-weight: 700;
 }
 
-.price-last {
-
-}
+.price-last {}
 
 .price-stars {
   position: absolute;
   right: 0;
 }
 
-.placement-item-star {
-
-}
+.placement-item-star {}
 
 .placement-item-title {
   margin: 0;
@@ -460,9 +493,12 @@ body {
 }
 
 .placement-btn {
+  max-width: 285px;
   border: 1px solid #cc9933;
   border-radius: 10px;
   padding: 13px 20px;
+  /* overflow-wrap: break-word; */
+  word-wrap: break-word;
   color: #cc9933;
 }
 
@@ -483,5 +519,7 @@ body {
 }
 
 .placement-item-more-link-arrow {
-  stroke: #fff;
+  position: relative;
+  top: 4px;
+  right: -3px;
 }
