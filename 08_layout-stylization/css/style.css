@@ -84,6 +84,7 @@ body {
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
+  overflow-wrap: break-word;
   color: #333;
 }
 
@@ -125,16 +126,16 @@ body {
 }
 
 .header-link-cabinet {
-  color: #cc9933;
   text-overflow: ellipsis;
   white-space: nowrap;
-  /* overflow: hidden; */
+  overflow: hidden;
+  padding-left: 10px;
+  color: #cc9933;
 }
 
 .header-link-cabinet-icon {
   position: relative;
   left: -7px;
-  top: 2px;
 }
 
 .header-nav {
@@ -147,7 +148,7 @@ body {
 .header-nav-list {
   width: 100%;
   max-width: 745px;
-  padding: 17px 0;
+  padding: 17px 25px;
   justify-content: space-between;
   border-right: 1px solid #e1e1e1;
   line-height: 16px;
@@ -155,48 +156,38 @@ body {
 
 .header-nav-item {
   max-width: 160px;
-  padding-left: 15px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
+  overflow-wrap: break-word;
   color: #666;
 }
 
-.header-nav-item:first-child {
-  padding-left: 25px;
-}
-
-.header-nav-item:last-child {
-  padding-right: 25px;
-}
 
 .header-nav-link {}
 
 .header-nav-buttons {
   width: 100%;
-  max-width: 426px ;
+  max-width: 426px;
+  padding: 0 25px;
   justify-content: space-evenly;
 }
 
 .header-btn-link {
-  max-width: 177px;
+  max-width: 180px;
   padding: 13px 20px;
   border: 1px solid #cc9933;
   border-radius: 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: break-word;
   overflow: hidden;
   color: #cc9933;
 }
 
 .header-btn {
-  max-width: 177px;
+  max-width: 180px;
   padding: 13px 20px;
   border: 1px solid #cc9933;
   border-radius: 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
+  overflow-wrap: break-word;
   color: #cc9933;
 }
 
@@ -223,7 +214,6 @@ body {
 }
 
 .special-left-item-title {
-  max-height: 300px;
   margin: 0;
   margin-bottom: 15px;
   font-weight: 700;
@@ -239,6 +229,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 20px;
+  overflow-wrap: break-word;
   opacity: 80%;
   color: #fff;
 }
@@ -247,6 +238,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;
+  overflow-wrap: break-word;
   color: #ffcc66;
 }
 
@@ -265,11 +257,11 @@ body {
 }
 
 .special-right-list {
-  width: 573px;
   margin: 0;
 }
 
 .special-right-item {
+  width: 573px;
   padding: 211px 234px 40px 40px ;
   border-radius: 15px;
   background-image: url(../img/special.jpg);
@@ -300,6 +292,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;
+  overflow-wrap: break-word;
   color: #ffcc66;
 }
 
@@ -356,6 +349,7 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 40px;
+  overflow-wrap: break-word;
   color: #cc9933;
 }
 
@@ -368,6 +362,7 @@ body {
 .services-item-descr {
   margin: 0;
   line-height: 32px;
+  overflow-wrap: break-word;
 }
 
 .services-item-img-1 {
@@ -422,6 +417,7 @@ body {
   margin: 0;
   font-size: 16px;
   line-height: 30px;
+  overflow-wrap: break-word;
 }
 
 /* placement */
@@ -461,6 +457,7 @@ body {
   position: relative;
   margin: 0;
   margin-bottom: 16px;
+  overflow-wrap: break-word;
 }
 
 .price-first {
@@ -484,11 +481,13 @@ body {
   margin: 0;
   margin-bottom: 16px;
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 .placement-item-location {
   margin: 0;
   margin-bottom: 20px;
+  overflow-wrap: break-word;
   color: #999;
 }
 
@@ -497,8 +496,7 @@ body {
   border: 1px solid #cc9933;
   border-radius: 10px;
   padding: 13px 20px;
-  /* overflow-wrap: break-word; */
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   color: #cc9933;
 }
 
@@ -510,11 +508,13 @@ body {
 
 .placement-item-more-link {
   position: absolute;
-  bottom: 0;
-  padding: 0 55px 27px 55px;
+  width: 270px;
+  bottom: 30px;
+  left: 55px;
   font-weight: 500;
   font-size: 20px;
   line-height: 40px;
+  overflow-wrap: break-word;
   color: #fff;
 }
 
