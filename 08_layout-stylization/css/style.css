@@ -140,15 +140,15 @@ body {
 
 .header-nav {
   align-items: center;
-  padding: 14px 0;
+  padding: 15px 25px;
   border-radius: 15px;
   background-color: #fff;
 }
 
 .header-nav-list {
   width: 100%;
-  max-width: 745px;
-  padding: 17px 25px;
+  max-width: 730px;
+  padding: 17px 0;
   justify-content: space-between;
   border-right: 1px solid #e1e1e1;
   line-height: 16px;
@@ -156,18 +156,21 @@ body {
 
 .header-nav-item {
   max-width: 160px;
+  padding-right: 15px;
   overflow: hidden;
   overflow-wrap: break-word;
   color: #666;
 }
 
-
+.header-nav-item:last-child {
+  padding-right: 25px;
+}
 .header-nav-link {}
 
 .header-nav-buttons {
   width: 100%;
   max-width: 426px;
-  padding: 0 25px;
+  padding-left: 25px;
   justify-content: space-evenly;
 }
 
