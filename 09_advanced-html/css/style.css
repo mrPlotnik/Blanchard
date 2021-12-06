@@ -545,57 +545,84 @@ body {
 }
 
 .form {
-  padding: 30px 10px;
+  padding: 30px 30px;
   border-radius: 15px;
   background: #fff;
 }
 
 .form-item {
-  box-sizing: border-box;
+  position: relative;
   flex-direction: column;
   padding: 0 20px;
   border-right: 1px solid #e1e1e1;
 }
 
+.form-item:first-child {
+  padding-left: 0;
+}
+
 .form-item-descr {
+  width: 120px;
+  flex-grow: 1;
+  padding-bottom: 15px;
   font-size: 12px;
   line-height: 12px;
+  overflow-wrap: break-word;
 }
 
 .form-select {
-  padding-top: 15px;
-  border: none;
-  /* outline: none; */
-  appearance: none;
-  background: #fff;
-}
-
-.form-select-city {
-  width: 150px;
-}
-
-.form-select-coutry {
+  padding-right: 20px;
   width: 170px;
+  margin-left: -4px;
+  line-height: 16px;
+  border: none;
+  appearance: none;
+  background: #fff0;
+  z-index: 2;
 }
 
-.form-input {
+.form-input-date {
+  position: relative;
+  margin-left: -5px;
+  line-height: 16px;
+  border: none;
+  background: #fff0;
+  z-index: 2;
+}
+
+.form-select-icon {
+  position: absolute;
+  right: 20px;
+  bottom: 7px;
+  z-index: 1;
+}
+
+.form-input-icon {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  z-index: 1;
+}
+
+.form-input-number {
   width: 120px;
-  padding-top: 15px;
   border: none;
   border-bottom: 1px solid #e1e1e1;
 }
 
 .form-btn-container {
   width: 100%;
-  justify-content: center;
+  padding-left: 20px;
+  justify-content: right;
 }
 
 .form-bth {
+  max-width: 125px;
   padding: 13px 30px;
-  font-size: 16px;
-  line-height: 16px;
   border: 1px solid #cc9933;
   border-radius: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   color: #cc9933;
 }
 
