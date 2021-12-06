@@ -621,10 +621,95 @@ body {
   padding: 13px 30px;
   border: 1px solid #cc9933;
   border-radius: 10px;
-  word-wrap: break-word;
   overflow-wrap: break-word;
   color: #cc9933;
 }
 
+/* Сontacts */
 
+.contacts-title {
+  padding-bottom: 25px;
+}
 
+.contact-wrapper {
+  padding: 45px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+.contacts-list-wrapper {}
+
+.contacts-list {
+  flex-direction: column;
+  padding-right: 50px;
+  margin-bottom: 45px;
+}
+
+.contacts-item {
+  max-width: 375px;
+  border-bottom: 1px solid #e4e4e4;
+  padding-top: 25px;
+  padding-bottom: 23px;
+}
+
+.contacts-item:first-child {
+  padding-top: 0;
+}
+
+.contacts-item-left {
+  width: 145px;
+}
+
+.contact-item-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  overflow-wrap: break-word;
+}
+
+.contacts-item-right {
+  width: 230px;
+}
+
+.contacts-item-right p {
+  margin: 0;
+  line-height: 24px;
+}
+
+.contacts-img {
+  border-radius: 10px;
+}
+
+.contacts-tel-link {
+  display: inline-block;
+  color: #cc9933;
+}
+
+.contacts-tel-link:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.contscts-email-link {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #cc9933;
+}
+
+.contscts-email-link-descr {
+  line-height: 24px;
+  color: #999;
+}
+
+.contscts-email-link-descr:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.contacts-bth {
+  max-width: 375px;
+  padding: 30px;
+  border: 1px solid #cc9933;
+  border-radius: 10px;
+  overflow-wrap: break-word;
+  color: #cc9933;
+}
