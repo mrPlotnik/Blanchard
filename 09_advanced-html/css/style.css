@@ -626,6 +626,9 @@ body {
 }
 
 /* Сontacts */
+.contacts {
+  padding-bottom: 20px;
+}
 
 .contacts-title {
   padding-bottom: 25px;
@@ -713,3 +716,58 @@ body {
   overflow-wrap: break-word;
   color: #cc9933;
 }
+
+/* footer */
+
+.footer-main {
+  border-radius: 15px;
+  padding: 50px;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #333;
+  background-repeat: no-repeat;
+  background-position: 80% 100%;
+  background-image: url(../img/footer-logo.png);
+}
+
+.footer-left {
+  width: 420px;
+  padding-right: 100px;
+}
+
+.footer-text {
+  flex-direction: column;
+  margin: 0;
+  line-height: 30px;
+}
+
+.footer-center-text:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.footer-link {
+  line-height: 24px;
+  color: #cc9933;
+}
+
+.footer-left-text:not(:last-child) {
+  padding-bottom: 50px;
+}
+
+.footer-center {
+  width: 360px;
+
+}
+
+.footer-right {
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.footer-right a:not(:last-child) {
+  padding-bottom: 20px;
+}
+
+
+
+
