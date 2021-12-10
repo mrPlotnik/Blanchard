@@ -529,11 +529,9 @@ body {
 
 /* form */
 
-.want {
+.want {}
 
-}
-
-.want-wrapper {
+.want-container {
   background: #e9e9e9;
   padding: 38px 40px 70px;
   border-radius: 15px;
@@ -541,7 +539,7 @@ body {
 
 .want-title {
   padding-left: 0;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form {
@@ -550,20 +548,28 @@ body {
   background: #fff;
 }
 
-.form-item {
+.fieldset {
+  border: none;
+  padding: 0;
+}
+
+.want-form-list {}
+
+.want-form-item {
   position: relative;
   flex-direction: column;
   padding: 0 20px;
   border-right: 1px solid #e1e1e1;
 }
 
-.form-item:first-child {
+.want-form-item:first-child {
   padding-left: 0;
 }
 
 .form-item-descr {
+  display: inline-block;
   width: 120px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   padding-bottom: 15px;
   font-size: 12px;
   line-height: 12px;
@@ -571,6 +577,7 @@ body {
 }
 
 .form-select {
+  position: relative;
   padding-right: 20px;
   width: 170px;
   margin-left: -4px;
@@ -578,7 +585,7 @@ body {
   border: none;
   appearance: none;
   background: #fff0;
-  z-index: 2;
+  z-index: 1;
 }
 
 .form-input-date {
@@ -587,21 +594,19 @@ body {
   line-height: 16px;
   border: none;
   background: #fff0;
-  z-index: 2;
+  z-index: 1;
 }
 
 .form-select-icon {
   position: absolute;
   right: 20px;
-  bottom: 7px;
-  z-index: 1;
+  bottom: 9px;
 }
 
 .form-input-icon {
   position: absolute;
   right: 20px;
   bottom: 5px;
-  z-index: 1;
 }
 
 .form-input-number {
@@ -631,7 +636,7 @@ body {
 }
 
 .contacts-title {
-  padding-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .contact-wrapper {
@@ -719,10 +724,13 @@ body {
 
 /* footer */
 
+.footer {
+  margin-bottom: 20px;
+}
+
 .footer-main {
   border-radius: 15px;
   padding: 50px;
-  margin-bottom: 20px;
   color: #fff;
   background-color: #333;
   background-repeat: no-repeat;
@@ -741,6 +749,12 @@ body {
   line-height: 30px;
 }
 
+.address {
+  margin-bottom: 15px;
+  font-style: normal;
+  line-height: 30px;
+}
+
 .footer-center-text:not(:last-child) {
   margin-bottom: 15px;
 }
@@ -756,15 +770,19 @@ body {
 
 .footer-center {
   width: 360px;
-
 }
 
 .footer-right {
-  flex-direction: column;
   margin-left: auto;
 }
 
-.footer-right a:not(:last-child) {
+.footer-list {
+  flex-direction: column;
+}
+
+.footer-item {}
+
+.footer-item:not(:last-child) {
   padding-bottom: 20px;
 }
 
