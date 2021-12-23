@@ -1,178 +1,141 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <title></title>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Евклид. Проектные системы</title>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"> </head> -->
 </head>
 <body>
 
-    <!-- header -->
-  <header class="header">
+  <!---------- header ---------->
+  <header class="site-header">
 
-    <div class="container header-container">
+    <div class="container flex">
 
-      <div class="header-main flex"> </div>
+      <div class="site-header__logo-wrap flex">
+        <img class="logo" src="img/logo.png" alt="Евклид. Проектные системы">
+      </div>
 
-      <nav class="header-nav flex">
-        <ul class="header-nav-list list-reset flex">
-          <li class="header-nav-item">
-          </li>
-          <li class="header-nav-item">
-          </li>
-          <li class="header-nav-item">
-          </li>
-          <li class="header-nav-item">
-          </li>
-          <li class="header-nav-item">
-          </li>
-          <li class="header-nav-item">
-          </li>
+      <nav class="site-header__nav nav flex">
+
+        <ul class="nav__list list-reset flex">
+
+          <li class="nav__item">О нас</li>
+          <li class="nav__item">Проекты</li>
+          <li class="nav__item">Этапы</li>
+          <li class="nav__item">Отзывы</li>
+          <li class="nav__item">Контакты</li>
+          <li class="nav__item">123</li>
+
         </ul>
+
       </nav>
 
     </div>
 
   </header>
 
-  <main class="main">
+  <main class="site-main">
 
-    <!--  -->
-    <section id="" class="section-offset">
+    <!---------- Slider ---------->
+    <!-- переверстать со списком -->
+    <section class="site-main__section section-slider">
 
-      <div class="container">
+      <div class="section-slider__container container">
+        <div class="section-slider__wrap">
 
-        <h2 class="section-title"></h2>
-        <div class="flex"> </div>
+          <ul class="section-slider__list list-reset">
+            <li>
+              <a class="flex" href="#">
+                <img src="img/slider-1.jpg" alt="">
+              </a>
+            </li>
+          </ul>
 
-      </div>
-
-    </section>
-
-    <!--  -->
-    <section id="" class="section-offset">
-
-      <div class="container">
-
-        <h2 class="section-title "></h2>
-
-      </div>
-
-    </section>
-
-    <!--  -->
-    <section id="" class="section-offset">
-
-      <div class="container">
-
-        <h2 class="section-title"></h2>
+          <div class="section-slider__overlay">
+            <h1 class="section-slider__header">Проектные решения любой сложности</h1>
+            <p class="section-slider__descr">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
+            <button class="section-slider__btn btn-reset">Заказать расчёт</button>
+          </div>
+        </div>
 
       </div>
 
     </section>
 
-    <!--  -->
-    <section id="" class="section-offset">
+    <!---------- About ---------->
+    <!-- переверстать со списком -->
+    <section class="site-main__section section-about">
 
-      <div class="container">
+      <div class="section-about__container container">
+        <h2 class="section-about__header">О нас</h2>
+        <p class="section-about__descr">Также как перспективное планирование создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса экспериментов, поражающих по своей масштабности и грандиозности. А также диаграммы связей могут быть описаны максимально подробно. Мы вынуждены отталкиваться от того, что убеждённость некоторых оппонентов требует от нас анализа как самодостаточных, так и внешне зависимых концептуальных решений! Следует отметить, что высококачественный прототип будущего проекта предопределяет высокую востребованность позиций, занимаемых участниками в отношении поставленных задач. Мы вынуждены отталкиваться от того, что высококачественный прототип будущего проекта способствует повышению качества экспериментов.</p>
+        <div class="section-about__wrap flex">
 
-        <h2 class="section-title"></h2>
-
-      </div>
-
-    </section>
-
-    <!--  -->
-    <section id="" class="section-offset">
-
-      <div class="container">
-
-        <h2 class="section-title"></h2>
-
-      </div>
-
-    </section>
-
-    <!--  -->
-    <section id="" class="section-offset">
-
-      <div class="container">
-
-        <h2 class="section-title"></h2>
-
-      </div>
-
-    </section>
-
-    <!-- Контакты -->
-    <section id="contacts" class="contacts section-offset">
-      <div class="container section-container">
-        <h2 class="section-title contacts-title">Контакты</h2>
-        <div class="contact-wrapper flex">
-
-          <div class="contacts-list-wrapper">
-            <ul class="contacts-list list-reset flex">
-
-              <li class="contacts-item flex">
-                <div class="contacts-item-left">
-                  <h3 class="contact-item-title">Адрес</h3>
-                </div>
-                <div class="contacts-item-right">
-                  <p>Москва, улица Юности, дом 5 строение 4, офис 2</p>
-                </div>
-              </li>
-
-              <li class="contacts-item flex">
-                <div class="contacts-item-left ">
-                  <h3 class="contact-item-title">Телефоны</h3>
-                </div>
-                <div class="contacts-item-right">
-                  <a class="contacts-tel-link link-light" href="#">+7 (499) 535-64-34</a>
-                  <a class="contacts-tel-link link-light" href="#">+7 (495) 005-05-44</a>
-                </div>
-              </li>
-
-              <li class="contacts-item flex">
-                <div class="contacts-item-left ">
-                  <h3 class="contact-item-title">E-mail</h3>
-                </div>
-                <div class="contacts-item-right">
-                  <a class="contscts-email-link link-light" href="#">lg.oona@mail.ru</a>
-                  <p class="contscts-email-link-descr">по вопросам бронирования</p>
-                  <a class="contscts-email-link link-light" href="#">hotels.ln@mail.ru</a>
-                  <p class="contscts-email-link-descr">по вопросам сотрудничества</p>
-                </div>
-
-              </li>
-              <li class="contacts-item flex">
-                <div class="contacts-item-left ">
-                  <h3 class="contact-item-title">График</h3>
-                </div>
-                <div class="contacts-item-right">
-                  <p>Понедельник - пятница, с 10:00 до 19:00</p>
-                </div>
-              </li>
-
-            </ul>
-            <button class="btn btn-reset contacts-bth">Построить маршрут</button>
+          <div class="section-about__left about-left">
+            <div class="about-left__overlay flex">
+              <p class="about-left__descr">Принимая во внимание показатели успешности, перспективное планирование способствует подготовке и реализации новых принципов.</p>
+              <button class="about-left__btn btn-reset">Подробнее</button>
+            </div>
           </div>
 
-          <div class="contacts-img-wrapper flex">
-            <img class="contacts-img" src="../09_advanced-html/img/contacts.jpg" alt="reception">
+          <div class="section-about__right about-right">
+
+            <div class="about-right__card about-right__card--1">
+              <h3 class="about-right__header">Консультация с широким активом</h3>
+              <p class="about-right__descr">А также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для как самодостаточных, так и внешне зависимых концептуальных решений.</p>
+            </div>
+
+            <div class="about-right__card about-right__card--2">
+              <h3 class="about-right__header">В своём стремлении повысить </h3>
+              <p class="about-right__descr">Качество жизни, они забывают, что сплочённость команды профессионалов представляет собой интересный эксперимент проверки прогресса профессионального сообщества. </p>
+            </div>
+
           </div>
 
         </div>
       </div>
+
     </section>
 
+    <!---------- Work ---------->
+    <section class="site-main__section section-work">
+
+      <div class="section-work__container container">
+        <h2 class="section-work__header">Как мы работаем</h2>
+        <ul class="section-work__list list-reset flex">
+          <li class="section-work__item"><a class="" href="#">1 шаг</a></li>
+          <li class="section-work__item"><a class="" href="#">2 шаг</a></li>
+          <li class="section-work__item"><a class="" href="#">3 шаг</a></li>
+          <li class="section-work__item"><a class="" href="#">4 шаг</a></li>
+        </ul>
+
+
+        <div class="section-work__wrap flex">
+
+          <div class="section-work__left work-left">
+            <h3 class="work-right__header">Проводим консультацию</h3>
+            <p class="work-right__descr">Влечет за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований. Кстати,  стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.</p>
+            <!---------- Кнопки через список? ---------->
+            <button class="work-right__btn--orange btn-reset">Подробнее</button>
+            <button class="work-right__btn--white btn-reset">Договор</button>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
   </main>
 
-  <!-- footer -->
-  <footer class="footer">
+  <!---------- footer ---------->
+  <footer class="site-footer">
 
     <div class="container footer-container">
 
