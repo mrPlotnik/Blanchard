@@ -450,9 +450,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* ---------- section-slider ---------- */
 
-.section-slider__container {}
-
-
 .section-slider__list {
   background-size: cover;
   background-repeat: no-repeat;
@@ -595,7 +592,6 @@ background-image: url(../img/about-right-2.svg);
 }
 
 /* ---------- section-work ---------- */
-.section-work {}
 
 .section-work-header {
   margin-bottom: 50px;
@@ -617,8 +613,6 @@ background-image: url(../img/about-right-2.svg);
   padding-right: 87px;
   justify-content: space-between;
 }
-
-.section-work__wrap {}
 
 .section-work__left {
   flex-basis: 50%;
@@ -778,7 +772,6 @@ background-image: url(../img/about-right-2.svg);
   font-size: 18px;
 }
 
-.social-list {}
 
 .social-list__item:not(:last-child) {
   margin-right: 25px;
