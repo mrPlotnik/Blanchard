@@ -112,15 +112,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
   }
 
+  //
+  function sliderHeight() {
+    // window.onresize = function(e) {
+      var swiperHeight = document.querySelector('.swiper');
+      var overlayHeight = document.querySelector('.section-slider__overlay').offsetHeight;
+      swiperHeight.style.height = overlayHeight + 'px';
+    // };
+  }
+
   search();
   burger();
   tab();
+  sliderHeight();
 
   $("#accordion").accordion({
     icons: false,
     heightStyle: "content",
     collapsible: true
   });
+
+
+
+
 
 })
 

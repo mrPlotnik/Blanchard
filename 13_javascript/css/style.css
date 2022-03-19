@@ -122,6 +122,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* Псевдоклассы для svg */
 .svg-link {
   display: flex;
+  justify-content: center;
 }
 .svg-link:active {
   color: #ff9900;
@@ -390,18 +391,25 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .header-nav__item {
   position: relative;
+  max-width: calc(100%/5 - 10px - 5px);
   max-height: 72px;
   font-weight: 600;
 }
 .header-nav__item:not(:last-child)  {
   margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.header-nav__item:last-child {
+  display: flex;
+  align-items: center;
 }
 .header-nav__text-link {
   display: flex;
   align-items: center;
   height: 100%;
   max-height: inherit;
-  text-align: center;
+  text-align: left;
   word-wrap: break-word;
   overflow: hidden;
   font-size: 1.12em;
@@ -580,6 +588,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .about-left__overlay {
   position: absolute;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -597,11 +606,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .about-left__btn {
-  min-width: 175px;
+  min-width: 180px;
   max-width: 40%;
   min-height: 60px;
   padding: 18px 36px;
   font-weight: bold;
+  word-wrap: break-word;
 }
 
 .about-right__card {
@@ -648,16 +658,18 @@ background-image: url(../img/about-right-2.svg);
 
 .tab-nav {
   margin-bottom: 3em;
+  /* justify-content: space-between; */
 }
 .tab-nav__item {
+  max-width: calc(25% - 10px);
   line-height: 1.25em;
   color: #333;
 }
 .tab-nav__item:not(:last-child) {
   padding-right: 87px;
-  justify-content: space-between;
 }
 .tab-nav__btn {
+  text-align: left;
   font-size: 1.1em;
 }
 .tab-content {
@@ -722,10 +734,11 @@ background-image: url(../img/about-right-2.svg);
 }
 .btn-wrap {
   position: absolute;
+  display: flex;
   bottom: 0;
 }
 .work-left__btn {
-  max-width: 45%;
+  max-width: calc(25% - 40px);
   padding: 20px 40px;
   line-height: 20px;
 }
@@ -751,6 +764,7 @@ background-image: url(../img/about-right-2.svg);
   width: 100%;
 }
 .section-faq__button {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -770,6 +784,7 @@ background-image: url(../img/about-right-2.svg);
 }
 
 .section-faq__button > span {
+  width: calc(100% - 60px);
   margin-right: auto;
   font-size: 1.5em;
 }
@@ -1032,6 +1047,7 @@ background-image: url(../img/about-right-2.svg);
 
 .footer-form__check {
   display: flex;
+  align-items: center;
   padding-left: 1.2em;
   color: #cacaca;
 }
