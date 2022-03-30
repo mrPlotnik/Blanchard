@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
   search();
   burger();
   tab();
-  sliderHeight();
+  // sliderHeight();
 
   $("#accordion").accordion({
     icons: false,
