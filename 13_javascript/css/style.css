@@ -73,8 +73,8 @@ h1, h2, h3, h4, h5, h6, p {
 .container {
   max-width: 1920px;
   margin: 0 auto;
-  /* padding: 0 75px; */
-  margin: 0 75px;
+  padding: 0 75px;
+  /* margin: 0 75px; */
 }
 
 .section-header {
@@ -503,6 +503,10 @@ h1, h2, h3, h4, h5, h6, p {
   position: relative;
 }
 
+.section-slider_wrap {
+  position: relative;
+}
+
 .section-slider__overlay {
   position: relative;
   max-width: 917px;
@@ -806,13 +810,13 @@ background-image: url(../img/about-right-2.svg);
 }
 
 .ui-accordion-header svg {
-  rotate: 0deg;
-  transition-property: rotate;
+  transform: rotate(0deg);
+  transition-property: transform;
   transition-duration: .3s;
 }
 .ui-accordion-header-active svg {
-  rotate: 45deg;
-  transition-property: rotate;
+  transform: rotate(45deg);
+  transition-property: transform;
   transition-duration: .3s;
 }
 
@@ -1147,9 +1151,6 @@ background-image: url(../img/about-right-2.svg);
 
   /* slider */
 
-  .swiper {
-    height: 668px;
-  }
   .section-slider__overlay {
     max-width: 925px;
     padding-top: 160px;
@@ -1316,10 +1317,6 @@ background-image: url(../img/about-right-2.svg);
 
   /* slider */
 
-  .swiper {
-    height: 662px;
-  }
-
   .section-slider__overlay {
     padding-top: 10em;
     padding-left: 2.5em;
@@ -1387,6 +1384,9 @@ background-image: url(../img/about-right-2.svg);
   .tab-nav {
     justify-content: space-between;
     margin-bottom: 44px;
+  }
+  .tab-nav__item:not(:last-child) {
+    padding-right: 0;
   }
   .tab-content {
     flex-direction: column;
