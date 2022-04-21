@@ -1,14 +1,16 @@
 const swiper = new Swiper('.swiper', {
-  loop: true,
+  // loop: true,
   effect: "fade",
+  allowTouchMove: false,
   autoplay: {
     delay: 5000,
-    disableOnInteraction: false,
+    disableOnInteraction: true,
   },
   pagination: {
     el: '.swiper-pagination',
-    clickable: true,
+    clickable: false,
   },
+  // pagination: false,
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -55,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Бургер
   function burger() {
-    const burger = document.querySelector('.site-header__burger-wrap');
-    const menuMobile = document.querySelector('.site-header__menu-mobile');
+    const burger = document.querySelector('.site-header__burger-link');
+    const menuMobile = document.querySelector('.menu-mobile');
     const closeMenu = document.querySelector('.close');
 
     const toggleMenu = function(q) {
@@ -112,29 +114,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   }
 
-  //
-  function sliderHeight() {
-    // window.onresize = function(e) {
-      var swiperHeight = document.querySelector('.swiper');
-      var overlayHeight = document.querySelector('.section-slider__overlay').offsetHeight;
-      swiperHeight.style.height = overlayHeight + 'px';
-    // };
-  }
-
   search();
   burger();
   tab();
-  // sliderHeight();
 
   $("#accordion").accordion({
+    // header: ".section-faq__item",
     icons: false,
     heightStyle: "content",
     collapsible: true
   });
-
-
-
-
 
 })
 

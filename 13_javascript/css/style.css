@@ -47,13 +47,6 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
-a:focus-visible {
-  outline: none;
-}
-
-/* img {
-	max-width: 100%;
-} */
 
 body {
   min-width: 320px;
@@ -74,7 +67,6 @@ h1, h2, h3, h4, h5, h6, p {
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 75px;
-  /* margin: 0 75px; */
 }
 
 .section-header {
@@ -96,127 +88,73 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
   border: none;
   background-color: transparent;
-  cursor: pointer;
-  transition-property: background-color, color, border-color;
+  /* cursor: pointer; */
+  /* transition-property: background-color, color, border-color;
   transition-duration: .3s;
-  transition-timing-function: ease-in-out
-}
-
-/* Псевдоклассы для лого */
-.logo-link::before {
-  position: absolute;
-  content: '';
-  top: -5px;
-  bottom: -5px;
-  right: -5px;
-  left: -5px;
-  outline: 2px solid #ff9900;
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
-}
-.logo-link:focus-visible::before {
-  opacity: 1;
+  transition-timing-function: ease-in-out */
 }
 
 /* Псевдоклассы для svg */
-.svg-link {
+svg rect,
+svg path,
+svg circle {
+  transition: all .3s ease-in-out;
+}
+.svg {
   display: flex;
-  justify-content: center;
 }
-.svg-link:active {
-  color: #ff9900;
+.svg:hover path {
+  stroke: #ff9900;
 }
-.svg-link::before {
-  position: absolute;
-  content: '';
-  top: -7px;
-  bottom: -7px;
-  right: -7px;
-  left: -7px;
-  outline: 2px solid #ff9900;
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
-}
-.svg-link:focus-visible:before {
-  opacity: 1;
+.svg:hover rect {
+  fill: #ff9900;
 }
 
-.section-work__link-step {
-  position: relative;
-  transition-property: background-color, color, border-color;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
+.btn-svg {
+  display: flex;
+  cursor: pointer;
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: 5px;
+  transition: .3s outline-color ease-in-out;
 }
-.section-work__link-step::before {
-  position: absolute;
-  display: block;
-  content: '';
-  top: -7px;
-  bottom: -7px;
-  right: -7px;
-  left: -7px;
-  outline: 2px solid #ff9900;
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
-}
-.section-work__link-step:focus-visible::before {
-  opacity: 1;
-}
-.section-work__link-step:focus-visible {
+.btn-svg:focus {
   outline: none;
 }
-.section-work__link-step:hover {
-  color: #ff9900;
+.btn-svg:focus-visible {
+  outline: 2px solid #ff9900;
 }
-.active {
+
+
+/* .active {
   color: #e1670e;
-}
+} */
 
-
-
+/* Псевдоклассы для оранжевых кнопок */
 .btn-orange {
   background-color: #ff9900;
   color: #fff;
-}
-.btn-orange:focus-visible {
-  background-color: rgba(255, 153, 0, 0.7);
-  outline: none;
+  transition: .3s background-color ease-in-out;
 }
 .btn-orange:hover {
+  background-color: rgba(255, 153, 0, 0.7);
+}
+.btn-orange:focus {
+  outline: none;
+}
+.btn-orange:focus-visible {
   background-color: rgba(255, 153, 0, 0.7);
 }
 .btn-orange:active {
   background-color: #e1670e;
 }
 
-.btn-orange-outline {
-  border: 3px solid #ff9900;
-  color: #fff;
-}
-.btn-orange-outline:focus-visible {
-  background-color: #ff9900;
-  border: 3px solid #ff9900;
-  outline: none;
-}
-.btn-orange-outline:hover {
-  background-color: #ff9900;
-  border: 3px solid #ff9900;
-
-}
-.btn-orange-outline:active {
-  background-color: #e1670e;
-  border: 3px solid #e1670e;
-}
-
+/* Псевдоклассы для обведенных кнопок */
 .btn-outline {
   border: 1px solid #333;
   color: #333;
+  transition-property: background-color, color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out
 }
 .btn-outline:focus-visible {
   color: #fff;
@@ -231,6 +169,27 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .btn-outline:active {
   background-color: #000;
+}
+
+/* Псевдоклассы для оранжевых обведенных кнопок */
+.btn-orange-outline {
+  border: 3px solid #ff9900;
+  color: #fff;
+  transition: .3s background-color ease-in-out;
+}
+.btn-orange-outline:focus-visible {
+  background-color: #ff9900;
+  border: 3px solid #ff9900;
+  outline: none;
+}
+.btn-orange-outline:hover {
+  background-color: #ff9900;
+  border: 3px solid #ff9900;
+
+}
+.btn-orange-outline:active {
+  background-color: #e1670e;
+  border: 3px solid #e1670e;
 }
 
 /* ---------- Header ---------- */
@@ -265,10 +224,6 @@ h1, h2, h3, h4, h5, h6, p {
   align-items: center;
 }
 
-.site-header__burger-link {
-  display: flex;
-}
-
 .site-header__logo-wrap {
   width: 50%;
   height: inherit;
@@ -290,11 +245,11 @@ h1, h2, h3, h4, h5, h6, p {
   visibility: hidden;
   opacity: 0;
   background-color: #fff;
-  transition: .2s visibility linear, .2s opacity linear;
+  transition: .3s visibility linear, .3s opacity linear;
   z-index: 101;
 }
 .menu-mobile.open {
-  transition: .2s visibility linear, .2s opacity linear;
+  transition: .3s visibility linear, .3s opacity linear;
   visibility: visible;
   opacity: 1;
 }
@@ -315,28 +270,21 @@ h1, h2, h3, h4, h5, h6, p {
 .menu-mobile__item:not(:first-child):not(:last-child) {
   padding-bottom: 3.75em;
 }
-.menu-mobile__text-link::before,
-.header-nav__text-link::before {
-  position: absolute;
-  display: block;
-  content: '';
-  top: -7px;
-  bottom: -7px;
-  right: -7px;
-  left: -7px;
-  outline: 2px solid #ff9900;
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
+
+/* Псевдоклассы для навигации */
+.menu-mobile__text-link,
+.header-nav__text-link {
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: 5px;
+  transition: .3s outline-color ease-in-out;
+}
+.menu-mobile__text-link:focus,
+.header-nav__text-link:focus {
+  outline: none;
 }
 .menu-mobile__text-link:focus-visible,
 .header-nav__text-link:focus-visible {
-  outline: none;
-}
-.menu-mobile__text-link:focus-visible::before,
-.header-nav__text-link:focus-visible::before {
-  opacity: 1;
+  outline: 2px solid #ff9900;
 }
 .menu-mobile__text-link::after,
 .header-nav__text-link::after {
@@ -348,35 +296,43 @@ h1, h2, h3, h4, h5, h6, p {
   bottom: -7px;
   background-color:#ff9900;
   opacity: 0;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
+  transition: .3s opacity ease-in-out;
 }
 .menu-mobile__text-link:hover::after,
 .header-nav__text-link:hover::after {
   opacity: 1;
 }
-.menu-mobile__text-link:active
+.menu-mobile__text-link:active,
 .header-nav__text-link:active {
   color: #e1670e;
 }
-.menu-mobile__text-link:active:after,
-.header-nav__text-link:active:after {
-  position: absolute;
-  display: block;
-  content: '';
-  width: 100%;
-  height: 2px;
-  bottom: -7px;
+.menu-mobile__text-link:active::after,
+.header-nav__text-link:active::after {
   background-color:#e1670e;
 }
 
-.site-header__logo-link {
+.site-header__logo-link,
+.site-footer__logo-link {
   position: relative;
   display: inline-flex;
 }
 .site-header__logo-link > img {
   width: 225px;
+}
+/* Псевдоклассы для лого */
+.site-header__logo-link {
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: 5px;
+  transition: .3s outline-color ease-in-out;
+}
+.site-header__logo-link:focus,
+.site-footer__logo-link:focus {
+  outline: none;
+}
+.site-header__logo-link:focus-visible,
+.site-footer__logo-link:focus-visible {
+  outline: 2px solid #ff9900;
+  outline-offset: 5px;
 }
 
 .site-header__nav {
@@ -429,10 +385,10 @@ h1, h2, h3, h4, h5, h6, p {
   opacity: 0;
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
-  transition: .2s visibility linear, .2s opacity linear;
+  transition: .3s visibility linear, .3s opacity linear;
 }
 .header-nav__search.open {
-  transition: .2s visibility linear, .2s opacity linear;
+  transition: .3s visibility linear, .3s opacity linear;
   visibility: visible;
   opacity: 1;
 }
@@ -530,6 +486,15 @@ h1, h2, h3, h4, h5, h6, p {
   height: 15px;
   margin: 0 !important;
   margin-right: 20px !important;
+}
+.swiper-pagination-bullet:focus {
+  outline: none;
+}
+
+/* --- Нужна плавность --- */
+.swiper-pagination-bullet:focus-visible {
+  outline: 2px solid #ff9900;
+  outline-offset: 1px;
 }
 .swiper-pagination-bullet-active {
   background-color: #fff;
@@ -679,10 +644,43 @@ background-image: url(../img/about-right-2.svg);
 .tab-nav__item:not(:last-child) {
   padding-right: 87px;
 }
+
 .tab-nav__btn {
+  position: relative;
   text-align: left;
   font-size: 1.1em;
 }
+
+/* Псевдоклассы для табов */
+.tab-nav__btn {
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: 5px;
+  transition: .3s outline-color ease-in-out, .3s color ease-in-out;
+}
+.tab-nav__btn:focus {
+  outline: none;
+}
+.tab-nav__btn:focus-visible {
+  outline: 2px solid #ff9900;
+}
+.tab-nav__btn::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  bottom: -7px;
+  background-color:#ff9900;
+  opacity: 0;
+  transition: .3s opacity ease-in-out;
+}
+.tab-nav__btn:hover {
+  color: #ff9900;
+}
+.tab-nav__btn:active {
+  color: #e1670e;
+}
+
 .tab-content {
   display: none;
   min-height: 460px;
@@ -770,34 +768,33 @@ background-image: url(../img/about-right-2.svg);
 }
 .section-faq__item {
   position: relative;
-  width: 100%;
-  margin-top: -1px;
-  padding: 30px 0 30px 0;
-  border-top: 1px solid #cacaca;
-  border-bottom: 1px solid #cacaca;
-  transition-property: border-top-color, border-bottom-color;
-  transition-duration: .3s;
-}
-.section-faq__header-answer {
   display: flex;
   align-items: center;
   width: 100%;
+  margin-top: -1px;
+  padding: 30px 0 30px 0;
   text-align: left;
   font-weight: 800;
   line-height: 32px;
-  transition-property: color;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+  transition-property: border-color, color;
   transition-duration: .3s;
+  transition-timing-function: ease-in-out
+}
+.section-faq__item span {
+  transition: .3s color ease-in-out;
 }
 
-.section-faq__header-answer > svg {
+.section-faq__item > svg {
   width: 50px;
 }
-.section-faq__header-answer > span {
+.section-faq__item > span {
   width: calc(100% - 60px);
   margin-right: auto;
   font-size: 1.5em;
 }
-.section-faq__header-answer > span > span {
+.section-faq__item > span > span {
   font-size: 1em;
   color: #aaa;
 }
@@ -826,16 +823,21 @@ background-image: url(../img/about-right-2.svg);
   transition-duration: .3s;
 }
 
+/* Псевдоклассы для FAQ */
 .section-faq__item:focus-visible {
   outline: none;
-}
-
-.section-faq__item:hover,
-.section-faq__item:first-child:focus-visible {
   border-color: #ff9900;
   z-index: 1;
 }
-.section-faq__item:hover .section-faq__header-answer {
+.section-faq__item:focus-visible span {
+  color: #ff9900;
+}
+
+.section-faq__item:hover {
+  border-color: #ff9900;
+  z-index: 1;
+}
+.section-faq__item:hover span {
   color: #ff9900;
 }
 .section-faq__item:hover svg  ellipse,
@@ -846,10 +848,6 @@ background-image: url(../img/about-right-2.svg);
 .section-faq__item:focus-visible svg path {
   fill: #fff;
 }
-
-/* .section-faq__item:focus-within {
-  outline: none;
-} */
 
 /* ---------- footer ---------- */
 
@@ -867,9 +865,7 @@ background-image: url(../img/about-right-2.svg);
 .site-footer__left {
   width: 600px;
 }
-.site-footer__logo {
-  position: relative;
-  display: inline-flex;
+.site-footer__logo-link {
   margin-bottom: 20px;
 }
 
@@ -895,33 +891,16 @@ background-image: url(../img/about-right-2.svg);
 }
 
 /* Псевдоклассы для навигации футера */
-.footer-nav__text-link::before {
-  position: absolute;
-  content: '';
-  top: -7px;
-  bottom: -7px;
-  right: -7px;
-  left: -7px;
-  outline: 2px solid #ff9900;
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
+.footer-nav__text-link {
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: 5px;
+  transition: .3s outline-color ease-in-out;
 }
-.footer-nav__text-link:active:after {
-  position: absolute;
-  display: block;
-  content: '';
-  width: 100%;
-  height: 2px;
-  bottom: -7px;
-  background-color:#e1670e;
-}
-.footer-nav__text-link:focus-visible::before {
-  opacity: 1;
+.footer-nav__text-link:focus {
+  outline: none;
 }
 .footer-nav__text-link:focus-visible {
-  outline: none;
+  outline: 2px solid #ff9900;
 }
 .footer-nav__text-link:hover {
   color: #ff9900;
@@ -936,39 +915,21 @@ background-image: url(../img/about-right-2.svg);
 .social-list__item:not(:last-child) {
   margin-right: 25px;
 }
-.social-list__item a {
-  display: flex;
+.social-list__svg-link {
+    display: flex;
 }
 
 /* Псевдоклассы для соц кнопок футера */
 .social-list__svg-link {
-  position: relative;
-  display: inline-flex;
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: 5px;
+  transition: .3s outline-color ease-in-out;
 }
-.social-list__svg-link svg path {
-  position: relative;
-  transition-property: fill;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
+.social-list__svg-link:focus {
+  outline:none
 }
-.social-list__svg-link::before {
-  position: absolute;
-  content: '';
-  top: -7px;
-  bottom: -7px;
-  right: -7px;
-  left: -7px;
+.social-list__svg-link:focus-visible{
   outline: 2px solid #ff9900;
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
-}
-.social-list__svg-link:focus-visible::before {
-  opacity: 1;
-}
-.social-list__svg-link:focus-visible {
-  outline: none;
 }
 .social-list__svg-link:hover svg path {
   fill: #ff9900;
@@ -995,6 +956,7 @@ background-image: url(../img/about-right-2.svg);
   flex-direction: column;
 }
 .footer-form__input {
+  width: 100%;
   padding: 14px 24px;
   margin-bottom: 25px;
   border: none;
@@ -1010,16 +972,19 @@ background-image: url(../img/about-right-2.svg);
   margin-bottom: 25px;
 }
 
+/* Псевдоклассы для инпутов */
 .footer-form__input::placeholder {
   color: #cacaca;
 }
 .footer-form__input:focus-visible {
   background-color: #666666;
+  outline: 3px solid #ff990055;
 }
 .footer-form__input:hover {
   background-color: #666666;
 }
 .footer-form__input:active {
+  color: #fff;
   background-color: #666666;
 }
 
@@ -1075,11 +1040,18 @@ background-image: url(../img/about-right-2.svg);
 .footer-form__check-input:checked + .footer-form__check-box {
   background-image: url(../img/check-on.svg);
 }
+/* Чтобы не ругался на поддержку доступности */
 .footer-form__check-input:focus-visible {
-  outline: none
+  outline: 2px solid #ffffff00;
 }
 .footer-form__check-input:focus-visible + .footer-form__check-box {
   outline: 2px solid #ff9900;
+}
+
+.visually-hidden {
+  height: 0px;
+  display: block;
+  visibility: hidden;
 }
 
 .site-footer__right {
@@ -1697,7 +1669,6 @@ background-image: url(../img/about-right-2.svg);
   .swiper {
     height: 306px;
   }
-
   .section-slider__overlay {
     padding-top: 59px;
     padding-right: 20px;
