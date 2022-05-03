@@ -88,10 +88,6 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
   border: none;
   background-color: transparent;
-  /* cursor: pointer; */
-  /* transition-property: background-color, color, border-color;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out */
 }
 
 /* Псевдоклассы для svg */
@@ -103,12 +99,6 @@ svg circle {
 .svg {
   display: flex;
 }
-.svg:hover path {
-  stroke: #ff9900;
-}
-.svg:hover rect {
-  fill: #ff9900;
-}
 
 .btn-svg {
   display: flex;
@@ -117,17 +107,9 @@ svg circle {
   outline-offset: 5px;
   transition: .3s outline-color ease-in-out;
 }
-.btn-svg:focus {
-  outline: none;
-}
 .btn-svg:focus-visible {
   outline: 2px solid #ff9900;
 }
-
-
-/* .active {
-  color: #e1670e;
-} */
 
 /* Псевдоклассы для оранжевых кнопок */
 .btn-orange {
@@ -138,11 +120,9 @@ svg circle {
 .btn-orange:hover {
   background-color: rgba(255, 153, 0, 0.7);
 }
-.btn-orange:focus {
-  outline: none;
-}
 .btn-orange:focus-visible {
   background-color: rgba(255, 153, 0, 0.7);
+  outline: none;
 }
 .btn-orange:active {
   background-color: #e1670e;
@@ -175,7 +155,7 @@ svg circle {
 .btn-orange-outline {
   border: 3px solid #ff9900;
   color: #fff;
-  transition: .3s background-color ease-in-out;
+  transition: .3s background-color ease-in-out, .3s border-color ease-in-out;
 }
 .btn-orange-outline:focus-visible {
   background-color: #ff9900;
@@ -276,11 +256,7 @@ svg circle {
 .header-nav__text-link {
   outline: 2px solid rgba(0, 0, 0, 0);
   outline-offset: 5px;
-  transition: .3s outline-color ease-in-out;
-}
-.menu-mobile__text-link:focus,
-.header-nav__text-link:focus {
-  outline: none;
+  transition: .3s color ease-in-out;
 }
 .menu-mobile__text-link:focus-visible,
 .header-nav__text-link:focus-visible {
@@ -296,11 +272,12 @@ svg circle {
   bottom: -7px;
   background-color:#ff9900;
   opacity: 0;
-  transition: .3s opacity ease-in-out;
+  transition: .3s opacity ease-in-out, .3s background-color ease-in-out;
 }
 .menu-mobile__text-link:hover::after,
 .header-nav__text-link:hover::after {
   opacity: 1;
+
 }
 .menu-mobile__text-link:active,
 .header-nav__text-link:active {
@@ -324,10 +301,6 @@ svg circle {
   outline: 2px solid rgba(0, 0, 0, 0);
   outline-offset: 5px;
   transition: .3s outline-color ease-in-out;
-}
-.site-header__logo-link:focus,
-.site-footer__logo-link:focus {
-  outline: none;
 }
 .site-header__logo-link:focus-visible,
 .site-footer__logo-link:focus-visible {
@@ -373,6 +346,16 @@ svg circle {
 }
 .nav__item:last-child a {
   min-width: 70px;
+}
+
+.btn-search:hover svg path {
+  stroke: #ff9900;
+}
+.btn-search:hover svg rect {
+  fill: #ff9900;
+}
+.btn-search:hover svg circle {
+  stroke: #ff9900;
 }
 
 .header-nav__search {
@@ -422,35 +405,8 @@ svg circle {
 .search__item:not(:last-child) {
   margin-right: 10px;
 }
-.btn--search,
-.btn--close {
-  display: flex;
-}
 .search__input:focus-visible {
   outline: none;
-}
-
-.btn--search:hover svg rect {
-  fill: #ff9900;
-}
-.btn--search:hover svg circle {
-  stroke: #ff9900;
-}
-.btn--search:hover svg path {
-  stroke: #ff9900;
-}
-
-.btn--close:hover svg circle {
-  stroke: #ff9900;
-}
-.btn--close:hover svg rect {
-  fill: #ff9900;
-}
-.btn--close:active svg circle {
-  stroke: #333;
-}
-.btn--close:active svg rect {
-  fill: #333;
 }
 
 /* ---------- section-slider ---------- */
@@ -487,9 +443,9 @@ svg circle {
   margin: 0 !important;
   margin-right: 20px !important;
 }
-.swiper-pagination-bullet:focus {
+/* .swiper-pagination-bullet:focus {
   outline: none;
-}
+} */
 
 /* --- Нужна плавность --- */
 .swiper-pagination-bullet:focus-visible {
@@ -657,9 +613,9 @@ background-image: url(../img/about-right-2.svg);
   outline-offset: 5px;
   transition: .3s outline-color ease-in-out, .3s color ease-in-out;
 }
-.tab-nav__btn:focus {
+/* .tab-nav__btn:focus {
   outline: none;
-}
+} */
 .tab-nav__btn:focus-visible {
   outline: 2px solid #ff9900;
 }
@@ -885,20 +841,17 @@ background-image: url(../img/about-right-2.svg);
   font-weight: 600;
   font-size: 18px;
   color: #cacaca;
-  transition-property: background-color, color;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out
 }
 
 /* Псевдоклассы для навигации футера */
 .footer-nav__text-link {
   outline: 2px solid rgba(0, 0, 0, 0);
   outline-offset: 5px;
-  transition: .3s outline-color ease-in-out;
+  transition: .3s outline-color ease-in-out, .3s color ease-in-out;
 }
-.footer-nav__text-link:focus {
+/* .footer-nav__text-link:focus {
   outline: none;
-}
+} */
 .footer-nav__text-link:focus-visible {
   outline: 2px solid #ff9900;
 }
@@ -916,7 +869,7 @@ background-image: url(../img/about-right-2.svg);
   margin-right: 25px;
 }
 .social-list__svg-link {
-    display: flex;
+  display: flex;
 }
 
 /* Псевдоклассы для соц кнопок футера */
@@ -924,9 +877,6 @@ background-image: url(../img/about-right-2.svg);
   outline: 2px solid rgba(0, 0, 0, 0);
   outline-offset: 5px;
   transition: .3s outline-color ease-in-out;
-}
-.social-list__svg-link:focus {
-  outline:none
 }
 .social-list__svg-link:focus-visible{
   outline: 2px solid #ff9900;

@@ -8,19 +8,22 @@ const swiper = new Swiper('.swiper', {
   },
   pagination: {
     el: '.swiper-pagination',
-    clickable: false,
+    clickable: true,
   },
-  // pagination: false,
+  a11y: {
+    paginationBulletMessage: 'Слайд {{index}}',
+
+  },
 });
 
 document.addEventListener('DOMContentLoaded', function() {
 
   // Поиск
   function search() {
-    const searchSmall = document.querySelector('.search-small');
+    const searchSmall = document.querySelector('.search-js');
     const searchBig = document.querySelector('.header-nav__search');
-    const btnClose = document.querySelector('.btn--close');
-    const btnSearch = document.querySelector('.btn--search');
+    const btnClose = document.querySelector('.btn-close-js');
+    const btnSearch = document.querySelector('.btn-search-js');
 
     const toggleSearch = function(q) {
       q.classList.toggle('open');
@@ -118,12 +121,19 @@ document.addEventListener('DOMContentLoaded', function() {
   burger();
   tab();
 
+  // Чекбокс по нажатию на Enter
+  $('input:checkbox').keypress(function(e) {
+    e.preventDefault();
+    if((e.keyCode ? e.keyCode : e.which) == 13) {
+      $(this).trigger('click');
+    }
+  });
+
+  // Аккордион
   $("#accordion").accordion({
-    // header: ".section-faq__item",
     icons: false,
     heightStyle: "content",
     collapsible: true
   });
 
 })
-
