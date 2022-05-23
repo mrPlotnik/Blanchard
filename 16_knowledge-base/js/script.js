@@ -3,9 +3,7 @@
 const el = document.querySelector('select');
 const choises = new Choices(el,{
   searchEnabled: false,
-  itemSelectText: '',
-  allowHTML: true,
- 
+  itemSelectText: ''
 });
 
 // ---------- Yandex-карты
@@ -29,5 +27,8 @@ function init(){
     });  
 
     // Размещение геообъекта на карте.
-    myMap.geoObjects.add(myPlacemark);
+    myMap.geoObjects.add(myPlacemark);   
 }
+
+// ---------- Кастомный скролл
+new SimpleBar(document.getElementById('scroll'), {});

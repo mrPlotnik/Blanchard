@@ -209,7 +209,39 @@ h2 {
 	background-color: #CCB26E33;
 }
 
-/* ---------- wrap-3 ---------- */
+/* ---------- section-2 ---------- */
 [class*="ground-pane"] {
 	filter: grayscale(1);
+}
+
+/* ---------- section-3 ---------- */
+#scroll {
+	width: 400px;
+	height: 310px;
+	padding: 20px 30px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 170%;
+	background-color: #fff;
+}
+
+.simplebar-scrollbar::before {
+	width: 6px;
+	background-color: #CCB26E;
+  }
+
+
+
+
+
+
+
+
+
+
+.wrap-1,
+.wrap-2,
+#map,
+#scroll {
+	display: none;
 }
