@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css"/>  
+  <link rel="stylesheet" href="css/choices.min.css"/>
+  <link rel="stylesheet" href="css/simplebar.css"/>
+
+  <link rel="stylesheet" href="css/style.css"/>  
+
+  <title>База знаний</title>
+</head>
+<body>
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="container">  
+      <span>Хедер сайта</span>
+    </div>
+  </header>
+
+  <!-- main -->
+  <main class="site-main">   
+
+    <div class="container">  
+      <h1>База знаний (бонус)</h1>
+    </div>    
+
+    <!-- section -->
+    <section class="site-main__section ">
+      <div class="container">
+
+        <h2>Кастомный чекбокс и селект</h2>
+
+        <div class="site-main__section-wrap">
+
+          <div class="wrap-1">
+
+            <fieldset>
+
+              <legend>Категории:</legend>
+
+              <div>
+                <label for="wrap-1__input-1">Динозавры
+                  <input type="checkbox" name="check" id="wrap-1__input-1" class="wrap-1__input" checked>
+                  <span></span>
+                </label>
+              </div>
+              <div>
+                <label for="wrap-1__input-2">Медведи
+                  <input type="checkbox" name="check" id="wrap-1__input-2" class="wrap-1__input">               
+                  <span></span>
+              </label>
+              </div>
+              <div>
+                <label for="wrap-1__input-3">Косули
+                  <input type="checkbox" name="check" id="wrap-1__input-3" class="wrap-1__input">
+                  <span></span>  
+                </label>
+              </div>
+              <div>
+                <label for="wrap-1__input-4">Лисы
+                  <input type="checkbox" name="check" id="wrap-1__input-4" class="wrap-1__input">
+                  <span></span>  
+                </label>
+              </div>
+              <div>
+                <label for="wrap-1__input-5">Волки
+                  <input type="checkbox" name="check" id="wrap-1__input-5" class="wrap-1__input">
+                  <span></span>
+                </label>                
+              </div>
+              <div>
+                <label for="wrap-1__input-6">Олени и лоси
+                  <input type="checkbox" name="check" id="wrap-1__input-6" class="wrap-1__input">
+                  <span></span>
+                </label>                
+              </div>
+
+            </fieldset>   
+
+          </div>
+
+          <div class="wrap-2">
+            
+            <select name="select">
+              <option value="">Материал</option>            
+              <option value="value-1">Древесина</option>
+              <option value="value-2">Металл</option>
+              <option value="value-3">Камень</option>
+              <option value="value-4">Пластик</option>
+              <option value="value-5">Композитный</option>
+              <option value="value-6">Гипс</option>
+            </select>           
+          
+          </div>  
+         
+        </div>
+        
+      </div>
+    </section> 
+
+    <!-- section -->
+    <section class="site-main__section ">
+      <div class="container">
+
+        <h2>Yandex-карта</h2>
+        <div id="map" style="width: 460px; height: 460px"></div>
+
+      </div>
+    </section>  
+
+    <!-- section -->
+    <section class="site-main__section ">
+      <div class="container">
+
+        <h2>Кастомный скролл</h2>
+        <div id="scroll">
+          Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.
+        </div>
+
+      </div>
+    </section>  
+
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <span>Футер сайта</span>
+    </div>
+  </footer>
+
+  <script src="js/choices.min.js"></script>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+  <script src="js/script.js"></script>
+
+  
+
+</body>
+</html>
