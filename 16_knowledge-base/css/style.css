@@ -89,27 +89,27 @@ h2 {
 }
 
 /* ---------- wrap-1 ---------- */
-.wrap-1 {		
+#wrap-1 {		
 	width: 176px;
 	margin-right: 50px;
 	padding: 20px 30px;
 	border-radius: 10px;
 	background: #fff;
 }
-.wrap-1 fieldset {
+#wrap-1 fieldset {
 	padding: 0;
 	margin: 0;
 	border: 0;
 }
-.wrap-1 div {
+#wrap-1 div {
 	padding-top: 20px;
 }
-.wrap-1 legend {
+#wrap-1 legend {
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 25px;
 }
-.wrap-1 label {
+#wrap-1 label {
 	position: relative;
 	padding-left: 20px;
 	font-weight: 400;
@@ -117,7 +117,7 @@ h2 {
 	line-height: 19px;
 	cursor: pointer;
 }
-.wrap-1 label:hover .wrap-1__input + span {
+#wrap-1 label:hover .wrap-1__input + span {
 	border: 1px solid #CCB26E;
 	transition: border .3s ease-in-out;
 }
@@ -155,7 +155,7 @@ h2 {
 }
 
 /* ---------- wrap-2 ---------- */
-.wrap-2 {
+#wrap-2 {
 	display: inline-block;
 	background-color: #777;
 	padding: 10px;
@@ -230,18 +230,88 @@ h2 {
 	background-color: #CCB26E;
   }
 
+/* ---------- section-4 ---------- */
+#wrap-3 {
+	width: fit-content;
+	padding: 40px 30px;
+	background-color: #222;	
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+.col {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+.form__input {
+	width: 380px;
+	height: 60px;
+	padding-left: 20px;
+	border: 0;
+	border-radius: 10px;
+	font-size: 16px;
+	line-height: 19px;
+}
+.form__input::placeholder {
+	color: #999;
+}
+.form__input:focus {
+	outline: 1px solid #FF5C00;
+}
+.btn {
+	width: fit-content;
+	padding: 18px 53px;	
+	border-radius: 10px;	
+	font-size: 20px;
+	line-height: 23px;
+	cursor: pointer;
+	color: #fff;
+	background-color: #FF5C00;	
+}
+
+.just-validate-error-label {
+	position: absolute;
+	top: -20px;
+	left: 20px;
+	font-size: 12px;
+	line-height: 14px;
+	color: #FF5C00 !important;
+}
+
+/* ---------- section-5 ---------- */
+.text {
+	width: 375px;
+	height: 160px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	padding: 20px 80px 20px 30px;
+	font-size: 14px;
+	line-height: 170%;
+	background-color: #fff;
+}
+#myButton:hover path {
+	fill: #CCB26E;
+}
+#tippy-1 {
+	max-width: 163px;
+	
+}
+.tooltip {
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 16px;
+}
 
 
-
-
-
-
-
-
-
-.wrap-1,
-.wrap-2,
+#wrap-1,
+#wrap-2,
 #map,
-#scroll {
-	display: none;
+#scroll,
+#wrap-3 {
+	/* display: none; */
 }

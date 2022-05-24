@@ -31,4 +31,67 @@ function init(){
 }
 
 // ---------- Кастомный скролл
+
 new SimpleBar(document.getElementById('scroll'), {});
+
+// ---------- маскирование номера телефона
+
+var selector = document.querySelector("input[type='tel']");
+
+var im = new Inputmask("+7 (999)-999-99-99");
+im.mask(selector);
+
+
+// ---------- Валидация формы
+
+const validation = new JustValidate('#form');
+
+validation
+  .addField('#name', [
+    {
+      rule: 'required',
+      errorMessage: 'Обязательное поле!',
+    },
+    {
+      rule: 'minLength',
+      value: 3,
+      errorMessage: 'Имя должно быть больше 3 символов!',
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+      errorMessage: 'Имя должно быть короче 30 символов!',
+    },    
+  ])
+  .addField('#tel', [
+    {
+      rule: 'required',
+      errorMessage: 'Обязательное поле!',
+    },
+    {
+      validator: (value) => {
+        const phone = selector.inputmask.unmaskedvalue();      
+        return Number(phone) && phone.length === 10
+      },      
+      errorMessage: 'Телефон должен быть не меньше 10 символов!',
+    },       
+  ])
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Обязательное поле!',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Неверный email!',
+    },
+  ]);
+
+// ---------- Тултипы
+  
+const template = document.getElementById('example');
+
+tippy('#myButton', {
+  content: '<span class="tooltip">Глава 2, страница 176 <span>', 
+  allowHTML: true, 
+}); 

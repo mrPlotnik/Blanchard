@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/normalize.css"/>  
   <link rel="stylesheet" href="css/choices.min.css"/>
   <link rel="stylesheet" href="css/simplebar.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
 
   <link rel="stylesheet" href="css/style.css"/>  
 
@@ -37,7 +38,7 @@
 
         <div class="site-main__section-wrap">
 
-          <div class="wrap-1">
+          <div id="wrap-1">
 
             <fieldset>
 
@@ -84,7 +85,7 @@
 
           </div>
 
-          <div class="wrap-2">
+          <div id="wrap-2">
             
             <select name="select">
               <option value="">Материал</option>            
@@ -125,6 +126,72 @@
       </div>
     </section>  
 
+    <!-- section -->
+    <section class="site-main__section ">
+      <div class="container">
+
+        <h2>Форма с валидацией</h2>
+        <div id="wrap-3">
+
+          <form id="form" action="">
+
+            <div class="col">             
+              <input 
+                id="name"
+                class="form__input form-control" 
+                aria-label="Введите имя" 
+                type="text" 
+                name="name" 
+                required 
+                placeholder="Имя*"
+              />
+            </div>  
+
+            <div class="col">  
+              <input      
+                id="tel"        
+                class="form__input form-control" 
+                aria-label="Введите номер телефона" 
+                type="tel" 
+                name="tel" 
+                required 
+                placeholder="Телефон*"
+              />
+            </div>
+
+            <div class="col">  
+              <input 
+                id="email"
+                class="form__input form-control" 
+                aria-label="Введите электронный адрес" 
+                type="email" 
+                name="email" 
+                required 
+                placeholder="E-mail*"
+              />
+            </div>
+          
+            <button id="submit-btn" class="btn btn-reset">Заказать</button>
+          </form>
+
+        </div>
+
+      </div>
+    </section>  
+
+    <!-- section -->
+    <section class="site-main__section ">
+      <div class="container">
+
+        <h2>Тултипы</h2>       
+        <div class="text">
+          Следует отметить, что социально-экономическое развитие способствует повышению качества переосмысления внешнеэкономических политик.
+          <svg id="myButton" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8 3C7.33333 3 7 3.31919 7 3.95758C7 4.60026 7.33333 4.92159 8 4.92159C8.33333 4.92159 8.58233 4.83805 8.74699 4.67095C8.91566 4.49957 9 4.26178 9 3.95758C9 3.31919 8.66667 3 8 3ZM7.07831 13H8.91566V5.81491H7.07831V13Z" fill="#BCBCBC"/></svg>         
+        </div>       
+
+      </div>
+    </section>  
+
   </main>
 
   <!-- footer -->
@@ -139,6 +206,13 @@
   <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
 
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+  <script src="js/inputmask.min.js"></script>
+
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>  
+
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
 
   <script src="js/script.js"></script>
 
