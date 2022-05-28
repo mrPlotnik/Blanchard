@@ -153,6 +153,9 @@ h2 {
 .choices__list--dropdown [data-value=''] {
 	display: none;
 }
+.choices__list--dropdown .is-selected {
+	display: none;
+}
 
 /* ---------- wrap-2 ---------- */
 #wrap-2 {
@@ -212,6 +215,9 @@ h2 {
 /* ---------- section-2 ---------- */
 [class*="ground-pane"] {
 	filter: grayscale(1);
+}
+[class*="controls"] {
+	display: none;
 }
 
 /* ---------- section-3 ---------- */
