@@ -1,9 +1,27 @@
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto-Regular'),
+    url('../fonts/Roboto-Regular.woff2') format('woff2'),
+    url('../fonts/Roboto-Regular.woff') format('woff');
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto-Bold'),
+		url('../fonts/Roboto-Bold.woff2') format('woff2'),
+		url('../fonts/Roboto-Bold.woff') format('woff');
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
+
 html {
 	box-sizing: border-box;
 }
 
 body * {
-  font-size: 16px;
   /* outline: 1px solid red; */
 }
 
@@ -20,7 +38,7 @@ a {
 
 body {
  	min-width: 320px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -69,14 +87,12 @@ footer span {
 	color: #fff;
 }
 
-/* ---------- Main ---------- */
+.container {
+  max-width: 1440px;
+  padding: 0 153px;
+}
 
-.site-main__section {
-	margin-bottom: 50px;
-}
-.site-main__section-wrap{
-	display: flex;
-}
+/* ---------- Main ---------- */
 
 h1 {
   font-size: 3em;
@@ -89,4 +105,59 @@ h2 {
   color: #fff;
 }
 
-/* ----------  ---------- */
+/* ---------- header ---------- */
+
+.header {
+  position: absolute;
+  height: 80px;
+  background-color: #3f2aff;
+}
+.header-wrap {
+  height: 80px
+}
+
+.nav-list {
+  display: flex;
+  justify-content:space-between;
+  padding-left: 73px;
+}
+.nav-list__item {
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+}
+
+/* ---------- main ---------- */
+
+.main {
+  height: 700px;
+  background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);}
+
+/* ---------- section-hero ---------- */
+
+.section-hero {
+  padding-top: 210px;
+  padding-bottom: 130px;
+}
+
+.left__header {
+  margin-bottom: 28px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 100%;
+}
+.left__text {
+  margin-bottom: 62px;
+  font-size: 18px;
+  line-height: 150%;
+  color: #fff;
+}
+.left__btn {
+  padding: 24px 75.5px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  background-color: #3f2aff;
+}
