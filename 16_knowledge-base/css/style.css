@@ -28,7 +28,6 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* ---------- Glob ----------*/
-
 .container {
   max-width: 1920px;
   margin: 0 auto;
@@ -135,7 +134,7 @@ h2 {
 	transition: border .3s ease-in-out;
 }
 .wrap-1__input + span::before {
-	content: url(/img/check.svg);
+	content: url(../img/check.svg);
 	position: absolute;	
 	top: -5px;
 	right: 0;
@@ -234,7 +233,7 @@ h2 {
 .simplebar-scrollbar::before {
 	width: 6px;
 	background-color: #CCB26E;
-  }
+}
 
 /* ---------- section-4 ---------- */
 #wrap-3 {
@@ -247,6 +246,7 @@ form {
 	display: flex;
 	flex-direction: column;
 }
+
 .col {
 	position: relative;
 	display: flex;
@@ -311,13 +311,4 @@ form {
 	font-weight: 600;
 	font-size: 12px;
 	line-height: 16px;
-}
-
-
-#wrap-1,
-#wrap-2,
-#map,
-#scroll,
-#wrap-3 {
-	/* display: none; */
 }
