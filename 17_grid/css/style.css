@@ -140,19 +140,19 @@ h2 {
   padding-bottom: 130px;
 }
 
-.left__header {
+.section-hero__header {
   margin-bottom: 28px;
   font-weight: 700;
   font-size: 60px;
   line-height: 100%;
 }
-.left__text {
+.section-hero__text {
   margin-bottom: 62px;
   font-size: 18px;
   line-height: 150%;
   color: #fff;
 }
-.left__btn {
+.section-hero__btn {
   padding: 24px 75.5px;
   border-radius: 20px;
   font-weight: 700;
@@ -160,4 +160,56 @@ h2 {
   line-height: 21px;
   color: #fff;
   background-color: #3f2aff;
+}
+
+.section-hero__right {
+  position: relative;
+}
+.section-hero__right-img-1 {
+  position: absolute;
+  top: -88px;
+  left: 17px;
+}
+.section-hero__right-img-2 {
+  position: absolute;
+  right: 12px;
+  top: -115px;
+}
+
+
+
+
+.section-advantage {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #e5e5e5;
+}
+.adv__row {
+  padding-bottom: 25px;
+}
+
+.adv__img {
+  margin-top: 22px;
+}
+.adv__header {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  color: #2e2b44;
+}
+.adv__text {
+  margin: 0;
+  margin-right: 50px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #666;
+}
+
+.adv__item-text {
+  padding-top: 11px;
+  padding-left: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
 }
