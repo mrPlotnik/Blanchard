@@ -130,14 +130,15 @@ h2 {
 /* ---------- main ---------- */
 
 .main {
-  height: 700px;
-  background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);}
+}
 
 /* ---------- section-hero ---------- */
 
 .section-hero {
+  height: 700px;
   padding-top: 210px;
   padding-bottom: 130px;
+  background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);
 }
 
 .section-hero__header {
@@ -180,6 +181,7 @@ h2 {
 
 
 .section-advantage {
+  height: 456px;
   padding-top: 80px;
   padding-bottom: 80px;
   background-color: #e5e5e5;
@@ -212,4 +214,129 @@ h2 {
   font-weight: 700;
   font-size: 16px;
   line-height: 120%;
+}
+
+
+
+
+.section-teacher {
+  height: 576px;
+  padding-top: 75px;
+  padding-bottom: 80px;
+  background-color: #212133;
+}
+.teach__header {
+  margin-bottom: 23px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  color: #fff;
+}
+.teach__img {
+  margin-bottom: 27px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.teach__name {
+  display: flex;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #fff;
+}
+.teach__descr {
+  padding-right: 8px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #85859b;
+}
+
+
+
+
+
+.section-courses {
+  height: 1208px;
+  padding-top: 75px;
+  padding-bottom: 80px;
+  background-color: #fff;
+}
+.courses__header {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  color: #212133;
+}
+.cards {
+  justify-content: space-around;
+}
+.cards > div {
+  width: 539px;
+}
+.cards > div:first-child {
+  margin-bottom: 28px;
+}
+.courses__head {
+  height: 180px;
+  padding-right: 4px ;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.courses__head--bg-1 {
+  background-image: url(../img/courses-bg-1.jpg);
+}
+.courses__head--bg-2 {
+  background-image: url(../img/courses-bg-2.jpg);
+}
+.courses__head--bg-3 {
+  background-image: url(../img/courses-bg-3.jpg);
+}
+.courses__head--bg-4 {
+  background-image: url(../img/courses-bg-4.jpg);
+}
+.courses__time {
+  position: relative;
+  float: right;
+  padding-top: 13px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+}
+.courses__time-svg {
+  position: absolute;
+  left: -28px;
+  top: 7px;
+}
+.courses__main {
+  height: 300px;
+  padding: 30px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #edf0f9;
+}
+.courses__main > div {
+  padding: 0;
+}
+.courses__name {
+  display: flex;
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+}
+.courses__descr {
+  font-size: 16px;
+  line-height: 150%;
+  color: #666;
+}
+.courses__btn {
+  width: 202px;
+  padding: 20.5px 59px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+  background-color: #3f2aff;
 }
