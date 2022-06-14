@@ -340,3 +340,33 @@ h2 {
   color: #fff;
   background-color: #3f2aff;
 }
+
+
+
+
+.footer__social {
+  height: 80px;
+  padding-top: 31px;
+  background-color: #2E2B44;
+}
+.footer__social-wrap > div {
+  display: flex;
+  justify-content: center;
+}
+.footer__social-wrap > div svg:not(:last-child) {
+  margin-right: 34px;
+}
+.footer__copy {
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #2E2B44;
+}
+.footer__copy-wrap > div {
+  display: flex;
+  justify-content: center;
+}
+.footer__copy-wrap > div > span{
+  height: 20px;
+  padding-top: 3px;
+}
