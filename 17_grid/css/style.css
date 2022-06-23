@@ -47,11 +47,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* ---------- Glob ----------*/
 
-.container {
+/* .container {
   max-width: 1920px;
   margin: 0 auto;
   padding: 0px 75px;
-}
+} */
 
 .list-reset {
   display: flex;
@@ -87,13 +87,6 @@ footer span {
 	color: #fff;
 }
 
-.container {
-  max-width: 1440px;
-  padding: 0 153px;
-}
-
-/* ---------- Main ---------- */
-
 h1 {
   font-size: 3em;
   margin-bottom: 50px;
@@ -105,21 +98,58 @@ h2 {
   color: #fff;
 }
 
+/* Устройства X-Small (портретные телефоны, менее 576 пикселей) */
+/* Нет медиа-запроса для `xs`, так как это значение по умолчанию в Bootstrap */
+
+
 /* ---------- header ---------- */
 
 .header {
-  position: absolute;
-  height: 80px;
   background-color: #3f2aff;
 }
 .header-wrap {
   height: 80px
 }
+.logo svg {
+  width: 72px;
+  height: 16px;
+}
+.burger-menu {
+  width: 20px;
+	height: 18px;
+	position: relative;
+  margin-right: 4px;
+  margin-bottom: 2px;
+	z-index:2;
+	overflow: hidden;
+}
+.burger-menu span {
+	width: 20px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	/* transition: all 0.5s; */
+}
+.burger-menu span:nth-of-type(2) {
+	top: calc(50% - 7px);
+}
+.burger-menu span:nth-of-type(3) {
+	top: calc(50% + 7px);
+}
 
+
+
+.nav {
+  padding-left: 73px;
+  display: none;
+}
 .nav-list {
   display: flex;
   justify-content:space-between;
-  padding-left: 73px;
+  width: 100%;
 }
 .nav-list__item {
   font-size: 18px;
@@ -135,30 +165,40 @@ h2 {
 /* ---------- section-hero ---------- */
 
 .section-hero {
-  height: 700px;
-  padding-top: 210px;
-  padding-bottom: 130px;
+  /* height: 700px; */
   background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);
 }
+.section-hero .container {
+  background-repeat: no-repeat;
+  background-position: 720px 95px;
+  background-image: url(../img/hero-bg.png);
+}
+.section-hero .container .row {
+  padding-top: 49px;
+  padding-bottom: 50px;
+  background-repeat: no-repeat;
+  background-position: 490px 120px;
+  background-image: url(../img/hero-bg-element.png);
+}
 
-.section-hero__header {
-  margin-bottom: 28px;
+.hero__header {
+  margin-bottom: 5px;
   font-weight: 700;
-  font-size: 60px;
+  font-size: 30px;
   line-height: 100%;
 }
-.section-hero__text {
-  margin-bottom: 62px;
-  font-size: 18px;
-  line-height: 150%;
+.hero__text {
+  margin-bottom: 46px;
+  font-size: 16px;
+  line-height: 130%;
   color: #fff;
 }
-.section-hero__btn {
-  padding: 24px 75.5px;
+.hero__btn {
+  padding: 20px 53px;
   border-radius: 20px;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 16px;
+  line-height: 19px;
   color: #fff;
   background-color: #3f2aff;
 }
@@ -177,112 +217,143 @@ h2 {
   top: -115px;
 }
 
-
-
+/* ---------- section-advantage ---------- */
 
 .section-advantage {
-  height: 456px;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 51px;
+  padding-bottom: 46px;
   background-color: #e5e5e5;
-}
-.adv__row {
-  padding-bottom: 25px;
 }
 
 .adv__img {
   margin-top: 22px;
 }
 .adv__header {
-  margin-bottom: 16px;
+  margin-bottom: 2px;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 100%;
+  font-size: 20px;
+  line-height: 130%;
   color: #2e2b44;
 }
 .adv__text {
   margin: 0;
-  margin-right: 50px;
+  margin-bottom: 24px;
   font-size: 16px;
   line-height: 150%;
   color: #666;
 }
-
 .adv__item-text {
-  padding-top: 11px;
-  padding-left: 16px;
+  padding-left: 4px;
   font-weight: 700;
   font-size: 16px;
   line-height: 120%;
 }
+.adv__item {
+  padding-bottom: 26px;
+}
 
-
-
+/* ---------- section-teacher ---------- */
 
 .section-teacher {
-  height: 576px;
-  padding-top: 75px;
-  padding-bottom: 80px;
+  padding-top: 46px;
+  padding-bottom: 25px;
   background-color: #212133;
 }
 .teach__header {
-  margin-bottom: 23px;
+  margin-bottom: 28px;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 20px;
   line-height: 100%;
   color: #fff;
 }
 .teach__img {
-  margin-bottom: 27px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  margin-bottom: 26px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .teach__name {
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
   font-weight: 700;
   font-size: 18px;
   line-height: 150%;
   color: #fff;
 }
 .teach__descr {
+  margin-bottom: 24px;
   padding-right: 8px;
   font-size: 16px;
   line-height: 150%;
   color: #85859b;
 }
 
-
-
-
+/* ---------- section-courses ---------- */
 
 .section-courses {
-  height: 1208px;
-  padding-top: 75px;
-  padding-bottom: 80px;
+  padding-top: 45px;
+  padding-bottom: 20px;
   background-color: #fff;
 }
 .courses__header {
+  margin-bottom: 29px;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 20px;
   line-height: 100%;
   color: #212133;
 }
-.cards {
-  justify-content: space-around;
-}
-.cards > div {
-  width: 539px;
-}
-.cards > div:first-child {
-  margin-bottom: 28px;
+.cards > div:not(last-child) {
+  margin-bottom: 30px;
 }
 .courses__head {
   height: 180px;
-  padding-right: 4px ;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+.courses__time {
+  position: relative;
+  float: right;
+  padding-top: 13px;
+  padding-right: 9px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+}
+.courses__time-svg {
+  position: absolute;
+  left: -29px;
+  top: 9px;
+}
+.courses__main {
+  height: 473px;
+  padding: 0 29px;
+  padding-top: 28px;
+  padding-bottom: 30px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #edf0f9;
+}
+.courses__name {
+  display: flex;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+.courses__descr {
+  font-size: 16px;
+  line-height: 150%;
+  color: #666;
+}
+.courses__btn {
+  padding: 20.5px 56px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+  background-color: #3f2aff;
+}
+
 .courses__head--bg-1 {
   background-image: url(../img/courses-bg-1.jpg);
 }
@@ -295,65 +366,17 @@ h2 {
 .courses__head--bg-4 {
   background-image: url(../img/courses-bg-4.jpg);
 }
-.courses__time {
-  position: relative;
-  float: right;
-  padding-top: 13px;
-  font-size: 16px;
-  line-height: 19px;
-  color: #fff;
-}
-.courses__time-svg {
-  position: absolute;
-  left: -28px;
-  top: 7px;
-}
-.courses__main {
-  height: 300px;
-  padding: 30px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  background-color: #edf0f9;
-}
-.courses__main > div {
-  padding: 0;
-}
-.courses__name {
-  display: flex;
-  margin-bottom: 6px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 150%;
-}
-.courses__descr {
-  font-size: 16px;
-  line-height: 150%;
-  color: #666;
-}
-.courses__btn {
-  width: 202px;
-  padding: 20.5px 59px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  color: #fff;
-  background-color: #3f2aff;
-}
 
+/* ---------- section-social ---------- */
 
-
-
-.footer__social {
-  height: 80px;
-  padding-top: 31px;
-  background-color: #2E2B44;
-}
-.footer__social-wrap > div {
+.footer__wrap > div {
   display: flex;
   justify-content: center;
+  height: 80px;
+  padding-top: 30px;
+  background-color: #2E2B44;
 }
-.footer__social-wrap > div svg:not(:last-child) {
+.footer__wrap > div svg:not(:last-child) {
   margin-right: 34px;
 }
 .footer__copy {
@@ -366,7 +389,56 @@ h2 {
   display: flex;
   justify-content: center;
 }
-.footer__copy-wrap > div > span{
+.footer__copy-wrap > div > span {
   height: 20px;
   padding-top: 3px;
+}
+
+
+/* Устройства Small (телефоны с горизонтальной ориентацией, 576 пикселей и выше) */
+@media (min-width: 576px) {
+  .header {
+    /* height: 133px; */
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 51px;
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 81px;
+    padding: 0 24px;
+  }
+}
+
+/* Устройства Medium (планшеты, 768 пикселей и выше) */
+@media (min-width: 768px) {
+  .container-md {
+    padding: 0 15px;
+  }
+  .nav {
+    padding-left: 28px;
+  }
+}
+
+/* Устройства Large (настольные компьютеры, 992 пикселей и выше) */
+@media (min-width: 992px) {
+
+}
+
+/* Устройства X-Large (большие настольные компьютеры, 1200 пикселей и выше) */
+@media (min-width: 1200px) {
+
+}
+
+ /* Устройства XX-Large (большие настольные компьютеры, 1400 пикселей и выше) */
+@media (min-width: 1400px) {
+  .container-xxl {
+    max-width: 1440px;
+    padding: 0 153px;
+  }
 }
