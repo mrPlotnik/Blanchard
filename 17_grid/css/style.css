@@ -98,28 +98,35 @@ h2 {
   color: #fff;
 }
 
-/* Устройства X-Small (портретные телефоны, менее 576 пикселей) */
-/* Нет медиа-запроса для `xs`, так как это значение по умолчанию в Bootstrap */
-
+.row {
+  --bs-gutter-x: 30px;
+}
+.container {
+  --bs-gutter-x: 15px;
+}
 
 /* ---------- header ---------- */
 
 .header {
   background-color: #3f2aff;
 }
-.header-wrap {
+.header__wrap {
   height: 80px
 }
-.logo svg {
+.header__logo-wrap svg {
   width: 72px;
   height: 16px;
 }
+
+.header__nav-wrap {
+  justify-content: end;
+}
 .burger-menu {
   width: 20px;
-	height: 18px;
+	height: 16px;
 	position: relative;
   margin-right: 4px;
-  margin-bottom: 2px;
+  /* margin-bottom: 2px; */
 	z-index:2;
 	overflow: hidden;
 }
@@ -143,13 +150,11 @@ h2 {
 
 
 .nav {
-  padding-left: 73px;
-  display: none;
+  /* padding-left: 73px; */
 }
 .nav-list {
-  display: flex;
-  justify-content:space-between;
-  width: 100%;
+  /* display: flex; */
+  /* width: 100%; */
 }
 .nav-list__item {
   font-size: 18px;
@@ -160,6 +165,7 @@ h2 {
 /* ---------- main ---------- */
 
 .main {
+
 }
 
 /* ---------- section-hero ---------- */
@@ -173,7 +179,7 @@ h2 {
   background-position: 720px 95px;
   background-image: url(../img/hero-bg.png);
 }
-.section-hero .container .row {
+.section-hero .row {
   padding-top: 49px;
   padding-bottom: 50px;
   background-repeat: no-repeat;
@@ -221,15 +227,16 @@ h2 {
 
 .section-advantage {
   padding-top: 51px;
-  padding-bottom: 46px;
+  padding-bottom: 20px;
   background-color: #e5e5e5;
 }
 
 .adv__img {
   margin-top: 22px;
+  height: fit-content;
 }
 .adv__header {
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   font-weight: 700;
   font-size: 20px;
   line-height: 130%;
@@ -243,7 +250,8 @@ h2 {
   color: #666;
 }
 .adv__item-text {
-  padding-left: 4px;
+  padding-top: 1px;
+  padding-left: 3px;
   font-weight: 700;
   font-size: 16px;
   line-height: 120%;
@@ -266,8 +274,8 @@ h2 {
   line-height: 100%;
   color: #fff;
 }
-.teach__img {
-  margin-bottom: 26px;
+.teach picture img {
+  margin-bottom: 28px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -280,7 +288,7 @@ h2 {
   color: #fff;
 }
 .teach__descr {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   padding-right: 8px;
   font-size: 16px;
   line-height: 150%;
@@ -301,50 +309,56 @@ h2 {
   line-height: 100%;
   color: #212133;
 }
+
 .cards > div:not(last-child) {
   margin-bottom: 30px;
 }
-.courses__head {
-  height: 180px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.courses__time {
+.card {
   position: relative;
-  float: right;
-  padding-top: 13px;
-  padding-right: 9px;
+}
+.card__time {
+  position: absolute;
+  top: 13px;
+  right: 25px;
   font-size: 16px;
   line-height: 19px;
   color: #fff;
 }
-.courses__time-svg {
+.card__time-svg {
   position: absolute;
   left: -29px;
-  top: 9px;
+  top: -3px;
 }
-.courses__main {
+.card__main {
+  display: flex;
+  flex-direction: column;
   height: 473px;
-  padding: 0 29px;
-  padding-top: 28px;
-  padding-bottom: 30px;
+  padding: 30px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #edf0f9;
 }
-.courses__name {
+.card__head {
+  height: 180px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card__header {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
+  padding-right: 30px;
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
 }
-.courses__descr {
+.card__descr {
   font-size: 16px;
   line-height: 150%;
   color: #666;
 }
-.courses__btn {
+.card__btn {
   padding: 20.5px 56px;
   border-radius: 20px;
   font-weight: 700;
@@ -354,91 +368,352 @@ h2 {
   background-color: #3f2aff;
 }
 
-.courses__head--bg-1 {
-  background-image: url(../img/courses-bg-1.jpg);
+.card__head--bg-1 {
+  background-image: url(../img/courses-bg-1-320.jpg);
 }
-.courses__head--bg-2 {
-  background-image: url(../img/courses-bg-2.jpg);
+.card__head--bg-2 {
+  background-image: url(../img/courses-bg-2-320.jpg);
 }
-.courses__head--bg-3 {
-  background-image: url(../img/courses-bg-3.jpg);
+.card__head--bg-3 {
+  background-image: url(../img/courses-bg-3-320.jpg);
 }
-.courses__head--bg-4 {
-  background-image: url(../img/courses-bg-4.jpg);
+.card__head--bg-4 {
+  background-image: url(../img/courses-bg-4-320.jpg);
 }
 
-/* ---------- section-social ---------- */
+/* ---------- footer ---------- */
 
-.footer__wrap > div {
-  display: flex;
-  justify-content: center;
-  height: 80px;
-  padding-top: 30px;
+.footer-main {
   background-color: #2E2B44;
 }
-.footer__wrap > div svg:not(:last-child) {
+.footer-main .row  {
+  height: 80px;
+}
+.footer-main svg:not(:last-child) {
   margin-right: 34px;
 }
-.footer__copy {
+.footer-copy {
+  color: #2E2B44;
+}
+.footer-copy span {
+  height: 20px;
+  padding-top: 3px;
   font-size: 13px;
   line-height: 15px;
   text-transform: uppercase;
-  color: #2E2B44;
-}
-.footer__copy-wrap > div {
-  display: flex;
-  justify-content: center;
-}
-.footer__copy-wrap > div > span {
-  height: 20px;
-  padding-top: 3px;
 }
 
-
-/* Устройства Small (телефоны с горизонтальной ориентацией, 576 пикселей и выше) */
+/* sm + */
 @media (min-width: 576px) {
-  .header {
-    /* height: 133px; */
+  .row {
+    --bs-gutter-x: 30px;
   }
-  .logo {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 51px;
+  .container {
+    --bs-gutter-x: 15px;
   }
-  .nav {
-    display: flex;
+
+  /* ---------- header---------- */
+
+  .header__wrap {
+    height: 133px;
+  }
+  .header__logo-wrap {
+    align-self: stretch;
     justify-content: center;
+    padding-top: 14px;
+  }
+  .header__logo-wrap svg {
+    width: inherit;
+    height: inherit;
+  }
+  .header__nav-wrap {
+    align-self: stretch;
+    padding-bottom: 13px;
+  }
+  .nav-list {
+    width: 100%;
     align-items: center;
-    height: 81px;
-    padding: 0 24px;
+    justify-content:space-between;
+    padding: 0 20px 2px;
+  }
+
+  /* ---------- section-hero ---------- */
+
+  .hero .row {
+    padding-top: 75px;
+    padding-bottom: 136px;
+  }
+  .hero__header {
+    margin-bottom: 17px;
+
+    font-size: 50px;
+    line-height: 100%;
+  }
+  .hero__text {
+    margin-bottom: 63px;
+    padding-right: 165px;
+    font-size: 18px;
+    line-height: 150%;
+  }
+  .hero__btn {
+    padding: 24px 75px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  /* ---------- section advantage ---------- */
+
+  .section-advantage {
+    padding-bottom: 29px;
+  }
+  .adv__img {
+    display: flex;
+    width: 151px;
+    margin-top: 0;
+    padding-top: 28px;
+  }
+  .adv__header {
+    padding-top: 28px;
+    font-size: 40px;
+    line-height: 100%;
+  }
+  .adv__text {
+    padding-top: 15px;
+    padding-right: 10px;
+  }
+  .adv__item-text {
+    padding-top: 5px;
+    padding-left: 0px;
+  }
+
+  /* ----------  section teacher ---------- */
+
+  .section-teacher {
+    padding-top: 75px;
+    padding-bottom: 50px;
+  }
+  .teach__header {
+    margin-bottom: 25px;
+    font-size: 40px;
+    line-height: 100%;
+  }
+  .teach__img {
+    width: 100%;
+  }
+  .teach__descr {
+    padding-right: 0;
+  }
+
+  /* ---------- section-courses ---------- */
+
+  .section-courses {
+    padding-top: 75px;
+    padding-bottom: 50px;
+  }
+  .courses__header {
+    margin-bottom: 25px;
+    font-size: 40px;
+    line-height: 100%;
+  }
+  .card__header {
+    padding-right: 0;
+  }
+  .card__btn {
+    padding: 20.5px 49px;
+  }
+  .card__head--bg-1 {
+    background-image: url(../img/courses-bg-1-576.jpg);
+  }
+  .card__head--bg-2 {
+    background-image: url(../img/courses-bg-2-576.jpg);
+  }
+  .card__head--bg-3 {
+    background-image: url(../img/courses-bg-3-576.jpg);
+  }
+  .card__head--bg-4 {
+    background-image: url(../img/courses-bg-4-576.jpg);
   }
 }
 
-/* Устройства Medium (планшеты, 768 пикселей и выше) */
+/* md + */
 @media (min-width: 768px) {
-  .container-md {
-    padding: 0 15px;
+
+  .row {
+    --bs-gutter-x: 30px;
   }
-  .nav {
-    padding-left: 28px;
+  .container {
+    --bs-gutter-x: 15px;
   }
+
+  /* ---------- header---------- */
+
+  .header__wrap {
+    height: 80px;
+  }
+  .header__logo-wrap {
+    justify-content: flex-start;
+    padding-top: 2px;
+  }
+  .nav-list {
+    padding: 10px 1px 0 40px;
+  }
+
+  /* ---------- section hero ---------- */
+
+  .hero .container {
+    background-size: 313px;
+    background-position: 392px 126px;
+  }
+  .hero .row {
+    padding-top: 130px;
+    background-size: 135px;
+    background-position: 375px 117px;
+  }
+  .hero__header {
+    margin-bottom: 15px;
+  }
+  .hero__text {
+    padding-right: 60px;
+  }
+
+  /* ---------- section advantage ---------- */
+
+  .section-advantage {
+    padding-bottom: 50px;
+  }
+  .adv__img {
+    width: 100%;
+    padding-top: 54px;
+  }
+  .adv__item-text {
+    padding-top: 7px;
+  }
+
+  /* ---------- section teacher ---------- */
+  .section-teacher {
+    padding-top: 74px;
+    padding-bottom: 26px;
+  }
+  .teach__header {
+    margin-bottom: 23px;
+  }
+  .teach__descr {
+    padding-right: 0;
+  }
+
+  /* ---------- section courses ---------- */
+
+  .card__main {
+    height: 376px;
+    padding-top: 32px;
+  }
+  .card__btn {
+    padding: 20.5px 56px;
+  }
+  .card__head--bg-1 {
+    background-image: url(../img/courses-bg-1-768.jpg);
+  }
+  .card__head--bg-2 {
+    background-image: url(../img/courses-bg-2-768.jpg);
+  }
+  .card__head--bg-3 {
+    background-image: url(../img/courses-bg-3-768.jpg);
+  }
+  .card__head--bg-4 {
+    background-image: url(../img/courses-bg-4-768.jpg);
+  }
+
 }
 
-/* Устройства Large (настольные компьютеры, 992 пикселей и выше) */
+/* lg - */
 @media (min-width: 992px) {
 
 }
 
-/* Устройства X-Large (большие настольные компьютеры, 1200 пикселей и выше) */
+/* xl - */
 @media (min-width: 1200px) {
 
 }
 
- /* Устройства XX-Large (большие настольные компьютеры, 1400 пикселей и выше) */
+ /* xxl + */
 @media (min-width: 1400px) {
-  .container-xxl {
-    max-width: 1440px;
-    padding: 0 153px;
+  .container {
+    --bs-gutter-x: 105px;
   }
+
+  /* ---------- header ---------- */
+
+  .nav-list {
+    padding-left: 70px;
+  }
+
+  /* ---------- section hero ---------- */
+
+  .hero .container {
+    background-size: 540px;
+    background-position: 675px 15px;
+  }
+  .hero .row {
+    padding-bottom: 130px;
+    background-size: 235px;
+    background-position: 492px 42px;
+  }
+  .hero__header {
+    margin-bottom: 27px;
+    font-size: 60px;
+  }
+  .hero__text {
+    padding-right: 140px;
+  }
+
+  /* ---------- section advantage ---------- */
+
+  .section-advantage {
+    padding-bottom: 50px;
+  }
+  .adv__header {
+    width: 450px;
+  }
+  .adv__text {
+    width: 600px;
+    padding-right: 0;
+  }
+  .adv__item-text {
+    padding-top: 0;
+    padding-left: 15px;
+  }
+
+  /* ---------- section teacher ---------- */
+
+  .section-teacher {
+    padding-bottom: 51px;
+  }
+
+  /* ---------- section courses ---------- */
+
+  .courses__header {
+    margin-bottom: 24px;
+  }
+  .card__main {
+    height: 300px;
+  }
+  .card__time {
+    right: 20px;
+  }
+  .card__btn {
+    padding: 20.5px 60px;
+  }
+  .card__head--bg-1 {
+    background-image: url(../img/courses-bg-1-1440.jpg);
+  }
+  .card__head--bg-2 {
+    background-image: url(../img/courses-bg-2-1440.jpg);
+  }
+  .card__head--bg-3 {
+    background-image: url(../img/courses-bg-3-1440.jpg);
+  }
+  .card__head--bg-4 {
+    background-image: url(../img/courses-bg-4-1440.jpg);
+  }
+
 }
