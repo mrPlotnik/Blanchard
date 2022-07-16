@@ -100,6 +100,25 @@ h2 {
 }
 
 /* ---------- header ---------- */
+
+.header {
+  background-color: #000;
+}
+.header .row {
+  height: 45px;
+}
+
+.burger-menu img {
+  width: 25px;
+}
+.header__logo img {
+  width: 97px;
+  padding-top: 5px;
+}
+.header__search img {
+  width: 18px;
+}
+
 /* ---------- section ---------- */
 /* ---------- section ---------- */
 /* ---------- section ---------- */
