@@ -1,6 +1,16 @@
-document.addEventListener("DOMContentLoaded", function(event) {
 
-  // ---------- Кастомизация инпута
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ----------
+
+   // ---------- Кастомизация инпута
+
+   const el = document.querySelector('select');
+   const choises = new Choices(el,{
+     searchEnabled: false,
+     itemSelectText: '',
+   });
+
 
 
   // ---------- Yandex-карты
