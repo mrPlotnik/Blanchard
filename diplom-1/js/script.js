@@ -1,9 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  // ----------
-
-   // ---------- Кастомизация инпута
+  // ---------- Кастомизация инпута
 
    const el = document.querySelector('select');
    const choises = new Choices(el,{
@@ -11,12 +9,32 @@ document.addEventListener('DOMContentLoaded', function() {
      itemSelectText: '',
    });
 
+  // ----------
+
+  const swiper = new Swiper('.mySwiper', {
+    // loop: true,
+    effect: "fade",
+    allowTouchMove: false,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: "fraction",
+      // clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next1",
+      prevEl: ".swiper-button-prev1",
+    },
+    // pagination: true,
+  });
 
 
-  // ---------- Yandex-карты
 
 
-  // ---------- Кастомный скролл
+  // ----------
 
 
   // ---------- маскирование номера телефона

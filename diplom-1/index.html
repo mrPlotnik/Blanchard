@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/bootstrap-grid.min.css">
 <link rel="stylesheet" href="css/normalize.css"/>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 <link rel="stylesheet" href="css/choices.min.css">
 <link rel="stylesheet" href="css/style.css"/>
 <title>Диплом</title>
@@ -125,7 +127,34 @@
                 <span class="filters__check-box"></span>
               </label>
             </div>
-            <div class="galery__slider">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img class="swiper-img" src="img/galery-section-1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img class="swiper-img" src="img/galery-section-2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img class="swiper-img" src="img/galery-section-3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img class="swiper-img" src="img/galery-section-4.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img class="swiper-img" src="img/galery-section-5.jpg" alt="">
+                </div>
+
+              </div>
+
+              <div class="swiper-button-next1">
+                <img src="img/pagination-next-default.png" alt="">
+              </div>
+              <div class="swiper-button-prev1">
+                <img src="img/pagination-prev-default.png" alt="">
+              </div>
+              <div class="swiper-pagination"></div>
 
             </div>
           </div>
@@ -143,6 +172,7 @@
 
 </footer>
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="js/choices.min.js" defer></script>
 <script src="js/script.js" defer></script>
 
