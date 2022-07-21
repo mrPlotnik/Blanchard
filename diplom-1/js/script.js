@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
 
   // ---------- Кастомизация инпута
@@ -9,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
      itemSelectText: '',
    });
 
-  // ----------
+  // ---------- Галерея с навигацией  пагинацией
 
   const swiper = new Swiper('.mySwiper', {
     // loop: true,
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // pagination: true,
   });
 
-  // ----------
+  // ---------- Аккордион на jQuery
 
   $("#accordion").accordion({
     // header: ".section-faq__item",
@@ -39,15 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     heightStyle: "content",
     collapsible: true
   });
-
-  // ---------- маскирование номера телефона
-
-
-  // ---------- Валидация формы
-
-
-  // ---------- Тултипы
-
 
 });
 
