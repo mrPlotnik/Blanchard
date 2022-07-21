@@ -46,12 +46,7 @@ a {
 }
 
 body {
-  position: relative;
   height: 100%;
-
-  margin: 0;
-  padding: 0;
-
  	min-width: 320px;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -76,6 +71,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* Псевдоклассы для svg */
+svg,
 svg rect,
 svg path,
 svg circle {
@@ -102,6 +98,11 @@ h2 {
   font-size: 28px;
   line-height: 38px;
   font-weight: 400;
+}
+h3 {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 600;
 }
 
 .row {
@@ -182,14 +183,13 @@ h2 {
 }
 
 /* ---------- section galery ---------- */
-
 .galery {
   background-image: url(../img/bg-galery-section-320.jpg);
   color: #fff;
 }
 .galery__wrap {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 46px;
 }
 .galery__header {
   margin-bottom: 12px;
@@ -308,13 +308,12 @@ h2 {
 
 .swiper {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   color: #000;
 }
 .swiper-wrapper {
   padding-bottom: 54px;
 }
-
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -323,7 +322,6 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -343,14 +341,88 @@ h2 {
 .swiper-button-prev1 {
   left: 28%;
 }
-
-
 .swiper-pagination {
   bottom: 7px;
   color: #fff;
 }
 
-/* ---------- section ---------- */
+/* ---------- section-catalog ---------- */
+.catalog__wrap {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.catalog__header {
+  margin-bottom: 13px;
+}
+
+.catalog__date-list {
+  flex-direction: column;
+}
+.catalog__date-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: -1px;
+  padding: 20px 0 20px 0;
+  text-align: left;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+  transition-property: border-color, color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out
+}
+.catalog__date-item > span {
+  margin-right: auto;
+  transition: .3s color ease-in-out;
+}
+.catalog__date-item > svg {
+  width: 30px;
+  height: 30px;
+}
+.catalog__date-item > svg path:first-child {
+  fill: #ececec;
+}
+.catalog__date-item > svg path:last-child {
+  stroke: #000;
+}
+.catalog__artists {
+  padding: 20px 0 20px 0;
+  line-height: 32px;
+}
+.ui-accordion-header-active svg {
+  transform: rotate(180deg);
+}
+/* Псевдоклассы */
+.catalog__date-item:focus-visible {
+  outline: none;
+  border-color: #9d5cd0;
+  z-index: 1;
+}
+.catalog__date-item:focus-visible span {
+  color: #fff;
+  background-color: #9d5cd0;
+}
+.catalog__date-item:hover {
+  border-color: #9d5cd0;
+  z-index: 1;
+}
+.catalog__date-item:hover span {
+  color: #9d5cd0;
+}
+.catalog__date-item:hover svg  path:first-child,
+.catalog__date-item:focus-visible svg path:first-child {
+  fill: #d1a9f0;
+}
+.catalog__date-item:active span {
+  color: #7943a4;
+  background-color: none;
+}
+.catalog__date-item:active svg  path:first-child {
+  stroke: #9d5cd0;
+}
+
+
 /* ---------- section ---------- */
 /* ---------- footer ---------- */
 

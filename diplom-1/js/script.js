@@ -31,11 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // pagination: true,
   });
 
-
-
-
   // ----------
 
+  $("#accordion").accordion({
+    // header: ".section-faq__item",
+    icons: false,
+    heightStyle: "content",
+    collapsible: true
+  });
 
   // ---------- маскирование номера телефона
 
