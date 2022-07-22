@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // ---------- Кастомизация инпута
+  // ---------- Кастомизация инпута choices.js в секции galery
 
    const el = document.querySelector('select');
    const choises = new Choices(el,{
@@ -8,29 +8,26 @@ document.addEventListener('DOMContentLoaded', function() {
      itemSelectText: '',
    });
 
-  // ---------- Галерея с навигацией  пагинацией
+  // ---------- Первый свайпер в секции galery
 
-  const swiper = new Swiper('.mySwiper', {
-    // loop: true,
+  const swiper1 = new Swiper('#swiper-galery', {
     effect: "fade",
-    allowTouchMove: false,
+    simulateTouch: true, // Принимает события мыши, как событие касания пальцами
+    grabCursor: true, // "Grab" курсор для повышения юзабилити на десктопах
     autoplay: {
-      delay: 5000,
-      disableOnInteraction: true,
+      disableOnInteraction: true, // Автоплей не останавливается после конца итереций
     },
     pagination: {
       el: '.swiper-pagination',
       type: "fraction",
-      // clickable: true,
     },
     navigation: {
       nextEl: ".swiper-button-next1",
       prevEl: ".swiper-button-prev1",
     },
-    // pagination: true,
   });
 
-  // ---------- Аккордион на jQuery
+  // ---------- Аккордион на jQuery в сеrции catalog
 
   $("#accordion").accordion({
     // header: ".section-faq__item",
@@ -39,6 +36,22 @@ document.addEventListener('DOMContentLoaded', function() {
     collapsible: true
   });
 
+// ---------- Второй свайпер в секции events
+
+  const swiper2 = new Swiper('#swiper-events', {
+    // loop: true,
+    effect: "fade",
+    simulateTouch: true, // Принимает события мыши, как событие касания пальцами
+    grabCursor: true, // "Grab" курсор для повышения юзабилити на десктопах
+    autoplay: {
+      disableOnInteraction: true, // Автоплей не останавливается после конца итереций
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+
+// ----------
+
 });
-
-

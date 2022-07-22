@@ -308,13 +308,12 @@ h3 {
 
 .swiper {
   width: 100%;
-  /* height: 100%; */
   color: #000;
 }
-.swiper-wrapper {
+#swiper-galery .swiper-wrapper {
   padding-bottom: 54px;
 }
-.swiper-slide {
+#swiper-galery .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -322,26 +321,26 @@ h3 {
   justify-content: center;
   align-items: center;
 }
-.swiper-slide img {
+#swiper-galery .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.swiper-button-next1,
-.swiper-button-prev1 {
+#swiper-galery .swiper-button-next1,
+#swiper-galery .swiper-button-prev1 {
   position: absolute;
   bottom: 0;
   color: #fff;
   z-index: 100;
 }
-.swiper-button-next1 {
+#swiper-galery .swiper-button-next1 {
   right: 28%;
 }
-.swiper-button-prev1 {
+#swiper-galery .swiper-button-prev1 {
   left: 28%;
 }
-.swiper-pagination {
+#swiper-galery .swiper-pagination {
   bottom: 7px;
   color: #fff;
 }
@@ -422,8 +421,6 @@ h3 {
 .catalog__date-item:active svg  path:first-child {
   stroke: #9d5cd0;
 }
-
-
 .empty__img {
   width: 100%;
 }
@@ -436,8 +433,6 @@ h3 {
   /* font-size: 16px; */
   line-height: 22px;
 }
-
-
 .info__img {
   margin-bottom: 19px;
 }
@@ -457,8 +452,67 @@ h3 {
   line-height: 32px;
 }
 
+/* ---------- section events ---------- */
+
+
+.events__header {
+  margin-bottom: 10px;
+}
+.events__card {
+  border: 1px solid #cacaca
+}
+.card__wrap {
+  padding: 14px 33px 48px 22px;
+  text-align: left;
+  background-color: #fff;
+}
+.card__date {
+  margin-right: -15px;
+  margin-bottom: 9px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  color: #999;
+}
+.card__body {
+  height: 344px;
+}
+.card__header {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+.card__text {
+  font-size: 16px;
+  line-height: 32px;
+}
+.card__link {
+  padding-left: 5px;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+#swiper-events .swiper-wrapper {
+  padding-bottom: 40px;
+}
+#swiper-events .swiper-pagination {
+  bottom: 7px;
+}
+#swiper-events .swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  margin-right: 7px;
+  margin-left: 7px;
+  background-color: #cacaca;
+}
+#swiper-events .swiper-pagination-bullet-active {
+  background-color: #666;
+}
 
 /* ---------- section ---------- */
+
+
 /* ---------- footer ---------- */
 
 
