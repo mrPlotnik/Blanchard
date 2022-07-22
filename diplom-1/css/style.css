@@ -357,6 +357,7 @@ h3 {
 
 .catalog__date-list {
   flex-direction: column;
+  margin-bottom: 50px;
 }
 .catalog__date-item {
   position: relative;
@@ -420,6 +421,40 @@ h3 {
 }
 .catalog__date-item:active svg  path:first-child {
   stroke: #9d5cd0;
+}
+
+
+.empty__img {
+  width: 100%;
+}
+.empty__header {
+  font-weight: 600;
+  font-size: 18px;
+  /* line-height: 32px; */
+}
+.empty__text {
+  /* font-size: 16px; */
+  line-height: 22px;
+}
+
+
+.info__img {
+  margin-bottom: 19px;
+}
+.info__header {
+  margin-bottom: 7px;
+  font-size: 24px;
+  line-height: 33px;
+}
+.info__date {
+  margin-bottom: 14px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #999;
+}
+.info__text {
+  font-size: 16px;
+  line-height: 32px;
 }
 
 
