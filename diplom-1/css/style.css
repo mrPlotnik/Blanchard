@@ -454,7 +454,9 @@ h3 {
 
 /* ---------- section events ---------- */
 
-
+.events__wrap {
+  margin-bottom: 40px;
+}
 .events__header {
   margin-bottom: 10px;
 }
@@ -510,7 +512,115 @@ h3 {
   background-color: #666;
 }
 
-/* ---------- section ---------- */
+/* ---------- section projects ---------- */
+
+.projects__wrap {
+  padding-bottom: 50px;
+}
+.projects__header {
+  margin-bottom: 12px;
+}
+.projects__text {
+  margin-right: -1px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 32px;
+  color: #333;
+}
+.projects__text svg {
+  width: 17px;
+  margin-bottom: -2px;
+}
+.projects__text svg path:first-child {
+  fill: #fff;
+  stroke: #9d5cd0;
+}
+.projects__text svg path:last-child {
+  fill: #000;
+}
+
+.projects__text svg:hover path:first-child {
+  fill: #d1a9f0;
+}
+.projects__text svg:active path:first-child {
+  fill: #9d5cd0;
+  stroke: #9d5cd0;
+}
+.projects__text svg:active path:last-child {
+  fill: #fff;
+}
+
+.projects__partners-header {
+  margin-bottom: 10px;
+}
+
+
+#swiper-partners .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+#swiper-partners a {
+  width: 195px;
+  height: 65px;
+  background-size: 55%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#swiper-partners a {
+  border: 1px solid #cacaca;
+}
+#swiper-partners a:active {
+  border: 1px solid #9d5cd0;
+  /* outline: 1px solid green; */
+  /* background-color: blue; */
+}
+#swiper-partners .swiper-button-next1,
+#swiper-partners .swiper-button-prev1 {
+  position: absolute;
+  bottom: 15px;
+  color: #fff;
+  z-index: 100;
+}
+#swiper-partners .swiper-button-next1 {
+  right: 0;
+}
+#swiper-partners .swiper-button-prev1 {
+  left: 0;
+}
+
+#swiper-partners #slide-1 {
+  background-image: url(../img/projects-partners-1-grey.png);
+}
+#swiper-partners #slide-1:hover {
+  background-image: url(../img/projects-partners-1-color.png);
+}
+#swiper-partners #slide-2 {
+  background-image: url(../img/projects-partners-2-grey.png);
+}
+#swiper-partners #slide-3 {
+  background-image: url(../img/projects-partners-3-grey.png);
+}
+#swiper-partners #slide-4 {
+  background-image: url(../img/projects-partners-4-grey.png);
+}
+#swiper-partners #slide-5 {
+  background-image: url(../img/projects-partners-5-grey.png);
+}
+#swiper-partners #slide-6 {
+  background-image: url(../img/projects-partners-6-grey.png);
+}
+#swiper-partners #slide-7 {
+  background-image: url(../img/projects-partners-7-grey.png);
+}
+#swiper-partners #slide-8 {
+  background-image: url(../img/projects-partners-8-grey.png);
+}
+#swiper-partners #slide-9 {
+  background-image: url(../img/projects-partners-9-grey.png);
+}
+
+
+
 
 
 /* ---------- footer ---------- */

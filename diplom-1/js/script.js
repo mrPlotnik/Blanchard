@@ -52,6 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
-// ----------
+// ---------- ВТретий свайпер в секции projects
+
+const swiper3 = new Swiper('#swiper-partners', {
+  // loop: true,
+  simulateTouch: true, // Принимает события мыши, как событие касания пальцами
+  grabCursor: true, // "Grab" курсор для повышения юзабилити на десктопах
+  autoplay: {
+    disableOnInteraction: true, // Автоплей не останавливается после конца итереций
+  },
+  navigation: {
+    nextEl: ".swiper-button-next1",
+    prevEl: ".swiper-button-prev1",
+  },
+});
+
+
 
 });
