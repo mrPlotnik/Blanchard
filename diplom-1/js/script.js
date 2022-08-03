@@ -12,10 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const swiper1 = new Swiper('#swiper-galery', {
     effect: "fade",
-    simulateTouch: true, // Принимает события мыши, как событие касания пальцами
-    grabCursor: true, // "Grab" курсор для повышения юзабилити на десктопах
+    // Принимает события мыши, как событие касания пальцами
+    simulateTouch: true,
+    // "Grab" курсор для повышения юзабилити на десктопах
+    grabCursor: true,
+    // Автоплей
     autoplay: {
-      disableOnInteraction: true, // Автоплей не останавливается после конца итереций
+      // Автоплей не останавливается после конца итереций
+      disableOnInteraction: true,
     },
     pagination: {
       el: '.swiper-pagination',
@@ -30,21 +34,23 @@ document.addEventListener('DOMContentLoaded', function() {
   // ---------- Аккордион на jQuery в сеrции catalog
 
   $("#accordion").accordion({
-    // header: ".section-faq__item",
     icons: false,
     heightStyle: "content",
     collapsible: true
   });
 
-// ---------- Второй свайпер в секции events
+  // ---------- Второй свайпер в секции events
 
   const swiper2 = new Swiper('#swiper-events', {
-    // loop: true,
     effect: "fade",
-    simulateTouch: true, // Принимает события мыши, как событие касания пальцами
-    grabCursor: true, // "Grab" курсор для повышения юзабилити на десктопах
+    // Принимает события мыши, как событие касания пальцами
+    simulateTouch: true,
+    // "Grab" курсор для повышения юзабилити на десктопах
+    grabCursor: true,
+    // Автоплей
     autoplay: {
-      disableOnInteraction: true, // Автоплей не останавливается после конца итереций
+      // Автоплей не останавливается после конца итереций
+      disableOnInteraction: true,
     },
     pagination: {
       el: '.swiper-pagination',
@@ -52,21 +58,53 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
-// ---------- ВТретий свайпер в секции projects
+  // ---------- Третий свайпер в секции projects
 
-const swiper3 = new Swiper('#swiper-partners', {
-  // loop: true,
-  simulateTouch: true, // Принимает события мыши, как событие касания пальцами
-  grabCursor: true, // "Grab" курсор для повышения юзабилити на десктопах
-  autoplay: {
-    disableOnInteraction: true, // Автоплей не останавливается после конца итереций
-  },
-  navigation: {
-    nextEl: ".swiper-button-next1",
-    prevEl: ".swiper-button-prev1",
-  },
+  const swiper3 = new Swiper('#swiper-partners', {
+    // Принимает события мыши, как событие касания пальцами
+    simulateTouch: true,
+    // "Grab" курсор для повышения юзабилити на десктопах
+    grabCursor: true,
+    // Автоплей
+    autoplay: {
+      // Автоплей не останавливается после конца итереций
+      disableOnInteraction: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next1",
+      prevEl: ".swiper-button-prev1",
+    },
+  });
+
 });
 
+// ---------- Yandex-карты
 
+// Дождёмся загрузки API и готовности DOM
+ymaps.ready(init);
+function init() {
+  // Создание экземпляра карты и его привязка к контейнеру с
+  // заданным id ("map")
+  myMap = new ymaps.Map("map", {
+      // Координаты центра карты
+      center: [55.760000, 37.614700],
+      // Уровень масштабирования. От 0 (весь мир) до 19
+      zoom: 14
+  });
 
-});
+  myPlacemark = new ymaps.Placemark([55.76000, 37.614700], {}, {
+    // Опции
+    // Необходимо указать данный тип макета
+    iconLayout: 'default#image',
+     // Своё изображение иконки метки
+    iconImageHref: '../img/map-point.svg',
+    // Размеры метки
+    iconImageSize: [20, 20],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки)
+    iconImageOffset: [-10, -10]
+  });
+
+  // Размещение геообъекта на карте.
+  myMap.geoObjects.add(myPlacemark);
+}
