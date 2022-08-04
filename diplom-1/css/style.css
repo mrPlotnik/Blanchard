@@ -84,6 +84,9 @@ svg circle {
 a {
   display: inline-flex;
 }
+a:focus {
+  outline: none;
+}
 
 /* ---------- My style ---------- */
 
@@ -124,9 +127,51 @@ h3 {
 .header .row {
   height: 45px;
 }
-.burger-menu img {
+.nav__burger img {
   width: 25px;
 }
+
+.nav {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+}
+.nav__mobile {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding-top: 16px;
+  padding-bottom: 26px;
+  padding-left: 16px;
+  visibility: hidden;
+  opacity: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  color: #fff;
+  background-color: #000000f0;
+  transition: .3s visibility linear, .3s opacity linear;
+  z-index: 101;
+}
+.nav__mobile .nav__mobile-list {
+  display: flex;
+  flex-direction: column;
+}
+.nav__open {
+  transition: .3s visibility linear, .3s opacity linear;
+  visibility: visible;
+  opacity: 1;
+}
+.nav__close svg {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 16px;
+}
+
+
 .header__logo img {
   width: 97px;
   margin-right: 6px;
@@ -727,26 +772,34 @@ address {
 .contacts__messages a:not(:last-child) {
   margin-right: 15px;
 }
-.whatsapp path:first-child {
+
+.whatsapp rect {
   fill: #30bf39;
   stroke: #fff;
 }
-.whatsapp:hover path:first-child {
+a:hover .whatsapp rect {
   fill: #30bf3950;
 }
-.whatsapp:active path:first-child {
+a:focus-visible .whatsapp rect {
+  fill: #30bf3950;
+}
+a:active .whatsapp rect {
   fill: #30bf39;
   stroke: #9d5cd0;
 }
-.telegram path:first-child {
+
+.telegram path:nth-child(2n-1) {
   fill: #26a5e4;
   stroke: #fff;
 }
-.telegram:hover path:first-child {
+a:hover .telegram path:nth-child(2n-1) {
   fill: #26a5e450;
 }
-.telegram:active path:first-child {
+a:focus-visible .telegram path:nth-child(2n-1) {
   fill: #26a5e450;
+}
+a:active .telegram path:nth-child(2n-1) {
+  fill: #26a5e4;
   stroke: #9d5cd0;
 }
 
@@ -776,9 +829,28 @@ address {
   margin-right: 20px;
 }
 
-.vk path {
+.vk,
+.ok {
+  width: 50px;
+  height: 50px;
+}
+.vk path,
+.ok path {
+  fill: #cacaca;
+}
+a:hover .vk path,
+a:hover .ok path {
   fill: #fff;
 }
+a:focus-within .vk path,
+a:focus-within .ok path {
+  fill: #fff;
+}
+a:active .vk path,
+a:active .ok path {
+  fill: #9d5cd0;
+}
+
 .bottom__logo {
   display: flex;
   justify-content: center;

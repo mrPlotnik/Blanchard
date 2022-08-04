@@ -1,5 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+
+
+   // Бургер
+   function burger() {
+    const burger = document.querySelector('.nav__burger');
+    const menuMobile = document.querySelector('.nav__mobile');
+    const closeMenu = document.querySelector('.nav__close');
+
+    const toggleMenu = function(q) {
+      q.classList.toggle('nav__open');
+    }
+
+    burger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleMenu(menuMobile);
+    })
+
+    closeMenu.addEventListener('click', function(e) {
+      toggleMenu(menuMobile);
+    })
+
+    // Отслеживаю клик вне контейнера .site-header__menu-mobile
+    document.addEventListener('click', function(e) {
+      // Определяю место клика
+      const target = e.target;
+      // Клик был на .site-header__menu-mobile и его вложенные элементы или нет?
+      const itsMenu = target == menuMobile || menuMobile.contains(target);
+      // .site-header__menu-mobile открыт?
+      const menuIsActive = menuMobile.classList.contains('open');
+
+      // Если клик был вне .site-header__menu-mobile и .site-header__menu-mobile открыт, то выполняю код
+      if (!itsMenu && menuIsActive) {
+        toggleMenu(menuMobile);
+      }
+    });
+  }
+
   // ---------- Кастомизация инпута choices.js в секции galery
 
    const el = document.querySelector('select');
@@ -75,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
       prevEl: ".swiper-button-prev1",
     },
   });
+
+  burger();
 
 });
 
