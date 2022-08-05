@@ -21,16 +21,13 @@
 
         <div class="header__nav nav d-flex order-lg-2">
 
-          <div class="nav__burger d-flex d-lg-none">
-            <img src="img/burger.png" alt="Меню">
+          <div class="nav__burger d-flex d-lg-none" tabindex="1">
+            <svg width="25" height="18" viewbox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="25" height="2" transform="matrix(-1 0 0 1 25 0)" fill="white"/> <path d="M16 8H9.53674e-07V10H16V8Z" fill="white"/> <path d="M10 16H0V18H10V16Z" fill="white"/> </svg>
           </div>
 
           <nav class="nav__mobile">
-            <div class="nav__close">
-              <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/>
-                <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/>
-              </svg>
+            <div class="nav__close" tabindex="1">
+              <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
             </div>
             <ul class="nav__mobile-list list-reset">
               <li class="nav__mobile-list-item"><a href="#">О нас</a></li>
@@ -61,8 +58,10 @@
           </a>
         </div>
 
-        <div class="header__search d-flex order-lg-3">
-          <img src="img/search.png" alt="Поиск">
+        <div class="header__search d-flex order-lg-3" tabindex="1">
+          <svg width="18" height="19" viewox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0002 8C16.0002 11.3137 13.3139 14 10.0002 14C6.68648 14 4.00019 11.3137 4.00019 8C4.00019 4.68629 6.68648 2 10.0002 2C13.3139 2 16.0002 4.68629 16.0002 8ZM18.0002 8C18.0002 12.4183 14.4185 16 10.0002 16C8.15297 16 6.45197 15.3739 5.09782 14.3224L1.41617 18.0041L0.00195312 16.5898L3.68288 12.9089C2.62828 11.5537 2.00019 9.8502 2.00019 8C2.00019 3.58172 5.58191 0 10.0002 0C14.4185 0 18.0002 3.58172 18.0002 8Z" fill="white"/>
+          </svg>
         </div>
 
       </div> <!-- col -->
@@ -687,13 +686,6 @@
   </div>
 
 </footer>
-
-
-
-
-<div class="row contacts__footer">
-
-</div>
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript" defer></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
