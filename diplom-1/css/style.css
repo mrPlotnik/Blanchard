@@ -84,17 +84,17 @@ svg circle {
 a {
   display: inline-flex;
 }
-a:focus {
+a:focus-visible {
   /* outline: none; */
-  outline: 1px solid #9d5cd0;
   outline-offset: 3px;
+  outline: 2px solid #9d5cd0;
 }
 
-/* ---------- My style ---------- */
+/* --- My style --- */
 
 header span,
 footer span {
-	color: #fff;
+	/* color: #fff; */
 }
 h1, h2, h3 {
   margin: 0;
@@ -133,8 +133,17 @@ h3 {
   width: 25px;
   cursor: pointer;
 }
+/* --- My style --- */
 .nav__burger:hover svg rect,
 .nav__burger:hover svg path {
+  fill: #d1a9f0;
+}
+.nav__burger:focus-visible {
+  outline-offset: 3px;
+  outline: 2px solid #9d5cd0;
+}
+.nav__burger:active svg rect,
+.nav__burger:active svg path {
   fill: #9d5cd0;
 }
 
@@ -145,7 +154,7 @@ h3 {
   color: #fff;
 }
 .nav__mobile {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 0;
@@ -172,10 +181,25 @@ h3 {
   visibility: visible;
   opacity: 1;
 }
+
+.nav__close {
+  display: flex;
+  width: fit-content;
+  margin-bottom: 16px;
+}
 .nav__close svg {
   width: 15px;
   height: 15px;
-  margin-bottom: 16px;
+}
+.nav__close:hover {
+  cursor: pointer;
+}
+.nav__close:hover svg rect {
+  fill: #d1a9f0;
+}
+.nav__close:focus-visible {
+  outline-offset: 3px;
+  outline: 2px solid #9d5cd0;
 }
 
 .header__logo {
@@ -189,10 +213,17 @@ h3 {
   width: 18px;
   cursor: pointer;
 }
+/* --- My style --- */
 .header__search:hover svg path {
+  fill: #d1a9f0;
+}
+.header__search:focus-visible {
+  outline-offset: 3px;
+  outline: 2px solid #9d5cd0;
+}
+.header__search:active svg path {
   fill: #9d5cd0;
 }
-
 
 /* ---------- section-hero ---------- */
 
@@ -220,13 +251,26 @@ h3 {
   color: #fff;
 }
 .hero__btn {
-  padding: 12px 19px;
+  padding: 10px 15px;
   border-radius: 100px;
+  border: 3px solid #9d5cd0;
   font-weight: 700;
   font-size: 12px;
   line-height: 16px;
   color: #fff;
   background-color: #9d5cd0;
+}
+.hero__btn:hover {
+  border: 3px solid #d1a9f0;
+}
+.hero__btn:focus-visible {
+  border: 3px solid #9d5cd0;
+  outline-offset: 3px;
+  outline: 2px solid #c283f3;
+}
+.hero__btn:active {
+  border: 3px solid #d1a9f0;
+  background-color: #7943a4;
 }
 
 /* ---------- section-about ---------- */
@@ -474,7 +518,7 @@ h3 {
 }
 .catalog__date-item:hover svg  path:first-child,
 .catalog__date-item:focus-visible svg path:first-child {
-  fill: #d1a9f0;
+  fill:  ;
 }
 .catalog__date-item:active span {
   color: #7943a4;
@@ -602,7 +646,7 @@ h3 {
 }
 
 .projects__text svg:hover path:first-child {
-  fill: #d1a9f0;
+  fill:  ;
 }
 .projects__text svg:active path:first-child {
   fill: #9d5cd0;
