@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-
-
-   // Бургер
-   function burger() {
+  // Бургер
+  function burger() {
     const burger = document.querySelector('.nav__burger');
     const menuMobile = document.querySelector('.nav__mobile');
     const closeMenu = document.querySelector('.nav__close');
+    const links = document.querySelectorAll('.nav__mobile-list-item a');
 
     // Выбираем все элементы для индекса в 'модальном' окне
     let elTab = document.querySelectorAll('.nav__close, .nav__mobile-list-item a');
@@ -15,11 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
       q.classList.toggle('nav__open');
     }
 
-    burger.addEventListener('click', function(e) {
-      e.stopPropagation();
+    burger.addEventListener('click', function() {
+      // Прекращаем дальнейшую передачу текущего события
+      // (предотвращает всплытие по дереву DOM)
+      // e.stopPropagation();
       toggleMenu(menuMobile);
 
-      // Индексация в мобильном меню
+      // Индексация в мобильном меню с клавиатуры
+      // При отрытии меню сразу фокус на крестик
+      // setTimeout(() => {closeMenu.focus()},100);
+      closeMenu.focus();
       elTab.forEach((tab, index) => {
         // Устанавливаем tabindex первой кнопки в 0
         // а tabindex всех остальных кнопок в -1
@@ -28,8 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           tab.setAttribute('tabindex', 0);
         }
-        // Добавляем прослушку события на ''активный' текущий элемент
+        // Добавляем прослушку события на 'активный' текущий элемент
         tab.addEventListener('keydown', (e) => {
+
           if (e.keyCode == 9) {
             // Предотвращаем поведение по умолчанию
             e.preventDefault();
@@ -51,27 +56,42 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       });
-
     })
 
-    closeMenu.addEventListener('click', function(e) {
+    // Что происходит при клике на крестик
+    closeMenu.addEventListener('click', function() {
+      // Закрыть меню
       toggleMenu(menuMobile);
-      // Удалить атрибут tabindex
-      elTab.forEach((el, index) => {
-        el.removeAttribute('tabindex');
-      })
+      // Удалить атрибут tabindex у текушего элемента
+      // (кнопка закрытия)
+      this.setAttribute('tabindex', -1);
+      // Фокус на бургер
+      burger.focus();
     })
 
+    // Что происходит при кликах на ссылки
+    links.forEach((el, index) => {
+      // Вешаем на все ссылки меню прослушки
+      el.addEventListener('click', function() {
+        // Закрыть меню
+        toggleMenu(menuMobile);
+        // Удалить атрибут tabindex у текушего элемента
+        // (ссылка на которую кликнули)
+        el.setAttribute('tabindex', -1);
+        // и с крестика тоже
+        closeMenu.setAttribute('tabindex', -1);
+      })
+    });
 
   };
 
   // ---------- Кастомизация инпута choices.js в секции galery
 
-   const el = document.querySelector('select');
-   const choises = new Choices(el,{
-     searchEnabled: false,
-     itemSelectText: '',
-   });
+  const el = document.querySelector('select');
+  const choises = new Choices(el,{
+    searchEnabled: false,
+    itemSelectText: '',
+  });
 
   // ---------- Первый свайпер в секции galery
 
