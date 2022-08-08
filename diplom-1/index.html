@@ -16,7 +16,7 @@
 <header class="header">
 
   <nav class="nav__mobile" aria-labelledby="" role="dialog">
-    <button class="nav__close btn-reset" tabindex="-1">
+    <button class="nav__close close btn-reset" tabindex="-1">
       <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
     </button>
     <ul class="nav__mobile-list list-reset js-btns">
@@ -65,10 +65,15 @@
 
       </div> <!-- col -->
 
-      <div class="search__big">
+      <div class="header__search-big">
         <svg width="30" height="29" viewbox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 7.08203 20.8653)" fill="white"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6236 23.9932C10.5366 23.9932 5.82665 19.0917 5.82665 13.3295C5.82665 7.56738 10.5366 2.66591 16.6236 2.66591C22.7105 2.66591 27.4205 7.56738 27.4205 13.3295C27.4205 19.0917 22.7105 23.9932 16.6236 23.9932ZM16.6236 26.6591C9.26188 26.6591 3.29404 20.6912 3.29404 13.3295C3.29404 5.96784 9.26188 0 16.6236 0C23.9853 0 29.9531 5.96784 29.9531 13.3295C29.9531 20.6912 23.9853 26.6591 16.6236 26.6591Z" fill="white"/> </svg>
-        <input type="text">
-        <button class="search__big-close btn-reset">
+        <input
+          id="search"
+          type="search"
+          name="search"
+          placeholder="Поиск по сайту"
+          value="">
+        <button class="header__search-close close btn-reset">
           <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
         </button>
       </div>

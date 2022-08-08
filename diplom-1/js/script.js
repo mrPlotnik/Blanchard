@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Индексация в мобильном меню с клавиатуры
       // При отрытии меню сразу фокус на крестик
-      // setTimeout(() => {closeMenu.focus()},100);
-      closeMenu.focus();
+      // Из-за анимации свойства visibility ставим задержку
+      setTimeout(() => {closeMenu.focus()},100);
+      // closeMenu.focus();
       elTab.forEach((tab, index) => {
         // Устанавливаем tabindex первой кнопки в 0
         // а tabindex всех остальных кнопок в -1
@@ -84,6 +85,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
   };
+
+  // Поиск
+  function search() {
+    const searchBtn = document.querySelector('.header__search');
+    const searchBig = document.querySelector('.header__search-big');
+    const searchCloseBtn = document.querySelector('.header__search-close');
+    const searchInput = document.querySelector('#search');
+    // const btnSearch = document.querySelector('.btn--search');
+
+    const toggleSearch = function(q) {
+      q.classList.toggle('search__open');
+    }
+
+    searchBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleSearch(searchBig);
+      // Из-за анимации свойства visibility ставим задержку
+      setTimeout(() => {searchInput.focus()},100);
+    })
+
+    searchCloseBtn.addEventListener('click', function() {
+      toggleSearch(searchBig);
+    })
+
+    // btnSearch.addEventListener('click', function() {
+    //   toggleSearch(searchBig);
+    // })
+
+    // Отслеживаю клик вне контейнера .searchBig
+    document.addEventListener('click', function(e) {
+      // Определяю место клика
+      const target = e.target;
+      // Клик был на .searchBig и его вложенные элементы или нет?
+      const itsSearch = target == searchBig || searchBig.contains(target);
+      // .searchBig открыт?
+      const searchIsActive = searchBig.classList.contains('search__open');
+
+      // Если клик был вне .searchBig и .searchBig открыт, то выполняю код
+      if (!itsSearch && searchIsActive) {
+        toggleSearch(searchBig);
+      }
+    });
+  }
 
   // ---------- Кастомизация инпута choices.js в секции galery
 
@@ -162,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   burger();
+  search();
 
 });
 

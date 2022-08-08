@@ -122,6 +122,21 @@ h3 {
   --bs-gutter-x: 15px;
 }
 
+.close svg {
+  width: 15px;
+  height: 15px;
+}
+.close:hover {
+  cursor: pointer;
+}
+.close:hover svg rect {
+  fill: #d1a9f0;
+}
+.close:focus-visible {
+  outline-offset: 3px;
+  outline: 2px solid #9d5cd0;
+}
+
 /* ---------- header ---------- */
 
 .header {
@@ -168,15 +183,19 @@ h3 {
   padding-right: 16px;
   padding-bottom: 26px;
   padding-left: 16px;
-  /* visibility: hidden; */
+  visibility: hidden;
   opacity: 0;
   font-weight: 600;
   font-size: 16px;
   line-height: 32px;
   color: #fff;
   background-color: #000000f0;
-  transition: .3s opacity linear;
-  z-index: -1;
+  transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+}
+.nav__open {
+  visibility: visible;
+  opacity: 1;
+  transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
 }
 .nav__mobile .nav__mobile-list {
   flex-direction: column;
@@ -196,30 +215,10 @@ h3 {
 .nav__mobile a:active {
   color: #7943a4;
 }
-.nav__open {
-  visibility: visible;
-  opacity: 1;
-  transition: .3s opacity linear;
-  z-index: 10;
-}
 .nav__close {
   display: flex;
   width: fit-content;
   margin-bottom: 16px;
-}
-.nav__close svg {
-  width: 15px;
-  height: 15px;
-}
-.nav__close:hover {
-  cursor: pointer;
-}
-.nav__close:hover svg rect {
-  fill: #d1a9f0;
-}
-.nav__close:focus-visible {
-  outline-offset: 3px;
-  outline: 2px solid #9d5cd0;
 }
 
 .header__logo {
@@ -249,31 +248,55 @@ h3 {
   fill: #9d5cd0;
 }
 
-.search__big {
+.header__search-big {
   position: absolute;
   display: flex;
   align-items: center;
   width: 100%;
   height: 45px;
+  visibility: hidden;
   opacity: 0;
   background-color: #000;
+  transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
 }
-.search__big svg {
+.search__open {
+  visibility: visible;
+  opacity: 1;
+  transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+}
+.header__search-big svg {
   width: 20px;
   height: 15px;
 }
-.search__big > svg {
+.header__search-big > svg {
  margin-right: 10px;
 }
-.search__big input {
+.header__search-big input {
   width: 100%;
   height: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  padding: 0;
+  padding-bottom: 2px;
   border: none;
   border-bottom: 1px solid #fff;
+  font-size: 13px;
+  color: #fff;
   background-color: #000;
 }
-.search__big-close  {
+input[type="search"]::-moz-placeholder {
+  color: #fff;
+  opacity: .85;
+}
+
+.header__search-big input:hover,
+.header__search-big input:active,
+.header__search-big input:focus-visible {
+  border-bottom-color: #c283f3;
+}
+.header__search-big input:focus-visible {
+  outline: none;
+}
+.header__search-close  {
   margin-left: 10px;
 }
 
