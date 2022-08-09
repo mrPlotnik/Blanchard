@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Бургер
   function burger() {
+    const body = document.querySelector('body');
     const burger = document.querySelector('.nav__burger');
     const menuMobile = document.querySelector('.nav__mobile');
     const closeMenu = document.querySelector('.nav__close');
@@ -13,12 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleMenu = function(q) {
       q.classList.toggle('nav__open');
     }
+    const toggleBody = function(q) {
+      q.classList.toggle('body-hidden');
+    }
 
     burger.addEventListener('click', function() {
       // Прекращаем дальнейшую передачу текущего события
       // (предотвращает всплытие по дереву DOM)
       // e.stopPropagation();
       toggleMenu(menuMobile);
+      toggleBody(body);
 
       // Индексация в мобильном меню с клавиатуры
       // При отрытии меню сразу фокус на крестик
@@ -63,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeMenu.addEventListener('click', function() {
       // Закрыть меню
       toggleMenu(menuMobile);
+      toggleBody(body);
       // Удалить атрибут tabindex у текушего элемента
       // (кнопка закрытия)
       this.setAttribute('tabindex', -1);
@@ -76,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       el.addEventListener('click', function() {
         // Закрыть меню
         toggleMenu(menuMobile);
+        toggleBody(body);
         // Удалить атрибут tabindex у текушего элемента
         // (ссылка на которую кликнули)
         el.setAttribute('tabindex', -1);

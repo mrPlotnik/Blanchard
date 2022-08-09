@@ -33,6 +33,9 @@ html {
 body * {
   /* outline: 1px solid red; */
 }
+.body-hidden {
+  overflow: hidden;
+}
 
 *,
 *::before,
@@ -175,22 +178,18 @@ h3 {
 }
 .nav__mobile {
   position: fixed;
+  flex-direction: column;
   width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  padding-top: 16px;
-  padding-right: 16px;
-  padding-bottom: 26px;
-  padding-left: 16px;
   visibility: hidden;
   opacity: 0;
   font-weight: 600;
   font-size: 16px;
   line-height: 32px;
-  color: #fff;
   background-color: #000000f0;
   transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+}
+.nav__mobile .row {
+  height: 100vh;
 }
 .nav__open {
   visibility: visible;
@@ -199,6 +198,7 @@ h3 {
 }
 .nav__mobile .nav__mobile-list {
   flex-direction: column;
+  color: #fff;
 }
 .nav__mobile a {
   display: inline-flex;
@@ -219,6 +219,27 @@ h3 {
   display: flex;
   width: fit-content;
   margin-bottom: 16px;
+}
+.nav__mobile-login-wrap {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+}
+.nav__mobile-login {
+  display: flex;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: 1px solid #9d5cd0;
+  color: #fff;
+}
+.nav__mobile-login svg {
+  margin-top: 4px;
+  margin-right: 4px;
+  width: 9px;
+  height: 9px;
 }
 
 .header__logo {
