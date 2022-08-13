@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.querySelector('body');
     const burger = document.querySelector('.nav__burger');
     const menuMobile = document.querySelector('.nav__mobile');
-    const closeMenu = document.querySelector('.nav__close');
-    const links = document.querySelectorAll('.nav__mobile-list-item a');
+    const closeMenu = document.querySelector('.nav-mobile__close-btn');
+    const links = document.querySelectorAll('.nav-mobile__list-item a');
 
     // Выбираем все элементы для индекса в 'модальном' окне
-    let elTab = document.querySelectorAll('.nav__close, .nav__mobile-list-item a');
+    let elTab = document.querySelectorAll('.nav-mobile__close-btn, .nav-mobile__login-link, .nav-mobile__list-item a');
 
     const toggleMenu = function(q) {
       q.classList.toggle('nav__open');
@@ -24,40 +24,25 @@ document.addEventListener('DOMContentLoaded', function() {
       // e.stopPropagation();
       toggleMenu(menuMobile);
       toggleBody(body);
-
       // Индексация в мобильном меню с клавиатуры
       // При отрытии меню сразу фокус на крестик
       // Из-за анимации свойства visibility ставим задержку
       setTimeout(() => {closeMenu.focus()},100);
       // closeMenu.focus();
       elTab.forEach((tab, index) => {
-        // Устанавливаем tabindex первой кнопки в 0
-        // а tabindex всех остальных кнопок в -1
-        if (index != 0) {
-          tab.setAttribute('tabindex', -1);
-        } else {
-          tab.setAttribute('tabindex', 0);
-        }
         // Добавляем прослушку события на 'активный' текущий элемент
         tab.addEventListener('keydown', (e) => {
-
           if (e.keyCode == 9) {
             // Предотвращаем поведение по умолчанию
             e.preventDefault();
-            // Устанавливаем текущему элементу tabindex в -1
-            tab.setAttribute('tabindex', -1);
             // Если элемент не последний задаем следующему элементу tabindex в 0
             // и вызываем метод фокуса на него
             if (index != elTab.length - 1) {
-              let nextEl = elTab[index + 1];
-              nextEl.setAttribute('tabindex', 0);
-              nextEl.focus();
+              elTab[index + 1].focus();
             } else {
-              // Когда мы добираемся до последнего элемента, устанавливаем для
-              // первого элемента tabindex 0 и вызовем на нем метод фокуса
-              let firstEl = elTab[elTab.length-elTab.length];
-              firstEl.setAttribute('tabindex', 0);
-              firstEl.focus();
+              // Когда мы добираемся до последнего элемента,
+              // устанавливаем фокус на первый элемент
+              elTab[0].focus();
             }
           }
         });
@@ -69,9 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Закрыть меню
       toggleMenu(menuMobile);
       toggleBody(body);
-      // Удалить атрибут tabindex у текушего элемента
-      // (кнопка закрытия)
-      this.setAttribute('tabindex', -1);
       // Фокус на бургер
       burger.focus();
     })
@@ -83,11 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Закрыть меню
         toggleMenu(menuMobile);
         toggleBody(body);
-        // Удалить атрибут tabindex у текушего элемента
-        // (ссылка на которую кликнули)
-        el.setAttribute('tabindex', -1);
-        // и с крестика тоже
-        closeMenu.setAttribute('tabindex', -1);
       })
     });
 
@@ -136,7 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // ---------- Кастомизация инпута choices.js в секции galery
+  burger();
+  search();
+
+  // ---------- Инициализация инпута choices.js в секции galery
 
   const el = document.querySelector('select');
   const choises = new Choices(el,{
@@ -162,8 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
       type: 'fraction',
     },
     navigation: {
-      nextEl: '.swiper-button-next1',
-      prevEl: '.swiper-button-prev1',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 
@@ -207,13 +187,12 @@ document.addEventListener('DOMContentLoaded', function() {
       disableOnInteraction: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next1',
-      prevEl: '.swiper-button-prev1',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 
-  burger();
-  search();
+
 
 });
 

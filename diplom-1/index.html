@@ -12,36 +12,39 @@
 </head>
 <body>
 
-  <nav class="nav__mobile" aria-labelledby="" role="dialog">
-    <div class="container">
-      <div class="row row-cols-1">
+<nav class="nav__mobile nav-mobile" aria-labelledby="" role="dialog">
+  <div class="container">
+    <div class="row row-cols-1">
 
-        <div class="col pt-3">
-          <button class="nav__close close btn-reset" tabindex="-1">
+      <div class="col pt-3">
+        <div class="nav-mobile__close-btn-wrap">
+          <button class="nav-mobile__close-btn close-btn btn-reset">
             <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
           </button>
-          <ul class="nav__mobile-list list-reset js-btns">
-            <li class="nav__mobile-list-item"><a class="btn" href="#about">О нас</a></li>
-            <li class="nav__mobile-list-item"><a class="btn" href="#galery">Галерея</a></li>
-            <li class="nav__mobile-list-item"><a class="btn" href="#catalog">Каталог</a></li>
-            <li class="nav__mobile-list-item"><a class="btn" href="#events">События</a></li>
-            <li class="nav__mobile-list-item"><a class="btn" href="#projects">Проекты</a></li>
-            <li class="nav__mobile-list-item"><a class="btn" href="#contacts">Контакты</a></li>
-          </ul>
         </div>
 
-        <div class="col d-flex pb-4">
-          <div class="nav__mobile-login-wrap">
-            <button class="nav__mobile-login btn-reset">
-              <svg width="14" height="13" viewbox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z" fill="white"/> </svg>
-              Войти
-            </button>
-          </div>
-        </div>
-
+        <ul class="nav-mobile__list list-reset">
+          <li class="nav-mobile__list-item"><a class="btn" href="#about">О нас</a></li>
+          <li class="nav-mobile__list-item"><a class="btn" href="#galery">Галерея</a></li>
+          <li class="nav-mobile__list-item"><a class="btn" href="#catalog">Каталог</a></li>
+          <li class="nav-mobile__list-item"><a class="btn" href="#events">События</a></li>
+          <li class="nav-mobile__list-item"><a class="btn" href="#projects">Проекты</a></li>
+          <li class="nav-mobile__list-item"><a class="btn" href="#contacts">Контакты</a></li>
+        </ul>
       </div>
+
+      <div class="col d-flex pb-4">
+        <div class="nav-mobile__login-link-wrap">
+          <a href="#" class="nav-mobile__login-link">
+            <svg width="14" height="13" viewbox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z" fill="white"/> </svg>
+            Войти
+          </a>
+        </div>
+      </div>
+
     </div>
-  </nav>
+  </div>
+</nav>
 
 <!-- header -->
 <header class="header">
@@ -56,9 +59,6 @@
           <button class="nav__burger btn-reset d-flex d-lg-none">
             <svg width="25" height="18" viewbox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="25" height="2" transform="matrix(-1 0 0 1 25 0)" fill="white"/> <path d="M16 8H9.53674e-07V10H16V8Z" fill="white"/> <path d="M10 16H0V18H10V16Z" fill="white"/> </svg>
           </button>
-
-
-
 
           <nav class="nav__desktop d-none d-lg-flex">
             <ul class="nav__desktop-list d-flex list-reset">
@@ -93,7 +93,7 @@
           name="search"
           placeholder="Поиск по сайту"
           value="">
-        <button class="header__search-close close btn-reset">
+        <button class="header__search-close close-btn btn-reset">
           <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
         </button>
       </div>
@@ -200,11 +200,11 @@
 
             </div>
 
-            <div class="swiper-button-next1">
-              <img src="img/pagination-next-default.png" alt="">
+            <div class="swiper-button-next">
+              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#666"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#666" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="#fff" fill="#666"/> </svg>
             </div>
-            <div class="swiper-button-prev1">
-              <img src="img/pagination-prev-default.png" alt="">
+            <div class="swiper-button-prev">
+              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666"/> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="#666" stroke-width="2"/> <path d="M16 20L11 15L16 10" stroke="#fff" fill="#666"/> </svg>
             </div>
             <div class="swiper-pagination"></div>
 
@@ -593,44 +593,41 @@
               <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                  <a href="#" id="slide-1"></a>
+                  <a href="#" id="slide-1" tabindex="-1"></a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#" id="slide-2"></a>
+                  <a href="#" id="slide-2" tabindex="-1"></a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#" id="slide-3"></a>
+                  <a href="#" id="slide-3" tabindex="-1"></a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#" id="slide-4"></a>
+                  <a href="#" id="slide-4" tabindex="-1"></a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#" id="slide-5"></a>
+                  <a href="#" id="slide-5" tabindex="-1"></a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#" id="slide-6"></a>
+                  <a href="#" id="slide-6" tabindex="-1"></a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#" id="slide-7"></a>
+                  <a href="#" id="slide-7" tabindex="-1"></a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#" id="slide-8"></a>
+                  <a href="#" id="slide-8" tabindex="-1"></a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#" id="slide-9"></a>
+                  <a href="#" id="slide-9" tabindex="-1"></a>
                 </div>
-
 
               </div>
 
-              <div class="swiper-button-next1">
-                <img src="img/pagination-next-default.png" alt="">
+              <div class="swiper-button-next">
+                <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#ececec"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#ececec" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="black" fill="#ececec"/> </svg>
               </div>
-              <div class="swiper-button-prev1">
-                <img src="img/pagination-prev-default.png" alt="">
+              <div class="swiper-button-prev">
+                <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#ececec"/> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="#ececec" stroke-width="2"/> <path d="M16 20L11 15L16 10" stroke="black" fill="#ececec"/> </svg>
               </div>
-
-
             </div>
           </div>
         </div>
