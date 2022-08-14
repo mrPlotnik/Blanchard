@@ -192,8 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
-
-
 });
 
 // ---------- Yandex-карты
