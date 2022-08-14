@@ -4,8 +4,8 @@
   font-display: swap;
   font-weight: 400;
   src: local(''),
-       url('../fonts/regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/regular.woff') format('woff'); /* Modern Browsers */
+    url('../fonts/regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/regular.woff') format('woff'); /* Modern Browsers */
 }
 @font-face {
   font-family: 'Open Sans';
@@ -13,8 +13,8 @@
   font-display: swap;
   font-weight: 600;
   src: local(''),
-       url('../fonts/600.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/600.woff') format('woff'); /* Modern Browsers */
+    url('../fonts/600.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/600.woff') format('woff'); /* Modern Browsers */
 }
 @font-face {
   font-family: 'Open Sans';
@@ -22,38 +22,33 @@
   font-display: swap;
   font-weight: 700;
   src: local(''),
-       url('../fonts/700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/700.woff') format('woff'); /* Modern Browsers */
+    url('../fonts/700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/700.woff') format('woff'); /* Modern Browsers */
 }
 
 html {
 	box-sizing: border-box;
 }
-
 body * {
   /* outline: 1px solid red; */
 }
 .body-hidden {
   overflow: hidden;
 }
-
 *,
 *::before,
 *::after {
 	box-sizing: inherit;
 }
-
 a {
 	color: inherit;
 	text-decoration: none;
 }
-
 body {
   height: 100%;
  	min-width: 320px;
 	font-family: 'Open Sans', sans-serif;
 }
-
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
@@ -66,14 +61,12 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
   list-style: none;
 }
-
 .btn-reset {
   cursor: pointer;
   padding: 0;
   border: none;
   background-color: transparent;
 }
-
 /* Псевдоклассы для svg */
 svg,
 svg rect,
@@ -81,12 +74,10 @@ svg path,
 svg circle {
   transition: all .3s ease-in-out;
 }
-
 a,
 button {
   transition: all .3s ease-in-out;
 }
-
 a {
   display: inline-flex;
 }
@@ -98,8 +89,6 @@ a {
 svg {
   display: flex;
 }
-
-/* --- My style --- */
 
 h1, h2, h3 {
   margin: 0;
@@ -118,14 +107,12 @@ h3 {
   line-height: 32px;
   font-weight: 600;
 }
-
 .row {
   --bs-gutter-x: 30px;
 }
 .container {
   --bs-gutter-x: 15px;
 }
-
 .close-btn svg {
   width: 15px;
   height: 15px;
@@ -140,7 +127,6 @@ h3 {
   outline-offset: 3px;
   outline: 2px solid #9d5cd0;
 }
-
 .swiper-button-next,
 .swiper-button-prev {
   width: fit-content;
@@ -243,9 +229,6 @@ h3 {
 }
 .header .row {
   height: 45px;
-}
-.nav__burger  {
-
 }
 .nav__burger svg {
   width: 25px;
@@ -606,7 +589,7 @@ input[type="search"]::-moz-placeholder {
   color: #fff;
 }
 
-/* ---------- section-catalog ---------- */
+/* ---------- section-catalog start---------- */
 .catalog__wrap {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -614,7 +597,6 @@ input[type="search"]::-moz-placeholder {
 .catalog__header {
   margin-bottom: 13px;
 }
-
 .catalog__date-list {
   flex-direction: column;
   margin-bottom: 50px;
@@ -641,20 +623,21 @@ input[type="search"]::-moz-placeholder {
   width: 30px;
   height: 30px;
 }
-.catalog__date-item > svg path:first-child {
-  fill: #ececec;
-}
-.catalog__date-item > svg path:last-child {
-  stroke: #000;
-}
-.catalog__artists {
-  padding: 20px 0 20px 0;
-  line-height: 32px;
-}
 .ui-accordion-header-active svg {
   transform: rotate(180deg);
 }
-/* Псевдоклассы */
+
+/* ---- Псевдоклассы аккордиона start---- */
+.catalog__date-item:hover {
+  border-color: #9d5cd0;
+  z-index: 1;
+}
+.catalog__date-item:hover span {
+  color: #9d5cd0;
+}
+.catalog__date-item:hover svg  path:first-child {
+  fill: #d1a9f0;
+}
 .catalog__date-item:focus-visible {
   outline: none;
   border-color: #9d5cd0;
@@ -664,16 +647,8 @@ input[type="search"]::-moz-placeholder {
   color: #fff;
   background-color: #9d5cd0;
 }
-.catalog__date-item:hover {
-  border-color: #9d5cd0;
-  z-index: 1;
-}
-.catalog__date-item:hover span {
-  color: #9d5cd0;
-}
-.catalog__date-item:hover svg  path:first-child,
 .catalog__date-item:focus-visible svg path:first-child {
-  fill:  ;
+  fill: #d1a9f0;
 }
 .catalog__date-item:active span {
   color: #7943a4;
@@ -682,16 +657,34 @@ input[type="search"]::-moz-placeholder {
 .catalog__date-item:active svg  path:first-child {
   stroke: #9d5cd0;
 }
+/* ---- Псевдоклассы аккордиона end ---- */
+
+.catalog__artists {
+  padding: 20px 0 20px 0;
+  line-height: 31px;
+}
+.catalog__artists a {
+  border-bottom: 1px solid #fff;
+}
+
+/* ---- Псевдоклассы пунктов аакордиона start ---- */
+.catalog__artists a:hover {
+  border-bottom: 1px solid #9d5cd0;
+}
+.catalog__artists a:focus-visible {
+  outline: none;
+  background-color: #7943a4;
+}
+/* ---- Псевдоклассы пунктов аакордиона end ---- */
+
 .empty__img {
   width: 100%;
 }
 .empty__header {
   font-weight: 600;
   font-size: 18px;
-  /* line-height: 32px; */
 }
 .empty__text {
-  /* font-size: 16px; */
   line-height: 22px;
 }
 .info__img {
@@ -712,8 +705,9 @@ input[type="search"]::-moz-placeholder {
   font-size: 16px;
   line-height: 32px;
 }
+/* ---------- section-catalog end---------- */
 
-/* ---------- section events ---------- */
+/* ---------- section events start---------- */
 
 .events__wrap {
   margin-bottom: 40px;
@@ -772,8 +766,9 @@ input[type="search"]::-moz-placeholder {
 #swiper-events .swiper-pagination-bullet-active {
   background-color: #666;
 }
+/* ---------- section events end---------- */
 
-/* ---------- section projects ---------- */
+/* ---------- section projects start ---------- */
 
 .projects__wrap {
   padding-bottom: 45px;
@@ -789,19 +784,17 @@ input[type="search"]::-moz-placeholder {
   color: #333;
 }
 .projects__text svg {
+  display: inline-flex;
   width: 17px;
   margin-bottom: -2px;
 }
-.projects__text svg path:first-child {
-  fill: #fff;
-  stroke: #9d5cd0;
-}
-.projects__text svg path:last-child {
-  fill: #000;
-}
 
+/* ---- Псевдоклассы иконок тултипов start ---- */
 .projects__text svg:hover path:first-child {
-  fill:  ;
+  fill: #d1a9f0;
+}
+.projects__text svg:focus-visible path:first-child {
+  fill: #d1a9f0;
 }
 .projects__text svg:active path:first-child {
   fill: #9d5cd0;
@@ -810,30 +803,58 @@ input[type="search"]::-moz-placeholder {
 .projects__text svg:active path:last-child {
   fill: #fff;
 }
-
 .projects__partners-header {
   margin-bottom: 10px;
 }
+/* ---- Псевдоклассы иконок тултипов end ---- */
 
 #swiper-partners .swiper-slide {
   display: flex;
   justify-content: center;
 }
 #swiper-partners a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 195px;
   height: 65px;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-#swiper-partners a {
   border: 1px solid #cacaca;
 }
-#swiper-partners a:active {
+#swiper-partners a img {
+  width: 55%;
+}
+#swiper-partners #slide-4 img,
+#swiper-partners #slide-5 img,
+#swiper-partners #slide-8 img {
+  width: 30%;
+}
+.swiper-first-img {
+  opacity: 1;
+  display: block;
+  position: absolute;
+  transition: all .3s ease-in-out;
+}
+.swiper-second-img {
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+#swiper-partners a:hover .swiper-first-img {
+  opacity: 0;
+}
+#swiper-partners a:hover .swiper-second-img {
+  opacity: 1;
+}
+#swiper-partners a:focus-visible {
+  outline: none;
   border: 1px solid #9d5cd0;
+}
+#slide-1:active {
+  /* border: 1px solid #9d5cd0; */
 }
 #swiper-partners .swiper-button-next,
 #swiper-partners .swiper-button-prev {
-  bottom: 15px;
+  bottom: 19px;
 }
 #swiper-partners .swiper-button-next {
   right: 0;
@@ -841,7 +862,7 @@ input[type="search"]::-moz-placeholder {
 #swiper-partners .swiper-button-prev {
   left: 0;
 }
-
+/* ---- Псевдоклассы свайпера start---- */
 #swiper-partners .swiper-button-next:hover svg path:nth-child(2n-1),
 #swiper-partners .swiper-button-prev:hover svg path:nth-child(2n-1) {
   fill: #d1a9f0;
@@ -866,72 +887,14 @@ input[type="search"]::-moz-placeholder {
 #swiper-partners .swiper-button-prev:active svg path:nth-child(2n-1) {
   fill: #d1a9f0;
 }
+/* ---- Псевдоклассы свайпера end---- */
+/* ---------- section projects end ---------- */
 
-#swiper-partners #slide-1 {
-  background-size: 105px;
-  background-image: url(../img/projects-partners-1-grey.png);
+/* ---------- footer start ---------- */
+/* ---- contacts start ---- */
+.footer__contacts-wrap {
+  padding-bottom: 17px;
 }
-#swiper-partners #slide-1:hover {
-  background-image: url(../img/projects-partners-1-color.png);
-}
-#swiper-partners #slide-2 {
-  background-size: 141px;
-  background-image: url(../img/projects-partners-2-grey.png);
-}
-#swiper-partners #slide-2:hover {
-  background-image: url(../img/projects-partners-2-color.png);
-}
-#swiper-partners #slide-3 {
-  background-size: 117px;
-  background-image: url(../img/projects-partners-3-grey.png);
-}
-#swiper-partners #slide-3:hover {
-  background-image: url(../img/projects-partners-3-color.png);
-}
-#swiper-partners #slide-4 {
-  background-size: 53px;
-  background-image: url(../img/projects-partners-4-grey.png);
-}
-#swiper-partners #slide-4:hover {
-  background-image: url(../img/projects-partners-4-color.png);
-}
-#swiper-partners #slide-5 {
-  background-size: 75px;
-  background-image: url(../img/projects-partners-5-grey.png);
-}
-#swiper-partners #slide-5:hover {
-  background-image: url(../img/projects-partners-5-color.png);
-}
-#swiper-partners #slide-6 {
-  background-size: 110px;
-  background-image: url(../img/projects-partners-6-grey.png);
-}
-#swiper-partners #slide-6:hover {
-  background-image: url(../img/projects-partners-6-color.png);
-}
-#swiper-partners #slide-7 {
-  background-size: 124px;
-  background-image: url(../img/projects-partners-7-grey.png);
-}
-#swiper-partners #slide-7:hover {
-  background-image: url(../img/projects-partners-7-color.png);
-}
-#swiper-partners #slide-8 {
-  background-size: 80px;
-  background-image: url(../img/projects-partners-8-grey.png);
-}
-#swiper-partners #slide-8:hover {
-  background-image: url(../img/projects-partners-8-color.png);
-}
-#swiper-partners #slide-9 {
-  background-size: 100px;
-  background-image: url(../img/projects-partners-9-grey.png);
-}
-#swiper-partners #slide-9:hover {
-  background-image: url(../img/projects-partners-9-color.png);
-}
-
-/* ---------- contacts ---------- */
 .contacts__header {
   margin-bottom: 1px;
 }
@@ -940,14 +903,12 @@ input[type="search"]::-moz-placeholder {
 	flex-direction: column;
   width: 100%;
 }
-
 address {
   margin-bottom: 20px;
   font-style:normal;
   font-size: 14px;
   line-height: 19px;
 }
-
 .form__input {
 	width: 100%;
 	height: 40px;
@@ -979,16 +940,7 @@ address {
 	font-weight: 700;
   font-size: 12px;
   line-height: 16px;
-	/* cursor: pointer; */
 	color: #9d5cd0;
-}
-
-.footer__contacts-wrap {
-  padding-bottom: 17px;
-}
-
-.contacts__messages {
-
 }
 .contacts__messages p {
   margin-bottom: 7px;
@@ -1033,8 +985,9 @@ a:active .telegram path:nth-child(2n-1) {
   fill: #26a5e4;
   stroke: #9d5cd0;
 }
+/* ---- contacts end ---- */
 
-.footer__map-wrap {}
+/* ---- contacts map start ---- */
 #map {
   width: 320px;
   height: 320px;
@@ -1045,7 +998,9 @@ a:active .telegram path:nth-child(2n-1) {
 [class*="controls"] {
 	display: none;
 }
+/* ---- contacts map end ---- */
 
+/* ---- bottom start ---- */
 .footer__bottom {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1089,7 +1044,8 @@ a:active .ok path {
 .bottom__logo img {
   width: 97px;
 }
-/* ---------- footer ---------- */
+/* ---- bottom start ---- */
+/* ---------- footer end ---------- */
 
 
 /* sm */
