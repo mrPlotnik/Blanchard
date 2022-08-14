@@ -127,7 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // ---------- Первый свайпер в секции galery
 
   const swiper1 = new Swiper('#swiper-galery', {
-    effect: 'fade',
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 38,
+    // loop: true,
     // Принимает события мыши, как событие касания пальцами
     simulateTouch: true,
     // 'Grab' курсор для повышения юзабилити на десктопах
@@ -136,6 +139,19 @@ document.addEventListener('DOMContentLoaded', function() {
     autoplay: {
       // Автоплей не останавливается после конца итереций
       disableOnInteraction: true,
+    },
+     // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      // when window width is >= 640px
+      1024: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      }
     },
     pagination: {
       el: '.swiper-pagination',
@@ -146,6 +162,22 @@ document.addEventListener('DOMContentLoaded', function() {
       prevEl: '.swiper-button-prev',
     },
   });
+
+  // var swiper = new Swiper(".mySwiper", {
+  //   slidesPerView: 3,
+  //   spaceBetween: 30,
+  //   slidesPerGroup: 3,
+  //   loop: true,
+  //   loopFillGroupWithBlank: true,
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //     clickable: true,
+  //   },
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  // });
 
   // ---------- Аккордион на jQuery в сеrции catalog
 
