@@ -135,8 +135,8 @@ h3 {
 .swiper-button-prev {
   width: fit-content;
   height: fit-content;
-  top: auto;
-  bottom: 0;
+  /* top: auto; */
+  /* bottom: 0; */
   z-index: 11;
 }
 .swiper-button-next::after,
@@ -232,7 +232,8 @@ h3 {
   background-color: #000;
 }
 .header .row {
-  height: 45px;
+  height: 44px;
+  padding-bottom: 2px;
 }
 .nav__burger {
   width: 25px;
@@ -340,7 +341,7 @@ input[type="search"]::-moz-placeholder {
 }
 .hero__wrap {
   padding-top: 30px;
-  padding-bottom: 44px;
+  padding-bottom: 45px;
   text-align: center;
 }
 .hero__header {
@@ -350,14 +351,14 @@ input[type="search"]::-moz-placeholder {
   color: #fff;
 }
 .hero__text {
-  margin-bottom: 42px;
+  margin-bottom: 43px;
   padding: 0 20px;
   font-size: 12px;
   line-height: 16px;
   color: #fff;
 }
 .hero__btn {
-  padding: 10px 15px;
+  padding: 9px 15px;
   border-radius: 100px;
   border: 3px solid #9d5cd0;
   font-weight: 700;
@@ -383,7 +384,6 @@ input[type="search"]::-moz-placeholder {
 /* ---------- section-about start---------- */
 .about__wrap {
   padding-top: 50px;
-  /* padding-right: 30px; */
   padding-bottom: 41px;
 }
 .about__header {
@@ -398,12 +398,14 @@ input[type="search"]::-moz-placeholder {
 
 /* ---------- section galery start ---------- */
 .galery {
+  background-size: cover;
+  background-repeat: no-repeat;
   background-image: url(../img/bg-galery-section-320.jpg);
   color: #fff;
 }
 .galery__wrap {
   padding-top: 50px;
-  padding-bottom: 46px;
+  padding-bottom: 50px;
 }
 .galery__header {
   margin-bottom: 12px;
@@ -529,12 +531,12 @@ input[type="search"]::-moz-placeholder {
   color: #000;
 }
 #swiper-galery .swiper-wrapper {
-  padding-bottom: 54px;
+  padding-bottom: 50px;
 }
 #swiper-galery .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  /* background: #fff; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -544,6 +546,11 @@ input[type="search"]::-moz-placeholder {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+#swiper-galery .swiper-button-next,
+#swiper-galery .swiper-button-prev {
+  top: auto;
+  bottom: 0;
 }
 #swiper-galery .swiper-button-next {
   right: 28%;
@@ -576,7 +583,9 @@ input[type="search"]::-moz-placeholder {
   fill: #7943a4;
 }
 #swiper-galery .swiper-pagination {
+  top: auto;
   bottom: 7px;
+  left: auto;
   color: #fff;
 }
 /* ---------- section galery end ---------- */
@@ -588,6 +597,10 @@ input[type="search"]::-moz-placeholder {
 }
 .catalog__header {
   margin-bottom: 13px;
+}
+.catalog__text {
+  font-size: 16px;
+  line-height: 32px;
 }
 .catalog__date-list {
   flex-direction: column;
@@ -612,8 +625,10 @@ input[type="search"]::-moz-placeholder {
   transition: .3s color ease-in-out;
 }
 .catalog__date-item > svg {
+  position: absolute;
   width: 30px;
-  height: 30px;
+  right: 0;
+  /* height: 30px; */
 }
 .ui-accordion-header-active svg {
   transform: rotate(180deg);
@@ -1075,13 +1090,14 @@ a:active .ok path {
   /* ---------- header start---------- */
   .header .row {
     height: 100px;
+    padding: 0;
   }
   .nav__burger  {
     width: 36px;
   }
   .header__logo {
     margin-right: 10px;
-    padding-top: 5px;
+    padding-top: 4px;
   }
   .header__logo img {
     width: 189px;
@@ -1136,7 +1152,7 @@ a:active .ok path {
   /* ---------- section galery start ---------- */
   .galery__wrap {
     padding-top: 80px;
-    padding-bottom: 70px;
+    padding-bottom: 79px;
   }
   .galery__header {
     margin-bottom: 16px;
@@ -1150,14 +1166,64 @@ a:active .ok path {
     width: 281px;
     margin-bottom: 49px;
   }
+
   .swiper {
-    height: 400px;
     padding-top: 70px;
   }
+  #swiper-galery .swiper-wrapper {
+    padding-bottom: 0;
+  }
+  .swiper-slide {
+    height: 330px;
+  }
+  #swiper-galery .swiper-button-next,
+  #swiper-galery .swiper-button-prev {
+    top: 32px;
+    left: 0;
+  }
+  #swiper-galery .swiper-button-next {
+    left: 15%;
+  }
+  #swiper-galery .swiper-pagination {
+    width: auto;
+    top: 16px;
+    left: 49px;
+  }
+
+
   /* ---------- section galery end ---------- */
 
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
+  /* ---------- section catalog start ---------- */
+  .catalog__wrap {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .catalog__header {
+    margin-bottom: 16px;
+    font-size: 48px;
+    line-height: 65px;
+  }
+  .catalog__text {
+    margin-bottom: 20px;
+  }
+  .catalog__date-item {
+    padding: 41px 0 41px 0;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .catalog__date-item > svg {
+    width: 50px;
+  }
+  .catalog__artists {
+    padding: 25px 0 25px 0;
+    column-width: 200px;
+    column-gap: 30px;
+  }
+  .empty {
+    column-count: unset;
+  }
+
+  /* ---------- section catalog end ---------- */
 
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */
