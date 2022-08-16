@@ -232,6 +232,7 @@ h3 {
   background-color: #000;
 }
 .header .row {
+  position: relative;
   height: 44px;
   padding-bottom: 2px;
 }
@@ -773,6 +774,27 @@ input[type="search"]::-moz-placeholder {
 #swiper-events .swiper-pagination-bullet-active {
   background-color: #666;
 }
+#swiper-events .card__head  {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.head-1 {
+  background-image: url(../img/events-card-head-320-1.jpg);
+}
+.head-2 {
+  background-image: url(../img/events-card-head-320-2.jpg);
+}
+.head-3 {
+  background-image: url(../img/events-card-head-320-3.jpg);
+}
+.head-4 {
+  background-image: url(../img/events-card-head-320-4.jpg);
+}
+.head-5 {
+  background-image: url(../img/events-card-head-320-5.jpg);
+}
 /* ---------- section events end---------- */
 
 /* ---------- section projects start ---------- */
@@ -1055,25 +1077,42 @@ a:active .ok path {
 /* ---------- footer end ---------- */
 
 
+
+/* sm */
+@media (min-width: 450px) {
+
+  /* ---------- section events start ---------- */
+  .card__body {
+    height: 220px;
+  }
+  /* ---------- section events end ---------- */
+
+}
+
 /* sm */
 @media (min-width: 576px) {
 
   /* ---------- header start---------- */
   /* ---------- header end ---------- */
+
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
+
   /* ---------- footer start---------- */
   /* ---------- footer end ---------- */
 
@@ -1167,13 +1206,13 @@ a:active .ok path {
     margin-bottom: 49px;
   }
 
-  .swiper {
+  #swiper-galery {
     padding-top: 70px;
   }
   #swiper-galery .swiper-wrapper {
     padding-bottom: 0;
   }
-  .swiper-slide {
+  #swiper-galery .swiper-slide {
     height: 330px;
   }
   #swiper-galery .swiper-button-next,
@@ -1190,13 +1229,12 @@ a:active .ok path {
     left: 49px;
   }
 
-
   /* ---------- section galery end ---------- */
 
   /* ---------- section catalog start ---------- */
   .catalog__wrap {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 79px;
   }
   .catalog__header {
     margin-bottom: 16px;
@@ -1222,11 +1260,38 @@ a:active .ok path {
   .empty {
     column-count: unset;
   }
-
+  .catalog__date-list {
+    margin-bottom: 51px;
+  }
+  .info__img img {
+    width: 100%;
+  }
+  .info__date {
+    margin-bottom: 9px;
+  }
   /* ---------- section catalog end ---------- */
 
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
+  /* ---------- section events start ---------- */
+  .events__wrap {
+    /* padding-top: 80px; */
+    padding-bottom: 80px;
+  }
+  .events__header {
+    margin-bottom: 16px;
+    font-size: 48px;
+    line-height: 65px;
+  }
+  #swiper-events .swiper-slide {
+    height: 693px;
+  }
+  .card__wrap {
+    padding: 20px 35px 45px 30px;
+  }
+  .card__body {
+    height: 346px;
+  }
+
+  /* ---------- section events end ---------- */
 
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */

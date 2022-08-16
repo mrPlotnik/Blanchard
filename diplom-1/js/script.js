@@ -190,7 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // ---------- Второй свайпер в секции events
 
   const swiper2 = new Swiper('#swiper-events', {
-    effect: 'fade',
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 38,
+    // effect: 'fade',
     // Принимает события мыши, как событие касания пальцами
     simulateTouch: true,
     // 'Grab' курсор для повышения юзабилити на десктопах
@@ -199,6 +202,19 @@ document.addEventListener('DOMContentLoaded', function() {
     autoplay: {
       // Автоплей не останавливается после конца итереций
       disableOnInteraction: true,
+    },
+     // Responsive breakpoints
+     breakpoints: {
+      // when window width is >= 320px
+      576: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      // when window width is >= 640px
+      1024: {
+        // slidesPerView: 3,
+        // slidesPerGroup: 3,
+      }
     },
     pagination: {
       el: '.swiper-pagination',
