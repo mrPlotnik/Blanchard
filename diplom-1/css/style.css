@@ -233,8 +233,8 @@ h3 {
 }
 .header .row {
   position: relative;
-  height: 44px;
-  padding-bottom: 2px;
+  height: 45px;
+  padding-bottom: 1px;
 }
 .nav__burger {
   width: 25px;
@@ -385,7 +385,7 @@ input[type="search"]::-moz-placeholder {
 /* ---------- section-about start---------- */
 .about__wrap {
   padding-top: 50px;
-  padding-bottom: 41px;
+  padding-bottom: 42px;
 }
 .about__header {
   margin-bottom: 12px;
@@ -482,7 +482,7 @@ input[type="search"]::-moz-placeholder {
 /* --- Input в галерее end ---- */
 
 .filters__labels-wrap {
-  margin-bottom: 37px;
+  margin-bottom: 35px;
 }
 .filters__check {
   display: flex;
@@ -491,7 +491,7 @@ input[type="search"]::-moz-placeholder {
   color: #cacaca;
 }
 .filters__check:not(:last-child) {
-  margin-bottom: 13px;
+  margin-bottom: 14px;
 }
 .filters__check-input {
   position: absolute;
@@ -594,7 +594,7 @@ input[type="search"]::-moz-placeholder {
 /* ---------- section-catalog start---------- */
 .catalog__wrap {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 49px;
 }
 .catalog__header {
   margin-bottom: 13px;
@@ -668,11 +668,13 @@ input[type="search"]::-moz-placeholder {
 /* ---- Псевдоклассы аккордиона end ---- */
 
 .catalog__artists {
-  padding: 20px 0 20px 0;
+  padding: 21px 0 20px 0;
   line-height: 31px;
+
 }
 .catalog__artists a {
   border-bottom: 1px solid #fff;
+  display: block;
 }
 
 /* ---- Псевдоклассы пунктов аакордиона start ---- */
@@ -696,7 +698,7 @@ input[type="search"]::-moz-placeholder {
   line-height: 22px;
 }
 .info__img {
-  margin-bottom: 19px;
+  margin-bottom: 17px;
 }
 .info__header {
   margin-bottom: 7px;
@@ -727,7 +729,7 @@ input[type="search"]::-moz-placeholder {
   border: 1px solid #cacaca
 }
 .card__wrap {
-  padding: 14px 33px 48px 22px;
+  padding: 20px 33px 47px 22px;
   text-align: left;
   background-color: #fff;
 }
@@ -807,7 +809,7 @@ input[type="search"]::-moz-placeholder {
 }
 .projects__text {
   margin-right: -1px;
-  margin-bottom: 50px;
+  margin-bottom: 51px;
   font-size: 16px;
   line-height: 32px;
   color: #333;
@@ -846,8 +848,8 @@ input[type="search"]::-moz-placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 195px;
-  height: 65px;
+  width: 193px;
+  height: 63px;
   border: 1px solid #cacaca;
 }
 #swiper-partners a img {
@@ -878,12 +880,10 @@ input[type="search"]::-moz-placeholder {
   outline: none;
   border: 1px solid #9d5cd0;
 }
-#slide-1:active {
-  /* border: 1px solid #9d5cd0; */
-}
+
 #swiper-partners .swiper-button-next,
 #swiper-partners .swiper-button-prev {
-  bottom: 19px;
+  top: 60%;
 }
 #swiper-partners .swiper-button-next {
   right: 0;
@@ -923,6 +923,7 @@ input[type="search"]::-moz-placeholder {
 /* ---- contacts start ---- */
 .footer__contacts-wrap {
   padding-bottom: 17px;
+  border: 1px solid #cacaca;
 }
 .contacts__header {
   margin-bottom: 1px;
@@ -937,6 +938,9 @@ address {
   font-style:normal;
   font-size: 14px;
   line-height: 19px;
+}
+.contacts__input-wrap {
+  margin-bottom: 20px;
 }
 .form__input {
 	width: 100%;
@@ -1018,7 +1022,7 @@ a:active .telegram path:nth-child(2n-1) {
 
 /* ---- contacts map start ---- */
 #map {
-  width: 320px;
+  width: 100%;
   height: 320px;
 }
 [class*="ground-pane"] {
@@ -1031,7 +1035,7 @@ a:active .telegram path:nth-child(2n-1) {
 
 /* ---- bottom start ---- */
 .footer__bottom {
-  padding-top: 20px;
+  padding-top: 18px;
   padding-bottom: 20px;
   background-color: #000;
 }
@@ -1136,7 +1140,7 @@ a:active .ok path {
   }
   .header__logo {
     margin-right: 10px;
-    padding-top: 4px;
+    padding-top: 2px;
   }
   .header__logo img {
     width: 189px;
@@ -1191,7 +1195,7 @@ a:active .ok path {
   /* ---------- section galery start ---------- */
   .galery__wrap {
     padding-top: 80px;
-    padding-bottom: 79px;
+    padding-bottom: 81px;
   }
   .galery__header {
     margin-bottom: 16px;
@@ -1203,7 +1207,7 @@ a:active .ok path {
   }
   .choices {
     width: 281px;
-    margin-bottom: 49px;
+    margin-bottom: 48px;
   }
 
   #swiper-galery {
@@ -1213,7 +1217,7 @@ a:active .ok path {
     padding-bottom: 0;
   }
   #swiper-galery .swiper-slide {
-    height: 330px;
+    height: 329px;
   }
   #swiper-galery .swiper-button-next,
   #swiper-galery .swiper-button-prev {
@@ -1234,7 +1238,7 @@ a:active .ok path {
   /* ---------- section catalog start ---------- */
   .catalog__wrap {
     padding-top: 80px;
-    padding-bottom: 79px;
+    padding-bottom: 80px;
   }
   .catalog__header {
     margin-bottom: 16px;
@@ -1242,7 +1246,7 @@ a:active .ok path {
     line-height: 65px;
   }
   .catalog__text {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
   .catalog__date-item {
     padding: 41px 0 41px 0;
@@ -1261,47 +1265,158 @@ a:active .ok path {
     column-count: unset;
   }
   .catalog__date-list {
-    margin-bottom: 51px;
+    margin-bottom: 50px;
+  }
+  .info__img {
+    margin-bottom: 19px;
   }
   .info__img img {
     width: 100%;
   }
+  .info__header {
+    margin-bottom: 8px;
+  }
   .info__date {
-    margin-bottom: 9px;
+    margin-bottom: 7px;
   }
   /* ---------- section catalog end ---------- */
 
   /* ---------- section events start ---------- */
   .events__wrap {
-    /* padding-top: 80px; */
-    padding-bottom: 80px;
+    padding-bottom: 31px;
   }
   .events__header {
-    margin-bottom: 16px;
+    margin-bottom: 15px;
     font-size: 48px;
     line-height: 65px;
   }
   #swiper-events .swiper-slide {
     height: 693px;
   }
+  #swiper-events .swiper-pagination {
+    bottom: 6px;
+  }
   .card__wrap {
-    padding: 20px 35px 45px 30px;
+    padding: 14px 31px 47px 32px;
   }
   .card__body {
-    height: 346px;
+    height: 354px;
+    padding-right: 10px;
+  }
+  .card__date {
+    margin-bottom: 4px;
+  }
+  .card__link {
+    padding-left: 1px;
   }
 
   /* ---------- section events end ---------- */
 
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
+  /* ---------- section projects start ---------- */
+  .projects__wrap {
+    padding-bottom: 122px;
+  }
+  .projects__header {
+    margin-bottom: 16px;
+    font-size: 48px;
+    line-height: 65px;
+  }
+  .projects__text {
+    margin-bottom: 28px;
+    margin-right: 3px;
+  }
+  .projects__text a {
+    display: inline-flex;
+  }
+  .projects__partners-header {
+    margin-bottom: 29px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  #swiper-partners a {
+    width: 264px;
+    height: 104px;
+  }
+  .projects__partners {
+    position: relative;
+  }
+  #swiper-partners  {
+    position: unset;
+    width: 600px;
+  }
+  #swiper-partners .swiper-button-next,
+  #swiper-partners .swiper-button-prev {
+    top: 73%;
+  }
+
+  /* ---------- section projects end ---------- */
 
   /* ---------- section start ---------- */
+  .contacts__header {
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  address {
+    margin-bottom: 30px;
+  }
+  .contacts__input-wrap {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+  }
+  .form__input {
+    width: 48.5%;
+    height: 50px;
+    border-radius: 25px;
+  }
+  .form__input:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .form__input:not(:last-child) {
+    margin-right: 20px;
+  }
+  #contacts__form .btn {
+    margin-bottom: 30px;
+    padding: 10px 28px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .contacts__messages  {
+    margin-bottom: 22px;
+  }
+  .contacts__messages p {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .contacts__messages svg {
+    width: 40px;
+    height: 40px;
+  }
+  #map {
+    height: 700px;
+  }
+  .footer__bottom {
+    padding-top: 39px;
+  }
+  .bottom__logo {
+    justify-content: flex-start;
+    padding-top: 11px;
+    padding-left: 1px;
+  }
+  .bottom__logo img {
+    width: 175px;
+  }
+  .bottom__social {
+    justify-content: flex-end;
+  }
+  .vk, .ok {
+    width: 60px;
+    height: 60px;
+  }
+
   /* ---------- section end ---------- */
-
-  /* ---------- footer start---------- */
-  /* ---------- footer end ---------- */
-
 }
 
 /* lg */

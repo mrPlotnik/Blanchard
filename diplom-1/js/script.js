@@ -140,14 +140,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // Автоплей не останавливается после конца итереций
       disableOnInteraction: true,
     },
-     // Responsive breakpoints
     breakpoints: {
-      // when window width is >= 320px
-      320: {
+      321: {
         slidesPerView: 2,
         slidesPerGroup: 2,
       },
-      // when window width is >= 640px
       1024: {
         slidesPerView: 3,
         slidesPerGroup: 3,
@@ -192,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const swiper2 = new Swiper('#swiper-events', {
     slidesPerView: 1,
     slidesPerGroup: 1,
-    spaceBetween: 38,
+    spaceBetween: 35,
     // effect: 'fade',
     // Принимает события мыши, как событие касания пальцами
     simulateTouch: true,
@@ -225,6 +222,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // ---------- Третий свайпер в секции projects
 
   const swiper3 = new Swiper('#swiper-partners', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    // width: 500,
+    // spaceBetween: 20,
     // Принимает события мыши, как событие касания пальцами
     simulateTouch: true,
     // 'Grab' курсор для повышения юзабилити на десктопах
@@ -233,6 +234,19 @@ document.addEventListener('DOMContentLoaded', function() {
     autoplay: {
       // Автоплей не останавливается после конца итереций
       disableOnInteraction: true,
+    },
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      576: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      // when window width is >= 640px
+      1024: {
+        // slidesPerView: 3,
+        // slidesPerGroup: 3,
+      }
     },
     navigation: {
       nextEl: '.swiper-button-next',
