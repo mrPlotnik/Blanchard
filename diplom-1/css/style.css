@@ -1277,6 +1277,10 @@ a:active .ok path {
   .info__date {
     margin-bottom: 7px;
   }
+  .catalog__empty {
+    column-width:unset;
+    column-gap: unset;
+  }
   /* ---------- section catalog end ---------- */
 
   /* ---------- section events start ---------- */
@@ -1494,7 +1498,26 @@ a:active .ok path {
     padding-right: 1px;
   }
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
+  .projects__text {
+    margin-bottom: 19px;
+  }
+  .projects__partners-header {
+    margin-bottom: 24px;
+  }
+  #swiper-partners {
+    width: 868px;
+  }
+  #swiper-partners a {
+    width: 380px;
+    height: 125px;
+  }
+
+  #swiper-partners .swiper-button-next,
+  #swiper-partners .swiper-button-prev {
+    top: 70%;
+  }
   /* ---------- section end ---------- */
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */
