@@ -157,6 +157,7 @@ h3 {
   line-height: 32px;
   background-color: #000000f0;
   transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+  z-index: 1;
 }
 .nav__mobile .row {
   height: 100vh;
@@ -1125,7 +1126,6 @@ a:active .ok path {
 /* md */
 @media (min-width: 768px) {
 
-
   .container {
     --bs-gutter-x: 26px;
   }
@@ -1209,7 +1209,6 @@ a:active .ok path {
     width: 281px;
     margin-bottom: 48px;
   }
-
   #swiper-galery {
     padding-top: 70px;
   }
@@ -1232,7 +1231,6 @@ a:active .ok path {
     top: 16px;
     left: 49px;
   }
-
   /* ---------- section galery end ---------- */
 
   /* ---------- section catalog start ---------- */
@@ -1309,7 +1307,6 @@ a:active .ok path {
   .card__link {
     padding-left: 1px;
   }
-
   /* ---------- section events end ---------- */
 
   /* ---------- section projects start ---------- */
@@ -1348,10 +1345,9 @@ a:active .ok path {
   #swiper-partners .swiper-button-prev {
     top: 73%;
   }
-
   /* ---------- section projects end ---------- */
 
-  /* ---------- section start ---------- */
+  /* ---------- footer start ---------- */
   .contacts__header {
     margin-bottom: 10px;
     font-size: 24px;
@@ -1416,21 +1412,87 @@ a:active .ok path {
     height: 60px;
   }
 
-  /* ---------- section end ---------- */
+  /* ---------- footer end ---------- */
 }
 
 /* lg */
 @media (min-width: 992px) {
 
+  .container {
+    --bs-gutter-x: 18px;
+  }
+
   /* ---------- header start---------- */
+  .header .row {
+    padding-top: 2px;
+  }
+  .nav__burger {
+    width: 38px;
+  }
+  .header__search {
+    width: 30px;
+  }
   /* ---------- header end ---------- */
+
   /* ---------- section start ---------- */
+  .hero__text {
+    /* padding: 0; */
+    padding-right: 175px;
+  }
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
+  .choices {
+    margin-bottom: 113px;
+  }
+  #swiper-galery {
+    padding-top: 85px;
+    padding-left: 15px;
+  }
+  #swiper-galery .swiper-slide {
+    height: 314px;
+  }
+  #swiper-galery .swiper-button-next,
+  #swiper-galery .swiper-button-prev {
+    top: 47px;
+  }
+  #swiper-galery .swiper-button-prev {
+    left: 15px;
+  }
+  #swiper-galery .swiper-button-next {
+    left: 115px;
+  }
+  #swiper-galery .swiper-pagination {
+    top: 32px;
+    left: 63px;
+  }
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
+  .catalog__wrap {
+    padding-bottom: 31px;
+  }
+  .catalog__text {
+    margin-bottom: 40px;
+  }
+  .catalog__info {
+    padding-right: 13px;
+  }
+  .catalog__date-list {
+    padding-left: 13px;
+  }
+  .info__img {
+    margin-bottom: 27px;
+  }
+  .info__date {
+    margin-bottom: 17px;
+  }
   /* ---------- section end ---------- */
+
   /* ---------- section start ---------- */
+  .card__body {
+    padding-right: 1px;
+  }
   /* ---------- section end ---------- */
   /* ---------- section start ---------- */
   /* ---------- section end ---------- */

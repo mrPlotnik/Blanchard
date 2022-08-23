@@ -54,9 +54,9 @@
 
       <div class="col d-flex justify-content-between align-items-center">
 
-        <div class="header__nav nav d-flex order-lg-2">
+        <div class="header__nav nav d-flex order-xl-2">
 
-          <button class="nav__burger btn-reset d-flex d-lg-none">
+          <button class="nav__burger btn-reset d-flex d-xl-none">
             <svg width="25" height="18" viewbox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="25" height="2" transform="matrix(-1 0 0 1 25 0)" fill="white"/> <path d="M16 8H9.53674e-07V10H16V8Z" fill="white"/> <path d="M10 16H0V18H10V16Z" fill="white"/> </svg>
           </button>
 
@@ -118,7 +118,7 @@
     </div>
   </section>
 
-  <!-- section hero -->
+  <!-- section about -->
   <section id="about" class="section-about about">
     <div class="container">
       <div class="row about__wrap">
@@ -134,8 +134,12 @@
   <section id="galery" class="section-galery galery">
     <div class="container">
       <div class="row galery__wrap">
-        <div class="col">
-          <h2 class="galery__header">Галерея</h2>
+
+        <div class="col col-lg-4">
+
+          <div class="col-12">
+            <h2 class="galery__header">Галерея</h2>
+          </div>
 
           <div class="galery__filters filters">
             <span>Фильтр:</span>
@@ -179,8 +183,12 @@
               </label>
             </div>
           </div>
+        </div>
+
+        <div class="col col-lg-8">
           <!-- Swiper -->
           <div id="swiper-galery" class="swiper">
+
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img class="swiper-img" src="img/galery-section-1.jpg" alt="">
@@ -197,7 +205,6 @@
               <div class="swiper-slide">
                 <img class="swiper-img" src="img/galery-section-5.jpg" alt="">
               </div>
-
             </div>
 
             <div class="swiper-button-next">
@@ -209,8 +216,8 @@
             <div class="swiper-pagination"></div>
 
           </div>
-
         </div>
+
       </div>
     </div>
   </section>
@@ -218,246 +225,256 @@
   <!-- section catalog -->
   <section id="catalog" class="section-catalog catalog">
     <div class="container">
-      <div class="row row-cols-1 catalog__wrap">
+      <div class="row catalog__wrap">
 
-        <div class="col">
-          <h2 class="catalog__header">Каталог</h2>
-        </div>
+        <div class="col-12">
+          <div class="row row-cols-1">
+            <div class="col">
+              <h2 class="catalog__header">Каталог</h2>
+            </div>
 
-        <div class="col d-none d-md-flex">
-          <div class="catalog__text">
-            Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.
+            <div class="col d-none d-md-flex">
+              <div class="catalog__text">
+                Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.
+              </div>
+            </div>
           </div>
+
         </div>
 
-        <div class="col">
-          <div  id="accordion" class="catalog__date-list list-reset">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12 col-lg-6 pr-3">
+              <div  id="accordion" class="catalog__date-list list-reset">
 
-            <h3 class="catalog__date-item">
-              <span>С 1400 по 1499 гг</span>
-              <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
-            </h3>
-            <div class="catalog__artists">
-              <a href="#">Бенедетто ди Биндо</a>
-              <a href="#">Бергоньоне, Амброджо</a>
-              <a href="#">Биссоло, Франческо</a>
-              <a href="#">Больтраффио, Джованни</a>
-              <a href="#">Бонсиньори, Франческо</a>
-              <a href="#">Боттичини, Рафаэлло</a>
-              <a href="#">Брамантино</a>
-              <a href="#">Бреа, Людовико</a>
-              <a href="#">Бьяджо д’Антонио Туччи</a>
-              <a href="#">Веккьетта</a>
-              <a href="#">Андреа Верроккьо</a>
-              <a href="#">Доменико Гирландайо</a>
-              <a href="#">Беноццо Гоццоли</a>
-              <a href="#">Граначчи, Франческо</a>
-              <a href="#">Грегорио ди Чекко</a>
-              <a href="#">Джованни да Удине</a>
-              <a href="#">Джованни ди Паоло</a>
-              <a href="#">Джорджоне</a>
-              <a href="#">Парентино, Бернардо</a>
-              <a href="#">Пезеллино</a>
-              <a href="#">Пьетро Перуджино</a>
-              <a href="#">Перуцци, Бальдассаре</a>
-              <a href="#">Пизанелло</a>
-              <a href="#">Пинтуриккьо</a>
-              <a href="#">Просто так, для верстки</a>
-              <a href="#">Просто так, для верстки</a>
-              <a href="#">Просто так, для верстки</a>
-            </div>
-
-            <h3 class="catalog__date-item">
-              <span>C 1500 по 1599 гг</span>
-              <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
-            </h3>
-            <div class="catalog__artists">
-              <a href="#">Бенедетто ди Биндо</a>
-              <a href="#">Бергоньоне, Амброджо</a>
-              <a href="#">Биссоло, Франческо</a>
-              <a href="#">Больтраффио, Джованни</a>
-              <a href="#">Бонсиньори, Франческо</a>
-              <a href="#">Боттичини, Рафаэлло</a>
-              <a href="#">Брамантино</a>
-              <a href="#">Бреа, Людовико</a>
-              <a href="#">Бьяджо д’Антонио Туччи</a>
-              <a href="#">Веккьетта</a>
-              <a href="#">Андреа Верроккьо</a>
-              <a href="#">Доменико Гирландайо</a>
-              <a href="#">Беноццо Гоццоли</a>
-              <a href="#">Граначчи, Франческо</a>
-              <a href="#">Грегорио ди Чекко</a>
-              <a href="#">Джованни да Удине</a>
-              <a href="#">Джованни ди Паоло</a>
-              <a href="#">Джорджоне</a>
-              <a href="#">Парентино, Бернардо</a>
-              <a href="#">Пезеллино</a>
-              <a href="#">Пьетро Перуджино</a>
-              <a href="#">Перуцци, Бальдассаре</a>
-              <a href="#">Пизанелло</a>
-              <a href="#">Пинтуриккьо</a>
-            </div>
-
-            <h3 class="catalog__date-item">
-              <span>C 1600 по 1699 гг</span>
-              <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
-            </h3>
-            <div class="catalog__artists catalog__empty empty">
-
-                <div class="row">
-                  <div class="col-4">
-                    <img class="empty__img" src="img/catalog-date-empty-320.png" alt="Здесь пока пусто">
-                  </div>
-                  <div class="col-8">
-                    <span class="empty__header">Здесь пока пусто</span>
-                    <p class="empty__text">А в галерее вы всегда можете найти что-то интересное для себя</p>
-                    <a href="#">В галерею</a>
-                  </div>
+                <h3 class="catalog__date-item">
+                  <span>С 1400 по 1499 гг</span>
+                  <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
+                </h3>
+                <div class="catalog__artists">
+                  <a href="#">Бенедетто ди Биндо</a>
+                  <a href="#">Бергоньоне, Амброджо</a>
+                  <a href="#">Биссоло, Франческо</a>
+                  <a href="#">Больтраффио, Джованни</a>
+                  <a href="#">Бонсиньори, Франческо</a>
+                  <a href="#">Боттичини, Рафаэлло</a>
+                  <a href="#">Брамантино</a>
+                  <a href="#">Бреа, Людовико</a>
+                  <a href="#">Бьяджо д’Антонио Туччи</a>
+                  <a href="#">Веккьетта</a>
+                  <a href="#">Андреа Верроккьо</a>
+                  <a href="#">Доменико Гирландайо</a>
+                  <a href="#">Беноццо Гоццоли</a>
+                  <a href="#">Граначчи, Франческо</a>
+                  <a href="#">Грегорио ди Чекко</a>
+                  <a href="#">Джованни да Удине</a>
+                  <a href="#">Джованни ди Паоло</a>
+                  <a href="#">Джорджоне</a>
+                  <a href="#">Парентино, Бернардо</a>
+                  <a href="#">Пезеллино</a>
+                  <a href="#">Пьетро Перуджино</a>
+                  <a href="#">Перуцци, Бальдассаре</a>
+                  <a href="#">Пизанелло</a>
+                  <a href="#">Пинтуриккьо</a>
+                  <!-- <a href="#">Просто так, для верстки</a> -->
+                  <!-- <a href="#">Просто так, для верстки</a> -->
+                  <!-- <a href="#">Просто так, для верстки</a> -->
                 </div>
 
+                <h3 class="catalog__date-item">
+                  <span>C 1500 по 1599 гг</span>
+                  <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
+                </h3>
+                <div class="catalog__artists">
+                  <a href="#">Бенедетто ди Биндо</a>
+                  <a href="#">Бергоньоне, Амброджо</a>
+                  <a href="#">Биссоло, Франческо</a>
+                  <a href="#">Больтраффио, Джованни</a>
+                  <a href="#">Бонсиньори, Франческо</a>
+                  <a href="#">Боттичини, Рафаэлло</a>
+                  <a href="#">Брамантино</a>
+                  <a href="#">Бреа, Людовико</a>
+                  <a href="#">Бьяджо д’Антонио Туччи</a>
+                  <a href="#">Веккьетта</a>
+                  <a href="#">Андреа Верроккьо</a>
+                  <a href="#">Доменико Гирландайо</a>
+                  <a href="#">Беноццо Гоццоли</a>
+                  <a href="#">Граначчи, Франческо</a>
+                  <a href="#">Грегорио ди Чекко</a>
+                  <a href="#">Джованни да Удине</a>
+                  <a href="#">Джованни ди Паоло</a>
+                  <a href="#">Джорджоне</a>
+                  <a href="#">Парентино, Бернардо</a>
+                  <a href="#">Пезеллино</a>
+                  <a href="#">Пьетро Перуджино</a>
+                  <a href="#">Перуцци, Бальдассаре</a>
+                  <a href="#">Пизанелло</a>
+                  <a href="#">Пинтуриккьо</a>
+                </div>
+
+                <h3 class="catalog__date-item">
+                  <span>C 1600 по 1699 гг</span>
+                  <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
+                </h3>
+                <div class="catalog__artists catalog__empty empty">
+
+                    <div class="row">
+                      <div class="col-4">
+                        <img class="empty__img" src="img/catalog-date-empty-320.png" alt="Здесь пока пусто">
+                      </div>
+                      <div class="col-8">
+                        <span class="empty__header">Здесь пока пусто</span>
+                        <p class="empty__text">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                        <a href="#">В галерею</a>
+                      </div>
+                    </div>
+
+                </div>
+
+                <h3 class="catalog__date-item">
+                  <span>C 1700 по 1799 гг</span>
+                  <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
+                </h3>
+                <div class="catalog__artists">
+                  <a href="#">Бенедетто ди Биндо</a>
+                  <a href="#">Бергоньоне, Амброджо</a>
+                  <a href="#">Биссоло, Франческо</a>
+                  <a href="#">Больтраффио, Джованни</a>
+                  <a href="#">Бонсиньори, Франческо</a>
+                  <a href="#">Боттичини, Рафаэлло</a>
+                  <a href="#">Брамантино</a>
+                  <a href="#">Бреа, Людовико</a>
+                  <a href="#">Бьяджо д’Антонио Туччи</a>
+                  <a href="#">Веккьетта</a>
+                  <a href="#">Андреа Верроккьо</a>
+                  <a href="#">Доменико Гирландайо</a>
+                  <a href="#">Беноццо Гоццоли</a>
+                  <a href="#">Граначчи, Франческо</a>
+                  <a href="#">Грегорио ди Чекко</a>
+                  <a href="#">Джованни да Удине</a>
+                  <a href="#">Джованни ди Паоло</a>
+                  <a href="#">Джорджоне</a>
+                  <a href="#">Парентино, Бернардо</a>
+                  <a href="#">Пезеллино</a>
+                  <a href="#">Пьетро Перуджино</a>
+                  <a href="#">Перуцци, Бальдассаре</a>
+                  <a href="#">Пизанелло</a>
+                  <a href="#">Пинтуриккьо</a>
+                </div>
+
+                <h3 class="catalog__date-item">
+                  <span>C 1800 по 1899 гг</span>
+                  <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
+                </h3>
+                <div class="catalog__artists">
+                  <a href="#">Бенедетто ди Биндо</a>
+                  <a href="#">Бергоньоне, Амброджо</a>
+                  <a href="#">Биссоло, Франческо</a>
+                  <a href="#">Больтраффио, Джованни</a>
+                  <a href="#">Бонсиньори, Франческо</a>
+                  <a href="#">Боттичини, Рафаэлло</a>
+                  <a href="#">Брамантино</a>
+                  <a href="#">Бреа, Людовико</a>
+                  <a href="#">Бьяджо д’Антонио Туччи</a>
+                  <a href="#">Веккьетта</a>
+                  <a href="#">Андреа Верроккьо</a>
+                  <a href="#">Доменико Гирландайо</a>
+                  <a href="#">Беноццо Гоццоли</a>
+                  <a href="#">Граначчи, Франческо</a>
+                  <a href="#">Грегорио ди Чекко</a>
+                  <a href="#">Джованни да Удине</a>
+                  <a href="#">Джованни ди Паоло</a>
+                  <a href="#">Джорджоне</a>
+                  <a href="#">Парентино, Бернардо</a>
+                  <a href="#">Пезеллино</a>
+                  <a href="#">Пьетро Перуджино</a>
+                  <a href="#">Перуцци, Бальдассаре</a>
+                  <a href="#">Пизанелло</a>
+                  <a href="#">Пинтуриккьо</a>
+                </div>
+
+                <h3 class="catalog__date-item">
+                  <span>C 1900 по 1999 гг</span>
+                  <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
+                </h3>
+                <div class="catalog__artists">
+                  <a href="#">Бенедетто ди Биндо</a>
+                  <a href="#">Бергоньоне, Амброджо</a>
+                  <a href="#">Биссоло, Франческо</a>
+                  <a href="#">Больтраффио, Джованни</a>
+                  <a href="#">Бонсиньори, Франческо</a>
+                  <a href="#">Боттичини, Рафаэлло</a>
+                  <a href="#">Брамантино</a>
+                  <a href="#">Бреа, Людовико</a>
+                  <a href="#">Бьяджо д’Антонио Туччи</a>
+                  <a href="#">Веккьетта</a>
+                  <a href="#">Андреа Верроккьо</a>
+                  <a href="#">Доменико Гирландайо</a>
+                  <a href="#">Беноццо Гоццоли</a>
+                  <a href="#">Граначчи, Франческо</a>
+                  <a href="#">Грегорио ди Чекко</a>
+                  <a href="#">Джованни да Удине</a>
+                  <a href="#">Джованни ди Паоло</a>
+                  <a href="#">Джорджоне</a>
+                  <a href="#">Парентино, Бернардо</a>
+                  <a href="#">Пезеллино</a>
+                  <a href="#">Пьетро Перуджино</a>
+                  <a href="#">Перуцци, Бальдассаре</a>
+                  <a href="#">Пизанелло</a>
+                  <a href="#">Пинтуриккьо</a>
+                </div>
+
+                <h3 class="catalog__date-item">
+                  <span>C 2000 г</span>
+                  <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
+                </h3>
+                <div class="catalog__artists">
+                  <a href="#">Бенедетто ди Биндо</a>
+                  <a href="#">Бергоньоне, Амброджо</a>
+                  <a href="#">Биссоло, Франческо</a>
+                  <a href="#">Больтраффио, Джованни</a>
+                  <a href="#">Бонсиньори, Франческо</a>
+                  <a href="#">Боттичини, Рафаэлло</a>
+                  <a href="#">Брамантино</a>
+                  <a href="#">Бреа, Людовико</a>
+                  <a href="#">Бьяджо д’Антонио Туччи</a>
+                  <a href="#">Веккьетта</a>
+                  <a href="#">Андреа Верроккьо</a>
+                  <a href="#">Доменико Гирландайо</a>
+                  <a href="#">Беноццо Гоццоли</a>
+                  <a href="#">Граначчи, Франческо</a>
+                  <a href="#">Грегорио ди Чекко</a>
+                  <a href="#">Джованни да Удине</a>
+                  <a href="#">Джованни ди Паоло</a>
+                  <a href="#">Джорджоне</a>
+                  <a href="#">Парентино, Бернардо</a>
+                  <a href="#">Пезеллино</a>
+                  <a href="#">Пьетро Перуджино</a>
+                  <a href="#">Перуцци, Бальдассаре</a>
+                  <a href="#">Пизанелло</a>
+                  <a href="#">Пинтуриккьо</a>
+                </div>
+
+              </div>
             </div>
 
-            <h3 class="catalog__date-item">
-              <span>C 1700 по 1799 гг</span>
-              <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
-            </h3>
-            <div class="catalog__artists">
-              <a href="#">Бенедетто ди Биндо</a>
-              <a href="#">Бергоньоне, Амброджо</a>
-              <a href="#">Биссоло, Франческо</a>
-              <a href="#">Больтраффио, Джованни</a>
-              <a href="#">Бонсиньори, Франческо</a>
-              <a href="#">Боттичини, Рафаэлло</a>
-              <a href="#">Брамантино</a>
-              <a href="#">Бреа, Людовико</a>
-              <a href="#">Бьяджо д’Антонио Туччи</a>
-              <a href="#">Веккьетта</a>
-              <a href="#">Андреа Верроккьо</a>
-              <a href="#">Доменико Гирландайо</a>
-              <a href="#">Беноццо Гоццоли</a>
-              <a href="#">Граначчи, Франческо</a>
-              <a href="#">Грегорио ди Чекко</a>
-              <a href="#">Джованни да Удине</a>
-              <a href="#">Джованни ди Паоло</a>
-              <a href="#">Джорджоне</a>
-              <a href="#">Парентино, Бернардо</a>
-              <a href="#">Пезеллино</a>
-              <a href="#">Пьетро Перуджино</a>
-              <a href="#">Перуцци, Бальдассаре</a>
-              <a href="#">Пизанелло</a>
-              <a href="#">Пинтуриккьо</a>
+            <div class="col-12 col-lg-6 order-lg-first">
+              <div class="catalog__info info ">
+                <div class="info__img">
+                  <img src="img/catalog-info-1.jpg" alt="Доменико Гирландайо">
+                </div>
+                <h3 class="info__header">
+                  Доменико Гирландайо
+                </h3>
+                <div class="info__date">
+                  2 июня 1448 — 11 января 1494
+                </div>
+                <div class="info__text">
+                  Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его&nbsp;брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того&nbsp;времени).            </div>
+              </div>
             </div>
-
-            <h3 class="catalog__date-item">
-              <span>C 1800 по 1899 гг</span>
-              <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
-            </h3>
-            <div class="catalog__artists">
-              <a href="#">Бенедетто ди Биндо</a>
-              <a href="#">Бергоньоне, Амброджо</a>
-              <a href="#">Биссоло, Франческо</a>
-              <a href="#">Больтраффио, Джованни</a>
-              <a href="#">Бонсиньори, Франческо</a>
-              <a href="#">Боттичини, Рафаэлло</a>
-              <a href="#">Брамантино</a>
-              <a href="#">Бреа, Людовико</a>
-              <a href="#">Бьяджо д’Антонио Туччи</a>
-              <a href="#">Веккьетта</a>
-              <a href="#">Андреа Верроккьо</a>
-              <a href="#">Доменико Гирландайо</a>
-              <a href="#">Беноццо Гоццоли</a>
-              <a href="#">Граначчи, Франческо</a>
-              <a href="#">Грегорио ди Чекко</a>
-              <a href="#">Джованни да Удине</a>
-              <a href="#">Джованни ди Паоло</a>
-              <a href="#">Джорджоне</a>
-              <a href="#">Парентино, Бернардо</a>
-              <a href="#">Пезеллино</a>
-              <a href="#">Пьетро Перуджино</a>
-              <a href="#">Перуцци, Бальдассаре</a>
-              <a href="#">Пизанелло</a>
-              <a href="#">Пинтуриккьо</a>
-            </div>
-
-            <h3 class="catalog__date-item">
-              <span>C 1900 по 1999 гг</span>
-              <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
-            </h3>
-            <div class="catalog__artists">
-              <a href="#">Бенедетто ди Биндо</a>
-              <a href="#">Бергоньоне, Амброджо</a>
-              <a href="#">Биссоло, Франческо</a>
-              <a href="#">Больтраффио, Джованни</a>
-              <a href="#">Бонсиньори, Франческо</a>
-              <a href="#">Боттичини, Рафаэлло</a>
-              <a href="#">Брамантино</a>
-              <a href="#">Бреа, Людовико</a>
-              <a href="#">Бьяджо д’Антонио Туччи</a>
-              <a href="#">Веккьетта</a>
-              <a href="#">Андреа Верроккьо</a>
-              <a href="#">Доменико Гирландайо</a>
-              <a href="#">Беноццо Гоццоли</a>
-              <a href="#">Граначчи, Франческо</a>
-              <a href="#">Грегорио ди Чекко</a>
-              <a href="#">Джованни да Удине</a>
-              <a href="#">Джованни ди Паоло</a>
-              <a href="#">Джорджоне</a>
-              <a href="#">Парентино, Бернардо</a>
-              <a href="#">Пезеллино</a>
-              <a href="#">Пьетро Перуджино</a>
-              <a href="#">Перуцци, Бальдассаре</a>
-              <a href="#">Пизанелло</a>
-              <a href="#">Пинтуриккьо</a>
-            </div>
-
-            <h3 class="catalog__date-item">
-              <span>C 2000 г</span>
-              <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
-            </h3>
-            <div class="catalog__artists">
-              <a href="#">Бенедетто ди Биндо</a>
-              <a href="#">Бергоньоне, Амброджо</a>
-              <a href="#">Биссоло, Франческо</a>
-              <a href="#">Больтраффио, Джованни</a>
-              <a href="#">Бонсиньори, Франческо</a>
-              <a href="#">Боттичини, Рафаэлло</a>
-              <a href="#">Брамантино</a>
-              <a href="#">Бреа, Людовико</a>
-              <a href="#">Бьяджо д’Антонио Туччи</a>
-              <a href="#">Веккьетта</a>
-              <a href="#">Андреа Верроккьо</a>
-              <a href="#">Доменико Гирландайо</a>
-              <a href="#">Беноццо Гоццоли</a>
-              <a href="#">Граначчи, Франческо</a>
-              <a href="#">Грегорио ди Чекко</a>
-              <a href="#">Джованни да Удине</a>
-              <a href="#">Джованни ди Паоло</a>
-              <a href="#">Джорджоне</a>
-              <a href="#">Парентино, Бернардо</a>
-              <a href="#">Пезеллино</a>
-              <a href="#">Пьетро Перуджино</a>
-              <a href="#">Перуцци, Бальдассаре</a>
-              <a href="#">Пизанелло</a>
-              <a href="#">Пинтуриккьо</a>
-            </div>
-
           </div>
-        </div>
 
-        <div class="col">
-          <div class="catalog__info info ">
-            <div class="info__img">
-              <img src="img/catalog-info-1.jpg" alt="Доменико Гирландайо">
-            </div>
-            <h3 class="info__header">
-              Доменико Гирландайо
-            </h3>
-            <div class="info__date">
-              2 июня 1448 — 11 января 1494
-            </div>
-            <div class="info__text">
-              Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его&nbsp;брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того&nbsp;времени).            </div>
-          </div>
         </div>
 
       </div>
