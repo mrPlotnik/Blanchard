@@ -161,6 +161,7 @@ h3 {
 }
 .nav__mobile .row {
   height: 100vh;
+  padding-top: 16px;
 }
 .nav__open {
   visibility: visible;
@@ -285,32 +286,38 @@ h3 {
 .header__search:active svg path {
   fill: #9d5cd0;
 }
-.header__search-big {
+.header__search-big-wrap {
   position: absolute;
   display: flex;
-  align-items: center;
+  justify-content: end;
   width: 100%;
   height: 45px;
   visibility: hidden;
   opacity: 0;
-  background-color: #000;
   transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+}
+.header__search-big {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #000;
+
 }
 .search__open {
   visibility: visible;
   opacity: 1;
   transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
 }
-.header__search-big svg {
-  width: 20px;
-  height: 15px;
-}
-.header__search-big > svg {
- margin-right: 10px;
+.header__search-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
 }
 .header__search-big input {
   width: 100%;
   height: 20px;
+  margin-right: 10px;
   margin-bottom: 4px;
   padding: 0;
   padding-bottom: 2px;
@@ -333,7 +340,9 @@ input[type="search"]::-moz-placeholder {
   outline: none;
 }
 .header__search-close  {
-  margin-left: 10px;
+  width: 18px;
+  height: 18px;
+
 }
 
 /* ---------- section-hero start ---------- */
@@ -1129,6 +1138,52 @@ a:active .ok path {
   .container {
     --bs-gutter-x: 26px;
   }
+  /* ---------- nav_mobile start---------- */
+  .nav__mobile .row {
+    padding-top: 37px;
+    padding-bottom: 10px;
+  }
+  .nav-mobile__close-btn {
+    margin-bottom: 30px;
+  }
+  .close-btn svg {
+    width: 29px;
+    height: 29px;
+  }
+  .nav-mobile__list-item a {
+    font-size: 24px;
+    line-height: 64px;
+  }
+  .nav-mobile__login-link {
+    padding: 15px 90px;
+    border-radius: 30px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .nav-mobile__login-link svg {
+    margin-top: 7px;
+    margin-right: 5px;
+    margin-left: -3px;
+    width: 15px;
+    height: 15px;
+  }
+  /* ---------- nav_mobile start---------- */
+
+  /* ---------- search start---------- */
+  .header__search-icon {
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+  }
+  .close-btn {
+    width: 29px;
+    height: 29px;
+  }
+  .header__search-big input {
+    height: 32px;
+    font-size: 20px;
+  }
+  /* ---------- search start---------- */
 
   /* ---------- header start---------- */
   .header .row {
@@ -1315,7 +1370,7 @@ a:active .ok path {
 
   /* ---------- section projects start ---------- */
   .projects__wrap {
-    padding-bottom: 122px;
+    padding-bottom: 81px;
   }
   .projects__header {
     margin-bottom: 16px;
@@ -1353,7 +1408,7 @@ a:active .ok path {
 
   /* ---------- footer start ---------- */
   .contacts__header {
-    margin-bottom: 10px;
+    margin-bottom: 11px;
     font-size: 24px;
     line-height: 32px;
   }
@@ -1366,7 +1421,7 @@ a:active .ok path {
     margin-bottom: 12px;
   }
   .form__input {
-    width: 48.5%;
+    /* width: 48.5%; */
     height: 50px;
     border-radius: 25px;
   }
@@ -1423,8 +1478,19 @@ a:active .ok path {
 @media (min-width: 992px) {
 
   .container {
-    --bs-gutter-x: 18px;
+    --bs-gutter-x: 17px;
   }
+
+   /* ---------- search start---------- */
+  .header__search-big  {
+    width: 320px;
+  }
+  .header__search-big input {
+    height: 32px;
+    font-size: 22px;
+  }
+  /* ---------- search start---------- */
+  /* ---------- search start---------- */
 
   /* ---------- header start---------- */
   .header .row {
@@ -1438,14 +1504,14 @@ a:active .ok path {
   }
   /* ---------- header end ---------- */
 
-  /* ---------- section start ---------- */
+  /* ---------- section hero start ---------- */
   .hero__text {
     /* padding: 0; */
     padding-right: 175px;
   }
-  /* ---------- section end ---------- */
+  /* ---------- section hero end ---------- */
 
-  /* ---------- section start ---------- */
+  /* ---------- section galery start ---------- */
   .choices {
     margin-bottom: 113px;
   }
@@ -1470,9 +1536,9 @@ a:active .ok path {
     top: 32px;
     left: 63px;
   }
-  /* ---------- section end ---------- */
+  /* ---------- section galery end ---------- */
 
-  /* ---------- section start ---------- */
+  /* ---------- section catalog start ---------- */
   .catalog__wrap {
     padding-bottom: 31px;
   }
@@ -1491,15 +1557,15 @@ a:active .ok path {
   .info__date {
     margin-bottom: 17px;
   }
-  /* ---------- section end ---------- */
+  /* ---------- section catalog end ---------- */
 
-  /* ---------- section start ---------- */
+  /* ---------- section events start ---------- */
   .card__body {
     padding-right: 1px;
   }
-  /* ---------- section end ---------- */
+  /* ---------- section events end ---------- */
 
-  /* ---------- section start ---------- */
+  /* ---------- section projects start ---------- */
   .projects__text {
     margin-bottom: 19px;
   }
@@ -1518,12 +1584,34 @@ a:active .ok path {
   #swiper-partners .swiper-button-prev {
     top: 70%;
   }
-  /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
+  /* ---------- section projects end ---------- */
+
   /* ---------- footer start---------- */
+  .footer__contacts-wrap {
+    padding-top: 41px;
+    padding-bottom: 17px;
+  }
+  /* ---------- footer__contacts start ---------- */
+  .contacts__custom--left {
+    width: 61.9%;
+  }
+  .contacts__custom--right {
+    width: 38.1%;
+    padding-left: 7px;
+  }
+  #contacts__form .btn {
+    margin-bottom: 28px;
+    padding: 11px 40px;
+  }
+  /* ---------- footer__contacts end ---------- */
+
+  /* ---------- footer__map start ---------- */
+
+  /* ---------- footer__map end ---------- */
+
+  /* ---------- footer__bottom start ---------- */
+
+  /* ---------- footer__bottom end ---------- */
   /* ---------- footer end ---------- */
 
 }

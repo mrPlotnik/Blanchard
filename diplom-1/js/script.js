@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Поиск
   function search() {
     const searchBtn = document.querySelector('.header__search');
-    const searchBig = document.querySelector('.header__search-big');
+    const searchBig = document.querySelector('.header__search-big-wrap');
     const searchCloseBtn = document.querySelector('.header__search-close');
     const searchInput = document.querySelector('#search');
     // const btnSearch = document.querySelector('.btn--search');

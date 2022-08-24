@@ -16,7 +16,7 @@
   <div class="container">
     <div class="row row-cols-1">
 
-      <div class="col pt-3">
+      <div class="col">
         <div class="nav-mobile__close-btn-wrap">
           <button class="nav-mobile__close-btn close-btn btn-reset">
             <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
@@ -33,7 +33,7 @@
         </ul>
       </div>
 
-      <div class="col d-flex pb-4">
+      <div class="col d-flex">
         <div class="nav-mobile__login-link-wrap">
           <a href="#" class="nav-mobile__login-link">
             <svg width="14" height="13" viewbox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z" fill="white"/> </svg>
@@ -80,22 +80,26 @@
         </div>
 
         <button class="header__search btn-reset d-flex order-lg-3" tabindex="0">
-          <svg width="30" height="29" viewbox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 7.08203 20.8653)" fill="white"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6236 23.9932C10.5366 23.9932 5.82665 19.0917 5.82665 13.3295C5.82665 7.56738 10.5366 2.66591 16.6236 2.66591C22.7105 2.66591 27.4205 7.56738 27.4205 13.3295C27.4205 19.0917 22.7105 23.9932 16.6236 23.9932ZM16.6236 26.6591C9.26188 26.6591 3.29404 20.6912 3.29404 13.3295C3.29404 5.96784 9.26188 0 16.6236 0C23.9853 0 29.9531 5.96784 29.9531 13.3295C29.9531 20.6912 23.9853 26.6591 16.6236 26.6591Z" fill="white"/> </svg>
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
         </button>
 
       </div> <!-- col -->
 
-      <div class="header__search-big">
-        <svg width="30" height="29" viewbox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 7.08203 20.8653)" fill="white"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6236 23.9932C10.5366 23.9932 5.82665 19.0917 5.82665 13.3295C5.82665 7.56738 10.5366 2.66591 16.6236 2.66591C22.7105 2.66591 27.4205 7.56738 27.4205 13.3295C27.4205 19.0917 22.7105 23.9932 16.6236 23.9932ZM16.6236 26.6591C9.26188 26.6591 3.29404 20.6912 3.29404 13.3295C3.29404 5.96784 9.26188 0 16.6236 0C23.9853 0 29.9531 5.96784 29.9531 13.3295C29.9531 20.6912 23.9853 26.6591 16.6236 26.6591Z" fill="white"/> </svg>
-        <input
-          id="search"
-          type="search"
-          name="search"
-          placeholder="Поиск по сайту"
-          value="">
-        <button class="header__search-close close-btn btn-reset">
-          <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
-        </button>
+      <div class="header__search-big-wrap">
+        <div class="header__search-big">
+          <div class="header__search-icon">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
+          </div>
+          <input
+            id="search"
+            type="search"
+            name="search"
+            placeholder="Поиск по сайту"
+            value="">
+          <button class="header__search-close close-btn btn-reset">
+            <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
+          </button>
+        </div>
       </div>
 
     </div> <!-- row -->
@@ -693,29 +697,27 @@
           <h3 class="contacts__header">Шоурум № 4</h3>
           <address>Леонтьевский переулок, дом 5/1</address>
           <form id="contacts__form" class="form" action="">
-            <div class="row row-cols-1">
-              <div class="col">
+            <div class="row ">
+              <div class="col-12 col-md-12 col-lg-7 contacts__custom--left">
                 <div class="contacts__input-wrap">
                   <input
-                  id="name"
-                  class="form__input form-control"
-                  aria-label="Введите имя"
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Имя*"
-                />
-                <input id="tel"
-                  class="form__input form-control"
-                  aria-label="Введите номер телефона"
-                  type="tel"
-                  name="tel"
-                  required
-                  placeholder="Телефон*"
-                />
+                    id="name"
+                    class="form__input form-control"
+                    aria-label="Введите имя"
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Имя*"/>
+                  <input id="tel"
+                    class="form__input form-control"
+                    aria-label="Введите номер телефона"
+                    type="tel"
+                    name="tel"
+                    required
+                    placeholder="Телефон*"/>
                 </div>
               </div>
-              <div class="col">
+              <div class="col-12 col-md-12 col-lg-5 contacts__custom--right">
                 <button class="btn btn-reset">Заказать обратный звонок</button>
               </div>
             </div>
