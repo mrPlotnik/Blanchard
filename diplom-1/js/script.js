@@ -147,6 +147,11 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       1025: {
         spaceBetween: 36,
+      },
+      1441: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 50,
       }
     },
     pagination: {
@@ -188,15 +193,24 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 2,
         slidesPerGroup: 2,
       },
-      1000: {
+      1001: {
         slidesPerView: 3,
         slidesPerGroup: 3,
         spaceBetween: 28,
+      },
+      1441: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 50,
       }
     },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 
@@ -220,6 +234,11 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 2,
         slidesPerGroup: 2,
       },
+      1441: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 0,
+      }
     },
     navigation: {
       nextEl: '.swiper-button-next',

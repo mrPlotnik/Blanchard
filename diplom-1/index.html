@@ -47,63 +47,146 @@
 </nav>
 
 <!-- header -->
-<header class="header">
+<header class="head">
 
-  <div class="container">
-    <div class="row d-flex align-items-center">
+  <div class="header">
 
-      <div class="col d-flex justify-content-between align-items-center">
+    <div class="container">
+      <div class="row d-flex align-items-center justify-content-between">
 
-        <div class="header__nav nav d-flex order-xl-2">
-
-          <button class="nav__burger btn-reset d-flex d-xl-none">
-            <svg width="25" height="18" viewbox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="25" height="2" transform="matrix(-1 0 0 1 25 0)" fill="white"/> <path d="M16 8H9.53674e-07V10H16V8Z" fill="white"/> <path d="M10 16H0V18H10V16Z" fill="white"/> </svg>
-          </button>
-
-          <!-- <nav class="nav__desktop d-none d-lg-flex">
-            <ul class="nav__desktop-list d-flex list-reset">
-              <li class="nav__desktop-list-item"><a href="#">О нас</a></li>
-              <li class="nav__desktop-list-item"><a href="#">Галерея</a></li>
-              <li class="nav__desktop-list-item"><a href="#">Каталог</a></li>
-              <li class="nav__desktop-list-item"><a href="#">События</a></li>
-              <li class="nav__desktop-list-item"><a href="#">Проекты</a></li>
-              <li class="nav__desktop-list-item"><a href="#">Контакты</a></li>
-            </ul>
-          </nav> -->
-
-        </div>
-
-        <div class="header__logo order-lg-1">
-          <a href="#">
-            <img src="img/logo.png" alt="Blanchard. Художественная галерея">
-          </a>
-        </div>
-
-        <button class="header__search btn-reset d-flex order-lg-3" tabindex="0">
-          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
-        </button>
-
-      </div> <!-- col -->
-
-      <div class="header__search-big-wrap">
-        <div class="header__search-big">
-          <div class="header__search-icon">
-            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
+        <div class="col col-xxl-2 order-2 order-xl-1">
+          <div class="header__logo-wrap">
+            <a href="#">
+              <img src="img/logo.png" alt="Blanchard. Художественная галерея">
+            </a>
           </div>
-          <input
-            id="search"
-            type="search"
-            name="search"
-            placeholder="Поиск по сайту"
-            value="">
-          <button class="header__search-close close-btn btn-reset">
-            <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
-          </button>
-        </div>
-      </div>
+        </div><!-- col logo -->
 
-    </div> <!-- row -->
-  </div> <!-- container -->
+        <div class="col col-xxl-8 order-1 order-xl-2">
+          <div class="header__nav-wrap nav d-flex">
+            <button class="nav__burger btn-reset d-flex d-xl-none">
+              <svg width="25" height="18" viewbox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="25" height="2" transform="matrix(-1 0 0 1 25 0)" fill="white"/> <path d="M16 8H9.53674e-07V10H16V8Z" fill="white"/> <path d="M10 16H0V18H10V16Z" fill="white"/> </svg>
+            </button>
+            <nav class="nav__major nav-major d-none d-xxl-flex">
+              <ul class="nav-major__list d-flex list-reset">
+                <li class="nav-major__list-item"><a href="#">О нас</a></li>
+                <li class="nav-major__list-item"><a href="#">Галерея</a></li>
+                <li class="nav-major__list-item"><a href="#">Каталог</a></li>
+                <li class="nav-major__list-item"><a href="#">События</a></li>
+                <li class="nav-major__list-item"><a href="#">Проекты</a></li>
+                <li class="nav-major__list-item"><a href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div><!-- col burger -->
+
+        <div class="col col-xxl-2 order-3 order-lg-3">
+          <div class="header__search-wrap d-flex justify-content-end">
+
+            <button class="header__search btn-reset d-flex d-xxl-none" tabindex="0">
+              <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
+            </button>
+
+            <div class="header__login-wrap d-none d-xxl-flex">
+              <a href="#" class="header__login-link">
+                <svg width="14" height="13" viewbox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z" fill="white"/> </svg>
+                Войти
+              </a>
+            </div>
+
+          </div>
+
+        </div><!-- col search-button, login -->
+
+        <div class="col-12 header__search-big-wrap">
+          <div class="header__search-big">
+            <div class="header__search-icon">
+              <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
+            </div>
+            <input
+              id="search"
+              type="search"
+              name="search"
+              placeholder="Поиск по сайту"
+              value="">
+            <button class="header__search-close close-btn btn-reset">
+              <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="2.63672" width="37.2838" height="3.72838" transform="rotate(45 2.63672 0)" fill="white"/> <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/> </svg>
+            </button>
+          </div>
+        </div><!-- col search-big -->
+
+      </div><!-- row --><!-- logo, burger, search -->
+    </div><!-- container -->
+  </div><!-- header -->
+
+  <div class="nav-1920 d-none d-xxl-flex">
+    <div class="container">
+      <div class="row">
+        <div class="col-10">
+          <nav class="nav__minor nav-minor">
+            <ul class="nav-minor__list d-flex list-reset align-items-center justify-content-between">
+              <li class="nav-minor__list-item"><a href="#">Реализм</a>
+                <ul class="nav-second-lvl__list list-reset">
+                  <li class="nav-second-lvl__list-item">Тинторетто</li>
+                  <li class="nav-second-lvl__list-item">Фридрих</li>
+                  <li class="nav-second-lvl__list-item">Леонардо</li>
+                  <li class="nav-second-lvl__list-item">Вероккьо</li>
+                </ul>
+              </li>
+              <li class="nav-minor__list-item"><a href="#">Импрессионизм</a>
+                <ul class="nav-second-lvl__list list-reset">
+                  <li class="nav-second-lvl__list-item">Моне</li>
+                  <li class="nav-second-lvl__list-item">Сислей</li>
+                  <li class="nav-second-lvl__list-item">Мане</li>
+                  <li class="nav-second-lvl__list-item">Ренуар</li>
+                </ul>
+              </li>
+              <li class="nav-minor__list-item"><a href="#">Постимпрессионизм</a>
+                <ul class="nav-second-lvl__list list-reset">
+                  <li class="nav-second-lvl__list-item">Ван Гог</li>
+                  <li class="nav-second-lvl__list-item">Сезанн</li>
+                  <li class="nav-second-lvl__list-item">Гоген</li>
+                  <li class="nav-second-lvl__list-item">Сёра</li>
+                </ul>
+              </li>
+              <li class="nav-minor__list-item"><a href="#">Авангард</a>
+                <ul class="nav-second-lvl__list list-reset">
+                  <li class="nav-second-lvl__list-item">Кандинский</li>
+                  <li class="nav-second-lvl__list-item">Маринетти</li>
+                  <li class="nav-second-lvl__list-item">Малевич</li>
+                  <li class="nav-second-lvl__list-item">Пикассо</li>
+                </ul>
+              </li>
+              <li class="nav-minor__list-item"><a href="#">Футуризм</a>
+                <ul class="nav-second-lvl__list list-reset">
+                  <li class="nav-second-lvl__list-item">Карра</li>
+                  <li class="nav-second-lvl__list-item">Прателла</li>
+                  <li class="nav-second-lvl__list-item">Северини</li>
+                  <li class="nav-second-lvl__list-item">Балла</li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div><!-- col -->
+
+        <div class="col-2 d-flex">
+          <div class="nav-1920__search">
+            <div class="nav-1920__search-icon">
+              <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
+            </div>
+            <input
+              id="nav-1920__search"
+              type="search"
+              name="search"
+              placeholder="Поиск по сайту"
+              value="">
+          </div><!-- col -->
+        </div>
+
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- nav-1920 -->
+
 </header>
 
 <!-- main -->
@@ -139,7 +222,7 @@
     <div class="container">
       <div class="row galery__wrap">
 
-        <div class="col col-lg-4">
+        <div class="col col-lg-4 col-xxl-3 galery__custom-block-first">
 
           <div class="col-12">
             <h2 class="galery__header">Галерея</h2>
@@ -189,7 +272,7 @@
           </div>
         </div>
 
-        <div class="col col-lg-8">
+        <div class="col col-lg-8 col-xxl-9 galery__custom-block-second">
           <!-- Swiper -->
           <div id="swiper-galery" class="swiper">
 
@@ -248,7 +331,7 @@
 
         <div class="col-12">
           <div class="row">
-            <div class="col-12 col-lg-6 pr-3">
+            <div class="col-12 col-lg-6 pr-3 catalog__custom-block-first">
               <div  id="accordion" class="catalog__date-list list-reset">
 
                 <h3 class="catalog__date-item">
@@ -280,7 +363,7 @@
                   <a href="#">Перуцци, Бальдассаре</a>
                   <a href="#">Пизанелло</a>
                   <a href="#">Пинтуриккьо</a>
-                  <!-- <a href="#">Просто так, для верстки</a> -->
+                  <a href="#">Просто так, для верстки</a>
                   <!-- <a href="#">Просто так, для верстки</a> -->
                   <!-- <a href="#">Просто так, для верстки</a> -->
                 </div>
@@ -462,7 +545,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-lg-6 order-lg-first">
+            <div class="col-12 col-lg-6 order-lg-first catalog__custom-block-second">
               <div class="catalog__info info ">
                 <div class="info__img">
                   <img src="img/catalog-info-1.jpg" alt="Доменико Гирландайо">
@@ -505,9 +588,7 @@
                       <h3 class="card__header">Книжная гравюра в&nbsp;живом восприятии</h3>
                       <div class="card__text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его&nbsp;брат Давид и&nbsp;сын&nbsp;Ридольфо</div>
                     </div>
-                    <div class="card__link">
-                      <a href="#">Подробнее</a>
-                    </div>
+                    <a class="card__link" href="#"><span>Подробнее</span></a>
                   </div>
                 </div>
               </div>
@@ -521,9 +602,7 @@
                       <h3 class="card__header">«Открытая дискуссия». Дмитрий Петров и&nbsp;Сергей Ильин.</h3>
                       <div class="card__text">Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта</div>
                     </div>
-                    <div class="card__link">
-                      <a href="#">Подробнее</a>
-                    </div>
+                    <a class="card__link" href="#"><span>Подробнее</span></a>
                   </div>
                 </div>
               </div>
@@ -537,9 +616,7 @@
                       <h3 class="card__header">Выставка «Формация 2020»</h3>
                       <div class="card__text">Идейные соображения высшего порядка, а&nbsp;также современная методология разработки играет важную роль в&nbsp;формировании глубокомысленных рассуждений</div>
                     </div>
-                    <div class="card__link">
-                      <a href="#">Подробнее</a>
-                    </div>
+                    <a class="card__link" href="#"><span>Подробнее</span></a>
                   </div>
                 </div>
               </div>
@@ -553,9 +630,7 @@
                       <h3 class="card__header">Джон Винзор. Фотографии из серии «Метафора»</h3>
                       <div class="card__text">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо</div>
                     </div>
-                    <div class="card__link">
-                      <a href="#">Подробнее</a>
-                    </div>
+                    <a class="card__link" href="#"><span>Подробнее</span></a>
                   </div>
                 </div>
               </div>
@@ -569,16 +644,20 @@
                       <h3 class="card__header">XXIV Международная биеннале молодого искусства</h3>
                       <div class="card__text">Внезапно, реплицированные с&nbsp;зарубежных источников, современные исследования</div>
                     </div>
-                    <div class="card__link">
-                      <a href="#">Подробнее</a>
-                    </div>
+                    <a class="card__link" href="#"><span>Подробнее</span></a>
                   </div>
                 </div>
               </div>
 
             </div>
 
-            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next d-none d-xxl-flex">
+              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#666"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#666" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="#fff" fill="#666"/> </svg>
+            </div>
+            <div class="swiper-button-prev d-none d-xxl-flex">
+              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666"/> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="#666" stroke-width="2"/> <path d="M16 20L11 15L16 10" stroke="#fff" fill="#666"/> </svg>
+            </div>
+            <div class="swiper-pagination d-xxl-none"></div>
 
           </div>
 
@@ -693,12 +772,14 @@
     <div class="container">
       <div class="row row-cols-1">
 
-        <div class="col">
+        <div class="col col-xxl-2 contacts__custom-block-first">
           <h3 class="contacts__header">Шоурум № 4</h3>
           <address>Леонтьевский переулок, дом 5/1</address>
+        </div>
+        <div class="col col-xxl-8 contacts__custom-block-second">
           <form id="contacts__form" class="form" action="">
             <div class="row ">
-              <div class="col-12 col-md-12 col-lg-7 contacts__custom--left">
+              <div class="col-12 col-md-12 col-lg-7 form__custom-block-first">
                 <div class="contacts__input-wrap">
                   <input
                     id="name"
@@ -717,14 +798,13 @@
                     placeholder="Телефон*"/>
                 </div>
               </div>
-              <div class="col-12 col-md-12 col-lg-5 contacts__custom--right">
+              <div class="col-12 col-md-12 col-lg-5 form__custom-block-second">
                 <button class="btn btn-reset">Заказать обратный звонок</button>
               </div>
             </div>
           </form>
         </div>
-
-        <div class="col">
+        <div class="col col-xxl-2 contacts__custom-block-third">
           <div class="contacts__messages">
             <p>Связаться в один клик </p>
             <a href="#">
