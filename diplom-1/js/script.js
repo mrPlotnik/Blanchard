@@ -1,122 +1,145 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Бургер
-  function burger() {
-    const body = document.querySelector('body');
-    const burger = document.querySelector('.nav__burger');
-    const menuMobile = document.querySelector('.nav__mobile');
-    const closeMenu = document.querySelector('.nav-mobile__close-btn');
-    const links = document.querySelectorAll('.nav-mobile__list-item a');
+  // --- Бургер
 
-    // Выбираем все элементы для индекса в 'модальном' окне
-    let elTab = document.querySelectorAll('.nav-mobile__close-btn, .nav-mobile__login-link, .nav-mobile__list-item a');
+  const body = document.querySelector('body');
+  const burger = document.querySelector('.nav__burger');
+  const menuMobile = document.querySelector('.nav__mobile');
+  const closeMenu = document.querySelector('.nav-mobile__close-btn');
+  const links = document.querySelectorAll('.nav-mobile__list-item a');
 
-    const toggleMenu = function(q) {
-      q.classList.toggle('nav__open');
-    }
-    const toggleBody = function(q) {
-      q.classList.toggle('body-hidden');
-    }
+  // Выбираем все элементы для индекса в 'модальном'
+  // окне бургера
+  const elTab = document.querySelectorAll('.nav-mobile__close-btn, .nav-mobile__login-link, .nav-mobile__list-item a');
 
-    burger.addEventListener('click', function() {
-      // Прекращаем дальнейшую передачу текущего события
-      // (предотвращает всплытие по дереву DOM)
-      // e.stopPropagation();
-      toggleMenu(menuMobile);
-      toggleBody(body);
-      // Индексация в мобильном меню с клавиатуры
-      // При отрытии меню сразу фокус на крестик
-      // Из-за анимации свойства visibility ставим задержку
-      setTimeout(() => {closeMenu.focus()},100);
-      // closeMenu.focus();
-      elTab.forEach((tab, index) => {
-        // Добавляем прослушку события на 'активный' текущий элемент
-        tab.addEventListener('keydown', (e) => {
-          if (e.keyCode == 9) {
-            // Предотвращаем поведение по умолчанию
-            e.preventDefault();
-            // Если элемент не последний задаем следующему элементу tabindex в 0
-            // и вызываем метод фокуса на него
-            if (index != elTab.length - 1) {
-              elTab[index + 1].focus();
-            } else {
-              // Когда мы добираемся до последнего элемента,
-              // устанавливаем фокус на первый элемент
-              elTab[0].focus();
-            }
-          }
-        });
-      });
-    })
-
-    // Что происходит при клике на крестик
-    closeMenu.addEventListener('click', function() {
-      // Закрыть меню
-      toggleMenu(menuMobile);
-      toggleBody(body);
-      // Фокус на бургер
-      burger.focus();
-    })
-
-    // Что происходит при кликах на ссылки
-    links.forEach((el, index) => {
-      // Вешаем на все ссылки меню прослушки
-      el.addEventListener('click', function() {
-        // Закрыть меню
-        toggleMenu(menuMobile);
-        toggleBody(body);
-      })
-    });
-
-  };
-
-  // Поиск
-  function search() {
-    const searchBtn = document.querySelector('.header__search');
-    const searchBig = document.querySelector('.header__search-big-wrap');
-    const searchCloseBtn = document.querySelector('.header__search-close');
-    const searchInput = document.querySelector('#search');
-    // const btnSearch = document.querySelector('.btn--search');
-
-    const toggleSearch = function(q) {
-      q.classList.toggle('search__open');
-    }
-
-    searchBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      toggleSearch(searchBig);
-      // Из-за анимации свойства visibility ставим задержку
-      setTimeout(() => {searchInput.focus()},100);
-    })
-
-    searchCloseBtn.addEventListener('click', function() {
-      toggleSearch(searchBig);
-    })
-
-    // btnSearch.addEventListener('click', function() {
-    //   toggleSearch(searchBig);
-    // })
-
-    // Отслеживаю клик вне контейнера .searchBig
-    document.addEventListener('click', function(e) {
-      // Определяю место клика
-      const target = e.target;
-      // Клик был на .searchBig и его вложенные элементы или нет?
-      const itsSearch = target == searchBig || searchBig.contains(target);
-      // .searchBig открыт?
-      const searchIsActive = searchBig.classList.contains('search__open');
-
-      // Если клик был вне .searchBig и .searchBig открыт, то выполняю код
-      if (!itsSearch && searchIsActive) {
-        toggleSearch(searchBig);
-      }
-    });
+  // Переключатель видимости 'модального' окна
+  const toggleMenu = function(q) {
+    q.classList.toggle('nav__open');
   }
 
-  burger();
-  search();
 
-  // ---------- Инициализация инпута choices.js в секции galery
+  // Переключатель скролла когда 'модальное' окно
+  // открыто
+  const toggleBody = function(q) {
+    q.classList.toggle('body-hidden');
+  }
+
+  // Что происходит после нажатия на бургер
+  burger.addEventListener('click', function() {
+
+    toggleMenu(menuMobile);
+    toggleBody(body);
+
+    // При отрытии меню сразу фокус на крестик
+    // Из-за анимации свойства visibility ставим
+    // задержку
+    setTimeout(() => {closeMenu.focus()},100);
+
+    // Индексация в мобильном меню с клавиатуры
+    elTab.forEach((tab, index) => {
+      // Добавляем прослушку события на 'активный'
+      // текущий элемент
+      tab.addEventListener('keydown', (e) => {
+        // Если нажата клавиша tab, то
+        if (e.keyCode == 9) {
+          // предотвращаем поведение по умолчанию
+          e.preventDefault();
+          // Если элемент не последний
+          if (index != elTab.length - 1) {
+            // задаем следующему элементу tabindex в 1
+            // и вызываем метод фокуса на него
+            elTab[index + 1].focus();
+          } else {
+            // Когда мы добираемся до последнего элемента,
+            // устанавливаем фокус на первый элемент
+            elTab[0].focus();
+          }
+        };
+      });
+    });
+  });
+
+  // Что происходит после клика на крестик
+  closeMenu.addEventListener('click', function() {
+    toggleMenu(menuMobile);
+    toggleBody(body);
+    // Фокус на бургер
+    burger.focus();
+  })
+
+  // Что происходит после кликов на ссылки
+  links.forEach((el, index) => {
+    el.addEventListener('click', function(e) {
+      toggleMenu(menuMobile);
+      toggleBody(body);
+
+      // Плавный скролл до элемента на чистом js
+
+      // предотвращаем поведение по умолчанию
+      e.preventDefault();
+      // Берем значение атрибута href
+      let href = el.getAttribute('href');
+      document.querySelector(href).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      // Плавный скролл до элемента на jQuery
+
+      // let href = $(this).attr('href');
+      // $('html, body').animate({
+      //     scrollTop: $(href).offset().top
+      // }, {
+      //     duration: 500,   // по умолчанию «400»
+      //     easing: "linear" // по умолчанию «swing»
+      // });
+
+    });
+  });
+
+  // --- Поиск
+
+  const searchBtn = document.querySelector('.header__search');
+  const searchBig = document.querySelector('.header__search-big-wrap');
+  const searchCloseBtn = document.querySelector('.header__search-close');
+  const searchInput = document.querySelector('#search');
+
+  // Переключатель видимости поиска
+  const toggleSearch = function(q) {
+    q.classList.toggle('search__open');
+  }
+
+  // Что происходит после клика на лупу
+  searchBtn.addEventListener('click', function(e) {
+    // предотвращаем поведение по умолчанию
+    e.stopPropagation();
+    toggleSearch(searchBig);
+    // Из-за анимации свойства visibility ставим задержку
+    setTimeout(() => {searchInput.focus()},100);
+  })
+
+  // Что происходит после клика на крестик
+  searchCloseBtn.addEventListener('click', function() {
+    toggleSearch(searchBig);
+  })
+
+  // Что происходит после клика вне поиска
+  document.addEventListener('click', function(e) {
+    // Определяю место клика
+    let target = e.target;
+    // Клик был на .searchBig и его вложенные элементы или нет?
+    let itsSearch = target == searchBig || searchBig.contains(target);
+    // .searchBig открыт?
+    let searchIsActive = searchBig.classList.contains('search__open');
+
+    // Если клик был вне .searchBig и .searchBig открыт, то выполняю код
+    if (!itsSearch && searchIsActive) {
+      toggleSearch(searchBig);
+    }
+  });
+
+
+  // --- Инициализация инпута choices.js в секции galery
 
   const el = document.querySelector('select');
   const choises = new Choices(el,{
@@ -124,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     itemSelectText: '',
   });
 
-  // ---------- Первый свайпер в секции galery
+  // --- Первый свайпер в секции galery
 
   const swiper1 = new Swiper('#swiper-galery', {
     slidesPerView: 1,
@@ -164,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
-  // ---------- Аккордион на jQuery в сеrции catalog
+  // --- Аккордион на jQuery в сеrции catalog
 
   $('#accordion').accordion({
     icons: false,
@@ -172,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     collapsible: true
   });
 
-  // ---------- Второй свайпер в секции events
+  // --- Второй свайпер в секции events
 
   const swiper2 = new Swiper('#swiper-events', {
     slidesPerView: 1,
@@ -214,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
-  // ---------- Третий свайпер в секции projects
+  // --- Третий свайпер в секции projects
 
   const swiper3 = new Swiper('#swiper-partners', {
     slidesPerView: 1,
@@ -246,35 +269,35 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
+  // --- Yandex-карты
+
+  // Дождёмся загрузки API и готовности DOM
+  ymaps.ready(init);
+  function init() {
+    // Создание экземпляра карты и его привязка к контейнеру с
+    // заданным id ('map')
+    myMap = new ymaps.Map('map', {
+        // Координаты центра карты
+        center: [55.760000, 37.614700],
+        // Уровень масштабирования. От 0 (весь мир) до 19
+        zoom: 14
+    });
+
+    myPlacemark = new ymaps.Placemark([55.76000, 37.614700], {}, {
+      // Опции
+      // Необходимо указать данный тип макета
+      iconLayout: 'default#image',
+      // Своё изображение иконки метки
+      iconImageHref: '../img/map-point.svg',
+      // Размеры метки
+      iconImageSize: [20, 20],
+      // Смещение левого верхнего угла иконки относительно
+      // её 'ножки' (точки привязки)
+      iconImageOffset: [-10, -10]
+    });
+
+    // Размещение геообъекта на карте.
+    myMap.geoObjects.add(myPlacemark);
+  }
+
 });
-
-// ---------- Yandex-карты
-
-// Дождёмся загрузки API и готовности DOM
-ymaps.ready(init);
-function init() {
-  // Создание экземпляра карты и его привязка к контейнеру с
-  // заданным id ('map')
-  myMap = new ymaps.Map('map', {
-      // Координаты центра карты
-      center: [55.760000, 37.614700],
-      // Уровень масштабирования. От 0 (весь мир) до 19
-      zoom: 14
-  });
-
-  myPlacemark = new ymaps.Placemark([55.76000, 37.614700], {}, {
-    // Опции
-    // Необходимо указать данный тип макета
-    iconLayout: 'default#image',
-     // Своё изображение иконки метки
-    iconImageHref: '../img/map-point.svg',
-    // Размеры метки
-    iconImageSize: [20, 20],
-    // Смещение левого верхнего угла иконки относительно
-    // её 'ножки' (точки привязки)
-    iconImageOffset: [-10, -10]
-  });
-
-  // Размещение геообъекта на карте.
-  myMap.geoObjects.add(myPlacemark);
-}

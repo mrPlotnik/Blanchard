@@ -30,7 +30,7 @@ html {
 	box-sizing: border-box;
 }
 body * {
-  /* outline: 1px solid red; */
+  outline: 1px solid #ff000000;
 }
 .body-hidden {
   overflow: hidden;
@@ -54,7 +54,6 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* ---------- Glob ----------*/
-
 .list-reset {
   display: flex;
   margin: 0;
@@ -67,7 +66,6 @@ h1, h2, h3, h4, h5, h6, p {
   border: none;
   background-color: transparent;
 }
-/* Псевдоклассы для svg */
 svg,
 svg rect,
 svg path,
@@ -97,6 +95,8 @@ svg {
 h1, h2, h3 {
   margin: 0;
   padding: 0;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 h1 {
   font-size: 3em;
@@ -105,6 +105,7 @@ h2 {
   font-size: 28px;
   line-height: 38px;
   font-weight: 400;
+  max-height: 200px;
 }
 h3 {
   font-size: 18px;
@@ -138,8 +139,6 @@ img {
 .swiper-button-prev {
   width: fit-content;
   height: fit-content;
-  /* top: auto; */
-  /* bottom: 0; */
   z-index: 11;
 }
 .swiper-button-next::after,
@@ -165,8 +164,6 @@ img {
 .nav__mobile .row {
   height: 100vh;
   padding-top: 16px;
-  /* padding-right: 16px;
-  padding-left: 16px; */
   padding-bottom: 16px;
 }
 .nav__open {
@@ -235,7 +232,6 @@ img {
 /* End */
 
 /* ---------- header ---------- */
-
 .header {
   background-color: #000;
 }
@@ -247,7 +243,6 @@ img {
 .nav__burger {
   width: 25px;
 }
-
 /* --- My style --- */
 .nav__burger:hover svg rect,
 .nav__burger:hover svg path {
@@ -339,7 +334,6 @@ input[type="search"]::-moz-placeholder {
 .header__search-close  {
   width: 18px;
   height: 18px;
-
 }
 
 /* ---------- section-hero start ---------- */
@@ -348,30 +342,38 @@ input[type="search"]::-moz-placeholder {
   background-image: url(../img/galery-1.jpg);
 }
 .hero__wrap {
-  padding-top: 30px;
-  padding-bottom: 45px;
+  height: 309px;
+  padding-top: 28px;
   text-align: center;
 }
 .hero__header {
+  max-height: 100px;
+  margin-bottom: 3px;
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
+  overflow: hidden;
   color: #fff;
 }
 .hero__text {
-  margin-bottom: 43px;
+  min-height: 106px;
   padding: 0 20px;
   font-size: 12px;
   line-height: 16px;
   color: #fff;
 }
 .hero__btn {
+  width: fit-content;
+  max-width: 100%;
   padding: 9px 15px;
   border-radius: 100px;
   border: 3px solid #9d5cd0;
   font-weight: 700;
   font-size: 12px;
   line-height: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #fff;
   background-color: #9d5cd0;
 }
@@ -495,6 +497,7 @@ input[type="search"]::-moz-placeholder {
   display: flex;
   width: fit-content;
   padding-left: 24px;
+  line-height: 18px;
   color: #cacaca;
 }
 .filters__check:not(:last-child) {
@@ -544,7 +547,6 @@ input[type="search"]::-moz-placeholder {
 #swiper-galery .swiper-slide {
   text-align: center;
   font-size: 18px;
-  /* background: #fff; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -591,9 +593,12 @@ input[type="search"]::-moz-placeholder {
   fill: #7943a4;
 }
 #swiper-galery .swiper-pagination {
+  max-width: 60px;
+  max-height: 20px;
   top: auto;
-  bottom: 7px;
-  left: auto;
+  bottom: 5px;
+  left: 40%;
+  overflow: hidden;
   color: #fff;
 }
 /* ---------- section galery end ---------- */
@@ -620,7 +625,7 @@ input[type="search"]::-moz-placeholder {
   align-items: center;
   width: 100%;
   margin-top: -1px;
-  padding: 20px 0 20px 0;
+  padding: 20px 30px 20px 0;
   text-align: left;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
@@ -636,7 +641,6 @@ input[type="search"]::-moz-placeholder {
   position: absolute;
   width: 30px;
   right: 0;
-  /* height: 30px; */
 }
 .ui-accordion-header-active svg {
   transform: rotate(180deg);
@@ -677,7 +681,6 @@ input[type="search"]::-moz-placeholder {
 .catalog__artists {
   padding: 21px 0 20px 0;
   line-height: 31px;
-
 }
 .catalog__artists a {
   border-bottom: 1px solid #fff;
@@ -725,7 +728,6 @@ input[type="search"]::-moz-placeholder {
 /* ---------- section-catalog end---------- */
 
 /* ---------- section events start---------- */
-
 .events__wrap {
   margin-bottom: 40px;
 }
@@ -736,37 +738,45 @@ input[type="search"]::-moz-placeholder {
   border: 1px solid #cacaca
 }
 .card__wrap {
-  padding: 20px 33px 43px 22px;
+  padding: 20px 33px 54px 22px;
   text-align: left;
   background-color: #fff;
 }
 .card__date {
+  max-height: 35px;
   margin-right: -15px;
   margin-bottom: 9px;
   font-size: 12px;
   line-height: 16px;
   text-align: right;
+  overflow: hidden;
   color: #999;
 }
 .card__body {
   height: 344px;
 }
 .card__header {
+  max-height: 100px;
   margin-bottom: 5px;
   font-weight: 600;
   font-size: 24px;
   line-height: 33px;
+  overflow: hidden;
 }
 .card__text {
+  max-height: 220px;
   font-size: 16px;
   line-height: 32px;
+  overflow: hidden;
 }
 .card__link {
-  display: inline-flex;
+  max-height: 40px;
+  display: inline-block;
   align-items: center;
-  height: 35px;
+  padding-top: 8px;
   padding-left: 5px;
   padding-right: 5px;
+  overflow: hidden;
 }
 .card__link span {
   height: 20px;
@@ -832,7 +842,6 @@ input[type="search"]::-moz-placeholder {
 /* ---------- section events end---------- */
 
 /* ---------- section projects start ---------- */
-
 .projects__wrap {
   padding-bottom: 46px;
 }
@@ -956,9 +965,6 @@ input[type="search"]::-moz-placeholder {
 .footer__contacts-wrap {
   padding-bottom: 17px;
   border: 1px solid #cacaca;
-}
-.contacts__header {
-  margin-bottom: 1px;
 }
 .form {
 	display: flex;
@@ -1112,51 +1118,20 @@ a:active .ok path {
 /* ---- bottom start ---- */
 /* ---------- footer end ---------- */
 
-
-
 /* sm */
 @media (min-width: 450px) {
-
   /* ---------- section events start ---------- */
   .card__body {
     height: 220px;
   }
   /* ---------- section events end ---------- */
-
 }
 
 /* sm */
-@media (min-width: 576px) {
-
-  /* ---------- header start---------- */
-  /* ---------- header end ---------- */
-
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-
-  /* ---------- footer start---------- */
-  /* ---------- footer end ---------- */
-
-}
+@media (min-width: 576px) {}
 
 /* md */
 @media (min-width: 768px) {
-
   .container {
     --bs-gutter-x: 26px;
   }
@@ -1227,19 +1202,19 @@ a:active .ok path {
 
   /* ---------- section hero start ---------- */
   .hero__wrap {
+    min-height: calc(100vh - 100px);
     padding-top: 105px;
-    padding-bottom: 114px;
     text-align: left;
   }
   .hero__header {
+    min-height: 196px;
     margin-bottom: -11px;
     font-size: 72px;
     line-height: 98px;
   }
   .hero__text {
-    margin-bottom: 133px;
+    min-height: 192px;
     padding: 0;
-
     font-weight: 700;
     font-size: 18px;
     line-height: 30px;
@@ -1253,7 +1228,7 @@ a:active .ok path {
 
   /* ---------- section about start ---------- */
   .about__wrap {
-    padding-top: 80px;
+    padding-top: 98px;
     padding-bottom: 70px;
   }
   .about__header {
@@ -1273,6 +1248,7 @@ a:active .ok path {
     padding-bottom: 81px;
   }
   .galery__header {
+    max-height: 400px;
     margin-bottom: 16px;
     font-size: 48px;
     line-height: 65px;
@@ -1310,7 +1286,7 @@ a:active .ok path {
 
   /* ---------- section catalog start ---------- */
   .catalog__wrap {
-    padding-top: 80px;
+    padding-top: 81px;
     padding-bottom: 80px;
   }
   .catalog__header {
@@ -1322,7 +1298,7 @@ a:active .ok path {
     margin-bottom: 22px;
   }
   .catalog__date-item {
-    padding: 41px 0 41px 0;
+    padding: 41px 50px 41px 0;
     font-size: 24px;
     line-height: 32px;
   }
@@ -1367,17 +1343,14 @@ a:active .ok path {
     font-size: 48px;
     line-height: 65px;
   }
-  #swiper-events .swiper-slide {
-    height: 693px;
-  }
   #swiper-events .swiper-pagination {
     bottom: 6px;
   }
   .card__wrap {
-    padding: 14px 31px 47px 32px;
+    padding: 14px 31px 50px 32px;
   }
   .card__body {
-    height: 354px;
+    height: 353px;
     padding-right: 10px;
   }
   .card__date {
@@ -1427,6 +1400,9 @@ a:active .ok path {
   /* ---------- section projects end ---------- */
 
   /* ---------- footer start ---------- */
+  .footer__contacts-wrap {
+    padding-top: 40px;
+  }
   .contacts__header {
     margin-bottom: 11px;
     font-size: 24px;
@@ -1490,17 +1466,14 @@ a:active .ok path {
     width: 60px;
     height: 60px;
   }
-
   /* ---------- footer end ---------- */
 }
 
 /* lg */
 @media (min-width: 992px) {
-
   .container {
     --bs-gutter-x: 17px;
   }
-
    /* ---------- search start---------- */
   .header__search-big  {
     width: 320px;
@@ -1509,8 +1482,7 @@ a:active .ok path {
     height: 32px;
     font-size: 22px;
   }
-  /* ---------- search start---------- */
-  /* ---------- search start---------- */
+  /* ---------- search end---------- */
 
   /* ---------- header start---------- */
   .header .row {
@@ -1553,6 +1525,7 @@ a:active .ok path {
     left: 115px;
   }
   #swiper-galery .swiper-pagination {
+    max-width: 40px;
     top: 32px;
     left: 63px;
   }
@@ -1599,7 +1572,6 @@ a:active .ok path {
     width: 380px;
     height: 125px;
   }
-
   #swiper-partners .swiper-button-next,
   #swiper-partners .swiper-button-prev {
     top: 70%;
@@ -1625,37 +1597,20 @@ a:active .ok path {
   }
   /* ---------- footer__contacts end ---------- */
   /* ---------- footer end ---------- */
-
 }
 
 /* xl */
-@media (min-width: 1200px) {
-
-   /* ---------- header start---------- */
-  /* ---------- header end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-  /* ---------- section start ---------- */
-  /* ---------- section end ---------- */
-  /* ---------- footer start---------- */
-  /* ---------- footer end ---------- */
-
-}
+@media (min-width: 1200px) {}
 
  /* xxl */
 @media (min-width: 1400px) {
   /* ---------- header start---------- */
+  .header .row {
+    padding-top: 0px;
+    padding-bottom: 5px;
+  }
   .header__logo-wrap {
+    padding-top: 5px;
     margin-left: -10px;
   }
   .header__logo-wrap img {
@@ -1671,18 +1626,26 @@ a:active .ok path {
   }
   .nav-major__list {
     width: 100%;
-    margin-bottom: 4px;
   }
   .nav-major__list-item {
-    max-width: 80px;
+    min-width: 52px;
+    max-height: 75px;
+    padding-right: 10px;
+    overflow: hidden;
+    word-break: break-word;
   }
   .nav-major__list-item:not(:last-child) {
-    margin-right: 63px;
+    margin-right: 52px;
+  }
+  header__login-wrap {
+    padding-bottom: 8px;
   }
   .header__login-link {
+    max-height: 25px;
     margin-right: -1px;
     font-size: 18px;
     line-height: 25px;
+    overflow: hidden;
     color: #fff;
   }
   .header__login-link svg {
@@ -1704,12 +1667,15 @@ a:active .ok path {
     color: #fff;
   }
   .nav-minor__list-item {
-    max-width: 190px;
+    max-height: 30px;
+    overflow: hidden;
+    word-break: break-word;
     font-size: 18px;
     line-height: 25px;
+    overflow: hidden;
   }
   .nav-minor__list-item:not(:last-child) {
-    margin-right: 15px;
+    padding-right: 10px;
   }
   .nav-second-lvl__list {
     display: none;
@@ -1743,6 +1709,7 @@ a:active .ok path {
   }
   /* ---------- header end ---------- */
 
+  /* ---------- hero section start ---------- */
   .hero__wrap {
     padding-top: 133px;
     padding-right: 55%;
@@ -1754,13 +1721,15 @@ a:active .ok path {
   .hero__text {
     margin-bottom: 90px;
   }
+  /* ---------- hero section end ---------- */
 
-
+  /* ---------- about section start ---------- */
   .about__wrap {
     padding-right: 34%;
   }
+  /* ---------- about section end ---------- */
 
-
+  /* ---------- galery section start ---------- */
   .galery__wrap {
     padding-bottom: 50px;
   }
@@ -1788,7 +1757,9 @@ a:active .ok path {
   #swiper-galery .swiper-pagination {
     left: 66px;
   }
+  /* ---------- galery section end ---------- */
 
+  /* ---------- catalog section start ---------- */
   .catalog__text {
     padding-right: 31%;
   }
@@ -1810,8 +1781,9 @@ a:active .ok path {
   .info__date {
     margin-bottom: 14px;
   }
+  /* ---------- catalog section end ---------- */
 
-
+  /* ---------- events section start ---------- */
   .events__wrap {
     padding-bottom: 0;
     margin-bottom: 48px;
@@ -1850,7 +1822,6 @@ a:active .ok path {
   .card__body {
     height: 271px;
   }
-
   #swiper-events .swiper-button-next:hover svg path:nth-child(2n-1),
   #swiper-events .swiper-button-prev:hover svg path:nth-child(2n-1) {
     fill: #9d5cd0;
@@ -1875,8 +1846,9 @@ a:active .ok path {
   #swiper-events .swiper-button-prev:active svg path:nth-child(2n-1) {
     fill: #7943a4;
   }
+  /* ---------- events section end ---------- */
 
-
+  /* ---------- projects section start ---------- */
   .projects__text {
     padding-right: 31%;
   }
@@ -1891,7 +1863,10 @@ a:active .ok path {
   #swiper-partners .swiper-button-prev {
     top: 67%;
   }
+  /* ---------- projects section end ---------- */
 
+  /* ---------- footer start ---------- */
+  /* ---------- contacts start ---------- */
   .footer__contacts-wrap {
     padding-top: 35px;
     padding-bottom: 13px;
@@ -1936,9 +1911,14 @@ a:active .ok path {
     margin-bottom: 0;
     padding-left: 20px;
   }
+  /* ---------- contacts end ---------- */
+
+  /* ---------- bottom start ---------- */
   .vk, .ok {
     width: 45px;
   }
+  /* ---------- bottom end ---------- */
+  /* ---------- footer end ---------- */
 }
 
  /* My */
