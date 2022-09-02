@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
     q.classList.toggle('nav__open');
   }
 
-
   // Переключатель скролла когда 'модальное' окно
   // открыто
   const toggleBody = function(q) {
@@ -97,6 +96,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // --- Выпадающее меню
+
+  const navBarBtn =  document.querySelectorAll('.nav-bar__btn');
+  const navBarDropdown = document.querySelectorAll('.nav-bar__items-wrap');
+
+  // Переключатель видимости меню
+  const toggleDropdownMenu = function(q) {
+    q.classList.toggle('nav-bar__items-wrap--active');
+  }
+
+  let isActive = null;
+
+  navBarBtn.forEach((el, index) => {
+    el.addEventListener('click', function(e) {
+
+      if (isActive == null) {
+        toggleDropdownMenu(navBarDropdown[index]);
+        isActive = e.target;
+      } else if (isActive == e.target) {
+        toggleDropdownMenu(navBarDropdown[index]);
+        isActive = null;
+      } else {
+        navBarDropdown.forEach((el, index) => {
+          el.classList.remove('nav-bar__items-wrap--active');
+        });
+        toggleDropdownMenu(navBarDropdown[index]);
+        isActive = e.target;
+      }
+
+    });
+
+  });
+
+  // document.querySelectorAll('.nav-bar__btn').forEach(function(heroBtn) {
+  //   heroBtn.addEventListener('click', function(event) {
+  //     const path = event.currentTarget.dataset.path
+
+  //     document.querySelectorAll('.nav-bar__dropdown-list').forEach(function(menuContent) {
+  //       menuContent.classList.remove('nav-bar__dropdown-list--active')
+  //     })
+  //     document.querySelector(`[data-target="${path}"]`).classList.toggle('nav-bar__dropdown-list--active')
+  //   })
+  // })
+
   // --- Поиск
 
   const searchBtn = document.querySelector('.header__search');
@@ -137,6 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleSearch(searchBig);
     }
   });
+
+
 
 
   // --- Инициализация инпута choices.js в секции galery
@@ -299,5 +344,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Размещение геообъекта на карте.
     myMap.geoObjects.add(myPlacemark);
   }
+
+
+
+
+
+
+
 
 });
