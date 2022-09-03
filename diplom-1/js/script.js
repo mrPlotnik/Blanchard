@@ -105,6 +105,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const toggleDropdownMenu = function(q) {
     q.classList.toggle('nav-bar__items-wrap--active');
   }
+  const toggleArrowRoute = function(q) {
+    q.classList.toggle('nav-bar__btn--active');
+  }
 
   let isActive = null;
 
@@ -113,15 +116,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (isActive == null) {
         toggleDropdownMenu(navBarDropdown[index]);
+        toggleArrowRoute(el);
         isActive = e.target;
       } else if (isActive == e.target) {
         toggleDropdownMenu(navBarDropdown[index]);
+        toggleArrowRoute(el);
         isActive = null;
       } else {
         navBarDropdown.forEach((el, index) => {
           el.classList.remove('nav-bar__items-wrap--active');
         });
+        navBarBtn.forEach((el, index) => {
+          el.classList.remove('nav-bar__btn--active');
+        });
         toggleDropdownMenu(navBarDropdown[index]);
+        toggleArrowRoute(el);
         isActive = e.target;
       }
 
