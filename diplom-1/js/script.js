@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function burger() {
     const body = document.querySelector('body');
-    // const header = document.querySelector('.header');
     const burger = document.querySelector('.nav__burger');
     const menuMobile = document.querySelector('.nav__mobile');
     const links = document.querySelectorAll('.nav-mobile__list-item a');
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     burger.addEventListener('click', function() {
 
       body.classList.toggle('stop-scroll');
-      burger.classList.toggle('nav-burger--close');
+      burger.classList.toggle('nav__burger--close');
       menuMobile.classList.toggle('nav-mobile--active');
 
       // Индексация в мобильном меню с клавиатуры
