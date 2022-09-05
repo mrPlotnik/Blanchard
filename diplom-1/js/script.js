@@ -2,99 +2,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- Бургер
 
-  const body = document.querySelector('body');
-  const burger = document.querySelector('.nav__burger');
-  const menuMobile = document.querySelector('.nav__mobile');
-  const closeMenu = document.querySelector('.nav-mobile__close-btn');
-  const links = document.querySelectorAll('.nav-mobile__list-item a');
+  burger();
 
-  // Выбираем все элементы для индекса в 'модальном'
-  // окне бургера
-  const elTab = document.querySelectorAll('.nav-mobile__close-btn, .nav-mobile__login-link, .nav-mobile__list-item a');
+  function burger() {
+    const body = document.querySelector('body');
+    // const header = document.querySelector('.header');
+    const burger = document.querySelector('.nav__burger');
+    const menuMobile = document.querySelector('.nav__mobile');
+    const links = document.querySelectorAll('.nav-mobile__list-item a');
+    // Выбираем все элементы для индекса в мобильном меню
+    const elTab = document.querySelectorAll('.nav__burger, .nav-mobile__list-item a, .nav-mobile__login-link');
 
-  // Переключатель видимости 'модального' окна
-  const toggleMenu = function(q) {
-    q.classList.toggle('nav__open');
-  }
+    // Что происходит после нажатия на бургер
+    burger.addEventListener('click', function() {
 
-  // Переключатель скролла когда 'модальное' окно
-  // открыто
-  const toggleBody = function(q) {
-    q.classList.toggle('body-hidden');
-  }
+      body.classList.toggle('stop-scroll');
+      burger.classList.toggle('nav-burger--close');
+      menuMobile.classList.toggle('nav-mobile--active');
 
-  // Что происходит после нажатия на бургер
-  burger.addEventListener('click', function() {
-
-    toggleMenu(menuMobile);
-    toggleBody(body);
-
-    // При отрытии меню сразу фокус на крестик
-    // Из-за анимации свойства visibility ставим
-    // задержку
-    setTimeout(() => {closeMenu.focus()},100);
-
-    // Индексация в мобильном меню с клавиатуры
-    elTab.forEach((tab, index) => {
-      // Добавляем прослушку события на 'активный'
-      // текущий элемент
-      tab.addEventListener('keydown', (e) => {
-        // Если нажата клавиша tab, то
-        if (e.keyCode == 9) {
-          // предотвращаем поведение по умолчанию
-          e.preventDefault();
-          // Если элемент не последний
-          if (index != elTab.length - 1) {
-            // задаем следующему элементу tabindex в 1
-            // и вызываем метод фокуса на него
-            elTab[index + 1].focus();
-          } else {
-            // Когда мы добираемся до последнего элемента,
-            // устанавливаем фокус на первый элемент
-            elTab[0].focus();
-          }
-        };
+      // Индексация в мобильном меню с клавиатуры
+      elTab.forEach((tab, index) => {
+        // Добавляем прослушку события на 'активный'
+        // текущий элемент
+        tab.addEventListener('keydown', (e) => {
+          // Если нажата клавиша tab, то
+          if (e.keyCode == 9) {
+            // предотвращаем поведение по умолчанию
+            e.preventDefault();
+            // Если элемент не последний
+            if (index != elTab.length - 1) {
+              // задаем следующему элементу tabindex в 1
+              // и вызываем метод фокуса на него
+              elTab[index + 1].focus();
+            } else {
+              // Когда мы добираемся до последнего элемента,
+              // устанавливаем фокус на первый элемент
+              elTab[0].focus();
+            }
+          };
+        });
       });
     });
-  });
 
-  // Что происходит после клика на крестик
-  closeMenu.addEventListener('click', function() {
-    toggleMenu(menuMobile);
-    toggleBody(body);
-    // Фокус на бургер
-    burger.focus();
-  })
+    // Что происходит после кликов на ссылки
+    links.forEach((el, index) => {
+      el.addEventListener('click', function(e) {
+        menuMobile.classList.toggle('nav-mobile--active');
+        body.classList.toggle('stop-scroll');
 
-  // Что происходит после кликов на ссылки
-  links.forEach((el, index) => {
-    el.addEventListener('click', function(e) {
-      toggleMenu(menuMobile);
-      toggleBody(body);
-
-      // Плавный скролл до элемента на чистом js
-
-      // предотвращаем поведение по умолчанию
-      e.preventDefault();
-      // Берем значение атрибута href
-      let href = el.getAttribute('href');
-      document.querySelector(href).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        // Плавный скролл до элемента
+        // предотвращаем поведение по умолчанию
+        e.preventDefault();
+        // Берем значение атрибута href
+        let href = el.getAttribute('href');
+        document.querySelector(href).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       });
-
-      // Плавный скролл до элемента на jQuery
-
-      // let href = $(this).attr('href');
-      // $('html, body').animate({
-      //     scrollTop: $(href).offset().top
-      // }, {
-      //     duration: 500,   // по умолчанию «400»
-      //     easing: "linear" // по умолчанию «swing»
-      // });
-
     });
-  });
+  }
 
   // --- Выпадающее меню
 
