@@ -3,21 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- Бургер
 
   burger();
-
   function burger() {
     const body = document.querySelector('body');
     const burger = document.querySelector('.nav__burger');
+    const closeBtn = document.querySelector('.nav-mobile__close-btn');
     const menuMobile = document.querySelector('.nav__mobile');
     const links = document.querySelectorAll('.nav-mobile__list-item a');
     // Выбираем все элементы для индекса в мобильном меню
-    const elTab = document.querySelectorAll('.nav__burger, .nav-mobile__list-item a, .nav-mobile__login-link');
+    const elTab = document.querySelectorAll('.nav-mobile__close-btn, .nav-mobile__list-item a, .nav-mobile__login-link');
 
     // Что происходит после нажатия на бургер
-    burger.addEventListener('click', function() {
+    burger.addEventListener('click', function(q) {
 
       body.classList.toggle('stop-scroll');
-      burger.classList.toggle('nav__burger--close');
       menuMobile.classList.toggle('nav-mobile--active');
+
+      // При отрытии меню сразу фокус на крестик
+      // Из-за анимации свойства visibility ставим
+      // задержку
+      setTimeout(() => {closeBtn.focus()},100);
 
       // Индексация в мобильном меню с клавиатуры
       elTab.forEach((tab, index) => {
@@ -30,134 +34,117 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             // Если элемент не последний
             if (index != elTab.length - 1) {
-              // задаем следующему элементу tabindex в 1
-              // и вызываем метод фокуса на него
+              // и вызываем метод фокуса на следующий элемент
               elTab[index + 1].focus();
             } else {
               // Когда мы добираемся до последнего элемента,
               // устанавливаем фокус на первый элемент
               elTab[0].focus();
             }
-          };
-        });
-      });
-    });
+          }
+        })
+      })
+    })
+
+    // Что происходит после клика на крестик
+    closeBtn.addEventListener('click', function() {
+      body.classList.toggle('stop-scroll');
+      menuMobile.classList.toggle('nav-mobile--active');
+      // Фокус на бургер
+      burger.focus();
+    })
+
 
     // Что происходит после кликов на ссылки
     links.forEach((el, index) => {
       el.addEventListener('click', function(e) {
-        menuMobile.classList.toggle('nav-mobile--active');
         body.classList.toggle('stop-scroll');
+        burger.classList.toggle('nav__burger--close');
+        menuMobile.classList.toggle('nav-mobile--active');
 
         // Плавный скролл до элемента
-        // предотвращаем поведение по умолчанию
-        e.preventDefault();
         // Берем значение атрибута href
         let href = el.getAttribute('href');
         document.querySelector(href).scrollIntoView({
           behavior: 'smooth',
           block: 'start'
-        });
-      });
-    });
-  }
+        })
+      })
+    })
+  };
 
   // --- Выпадающее меню
 
-  const navBarBtn =  document.querySelectorAll('.nav-bar__btn');
-  const navBarDropdown = document.querySelectorAll('.nav-bar__items-wrap');
+  dropdownMenu();
+  function dropdownMenu() {
+    const navBarBtn =  document.querySelectorAll('.nav-bar__btn');
+    const navBarDropdown = document.querySelectorAll('.nav-bar__items-wrap');
 
-  // Переключатель видимости меню
-  const toggleDropdownMenu = function(q) {
-    q.classList.toggle('nav-bar__items-wrap--active');
-  }
-  const toggleArrowRoute = function(q) {
-    q.classList.toggle('nav-bar__btn--active');
-  }
+    let isActive = null;
 
-  let isActive = null;
-
-  navBarBtn.forEach((el, index) => {
-    el.addEventListener('click', function(e) {
-
-      if (isActive == null) {
-        toggleDropdownMenu(navBarDropdown[index]);
-        toggleArrowRoute(el);
-        isActive = e.target;
-      } else if (isActive == e.target) {
-        toggleDropdownMenu(navBarDropdown[index]);
-        toggleArrowRoute(el);
-        isActive = null;
-      } else {
-        navBarDropdown.forEach((el, index) => {
-          el.classList.remove('nav-bar__items-wrap--active');
-        });
-        navBarBtn.forEach((el, index) => {
-          el.classList.remove('nav-bar__btn--active');
-        });
-        toggleDropdownMenu(navBarDropdown[index]);
-        toggleArrowRoute(el);
-        isActive = e.target;
-      }
-
-    });
-
-  });
-
-  // document.querySelectorAll('.nav-bar__btn').forEach(function(heroBtn) {
-  //   heroBtn.addEventListener('click', function(event) {
-  //     const path = event.currentTarget.dataset.path
-
-  //     document.querySelectorAll('.nav-bar__dropdown-list').forEach(function(menuContent) {
-  //       menuContent.classList.remove('nav-bar__dropdown-list--active')
-  //     })
-  //     document.querySelector(`[data-target="${path}"]`).classList.toggle('nav-bar__dropdown-list--active')
-  //   })
-  // })
+    navBarBtn.forEach((el, index) => {
+      el.addEventListener('click', function(e) {
+        if (isActive == null) {
+          navBarDropdown[index].classList.toggle('nav-bar__items-wrap--active');
+          el.classList.toggle('nav-bar__btn--active');
+          isActive = e.target;
+        } else if (isActive == e.target) {
+          navBarDropdown[index].classList.toggle('nav-bar__items-wrap--active');
+          el.classList.toggle('nav-bar__btn--active');
+          isActive = null;
+        } else {
+          navBarDropdown.forEach((el, index) => {
+            el.classList.remove('nav-bar__items-wrap--active');
+          });
+          navBarBtn.forEach((el, index) => {
+            el.classList.remove('nav-bar__btn--active');
+          });
+          navBarDropdown[index].classList.toggle('nav-bar__items-wrap--active');
+          el.classList.toggle('nav-bar__btn--active');
+          isActive = e.target;
+        }
+      })
+    })
+  };
 
   // --- Поиск
 
-  const searchBtn = document.querySelector('.header__search');
-  const searchBig = document.querySelector('.header__search-big-wrap');
-  const searchCloseBtn = document.querySelector('.header__search-close');
-  const searchInput = document.querySelector('#search');
+  search ();
+  function search() {
+    const searchBtn = document.querySelector('.header__search-btn');
+    const searchBig = document.querySelector('.search-big');
+    const searchCloseBtn = document.querySelector('.search-big__close-btn');
+    const searchInput = document.querySelector('#search');
 
-  // Переключатель видимости поиска
-  const toggleSearch = function(q) {
-    q.classList.toggle('search__open');
-  }
+    // Что происходит после клика на лупу
+    searchBtn.addEventListener('click', function(e) {
+      // предотвращаем поведение по умолчанию
+      e.stopPropagation();
+      searchBig.classList.toggle('search-big--open');
+      // Из-за анимации свойства visibility ставим задержку
+      setTimeout(() => {searchInput.focus()},100);
+    })
 
-  // Что происходит после клика на лупу
-  searchBtn.addEventListener('click', function(e) {
-    // предотвращаем поведение по умолчанию
-    e.stopPropagation();
-    toggleSearch(searchBig);
-    // Из-за анимации свойства visibility ставим задержку
-    setTimeout(() => {searchInput.focus()},100);
-  })
+    // Что происходит после клика на крестик
+    searchCloseBtn.addEventListener('click', function() {
+      searchBig.classList.toggle('search-big--open');
+    })
 
-  // Что происходит после клика на крестик
-  searchCloseBtn.addEventListener('click', function() {
-    toggleSearch(searchBig);
-  })
+    // Что происходит после клика вне поиска
+    document.addEventListener('click', function(e) {
+      // Определяю место клика
+      let target = e.target;
+      // Клик был на .searchBig и его вложенные элементы или нет?
+      let itsSearch = target == searchBig || searchBig.contains(target);
+      // .searchBig открыт?
+      let searchIsActive = searchBig.classList.contains('search-big--open');
 
-  // Что происходит после клика вне поиска
-  document.addEventListener('click', function(e) {
-    // Определяю место клика
-    let target = e.target;
-    // Клик был на .searchBig и его вложенные элементы или нет?
-    let itsSearch = target == searchBig || searchBig.contains(target);
-    // .searchBig открыт?
-    let searchIsActive = searchBig.classList.contains('search__open');
-
-    // Если клик был вне .searchBig и .searchBig открыт, то выполняю код
-    if (!itsSearch && searchIsActive) {
-      toggleSearch(searchBig);
-    }
-  });
-
-
-
+      // Если клик был вне .searchBig и .searchBig открыт, то выполняю код
+      if (!itsSearch && searchIsActive) {
+        searchBig.classList.toggle('search-big--open');
+      }
+    })
+  };
 
   // --- Инициализация инпута choices.js в секции galery
 
@@ -319,12 +306,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Размещение геообъекта на карте.
     myMap.geoObjects.add(myPlacemark);
   }
-
-
-
-
-
-
-
 
 });
