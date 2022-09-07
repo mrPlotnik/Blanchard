@@ -307,4 +307,14 @@ document.addEventListener('DOMContentLoaded', function() {
     myMap.geoObjects.add(myPlacemark);
   }
 
+  // --- SimpleBar
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.nav-bar__items-wrap'),
+    el => new SimpleBar(el, {
+      autoHide: false
+    })
+  );
+
+
 });

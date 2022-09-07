@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/normalize.css"/>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
   <title>Blanchard — удожественная галерея</title>
@@ -73,7 +74,7 @@
                     <ul class="nav-bar__list d-flex list-reset align-items-center justify-content-between">
                       <li id="list-1" class="nav-bar__list-item">
                         <button class="nav-bar__btn btn-reset" aria-label="Подменю 'реализм'. Открыть">Реализм</button>
-                        <div class="nav-bar__items-wrap">
+                        <div class="nav-bar__items-wrap" data-simplebar>
                           <ul class="nav-bar__dropdown-list list-reset ">
                             <li class="nav-bar__dropdown-item">
                               <a class="nav-bar__dropdown-item-btn btn-reset">Тинторетто</a>
@@ -83,7 +84,7 @@
                             </li>
                             <li class="nav-bar__dropdown-item">
                               <a class="nav-bar__dropdown-item-btn btn-reset">Леонардо</a>
-                              </li>
+                            </li>
                             <li class="nav-bar__dropdown-item">
                               <a class="nav-bar__dropdown-item-btn btn-reset">Вероккьо</a>
                             </li>
@@ -95,17 +96,16 @@
                             </li>
                             <li class="nav-bar__dropdown-item">
                               <a class="nav-bar__dropdown-item-btn btn-reset">Леонардо</a>
-                              </li>
+                            </li>
                             <li class="nav-bar__dropdown-item">
                               <a class="nav-bar__dropdown-item-btn btn-reset">Вероккьо</a>
                             </li>
                           </ul>
                         </div>
                       </li>
-
                       <li id="list-2" class="nav-bar__list-item">
                         <button class="nav-bar__btn btn-reset" aria-label="Подменю 'импрессионизм'. Открыть">Импрессионизм</button>
-                        <div class="nav-bar__items-wrap">
+                        <div class="nav-bar__items-wrap" data-simplebar>
                           <ul class="nav-bar__dropdown-list list-reset ">
                             <li class="nav-bar__dropdown-item">
                               <a class="nav-bar__dropdown-item-btn btn-reset">Моне</a>
@@ -297,12 +297,9 @@
     <div class="container">
       <div class="row hero__wrap">
         <div class="col d-flex flex-column align-items-center align-items-md-start">
-
-            <h1 class="hero__header">Прикоснитесь к&nbspпрекрасному</h1>
-            <p class="hero__text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений</p>
-
-            <button class="hero__btn btn-reset">Подписаться на рассылку</button>
-
+          <h1 class="hero__header">Прикоснитесь к&nbspпрекрасному</h1>
+          <p class="hero__text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений</p>
+          <button class="hero__btn btn-reset">Подписаться на рассылку</button>
         </div>
       </div>
     </div>
@@ -963,6 +960,7 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" defer></script>
 <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
 <script src="js/choices.min.js" defer></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js" defer></script>
 <script src="js/script.js" defer></script>
 
 </body>
