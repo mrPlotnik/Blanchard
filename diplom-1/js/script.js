@@ -154,9 +154,37 @@ document.addEventListener('DOMContentLoaded', function() {
     itemSelectText: '',
   });
 
-  // --- Первый свайпер в секции galery
+  // --- SimpleBar
 
-  const swiper1 = new Swiper('#swiper-galery', {
+   Array.prototype.forEach.call(
+    document.querySelectorAll('.nav-bar__items-wrap'),
+    el => new SimpleBar(el, {
+      autoHide: false
+    })
+  );
+
+  // --- Аккордион на jQuery в сеrции catalog
+
+  $('#accordion').accordion({
+    icons: false,
+    heightStyle: 'content',
+    collapsible: true
+  });
+
+  // --- Первый свайпер в секции hero
+
+  const swiper1 = new Swiper('#swiper-hero', {
+    effect: 'fade',
+    // Автоплей
+    autoplay: {
+      // Автоплей не останавливается после конца итереций
+      disableOnInteraction: true,
+    },
+  });
+
+  // --- Второй свайпер в секции galery
+
+  const swiper2 = new Swiper('#swiper-galery', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 38,
@@ -194,17 +222,9 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
-  // --- Аккордион на jQuery в сеrции catalog
+  // --- Третий свайпер в секции events
 
-  $('#accordion').accordion({
-    icons: false,
-    heightStyle: 'content',
-    collapsible: true
-  });
-
-  // --- Второй свайпер в секции events
-
-  const swiper2 = new Swiper('#swiper-events', {
+  const swiper3 = new Swiper('#swiper-events', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 35,
@@ -244,9 +264,9 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
-  // --- Третий свайпер в секции projects
+   // --- Четвертый свайпер в секции projects
 
-  const swiper3 = new Swiper('#swiper-partners', {
+  const swiper4 = new Swiper('#swiper-partners', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     // spaceBetween: 20,
@@ -306,15 +326,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Размещение геообъекта на карте.
     myMap.geoObjects.add(myPlacemark);
   }
-
-  // --- SimpleBar
-
-  Array.prototype.forEach.call(
-    document.querySelectorAll('.nav-bar__items-wrap'),
-    el => new SimpleBar(el, {
-      autoHide: false
-    })
-  );
-
 
 });

@@ -95,7 +95,6 @@ svg {
   width: 100%;
   height: 100%;
 }
-
 h1, h2, h3 {
   margin: 0;
   padding: 0;
@@ -402,15 +401,28 @@ img {
 /* ---------- section-hero start ---------- */
 .hero {
   background-size: cover;
-  background-image: url(../img/hero-1920-1.jpg);
+  height: 309px;
 }
 .hero__wrap {
-  height: 309px;
   padding-top: 28px;
   text-align: center;
 }
-
-
+#swiper-hero {
+  position: absolute;
+  height: inherit;
+  top: calc(0 - var(--header-height));
+  left: 0;
+  z-index: -1;
+}
+#swiper-hero .swiper-slide--1 {
+  background-image: url(../img/hero-1920-1.jpg);
+}
+#swiper-hero .swiper-slide--2 {
+  background-image: url(../img/hero-1920-2.jpg);
+}
+#swiper-hero .swiper-slide--3 {
+  background-image: url(../img/hero-1920-3.jpg);
+}
 
 .hero__header {
   max-height: 100px;
@@ -1206,6 +1218,9 @@ a:active .ok path {
 
 /* md */
 @media (min-width: 768px) {
+  :root {
+    --header-height: 100px;
+  }
   .container {
     --bs-gutter-x: 26px;
   }
@@ -1286,8 +1301,10 @@ a:active .ok path {
   /* ---------- header end ---------- */
 
   /* ---------- section hero start ---------- */
-  .hero__wrap {
+  .hero {
     height: 668px;
+  }
+  .hero__wrap {
     padding-top: 105px;
     text-align: left;
   }
@@ -1930,8 +1947,10 @@ a:active .ok path {
     background-color: #00000000;
   }
     /* ---------- hero section start ---------- */
-  .hero__wrap {
+  .hero {
     height: 700px;
+  }
+  .hero__wrap {
     padding-top: 133px;
     padding-right: 55%;
     padding-bottom: 122px;
