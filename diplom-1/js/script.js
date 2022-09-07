@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Плавный скролл до элемента
         // Берем значение атрибута href
+        e.preventDefault();
         let href = el.getAttribute('href');
         document.querySelector(href).scrollIntoView({
           behavior: 'smooth',
@@ -146,6 +147,24 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   };
 
+  // Плавный скролл до элемента (горизонтальное меню 1920px)
+
+  scroll();
+  function scroll() {
+    const links = document.querySelectorAll('.nav-major__list-item a')
+
+    links.forEach((el, index) => {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        let href = el.getAttribute('href');
+          document.querySelector(href).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+      })
+    })
+  }
+
   // --- Инициализация инпута choices.js в секции galery
 
   const el = document.querySelector('select');
@@ -154,12 +173,12 @@ document.addEventListener('DOMContentLoaded', function() {
     itemSelectText: '',
   });
 
-  // --- SimpleBar
+  // --- SimpleBar в выпадающем меню
 
-   Array.prototype.forEach.call(
+  Array.prototype.forEach.call(
     document.querySelectorAll('.nav-bar__items-wrap'),
     el => new SimpleBar(el, {
-      autoHide: false
+      autoHide: true
     })
   );
 
@@ -185,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- Второй свайпер в секции galery
 
   const swiper2 = new Swiper('#swiper-galery', {
+    // preventClicksPropagation: false,
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 38,
