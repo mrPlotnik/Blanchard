@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   };
 
-  // Плавный скролл до элемента (горизонтальное меню 1920px)
+  // --- Плавный скролл до элемента (горизонтальное меню 1920px)
 
   scroll();
   function scroll() {
@@ -162,6 +162,56 @@ document.addEventListener('DOMContentLoaded', function() {
             block: 'start'
           })
       })
+    })
+  }
+
+  // --- gallery modal
+
+  modal();
+  function modal() {
+    const btn = document.querySelectorAll('#swiper-galery .swiper-slide');
+    const modal = document.querySelector('.modal');
+    const notes = document.querySelectorAll('.modal__item');
+    const exitBtn = document.querySelectorAll('.modal__close-btn');
+
+    btn.forEach((element, index) => {
+      element.addEventListener('click', () => {
+        document.body.classList.toggle('stop-scroll');
+        notes.forEach((el) => {
+          el.classList.remove('modal__item--active');
+        })
+        document.querySelector(`#modal-item-${ index }`).classList.add('modal__item--active');
+        modal.classList.add('modal--active');
+        setTimeout(() => {
+          let activeModal = document.querySelector('.modal__item--active');
+          activeModal.querySelector('.note__btn').focus();
+        }, 100);
+      });
+    });
+    exitBtn.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.body.classList.remove('stop-scroll');
+        modal.classList.remove('modal--active');
+        notes.classList.remove('modal__item--active');
+      })
+    })
+    // modal.addEventListener('click', function (el) {
+    //   if (el.target === modal) {
+    //     notes.forEach(function (el) {
+    //       el.classList.remove('modal__item--active');
+    //     })
+    //     document.body.classList.remove('stop-scroll');
+    //     modal.classList.remove('modal--active');
+    //   }
+    // })
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        notes.forEach(function (el) {
+          el.classList.remove('modal__item--active');
+        })
+        document.body.classList.remove('stop-scroll');
+        modal.classList.remove('modal--active');
+      }
     })
   }
 

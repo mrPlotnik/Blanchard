@@ -384,7 +384,7 @@
           <div id="swiper-galery" class="swiper">
 
             <div class="swiper-wrapper">
-              <a href="" class="swiper-slide">
+              <a class="swiper-slide" role="group" aria-label="1 из 6">
                 <picture>
                   <source media="(max-width: 765px)" srcset="img/galery/galery-320-1.jpg">
                   <source media="(max-width: 1023px)" srcset="img/galery/galery-768-1.jpg">
@@ -392,14 +392,15 @@
                   <img class="swiper-slide__img" src="img/galery/galery-1920-1.jpg" alt="Казимир Малевич, Торс №2">
                 </picture>
               </a>
-
               <div class="swiper-slide">
-                <picture>
-                  <source media="(max-width: 765px)" srcset="img/galery/galery-320-2.jpg">
-                  <source media="(max-width: 1023px)" srcset="img/galery/galery-768-2.jpg">
-                  <source media="(max-width: 1919)" srcset="img/galery/galery-1024-2.jpg">
-                  <img class="swiper-slide__img" src="img/galery/galery-1920-2.jpg" alt="Казимир Малевич, Женщина с&nbsp;граблями">
-                </picture>
+                <a class="swiper-slide" role="group" aria-label="2 из 6">
+                  <picture>
+                    <source media="(max-width: 765px)" srcset="img/galery/galery-320-2.jpg">
+                    <source media="(max-width: 1023px)" srcset="img/galery/galery-768-2.jpg">
+                    <source media="(max-width: 1919)" srcset="img/galery/galery-1024-2.jpg">
+                    <img class="swiper-slide__img" src="img/galery/galery-1920-2.jpg" alt="Казимир Малевич, Женщина с&nbsp;граблями">
+                  </picture>
+                </a>
               </div>
               <div class="swiper-slide">
                 <picture>
@@ -899,9 +900,9 @@
 </main>
 
 <!-- footer -->
-<footer id="contacts" class="footer">
+<footer class="footer">
 
-  <div class="footer__contacts-wrap contacts">
+  <div id="contacts" class="footer__contacts-wrap contacts">
     <div class="container">
       <div class="row row-cols-1">
 
@@ -986,6 +987,56 @@
   </div>
 
 </footer>
+
+<div class="modal">
+  <div class="container ">
+    <div class="row">
+      <ul class="list-reset justify-content-center">
+        <li id="modal-item-0" class="modal__item">
+          <article class="note d-flex flex-column">
+
+            <div class="col">
+              <div class="note__first">
+                <div class="note__img-wrap">
+                  <picture>
+                    <source media="(max-width: 640px)" srcset="img/galery/galery-320-1.jpg">
+                    <source media="(max-width: 992px)" srcset="img/galery/galery-768-1.jpg">
+                    <source media="(max-width: 1440px)" srcset="img/galery/galery-1024-1.jpg">
+                    <img class="note__img" src="img/galery/galery-1920-1.jpg" alt="Каземир Малевич, Торс №2">
+                  </picture>
+                  <button class="modal__close-btn btn-reset d-flex" aria-label="Закрыть">
+                    <span class="modal__close-btn-line modal__close-btn-line-1"></span>
+                    <span class="modal__close-btn-line modal__close-btn-line-2"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="note__header-wrap">
+                <h3 class="note__header article-title">Каземир малевич</h3>
+                <h4 class="note__subheader article-title">Торс (Фигура с розовым лицом)</h4>
+                <span class="note__date">1928-1929</span>
+              </div>
+            </div>
+
+            <div class="col descr-wrap">
+              <div class="note__second">
+                <p class="note__descr descr">
+                  Эти странные безликие "полуобразы" (так называл подобные работы сам художник), зашифрованные в женских фигурах и торсах, существуют по мысли К.Малевича, в параллельном мире, в пределах вымышленного художником Космоса, в пространстве без времени. Произведение вызывает ассоциации и с пластикой архаической скульптуры, и с деревянной игрушкой, и с модернистским манекеном. Присутствие в фигуре белого цвета, дающего реальное представление о бесконечности, говорит о том, что в данном случае бесконечность заключена в самом человеке, который и становится для Малевича средоточием некоего абсолюта.          </p>
+              </div>
+            </div>
+
+
+
+
+
+          </article>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript" defer></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
