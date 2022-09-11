@@ -11,25 +11,21 @@
   <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
-  <title>Blanchard — удожественная галерея</title>
+  <title>Blanchard&nbsp;&mdash; удожественная галерея</title>
 </head>
 <body>
 
 <!-- header -->
 <header class="header">
-
   <div class="container">
-
     <div class="row header-wrap d-flex align-items-center justify-content-between">
-
       <div class="col col-xl-2 order-2 order-xl-1 d-flex justify-content-center justify-content-xl-start">
         <div class="header__logo-wrap">
           <a href="#">
-            <img src="img/logo.png" alt="Логотип Blanchard. Художественная галерея">
+            <img src="img/logo.svg" alt="Логотип Blanchard. Художественная галерея">
           </a>
         </div>
       </div><!-- logo -->
-
       <div class="col col-xl-8 order-1 order-xl-2 d-flex">
         <div class="header__nav-wrap nav d-flex">
           <button class="nav__burger btn-reset d-flex d-xl-none" aria-label="Открыть главное меню" aria-expanded="false">
@@ -235,12 +231,7 @@
                     <div class="nav-bar__search-icon">
                       <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
                     </div>
-                    <input
-                      id="nav-bar__search"
-                      type="search"
-                      name="search"
-                      placeholder="Поиск по сайту"
-                      value="">
+                    <input id="nav-bar__search" type="search" name="search" placeholder="Поиск по сайту" value="">
                   </div>
                 </div><!-- nav-bar__search-->
               </div><!-- row -->
@@ -269,24 +260,15 @@
           <div class="search-big__search-icon">
             <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
           </div>
-          <input
-            id="search"
-            type="search"
-            name="search"
-            placeholder="Поиск по сайту"
-            aria-label="Введите запрос поиска"
-            autocomplete="off">
+          <input id="search" type="search" name="search" placeholder="Поиск по сайту" aria-label="Введите запрос поиска" autocomplete="off">
           <button class="search-big__close-btn btn-reset">
             <span class="search-big__close-btn-line"></span>
             <span class="search-big__close-btn-line"></span>
           </button>
-        </div>
+        </div><!-- search-big__wrap -->
       </div><!-- search-big -->
-
     </div><!-- header-wrap -->
-
   </div><!-- container -->
-
 </header><!-- header -->
 
 <!-- main -->
@@ -328,13 +310,10 @@
   <section id="galery" class="section-galery galery">
     <div class="container">
       <div class="row galery__wrap">
-
         <div class="col col-lg-4 col-xxl-3 galery__custom-block-first">
-
           <div class="col-12">
             <h2 class="galery__header">Галерея</h2>
           </div>
-
           <div class="galery__filters filters">
             <span>Фильтр:</span>
             <select name="select">
@@ -378,11 +357,9 @@
             </div>
           </div>
         </div>
-
         <div class="col col-lg-8 col-xxl-9 galery__custom-block-second">
           <!-- Swiper -->
           <div id="swiper-galery" class="swiper">
-
             <div class="swiper-wrapper">
               <a class="swiper-slide" role="group" aria-label="1 из 6">
                 <picture>
@@ -427,7 +404,6 @@
                 </picture>
               </div>
             </div>
-
             <div class="swiper-button-next">
               <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#666"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#666" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="#fff" fill="#666"/> </svg>
             </div>
@@ -435,10 +411,8 @@
               <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666"/> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="#666" stroke-width="2"/> <path d="M16 20L11 15L16 10" stroke="#fff" fill="#666"/> </svg>
             </div>
             <div class="swiper-pagination"></div>
-
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -538,7 +512,6 @@
                   <svg aria-label="Открыть/закрыть" width="50" height="50" fill="none" viewbox="-1 -1 52 52" xmlns="http://www.w3.org/2000/svg" > <path d="M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" fill="#ececec" stroke="#fff" stroke-width="2" /> <path d="M16.6667 27.3333L25 19L33.3333 27.3333" stroke="#000" /> </svg>
                 </h3>
                 <div class="catalog__artists catalog__empty empty">
-
                   <div class="row">
                     <div class="col-4 col-lg-6">
                       <img class="empty__img" src="img/catalog-date-empty-320.png" alt="Здесь пока пусто">
@@ -549,7 +522,6 @@
                       <a href="#">В галерею</a>
                     </div>
                   </div>
-
                 </div>
 
                 <h3 class="catalog__date-item">
@@ -882,7 +854,6 @@
                 </div>
 
               </div>
-
               <div class="swiper-button-next">
                 <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#ececec"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#ececec" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="black" fill="#ececec"/> </svg>
               </div>
@@ -958,11 +929,9 @@
   <div class="footer__map-wrap">
     <div id="map"></div>
   </div>
-
   <div class="footer__bottom bottom">
     <div class="container">
       <div class="row row-cols-1 row-cols-md-2 ">
-
         <div class="col">
           <div class="bottom__social">
             <a href="#" target="_blank" aria-label="Мы в соцсети Вконтакте">
@@ -973,7 +942,6 @@
             </a>
           </div>
         </div>
-
         <div class="col order-md-first ">
           <div class="bottom__logo">
             <a href="#">
@@ -981,11 +949,9 @@
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
 </footer>
 
 <div class="modal">
@@ -994,7 +960,6 @@
       <ul class="list-reset justify-content-center">
         <li id="modal-item-0" class="modal__item">
           <article class="note d-flex flex-column">
-
             <div class="col">
               <div class="note__first">
                 <div class="note__img-wrap">
@@ -1011,7 +976,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col">
               <div class="note__header-wrap">
                 <h3 class="note__header article-title">Каземир малевич</h3>
@@ -1019,18 +983,12 @@
                 <span class="note__date">1928-1929</span>
               </div>
             </div>
-
             <div class="col descr-wrap">
               <div class="note__second">
                 <p class="note__descr descr">
                   Эти странные безликие "полуобразы" (так называл подобные работы сам художник), зашифрованные в женских фигурах и торсах, существуют по мысли К.Малевича, в параллельном мире, в пределах вымышленного художником Космоса, в пространстве без времени. Произведение вызывает ассоциации и с пластикой архаической скульптуры, и с деревянной игрушкой, и с модернистским манекеном. Присутствие в фигуре белого цвета, дающего реальное представление о бесконечности, говорит о том, что в данном случае бесконечность заключена в самом человеке, который и становится для Малевича средоточием некоего абсолюта.          </p>
               </div>
             </div>
-
-
-
-
-
           </article>
         </li>
       </ul>
@@ -1038,14 +996,13 @@
   </div>
 </div>
 
-<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript" defer></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
-<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" defer></script>
-<script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-<script src="js/choices.min.js" defer></script>
-<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js" defer></script>
-<script src="js/script.js" defer></script>
-
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+<script src="js/choices.min.js"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

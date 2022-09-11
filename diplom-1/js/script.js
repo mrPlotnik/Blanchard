@@ -82,28 +82,35 @@ document.addEventListener('DOMContentLoaded', function() {
   function dropdownMenu() {
     const navBarBtn =  document.querySelectorAll('.nav-bar__btn');
     const navBarDropdown = document.querySelectorAll('.nav-bar__items-wrap');
-
     let isActive = null;
 
     navBarBtn.forEach((el, index) => {
       el.addEventListener('click', function(e) {
         if (isActive == null) {
-          navBarDropdown[index].classList.toggle('nav-bar__items-wrap--active');
-          el.classList.toggle('nav-bar__btn--active');
+          navBarDropdown[index].classList.add('nav-bar__items-wrap--active');
+          navBarDropdown[index].setAttribute("aria-hidden", "false");
+          el.classList.add('nav-bar__btn--active');
+          el.setAttribute("aria-expanded", "true");
           isActive = e.target;
         } else if (isActive == e.target) {
-          navBarDropdown[index].classList.toggle('nav-bar__items-wrap--active');
-          el.classList.toggle('nav-bar__btn--active');
+          navBarDropdown[index].classList.remove('nav-bar__items-wrap--active');
+          navBarDropdown[index].setAttribute("aria-hidden", "true");
+          el.classList.remove('nav-bar__btn--active');
+          el.setAttribute("aria-expanded", "false");
           isActive = null;
         } else {
-          navBarDropdown.forEach((el, index) => {
+          navBarDropdown.forEach((el) => {
             el.classList.remove('nav-bar__items-wrap--active');
+            el.setAttribute("aria-hidden", "true");
           });
-          navBarBtn.forEach((el, index) => {
+          navBarBtn.forEach((el) => {
             el.classList.remove('nav-bar__btn--active');
+            el.setAttribute("aria-expanded", "false");
           });
-          navBarDropdown[index].classList.toggle('nav-bar__items-wrap--active');
-          el.classList.toggle('nav-bar__btn--active');
+          navBarDropdown[index].classList.add('nav-bar__items-wrap--active');
+          navBarDropdown[index].setAttribute("aria-hidden", "false");
+          el.classList.add('nav-bar__btn--active');
+          el.setAttribute("aria-expanded", "true");
           isActive = e.target;
         }
       })
@@ -230,7 +237,8 @@ document.addEventListener('DOMContentLoaded', function() {
   Array.prototype.forEach.call(
     document.querySelectorAll('.nav-bar__items-wrap'),
     el => new SimpleBar(el, {
-      autoHide: true
+      autoHide: true,
+      ariaLabel: 'Прокручиваемая область',
     })
   );
 
