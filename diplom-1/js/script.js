@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     burger.addEventListener('click', function(q) {
 
       body.classList.toggle('stop-scroll');
+      burger.setAttribute("aria-expanded", "true");
       menuMobile.classList.toggle('nav-mobile--active');
 
       // При отрытии меню сразу фокус на крестик
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Что происходит после клика на крестик
     closeBtn.addEventListener('click', function() {
       body.classList.toggle('stop-scroll');
+      burger.setAttribute("aria-expanded", "false");
       menuMobile.classList.toggle('nav-mobile--active');
       // Фокус на бургер
       burger.focus();
@@ -248,6 +250,11 @@ document.addEventListener('DOMContentLoaded', function() {
     autoplay: {
       // Автоплей не останавливается после конца итереций
       disableOnInteraction: true,
+    },
+    a11y: {
+      preventClicks: false,
+      preventClicksPropagation: false,
+      simulateTouch: false,
     },
   });
 

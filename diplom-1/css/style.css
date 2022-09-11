@@ -32,6 +32,10 @@ html {
 body * {
   /* outline: 1px solid #ff000000; */
 }
+.nav__burger:focus {
+  /* outline-color:transparent; */
+  outline: 1px solid #000000;
+}
 .stop-scroll {
   overflow: hidden;
 }
@@ -63,6 +67,7 @@ h1, h2, h3, h4, h5, h6, p {
   --purple-4: #d1a9f0;
   --white: #fff;
   --silver: #cacaca;
+  --gray: #333;
   --black: #000;
 }
 .list-reset {
@@ -80,9 +85,7 @@ h1, h2, h3, h4, h5, h6, p {
 svg,
 svg rect,
 svg path,
-svg circle {
-  transition: all .3s ease-in-out;
-}
+svg circle,
 a,
 button {
   transition: all .3s ease-in-out;
@@ -90,11 +93,6 @@ button {
 a {
   display: inline-flex;
   width: fit-content;
-}
-.header button,
-.header a {
-  outline-offset: var(--outline-offset);
-  outline: 2px solid #9d5cd000;
 }
 svg {
   display: flex;
@@ -153,6 +151,19 @@ img {
 }
 
 /* ---------- header start ---------- */
+.header button,
+.header a {
+  outline-offset: var(--outline-offset);
+  outline: 2px solid transparent;
+}
+/* .header button:focus:not(focus-visible),
+.header a:focus:not(focus-visible) {
+  outline: none;
+} */
+.header button:focus-visible,
+.header a:focus-visible {
+  outline-color: var(--purple-2);
+}
 .header {
   background-color: var(--black);
 }
@@ -168,20 +179,12 @@ img {
 .header__logo-wrap a {
   width: 100%;
 }
-.header__logo-wrap a:focus-visible {
-  outline: 2px solid var(--purple-2);
-}
 .header__search-btn {
   width: 18px;
 }
 .header__search-btn:hover svg path {
   fill: var(--purple-3);
 }
-.header__search-btn:focus-visible {
-  outline: 2px solid var(--purple-2);
-}
-
-/* --- Мобильное меню start --- */
 .nav__burger {
   position: relative;
   width: 25px;
@@ -189,9 +192,6 @@ img {
 }
 .nav__burger:hover .nav__burger-line {
   background-color: var(--purple-3);
-}
-.nav__burger:focus-visible {
-  outline: 2px solid var(--purple-2);
 }
 .nav__burger-line {
   position: absolute;
@@ -212,6 +212,8 @@ img {
   width: 40%;
   bottom: 0;
 }
+
+/* --- Мобильное меню start --- */
 .nav__mobile {
   position: fixed;
   display: flex;
@@ -279,6 +281,7 @@ img {
 }
 .nav-mobile__list-item a:focus-visible {
   color: var(--white);
+  outline-color: transparent;
   background-color: var(--purple-1);
 }
 .nav-mobile__list-item a:active {
@@ -457,6 +460,7 @@ img {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  outline: 2px solid transparent;
   color: var(--white);
   background-color: var(--purple-2);
 }
@@ -464,8 +468,7 @@ img {
   border: 3px solid var(--purple-4);
 }
 .hero__btn:focus-visible {
-  border: 3px solid var(--purple-2);
-  outline: 2px solid var(--purple-3);
+  outline-color: var(--purple-3);
 }
 .hero__btn:active {
   border: 3px solid var(--purple-4);
@@ -480,7 +483,7 @@ img {
 }
 .about__header {
   margin-bottom: 12px;
-  color: #333;
+  color: var(--gray);
 }
 .about__text {
   font-size: 14px;
@@ -937,8 +940,8 @@ img {
   color: var(--white);
 }
 .card__link:active span {
-  border-color: #333;
-  color: #333;
+  border-color: var(--gray);
+  color: var(--gray);
 }
 
 #swiper-events .swiper-wrapper {
@@ -992,7 +995,7 @@ img {
   margin-bottom: 51px;
   font-size: 16px;
   line-height: 32px;
-  color: #333;
+  color: var(--gray);
 }
 .projects__text svg {
   display: inline-flex;
@@ -1124,7 +1127,7 @@ address {
 	height: 40px;
 	padding-left: 23px;
   border: none;
-	border: 1px solid #333;
+	border: 1px solid var(--gray);
 	border-radius: 20px;
 	font-size: 16px;
 	line-height: 19px;
@@ -1156,7 +1159,7 @@ address {
   margin-bottom: 7px;
   font-size: 18px;
   line-height: 32px;
-  color: #333;
+  color: var(--gray);
 }
 .contacts__messages svg {
   width: 50px;
@@ -1337,9 +1340,9 @@ a:active .ok path {
   flex: 1 0 fit-content;
   width: 100%;
 }
-button, [type="button"], [type="reset"], [type="submit"] {
+/* button, [type="button"], [type="reset"], [type="submit"] {
 	-webkit-appearance: button;
-}
+} */
 .note__header-wrap {}
 .article-title {
 	margin: 0;
@@ -1347,7 +1350,7 @@ button, [type="button"], [type="reset"], [type="submit"] {
 	font-weight: 600;
 	font-size: 24px;
 	line-height: 33px;
-	color: #333;
+	color: var(--gray);
 }
 .note__header {
   flex-shrink: 0;
@@ -1378,8 +1381,6 @@ button, [type="button"], [type="reset"], [type="submit"] {
 	line-height: 32px;
 	color: var(--color-grey);
 }
-
-
 /* ---------- modal end ---------- */
 
 /* sm */
