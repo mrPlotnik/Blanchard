@@ -160,8 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   scroll();
   function scroll() {
-    const links = document.querySelectorAll('.nav-major__list-item a')
-
+    const links = document.querySelectorAll('.nav-major__link')
     links.forEach((el, index) => {
       el.addEventListener('click', function(e) {
         e.preventDefault();
@@ -193,7 +192,8 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.add('modal--active');
         setTimeout(() => {
           let activeModal = document.querySelector('.modal__item--active');
-          activeModal.querySelector('.note__btn').focus();
+          console.log(activeModal);
+          activeModal.querySelector('.modal__close-btn').focus();
         }, 100);
       });
     });
@@ -204,15 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
         notes.classList.remove('modal__item--active');
       })
     })
-    // modal.addEventListener('click', function (el) {
-    //   if (el.target === modal) {
-    //     notes.forEach(function (el) {
-    //       el.classList.remove('modal__item--active');
-    //     })
-    //     document.body.classList.remove('stop-scroll');
-    //     modal.classList.remove('modal--active');
-    //   }
-    // })
+
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         notes.forEach(function (el) {
@@ -226,21 +218,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- Инициализация инпута choices.js в секции galery
 
-  const el = document.querySelector('select');
-  const choises = new Choices(el,{
-    searchEnabled: false,
-    itemSelectText: '',
-  });
+  choises();
+  function choises() {
+    const el = document.querySelector('select');
+    const choises = new Choices(el,{
+      searchEnabled: false,
+      itemSelectText: '',
+    });
+  }
 
   // --- SimpleBar в выпадающем меню
 
-  Array.prototype.forEach.call(
-    document.querySelectorAll('.nav-bar__items-wrap'),
-    el => new SimpleBar(el, {
-      autoHide: true,
-      ariaLabel: 'Прокручиваемая область',
+  simplebar1();
+  function simplebar1() {
+    const bars = document.querySelectorAll('[data-simplebar]')
+    bars.forEach(el => {
+      new SimpleBar(el, {
+        ariaLabel: 'Прокручиваемая область',
+      })
+      el.querySelector('.simplebar-content-wrapper').setAttribute('tabindex', '-1');
     })
-  );
+  };
+
+  // --- SimpleBar в модальных окнах
+
+  simplebar2();
+  function simplebar2() {
+    Array.prototype.forEach.call(
+      document.querySelectorAll('.note__descr-wrap'),
+      el => new SimpleBar(el, {
+        autoHide: true,
+        ariaLabel: 'Прокручиваемая область',
+      })
+    );
+  }
 
   // --- Аккордион на jQuery в сеrции catalog
 
@@ -252,164 +263,180 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- Первый свайпер в секции hero
 
-  const swiper1 = new Swiper('#swiper-hero', {
-    effect: 'fade',
-    // Автоплей
-    autoplay: {
-      // Автоплей не останавливается после конца итереций
-      disableOnInteraction: true,
-    },
-    a11y: {
-      preventClicks: false,
-      preventClicksPropagation: false,
-      simulateTouch: false,
-    },
-  });
+  swiper1();
+  function swiper1() {
+    const swiper1 = new Swiper('#swiper-hero', {
+      effect: 'fade',
+      // Автоплей
+      autoplay: {
+        // Автоплей не останавливается после конца итереций
+        disableOnInteraction: true,
+      },
+      a11y: {
+        preventClicks: false,
+        preventClicksPropagation: false,
+        simulateTouch: false,
+      },
+    });
+  }
 
   // --- Второй свайпер в секции galery
 
-  const swiper2 = new Swiper('#swiper-galery', {
-    // preventClicksPropagation: false,
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 38,
-    // loop: true,
-    // Принимает события мыши, как событие касания пальцами
-    simulateTouch: true,
-    // 'Grab' курсор для повышения юзабилити на десктопах
-    grabCursor: true,
-    // Автоплей
-    autoplay: {
-      // Автоплей не останавливается после конца итереций
-      disableOnInteraction: true,
-    },
-    breakpoints: {
-      321: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
+  swiper2();
+  function swiper2() {
+    const swiper2 = new Swiper('#swiper-galery', {
+      // preventClicksPropagation: false,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 38,
+      // loop: true,
+      // Принимает события мыши, как событие касания пальцами
+      simulateTouch: true,
+      // 'Grab' курсор для повышения юзабилити на десктопах
+      grabCursor: true,
+      // Автоплей
+      autoplay: {
+        // Автоплей не останавливается после конца итереций
+        disableOnInteraction: true,
       },
-      1025: {
-        spaceBetween: 36,
+      breakpoints: {
+        321: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+        1025: {
+          spaceBetween: 36,
+        },
+        1441: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 50,
+        }
       },
-      1441: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 50,
-      }
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'fraction',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
 
   // --- Третий свайпер в секции events
 
-  const swiper3 = new Swiper('#swiper-events', {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 35,
-    // effect: 'fade',
-    // Принимает события мыши, как событие касания пальцами
-    simulateTouch: true,
-    // 'Grab' курсор для повышения юзабилити на десктопах
-    grabCursor: true,
-    // Автоплей
-    autoplay: {
-      // Автоплей не останавливается после конца итереций
-      disableOnInteraction: true,
-    },
-     breakpoints: {
-      576: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
+  swiper3();
+  function swiper3() {
+    const swiper3 = new Swiper('#swiper-events', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 35,
+      // effect: 'fade',
+      // Принимает события мыши, как событие касания пальцами
+      simulateTouch: true,
+      // 'Grab' курсор для повышения юзабилити на десктопах
+      grabCursor: true,
+      // Автоплей
+      autoplay: {
+        // Автоплей не останавливается после конца итереций
+        disableOnInteraction: true,
       },
-      1001: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 28,
+       breakpoints: {
+        576: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+        1001: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 28,
+        },
+        1441: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 50,
+        }
       },
-      1441: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 50,
-      }
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
 
    // --- Четвертый свайпер в секции projects
 
-  const swiper4 = new Swiper('#swiper-partners', {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    // spaceBetween: 20,
-    // Принимает события мыши, как событие касания пальцами
-    simulateTouch: true,
-    // 'Grab' курсор для повышения юзабилити на десктопах
-    grabCursor: true,
-    // Автоплей
-    autoplay: {
-      // Автоплей не останавливается после конца итереций
-      disableOnInteraction: true,
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
+  swiper4();
+  function swiper4() {
+    const swiper4 = new Swiper('#swiper-partners', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetween: 20,
+      // Принимает события мыши, как событие касания пальцами
+      simulateTouch: true,
+      // 'Grab' курсор для повышения юзабилити на десктопах
+      grabCursor: true,
+      // Автоплей
+      autoplay: {
+        // Автоплей не останавливается после конца итереций
+        disableOnInteraction: true,
       },
-      1441: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 0,
-      }
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
+      breakpoints: {
+        576: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+        1441: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 0,
+        }
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
 
   // --- Yandex-карты
 
-  // Дождёмся загрузки API и готовности DOM
-  ymaps.ready(init);
-  function init() {
-    // Создание экземпляра карты и его привязка к контейнеру с
-    // заданным id ('map')
-    myMap = new ymaps.Map('map', {
-        // Координаты центра карты
-        center: [55.760000, 37.614700],
-        // Уровень масштабирования. От 0 (весь мир) до 19
-        zoom: 14
-    });
+  map();
+  function map() {
+    // Дождёмся загрузки API и готовности DOM
+    ymaps.ready(init);
+    function init() {
+      // Создание экземпляра карты и его привязка к контейнеру с
+      // заданным id ('map')
+      myMap = new ymaps.Map('map', {
+          // Координаты центра карты
+          center: [55.760000, 37.614700],
+          // Уровень масштабирования. От 0 (весь мир) до 19
+          zoom: 14
+      });
 
-    myPlacemark = new ymaps.Placemark([55.76000, 37.614700], {}, {
-      // Опции
-      // Необходимо указать данный тип макета
-      iconLayout: 'default#image',
-      // Своё изображение иконки метки
-      iconImageHref: '../img/map-point.svg',
-      // Размеры метки
-      iconImageSize: [20, 20],
-      // Смещение левого верхнего угла иконки относительно
-      // её 'ножки' (точки привязки)
-      iconImageOffset: [-10, -10]
-    });
+      myPlacemark = new ymaps.Placemark([55.76000, 37.614700], {}, {
+        // Опции
+        // Необходимо указать данный тип макета
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки
+        iconImageHref: '../img/map-point.svg',
+        // Размеры метки
+        iconImageSize: [20, 20],
+        // Смещение левого верхнего угла иконки относительно
+        // её 'ножки' (точки привязки)
+        iconImageOffset: [-10, -10]
+      });
 
-    // Размещение геообъекта на карте.
-    myMap.geoObjects.add(myPlacemark);
+      // Размещение геообъекта на карте.
+      myMap.geoObjects.add(myPlacemark);
+    }
   }
+
 
 });
