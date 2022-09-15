@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     searchBtn.addEventListener('click', function(e) {
       // предотвращаем поведение по умолчанию
       e.stopPropagation();
+      searchCloseBtn.setAttribute("aria-expanded", "false");
       searchBig.classList.toggle('search-big--open');
       // Из-за анимации свойства visibility ставим задержку
       setTimeout(() => {searchInput.focus()},100);
@@ -137,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Что происходит после клика на крестик
     searchCloseBtn.addEventListener('click', function() {
+      searchCloseBtn.setAttribute("aria-expanded", "true");
       searchBig.classList.toggle('search-big--open');
     })
 
@@ -151,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Если клик был вне .searchBig и .searchBig открыт, то выполняю код
       if (!itsSearch && searchIsActive) {
+        searchCloseBtn.setAttribute("aria-expanded", "true");
         searchBig.classList.toggle('search-big--open');
       }
     })
@@ -171,6 +174,15 @@ document.addEventListener('DOMContentLoaded', function() {
           })
       })
     })
+  }
+
+  // --- projects tooltip
+  tooltip();
+  function tooltip() {
+    tippy('.projects__tooltip', {
+      theme: 'tooltip',
+      maxWidth: 264,
+    });
   }
 
   // --- gallery modal
@@ -255,11 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- Аккордион на jQuery в сеrции catalog
 
-  $('#accordion').accordion({
-    icons: false,
-    heightStyle: 'content',
-    collapsible: true
-  });
+  new Accordion('.accordion-container');
 
   // --- Первый свайпер в секции hero
 
@@ -376,7 +384,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const swiper4 = new Swiper('#swiper-partners', {
       slidesPerView: 1,
       slidesPerGroup: 1,
-      // spaceBetween: 20,
       // Принимает события мыши, как событие касания пальцами
       simulateTouch: true,
       // 'Grab' курсор для повышения юзабилити на десктопах
