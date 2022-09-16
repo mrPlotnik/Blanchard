@@ -204,7 +204,6 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.add('modal--active');
         setTimeout(() => {
           let activeModal = document.querySelector('.modal__item--active');
-          console.log(activeModal);
           activeModal.querySelector('.modal__close-btn').focus();
         }, 100);
       });
@@ -213,7 +212,9 @@ document.addEventListener('DOMContentLoaded', function() {
       btn.addEventListener('click', function () {
         document.body.classList.remove('stop-scroll');
         modal.classList.remove('modal--active');
-        notes.classList.remove('modal__item--active');
+        notes.forEach((el) => {
+          el.classList.remove('modal__item--active');
+        })
       })
     })
 
@@ -247,8 +248,9 @@ document.addEventListener('DOMContentLoaded', function() {
     bars.forEach(el => {
       new SimpleBar(el, {
         ariaLabel: 'Прокручиваемая область',
+
       })
-      el.querySelector('.simplebar-content-wrapper').setAttribute('tabindex', '-1');
+      // el.querySelector('.simplebar-content-wrapper').setAttribute('tabindex', '1');
     })
   };
 
@@ -267,7 +269,75 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- Аккордион на jQuery в сеrции catalog
 
-  new Accordion('.accordion-container');
+  new Accordion('#accordion', {
+    elementClass: 'ac__item',
+    triggerClass: 'ac__trigger',
+    panelClass: 'ac__panel',
+    activeClass: 'accordion--active',
+    openOnInit: [0],
+    duration: 700,
+  });
+
+  // input mask tel
+
+  inputMask();
+  function inputMask() {
+    const selector = document.querySelector("input[type='tel']");
+    const im = new Inputmask("+7(999) 999-99-99");
+    im.mask(selector);
+  }
+
+  // --- Validate form
+
+  validate();
+  function validate() {
+    new window.JustValidate('#form', {
+      rules: {
+        name: {
+          required: true,
+          minLength: 3,
+          maxLength: 30,
+        },
+        tel: {
+          required: true,
+          function: () => {
+            const phone = selector.inputmask.unmaskedvalue();
+            return Number(phone) && phone.length === 10;
+          }
+        }
+      },
+      messages: {
+        name: {
+          required: 'Вы не ввели имя',
+          minLength: 'Поле должно содержать более 3 символов',
+          maxLength: 'Поле должно содержать не более 30 символов',
+        },
+        tel: {
+          required: 'Вы не ввели телефон',
+          function: 'Поле должно содержать 10 символов',
+        },
+        email: {
+          required: 'Вы не ввели e-mail',
+          email: 'Введен некорректный e-mail',
+        }
+      },
+      colorWrong: '#D11616',
+      submitHandler: function (thisForm, values, ajax) {
+        ajax({
+          url: 'https://jsonplaceholder.typicode.com/posts',
+          method: 'POST',
+          data: values,
+          async: true,
+          callback: function (response) {
+            alert('Response from server: ' + response)
+          },
+          error: function (response) {
+            alert('Response from server: ' + response)
+          }
+        })
+      }
+    })
+  }
 
   // --- Первый свайпер в секции hero
 
@@ -420,12 +490,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function init() {
       // Создание экземпляра карты и его привязка к контейнеру с
       // заданным id ('map')
-      myMap = new ymaps.Map('map', {
+      myMap = new ymaps.Map('map',
+        {
           // Координаты центра карты
           center: [55.760000, 37.614700],
           // Уровень масштабирования. От 0 (весь мир) до 19
-          zoom: 14
-      });
+          zoom: 14,
+          controls: ['geolocationControl', 'zoomControl']
+        },
+        {
+          zoomControlSize: "small",
+          geolocationControlPosition:  { top: "270px", right: "20px" },
+          zoomControlPosition: { top: "170px", right: "20px" }
+        }
+      );
 
       myPlacemark = new ymaps.Placemark([55.76000, 37.614700], {}, {
         // Опции
@@ -442,8 +520,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Размещение геообъекта на карте.
       myMap.geoObjects.add(myPlacemark);
+      myMap.behaviors.disable(['scrollZoom']);
+      myMap.behaviors.disable('drag');
     }
   }
-
 
 });
