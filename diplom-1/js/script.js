@@ -161,20 +161,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- Плавный скролл до элемента (горизонтальное меню 1920px)
 
+  // scroll();
+  // function scroll() {
+  //   const links = document.querySelectorAll('.nav-major__link')
+  //   links.forEach((el, index) => {
+  //     el.addEventListener('click', function(e) {
+  //       e.preventDefault();
+  //       let href = el.getAttribute('href');
+  //         document.querySelector(href).scrollIntoView({
+  //           behavior: 'smooth',
+  //           block: 'start'
+  //         })
+  //     })
+  //   })
+  // };
+
   scroll();
   function scroll() {
-    const links = document.querySelectorAll('.nav-major__link')
-    links.forEach((el, index) => {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        let href = el.getAttribute('href');
-          document.querySelector(href).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
+    const links = document.querySelectorAll('a[href*="#"]')
+    for (let link of links) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const blockID = link.getAttribute('href').substr(1)
+
+        document.getElementById(blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
       })
-    })
-  }
+    }
+  };
+
 
   // --- projects tooltip
   tooltip();
@@ -421,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
         disableOnInteraction: true,
       },
        breakpoints: {
-        576: {
+        767: {
           slidesPerView: 2,
           slidesPerGroup: 2,
         },
@@ -464,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function() {
         disableOnInteraction: true,
       },
       breakpoints: {
-        576: {
+        767: {
           slidesPerView: 2,
           slidesPerGroup: 2,
         },

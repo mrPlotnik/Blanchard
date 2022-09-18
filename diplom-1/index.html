@@ -259,7 +259,7 @@
           <div class="search-big__search-icon">
             <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
           </div>
-          <input type="search" name="search" placeholder="Поиск по сайту" aria-label="Введите запрос поиска" autocomplete="off">
+          <input id="search" type="search" name="search" placeholder="Поиск по сайту" aria-label="Введите запрос поиска" autocomplete="off">
           <button class="search-big__close-btn btn-reset" type="button" aria-label="Закрыть окно поиска" aria-expanded="true">
             <span class="search-big__close-btn-line"></span>
             <span class="search-big__close-btn-line"></span>
@@ -287,7 +287,7 @@
         <div class="col d-flex flex-column align-items-center align-items-md-start">
           <h1 class="hero__header">Прикоснитесь к&nbspпрекрасному</h1>
           <p class="hero__text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений</p>
-          <button class="hero__btn btn-reset" type="button">Подписаться на рассылку</button>
+          <a href="#contacts" class="hero__btn btn-reset" type="button">Подписаться на рассылку</a>
         </div>
       </div>
     </div>
@@ -341,7 +341,7 @@
         </div>
         <div class="col col-lg-8 col-xxl-9 galery__custom-block-second">
           <!-- Swiper -->
-          <div id="swiper-galery" class="swiper">
+          <div id="swiper-galery" class="swiper d-flex flex-column">
             <div class="swiper-wrapper">
               <a class="swiper-slide" role="group" aria-label="1 из 6">
                 <picture>
@@ -386,13 +386,15 @@
                 </picture>
               </div>
             </div>
-            <div class="swiper-button-next">
-              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#666"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#666" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="#fff" fill="#666"/> </svg>
+            <div class="swiper-nav">
+              <div class="swiper-button-next">
+              </div>
+              <div class="swiper-pagination-wrap d-flex justify-content-center align-items-center">
+                <div class="swiper-pagination"></div>
+              </div>
+              <div class="swiper-button-prev">
+              </div>
             </div>
-            <div class="swiper-button-prev">
-              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666"/> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="#666" stroke-width="2"/> <path d="M16 20L11 15L16 10" stroke="#fff" fill="#666"/> </svg>
-            </div>
-            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
@@ -403,20 +405,17 @@
   <section id="catalog" class="section-catalog catalog">
     <div class="container">
       <div class="row catalog__wrap">
-
         <div class="col-12">
           <div class="row row-cols-1">
             <div class="col">
               <h2 class="catalog__header">Каталог</h2>
             </div>
-
             <div class="col d-none d-md-flex">
               <div class="catalog__text">
-                Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены на&nbsp;независимые элементы.
+                Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены на&nbsp;независимые элементы.
               </div>
             </div>
           </div>
-
         </div>
 
         <div class="col-12">
@@ -432,77 +431,83 @@
                   <div class="ac__panel">
                     <ul class="ac__artist-list list-reset flex-column">
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Бенедетто ди&nbsp;Биндо</a>
+                        <a href="#" class="ac__link">Бенедетто ди&nbsp;Биндо</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Бергоньоне, Амброджо</a>
+                        <a href="#" class="ac__link">Бергоньоне, Амброджо</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Биссоло, Франческо</a>
+                        <a href="#" class="ac__link">Биссоло, Франческо</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Больтраффио, Джованни</a>
+                        <a href="#" class="ac__link">Больтраффио, Джованни</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Бонсиньори, Франческо</a>
+                        <a href="#" class="ac__link">Бонсиньори, Франческо</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Боттичини, Рафаэлло</a>
+                        <a href="#" class="ac__link">Боттичини, Рафаэлло</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Брамантино</a>
+                        <a href="#" class="ac__link">Брамантино</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Бреа, Людовико</a>
+                        <a href="#" class="ac__link">Бреа, Людовико</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Бьяджо д’Антонио Туччи</a>
+                        <a href="#" class="ac__link">Бьяджо д&rsquo;Антонио Туччи</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Веккьетта</a>
+                        <a href="#" class="ac__link">Веккьетта</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Андреа Верроккьо</a>
+                        <a href="#" class="ac__link">Андреа Верроккьо</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#ghirlandaio" class="ac__link ac__link--active" data-way="ghirlandaio">Доменико Гирландайо</a>
+                        <a href="#ghirlandaio" class="ac__link ac__link--active">Доменико Гирландайо</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Беноццо Гоццоли</a>
+                        <a href="#" class="ac__link">Беноццо Гоццоли</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#granacci" class="ac__link" data-way="granacci">Граначчи, Франческо</a>
+                        <a href="#" class="ac__link">Граначчи, Франческо</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Грегорио ди Чекко</a>
+                        <a href="#" class="ac__link">Грегорио ди&nbsp;Чекко</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Джованни да Удине</a>
+                        <a href="#" class="ac__link">Джованни да&nbsp;Удине</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#giovanni_di_paolo" class="ac__link" data-way="giovanni_di_paolo">Джованни ди Паоло</a>
+                        <a href="#" class="ac__link">Джованни ди&nbsp;Паоло</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Джорджоне</a>
+                        <a href="#" class="ac__link">Джорджоне</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#parentino" class="ac__link" data-way="parentino">Парентино, Бернардо</a>
+                        <a href="#" class="ac__link">Парентино, Бернардо</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Пезеллино</a>
+                        <a href="#" class="ac__link">Пезеллино</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Пьетро Перуджино</a>
+                        <a href="#" class="ac__link">Пьетро Перуджино</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Перуцци, Бальдассаре</a>
+                        <a href="#" class="ac__link">Перуцци, Бальдассаре</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Пизанелло</a>
+                        <a href="#" class="ac__link">Пизанелло</a>
                       </li>
                       <li class="ac__artist-item">
-                        <a href="#" class="ac__link" data-way="">Пинтуриккьо</a>
+                        <a href="#" class="ac__link">Пинтуриккьо</a>
                       </li>
+                      <!-- <li class="ac__artist-item">
+                        <a href="#" class="ac__link">Пинтуриккьо</a>
+                      </li>
+                      <li class="ac__artist-item">
+                        <a href="#" class="ac__link">Пинтуриккьо</a>
+                      </li> -->
                     </ul>
                   </div>
                 </li>
@@ -630,18 +635,57 @@
             </div>
 
             <div class="col-12 col-lg-6 order-lg-first catalog__custom-block-second">
-              <div class="catalog__info info ">
-                <div class="info__img">
-                  <img src="img/catalog-info-1.jpg" alt="Доменико Гирландайо">
-                </div>
-                <h3 class="info__header">
-                  Доменико Гирландайо
-                </h3>
-                <div class="info__date">
-                  2 июня 1448 — 11 января 1494
-                </div>
-                <div class="info__text">
-                  Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его&nbsp;брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того&nbsp;времени).            </div>
+              <div class="catalog__bookmark">
+
+                <article class="bookmark">
+                  <div class="bookmark__head">
+                    <div class="bookmark__img">
+                      <picture>
+                        <source media="(max-width: 640px)" srcset="img/catalog/320-1.jpg">
+                        <source media="(max-width: 992px)" srcset="img/catalog/768-1.jpg">
+                        <source media="(max-width: 1440px)" srcset="img/catalog/1024-1.jpg">
+                        <img src="img/catalog/1920-1.jpg" alt="Доменико Гирландайо">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="bookmark__body">
+                    <h3 class="bookmark__header">
+                      Доменико Гирландайо
+                    </h3>
+                    <span class="bookmark__date">
+                      2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494
+                    </span>
+                    <p class="bookmark__descr">
+                      Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его&nbsp;брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того&nbsp;времени).
+                    </p>
+                  </div>
+                </article>
+
+                <article class="bookmark-empty bookmark--active">
+                  <div class="bookmark__head">
+                    <div class="bookmark__img">
+                      <picture>
+                        <source media="(max-width: 640px)" srcset="img/catalog/320-1.jpg">
+                        <source media="(max-width: 992px)" srcset="img/catalog/768-1.jpg">
+                        <source media="(max-width: 1440px)" srcset="img/catalog/1024-1.jpg">
+                        <img src="img/catalog/1920-1.jpg" alt="Доменико Гирландайо">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="bookmark__body">
+                    <h3 class="bookmark-empty__header">
+                      Что мы&nbsp;о&nbsp;нём знаем?
+                    </h3>
+                    <p class="bookmark-empty__descr">
+                      Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                    </p>
+                    <a href="#gallery" class="bookmark-empty__link">
+                      В&nbsp;галерею
+                    </a>
+                  </div>
+                </article>
+
+
               </div>
             </div>
           </div>
