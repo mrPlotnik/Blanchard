@@ -159,33 +159,17 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   };
 
-  // --- Плавный скролл до элемента (горизонтальное меню 1920px)
-
-  // scroll();
-  // function scroll() {
-  //   const links = document.querySelectorAll('.nav-major__link')
-  //   links.forEach((el, index) => {
-  //     el.addEventListener('click', function(e) {
-  //       e.preventDefault();
-  //       let href = el.getAttribute('href');
-  //         document.querySelector(href).scrollIntoView({
-  //           behavior: 'smooth',
-  //           block: 'start'
-  //         })
-  //     })
-  //   })
-  // };
+  // --- Плавный скролл до элемента (на все ссылки)
 
   scroll();
   function scroll() {
     const links = document.querySelectorAll('a[href*="#"]')
+
     for (let link of links) {
       link.addEventListener('click', function (e) {
         e.preventDefault()
-
-        const blockID = link.getAttribute('href').substr(1)
-
-        document.getElementById(blockID).scrollIntoView({
+        const blockID = link.getAttribute('href');
+        document.querySelector(`${blockID}`).scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         })
@@ -193,8 +177,40 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
+  // --- Каталог. Вкладки
+
+  bookmark();
+  function bookmark() {
+    let links = document.querySelectorAll('.ac__link');
+    let bookmarks = document.querySelectorAll('.bookmark');
+
+    links.forEach(function (element) {
+      element.addEventListener('click', function (e) {
+        const way = e.target.getAttribute('href');
+        e.preventDefault();
+
+        links.forEach(function (btn) {
+          btn.classList.remove('ac__link--active');
+          btn.setAttribute("aria-expanded", "false");
+        });
+        e.currentTarget.classList.add('ac__link--active');
+        e.currentTarget.setAttribute("aria-expanded", "true");
+
+        bookmarks.forEach(function (el) {
+          el.classList.remove('bookmark--active')
+        });
+        let href = document.querySelector(`${way}`);
+        href.classList.add('bookmark--active');
+        href.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      })
+    })
+  };
 
   // --- projects tooltip
+
   tooltip();
   function tooltip() {
     tippy('.projects__tooltip', {

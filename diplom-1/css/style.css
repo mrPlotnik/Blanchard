@@ -695,8 +695,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-self: center;
-  bottom: 0;
   width: 130px;
+  bottom: 0;
 }
 #swiper-galery .swiper-button-next,
 #swiper-galery .swiper-button-prev {
@@ -770,6 +770,7 @@ img {
   line-height: 22px;
 }
 
+
 .bookmark {
   display: none;
 }
@@ -777,13 +778,7 @@ img {
   display: block;
 }
 .bookmark__head {
-
-}
-.bookmark__img {
-  margin-bottom: 17px;
-}
-.bookmark__body {
-
+  margin-bottom: 18px;
 }
 .bookmark__header {
   margin-bottom: 7px;
@@ -802,6 +797,69 @@ img {
   font-size: 16px;
   line-height: 32px;
   color: var(--color-gray-20);
+}
+
+
+.bookmark-empty__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 290px;
+  height: 180px;
+  margin-bottom: 17px;
+  background-color: var(--color-gray-93);
+}
+.bookmark-empty__img img {
+  width: 45%;
+}
+.bookmark-empty__header {
+  margin-bottom: 12px;
+  font-size: 24px;
+  line-height: 33px;
+}
+.bookmark-empty__descr {
+  margin-bottom: 15px;
+  line-height: 32px;
+}
+.bookmark-empty__link {
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--color-purple-2);
+  transition: color 0.3s ease-in-out;
+}
+.bookmark-empty__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-purple-2);
+  opacity: 0;
+  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.bookmark-empty__link::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 10px);
+  opacity: 0;
+  background-color: var(--color-purple-2);
+  z-index: -1;
+}
+.bookmark-empty__link:hover::after,
+.bookmark-empty__link:focus-visible::before {
+  opacity: 1;
+}
+.bookmark-empty__link:focus-visible {
+  color: var(--color-white);
+}
+.bookmark-empty__link:active {
+  color: var(--color-purple-1);
 }
 
 /* --- accordion start--- */
@@ -1011,7 +1069,7 @@ img {
 
 /* ---------- section events start---------- */
 .events__wrap {
-  padding-bottom: 47px;
+  padding-bottom: 46px;
 }
 .events__header {
   margin-bottom: 12px;
@@ -1035,7 +1093,7 @@ img {
   color: var(--color-gray-60);
 }
 .card__body {
-  height: 344px;
+  height: 343px;
 }
 .card__header {
   max-height: 100px;
@@ -1077,7 +1135,7 @@ img {
   position: absolute;
   left: 8px;
   bottom: 2px;
-  width: calc(100% - 9px);
+  width: calc(100% - 8px);
   height: 1px;
   background-color: var(--color-purple-2);
   transition: background-color 0.3s ease-in-out;
@@ -1155,7 +1213,7 @@ img {
 }
 .projects__descr {
   margin-right: 1px;
-  margin-bottom: 56px;
+  margin-bottom: 57px;
   line-height: 32px;
   color: var(--color-gray-20);
 }
@@ -1226,13 +1284,7 @@ img {
   transition: filter 0.3s ease-in-out;
 }
 #swiper-partners img {
-  width: 55%;
-}
-#swiper-partners #slide-4 img,
-#swiper-partners #slide-5 img,
-#swiper-partners #slide-7 img,
-#swiper-partners #slide-8 img {
-  width: 30%;
+  max-height: 50%;
 }
 #swiper-partners a:hover {
   filter: none;
@@ -1325,7 +1377,7 @@ address {
   line-height: 16px;
 	color: var(--color-purple-2);
 }
-.form__btn-big {
+.form__btn--big {
   display: none;
 }
 .form__error {
@@ -1604,6 +1656,10 @@ a:active .ok path {
 }
 /* ---------- modal end ---------- */
 
+.for-me {
+  display: none;
+}
+
 /* sm */
 @media (min-width: 450px) {
   /* ---------- section events start ---------- */
@@ -1640,6 +1696,11 @@ a:active .ok path {
   }
   .nav__mobile {
     padding: 35px;
+  }
+  .nav-mobile__login-link svg {
+    margin-top: 1px;
+    width: 15px;
+    height: 15px;
   }
   .header__search-big {
     padding: 0 18px;
@@ -1704,18 +1765,13 @@ a:active .ok path {
     line-height: 25px;
   }
 
-
   .ac__artist-list {
    column-count: 2;
   }
 
-
   .card__wrap {
     padding: 30px;
   }
-
-
-
 }
 
 /* md */
@@ -1860,7 +1916,7 @@ a:active .ok path {
     margin-bottom: 10px;
   }
   .choices {
-    width: 281px;
+    width: 280px;
     margin-bottom: 48px;
   }
   #swiper-galery {
@@ -1879,7 +1935,6 @@ a:active .ok path {
     bottom: unset;
     align-self: start;
   }
-
   /* ---------- section galery end ---------- */
 
   /* ---------- section catalog start ---------- */
@@ -1896,7 +1951,7 @@ a:active .ok path {
     margin-bottom: 21px;
   }
   .ac__trigger {
-    padding: 41px 30px 41px 0;
+    padding: 40px 30px 42px 0;
   }
   .ac__header-text {
     font-size: 24px;
@@ -1921,9 +1976,6 @@ a:active .ok path {
   .catalog__date-list {
     margin-bottom: 50px;
   }
-  .bookmark__img {
-    margin-bottom: 19px;
-  }
   .bookmark__img img {
     width: 100%;
   }
@@ -1933,9 +1985,12 @@ a:active .ok path {
   .bookmark__date {
     margin-bottom: 7px;
   }
-  .catalog__empty {
-    column-width:unset;
-    column-gap: unset;
+  .bookmark-empty__img {
+    width: 668px;
+    height: 419px;
+  }
+  .bookmark-empty__descr {
+   max-width: 400px;
   }
   /* ---------- section catalog end ---------- */
 
@@ -1944,15 +1999,18 @@ a:active .ok path {
     padding-bottom: 77px;
   }
   .events__header {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     font-size: 48px;
     line-height: 65px;
   }
   #swiper-events .swiper-wrapper {
     padding-bottom: 43px;
   }
+  .card__header {
+    margin-bottom: 8px;
+  }
   .card__wrap {
-    padding: 14px 31px 50px 32px;
+    padding: 13px 31px 47px 33px;
   }
   .card__body {
     height: 353px;
@@ -1968,7 +2026,7 @@ a:active .ok path {
 
   /* ---------- section projects start ---------- */
   .projects__wrap {
-    padding-bottom: 81px;
+    padding-bottom: 82px;
   }
   .projects__header {
     margin-bottom: 16px;
@@ -1976,14 +2034,17 @@ a:active .ok path {
     line-height: 65px;
   }
   .projects__descr {
-    margin-bottom: 28px;
+    margin-bottom: 27px;
     margin-right: 3px;
+  }
+  .projects__descr {
+    margin-right: 0px;
   }
   .projects__descr a {
     display: inline-flex;
   }
   .projects__partners-header {
-    margin-bottom: 29px;
+    margin-bottom: 30px;
     font-size: 24px;
     line-height: 32px;
   }
@@ -2002,6 +2063,9 @@ a:active .ok path {
   #swiper-partners .swiper-button-prev {
     top: 73%;
   }
+  #swiper-partners img {
+    width: 70%;
+  }
   /* ---------- section projects end ---------- */
 
   /* ---------- footer start ---------- */
@@ -2017,9 +2081,7 @@ a:active .ok path {
     margin-bottom: 30px;
   }
   .form__item {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 12px;
+    margin-bottom: 0;
   }
   .form__input {
     /* width: 48.5%; */
@@ -2032,14 +2094,35 @@ a:active .ok path {
   .form__input:not(:last-child) {
     margin-right: 20px;
   }
-  #contacts__form .btn {
-    margin-bottom: 30px;
-    padding: 10px 28px;
+  .form__btn {
+    margin-bottom: 0;
+    padding: 10px 41px;
     font-size: 18px;
-    line-height: 25px;
+    line-height: 26px;
+  }
+  .form__btn--big {
+    display: block;
+  }
+  .form__btn--small {
+    display: none;
+  }
+  .form__inputs-wrap {
+    padding-left: 13px;
+    padding-right: 5px;
+    width: 61%;
+  }
+  .form__btn-wrap {
+    display: flex;
+    justify-content: end;
+    width: 39%;
+    padding-bottom: 31px;
   }
   .contacts__messages  {
     margin-bottom: 22px;
+  }
+  .contacts__messages h3 {
+    margin-bottom: 8px;
+    font-size: 25px;
   }
   .contacts__messages p {
     font-weight: 600;
@@ -2054,15 +2137,19 @@ a:active .ok path {
     height: 700px;
   }
   .footer__bottom {
-    padding-top: 39px;
+    padding-top: 40px;
   }
   .bottom__logo {
+    width: 175px;
     justify-content: flex-start;
-    padding-top: 11px;
+    padding-top: 10px;
     padding-left: 1px;
   }
+  .bottom__logo a {
+    width: inherit;
+  }
   .bottom__logo img {
-    width: 175px;
+    width: 100%;
   }
   .bottom__social {
     justify-content: flex-end;
@@ -2071,10 +2158,9 @@ a:active .ok path {
     width: 60px;
     height: 60px;
   }
+  /* ---------- footer end ---------- */
 
-
-
-
+  /* ---------- mmodal start ---------- */
   .note {
     width: 668px;
     height: 594px;
@@ -2097,11 +2183,10 @@ a:active .ok path {
   .note__descr-wrap {
     margin: 0;
   }
-
-
-
-
-  /* ---------- footer end ---------- */
+   /* ---------- mmodal end ---------- */
+   .for-me {
+    display: inline-flex;
+   }
 }
 
 /* lg */
@@ -2149,25 +2234,13 @@ a:active .ok path {
   }
   #swiper-galery {
     padding-top: 85px;
-    padding-left: 15px;
+    padding-left: 13px;
+  }
+  #swiper-galery .swiper-nav {
+    top: 25px;
   }
   #swiper-galery .swiper-slide {
-    height: 313px;
-  }
-  #swiper-galery .swiper-button-next,
-  #swiper-galery .swiper-button-prev {
-    top: 47px;
-  }
-  #swiper-galery .swiper-button-prev {
-    left: 15px;
-  }
-  #swiper-galery .swiper-button-next {
-    left: 115px;
-  }
-  #swiper-galery .swiper-pagination {
-    max-width: 40px;
-    top: 32px;
-    left: 63px;
+    height: 315px;
   }
   /* ---------- section galery end ---------- */
 
@@ -2178,22 +2251,24 @@ a:active .ok path {
   .catalog__text {
     margin-bottom: 40px;
   }
+  #accordion {
+    padding-left: 13px;
+  }
+  .ac__artist-list {
+    column-count: 2;
+  }
   .catalog__bookmark {
     padding-right: 13px;
   }
-
-
-
-
-
   .catalog__date-list {
     padding-left: 10px;
   }
-  .bookmark__img {
-    margin-bottom: 27px;
-  }
   .bookmark__date {
     margin-bottom: 17px;
+  }
+  .bookmark-empty__img {
+    width: 437px;
+    height: 274px;
   }
   /* ---------- section catalog end ---------- */
 
@@ -2226,7 +2301,7 @@ a:active .ok path {
   /* ---------- footer start---------- */
   .footer__contacts-wrap {
     padding-top: 41px;
-    padding-bottom: 17px;
+    padding-bottom: 18px;
   }
   /* ---------- footer__contacts start ---------- */
   .form__custom-block-first {
@@ -2549,9 +2624,6 @@ a:active .ok path {
     margin-bottom: 75px;
     padding-right: 165px;
   }
-  .card__body {
-    height: 276px;
-  }
 
   #header .simplebar-track {
     right: 19px;
@@ -2587,7 +2659,7 @@ a:active .ok path {
 
   /* ---------- galery section start ---------- */
   .galery__wrap {
-    padding-bottom: 50px;
+    padding-bottom: 49px;
   }
   .galery__custom-block-first {
     width: 27%;
@@ -2599,30 +2671,33 @@ a:active .ok path {
   }
   .choices {
     width: 100%;
-    margin-bottom: 46%;
+    margin-bottom: 185px;
+  }
+  #swiper-galery {
+    padding-left: 14px;
   }
   #swiper-galery .swiper-slide {
     height: 350px;
   }
-
-
-  #swiper-galery .swiper-button-prev {
-    left: 18px;
-  }
-  #swiper-galery .swiper-button-next {
-    left: 118px;
-  }
-  #swiper-galery .swiper-pagination {
-    left: 66px;
+  #swiper-galery .swiper-nav {
+    left: 17px;
   }
   /* ---------- galery section end ---------- */
 
   /* ---------- catalog section start ---------- */
   .catalog__text {
     padding-right: 31%;
+    margin-bottom: 40px;
+  }
+  #accordion {
+    padding-left: 20px;
+    margin-bottom: 49px;
+  }
+  .ac__artist-list {
+    column-count: 3;
   }
   .catalog__bookmark {
-    padding-right: 3px;
+    padding-right: 6px;
   }
   .catalog__custom-block-first {
     width: 52%;
@@ -2639,13 +2714,21 @@ a:active .ok path {
   .bookmark__date {
     margin-bottom: 14px;
   }
+  .bookmark-empty__img {
+    width: 750px;
+    height: 470px;
+  }
+  .bookmark-empty__descr {
+    max-width: unset;
+  }
   /* ---------- catalog section end ---------- */
 
   /* ---------- events section start ---------- */
   .events__wrap {
     padding-bottom: 0;
-    margin-bottom: 48px;
+    padding-bottom: 37px;
   }
+
   .section-events > .container {
     position: relative;
   }
@@ -2667,7 +2750,10 @@ a:active .ok path {
     left: -6px;
   }
   .card__wrap {
-    padding: 12px 40px 35px 49px;
+    padding: 12px 40px 39px 49px;
+  }
+  .card__body {
+    height: 270px;
   }
   .card__date {
     text-align: left;
@@ -2719,28 +2805,27 @@ a:active .ok path {
   .contacts__custom-block-third {
     width: 20%;
   }
-  .form__item {
-    margin-left: 42px;
-  }
   .form {
     padding-top: 15px;
   }
-  .form__custom-block-first {
+  .form__inputs-wrap {
+    padding-left: 55px;
+    padding-right: 8px;
     width: 62%;
-    padding-right: 10px;
   }
-  .form__custom-block-second {
-    width: 37%;
-    padding-left: 10px;
-    padding-right: 30px;
+  .form__btn-wrap {
+    justify-content: start;
+    width: 38%;
+    padding-bottom: 0;
   }
-  #contacts__form .btn {
+  .form__btn {
     margin-bottom: 28px;
-    padding: 11px 35px;
+    padding: 11px 34px;
   }
   .contacts__messages {
     margin-bottom: 0;
-    padding-left: 20px;
+    padding-top: 3px;
+    padding-left: 25px;
   }
   /* ---------- contacts end ---------- */
 
@@ -2804,5 +2889,6 @@ a:active .ok path {
 @media (min-width: 1920px) {
   .container {
     min-width: 1635px;
+    padding: 0 17px;
   }
 }
