@@ -5,19 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
   burger();
   function burger() {
     const body = document.querySelector('body');
-    const burger = document.querySelector('.nav__burger');
-    const closeBtn = document.querySelector('.nav-mobile__close-btn');
-    const menuMobile = document.querySelector('.nav__mobile');
-    const links = document.querySelectorAll('.nav-mobile__list-item a');
+    const burger = document.querySelector('.header-top__burger');
+    const closeBtn = document.querySelector('.ht-nav__close-btn');
+    const menuMobile = document.querySelector('.header-top__nav');
+    const links = document.querySelectorAll('.ht-nav__list-item a');
     // Выбираем все элементы для индекса в мобильном меню
-    const elTab = document.querySelectorAll('.nav-mobile__close-btn, .nav-mobile__list-item a, .nav-mobile__login-link');
+    const elTab = document.querySelectorAll('.ht-nav__close-btn, .ht-nav__list-item a, .ht-nav__login-link');
 
     // Что происходит после нажатия на бургер
     burger.addEventListener('click', function(q) {
 
       body.classList.toggle('stop-scroll');
       burger.setAttribute("aria-expanded", "true");
-      menuMobile.classList.toggle('nav-mobile--active');
+      menuMobile.classList.toggle('header-top__nav--active');
 
       // При отрытии меню сразу фокус на крестик
       // Из-за анимации свойства visibility ставим
@@ -51,27 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
     closeBtn.addEventListener('click', function() {
       body.classList.toggle('stop-scroll');
       burger.setAttribute("aria-expanded", "false");
-      menuMobile.classList.toggle('nav-mobile--active');
+      menuMobile.classList.toggle('header-top__nav--active');
       // Фокус на бургер
       burger.focus();
     })
-
 
     // Что происходит после кликов на ссылки
     links.forEach((el, index) => {
       el.addEventListener('click', function(e) {
         body.classList.toggle('stop-scroll');
-        burger.classList.toggle('nav__burger--close');
-        menuMobile.classList.toggle('nav-mobile--active');
-
-        // Плавный скролл до элемента
-        // Берем значение атрибута href
-        e.preventDefault();
-        let href = el.getAttribute('href');
-        document.querySelector(href).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
+        menuMobile.classList.toggle('header-top__nav--active');
       })
     })
   };
@@ -122,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
   search ();
   function search() {
     const searchBtn = document.querySelector('.header__search-btn');
-    const searchBig = document.querySelector('.search-big');
-    const searchCloseBtn = document.querySelector('.search-big__close-btn');
+    const searchBig = document.querySelector('.ht-search');
+    const searchCloseBtn = document.querySelector('.ht-search__close-btn');
     const searchInput = document.querySelector('#search');
 
     // Что происходит после клика на лупу
@@ -131,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // предотвращаем поведение по умолчанию
       e.stopPropagation();
       searchCloseBtn.setAttribute("aria-expanded", "false");
-      searchBig.classList.toggle('search-big--open');
+      searchBig.classList.toggle('ht-search--open');
       // Из-за анимации свойства visibility ставим задержку
       setTimeout(() => {searchInput.focus()},100);
     })
@@ -139,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Что происходит после клика на крестик
     searchCloseBtn.addEventListener('click', function() {
       searchCloseBtn.setAttribute("aria-expanded", "true");
-      searchBig.classList.toggle('search-big--open');
+      searchBig.classList.toggle('ht-search--open');
     })
 
     // Что происходит после клика вне поиска
@@ -149,12 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
       // Клик был на .searchBig и его вложенные элементы или нет?
       let itsSearch = target == searchBig || searchBig.contains(target);
       // .searchBig открыт?
-      let searchIsActive = searchBig.classList.contains('search-big--open');
+      let searchIsActive = searchBig.classList.contains('ht-search--open');
 
       // Если клик был вне .searchBig и .searchBig открыт, то выполняю код
       if (!itsSearch && searchIsActive) {
         searchCloseBtn.setAttribute("aria-expanded", "true");
-        searchBig.classList.toggle('search-big--open');
+        searchBig.classList.toggle('ht-search--open');
       }
     })
   };

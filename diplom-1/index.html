@@ -16,259 +16,267 @@
 
 <!-- header -->
 <header id="header" class="header">
-  <div class="container">
-    <div class="row header-wrap d-flex align-items-center justify-content-between">
-      <div class="col col-xl-2 order-2 order-xl-1 d-flex justify-content-center justify-content-xl-start">
-        <div class="header__logo-wrap">
+
+  <div class="header-top">
+    <div class="container header-top__container">
+      <div class="header-top__content">
+
+        <button class="header-top__burger btn-reset" type="button" aria-label="Открыть главное меню" aria-expanded="false">
+          <span class="header-top__burger-line header-top__burger-line-1"></span>
+          <span class="header-top__burger-line header-top__burger-line-2"></span>
+          <span class="header-top__burger-line header-top__burger-line-3"></span>
+        </button>
+
+        <div class="header-top__logo-wrap">
           <a href="#">
             <img src="img/logo.svg" alt="Логотип Blanchard. Художественная галерея">
           </a>
         </div>
-      </div><!-- logo -->
-      <div class="col col-xl-8 order-1 order-xl-2 d-flex">
-        <div class="header__nav-wrap nav d-flex">
-          <button class="nav__burger btn-reset d-flex d-xl-none" type="button" aria-label="Открыть главное меню" aria-expanded="false">
-            <span class="nav__burger-line nav__burger-line-1"></span>
-            <span class="nav__burger-line nav__burger-line-2"></span>
-            <span class="nav__burger-line nav__burger-line-3"></span>
-          </button><!-- nav__burger -->
-          <nav class="nav__mobile nav-mobile">
-            <div class="col">
-              <button class="nav-mobile__close-btn btn-reset d-flex" type="button" aria-label="Закрыть меню">
-                <span class="nav-mobile__close-btn-line nav-mobile__close-btn-line-1"></span>
-                <span class="nav-mobile__close-btn-line nav-mobile__close-btn-line-2"></span>
-              </button><!-- nav-mobile__close-btn -->
-              <ul class="nav-mobile__list list-reset">
-                <li class="nav-mobile__list-item"><a class="btn" href="#about">О нас</a></li>
-                <li class="nav-mobile__list-item"><a class="btn" href="#galery">Галерея</a></li>
-                <li class="nav-mobile__list-item"><a class="btn" href="#catalog">Каталог</a></li>
-                <li class="nav-mobile__list-item"><a class="btn" href="#events">События</a></li>
-                <li class="nav-mobile__list-item"><a class="btn" href="#projects">Проекты</a></li>
-                <li class="nav-mobile__list-item"><a class="btn" href="#contacts">Контакты</a></li>
-              </ul><!-- nav-mobile__list -->
-            </div>
-            <div class="nav-mobile__login-link-wrap">
-              <a href="#" class="nav-mobile__login-link"> <svg width="14" height="13" viewbox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z" fill="white"/> </svg> Войти </a>
-            </div><!-- nav-mobile__login-link -->
-          </nav><!-- nav-mobile -->
-          <nav class="nav__major nav-major d-none d-xl-flex">
-            <ul class="nav-major__list d-flex list-reset justify-content-between justify-content-xxl-start">
-              <li class="nav-major__item"><a class="nav-major__link" href="#about">О нас</a></li>
-              <li class="nav-major__item"><a class="nav-major__link" href="#galery">Галерея</a></li>
-              <li class="nav-major__item"><a class="nav-major__link" href="#catalog">Каталог</a></li>
-              <li class="nav-major__item"><a class="nav-major__link" href="#events">События</a></li>
-              <li class="nav-major__item"><a class="nav-major__link" href="#projects">Проекты</a></li>
-              <li class="nav-major__item"><a class="nav-major__link" href="#contacts">Контакты</a></li>
-            </ul><!-- nav-major__list -->
-          </nav><!-- nav-major -->
-          <div class="nav-bar d-none d-xl-flex">
-            <div class="container">
-              <div class="row">
-                <div class="col-10">
-                  <nav>
-                    <ul class="nav-bar__list d-flex list-reset align-items-center justify-content-between">
-                      <li id="list-1" class="nav-bar__list-item">
-                        <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'реализм'. Открыть">Реализм</button>
-                        <div class="nav-bar__items-wrap" data-simplebar>
-                          <ul class="nav-bar__dropdown-list list-reset ">
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Тинторетто</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Фридрих</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Леонардо</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Вероккьо</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Тинторетто</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Фридрих</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Леонардо</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Вероккьо</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li id="list-2" class="nav-bar__list-item">
-                        <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'импрессионизм'. Открыть">Импрессионизм</button>
-                        <div class="nav-bar__items-wrap" data-simplebar>
-                          <ul class="nav-bar__dropdown-list list-reset ">
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Моне</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сислей</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Мане</a>
-                              </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Ренуар</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Моне</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сислей</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Мане</a>
-                              </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Ренуар</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li id="list-3" class="nav-bar__list-item">
-                        <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'постимпрессионизм'. Открыть">Постимпрессионизм</button>
-                        <div class="nav-bar__items-wrap" data-simplebar>
-                          <ul class="nav-bar__dropdown-list list-reset ">
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Ван Гог</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сезанн</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Гоген</a>
-                              </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сёра</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Ван Гог</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сезанн</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Гоген</a>
-                              </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сёра</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li id="list-4" class="nav-bar__list-item">
-                        <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'авангард'. Открыть">Авангард</button>
-                        <div class="nav-bar__items-wrap" data-simplebar>
-                          <ul class="nav-bar__dropdown-list list-reset ">
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Кандинский</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Маринетти</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Малевич</a>
-                              </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Пикассо</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Кандинский</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Маринетти</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Малевич</a>
-                              </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Пикассо</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li id="list-5" class="nav-bar__list-item" >
-                        <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'Футуризм'. Открыть">Футуризм</button>
-                        <div class="nav-bar__items-wrap" data-simplebar>
-                          <ul class="nav-bar__dropdown-list list-reset ">
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Карра</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Прателла</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Северини</a>
-                              </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Балла</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Карра</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Прателла</a>
-                            </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Северини</a>
-                              </li>
-                            <li class="nav-bar__dropdown-item">
-                              <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Балла</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </nav>
-                </div><!-- col -->
-                <div class="col-2 d-flex g-0 justify-content-end">
-                  <div class="nav-bar__search">
-                    <div class="nav-bar__search-icon">
-                      <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
-                    </div>
-                    <input id="nav-bar__search" type="search" name="search" placeholder="Поиск по сайту" autocomplete="off">
-                  </div>
-                </div><!-- nav-bar__search-->
-              </div><!-- row -->
-            </div><!-- container -->
-          </div><!-- nav-1920 -->
-        </div><!-- header__nav-wrap -->
-      </div><!-- nav (all) -->
 
-      <div class="col col-xl-2 order-3 order-lg-3">
-        <div class="header__search-wrap d-flex justify-content-end">
-          <button class="header__search-btn btn-reset d-flex d-xl-none" type="submit" aria-label="Открыть поиск по сайту">
-            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
+        <button class="header__search-btn btn-reset" type="submit" aria-label="Открыть поиск по сайту">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
+        </button>
+
+        <nav class="header-top__nav ht-nav">
+
+          <button class="ht-nav__close-btn btn-reset" type="button" aria-label="Закрыть меню">
+            <span class="ht-nav__close-btn-line ht-nav__close-btn-line-1"></span>
+            <span class="ht-nav__close-btn-line ht-nav__close-btn-line-2"></span>
           </button>
-          <div class="header__login-wrap d-none d-xl-flex">
-            <a href="#" class="header__login-link">
-              <svg width="14" height="13" viewbox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z" fill="white"/> </svg>
-              Войти
-            </a>
-          </div>
-        </div>
 
-      </div><!-- search-btn, login -->
+          <ul class="ht-nav__list list-reset">
+            <li class="ht-nav__item"><a href="#about">О нас</a></li>
+            <li class="ht-nav__item"><a href="#galery">Галерея</a></li>
+            <li class="ht-nav__item"><a href="#catalog">Каталог</a></li>
+            <li class="ht-nav__item"><a href="#events">События</a></li>
+            <li class="ht-nav__item"><a href="#projects">Проекты</a></li>
+            <li class="ht-nav__item"><a href="#contacts">Контакты</a></li>
+          </ul>
 
-      <div class="col-12 header__search-big search-big">
-        <div class="search-big__wrap">
-          <div class="search-big__search-icon">
+          <a href="#" class="ht-nav__login-link"> <svg width="14" height="13" viewbox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z" fill="white"/> </svg> Войти </a>
+
+        </nav>
+
+        <div class="header-top__search ht-search">
+          <div class="ht-search__search-icon">
             <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
           </div>
           <input id="search" type="search" name="search" placeholder="Поиск по сайту" aria-label="Введите запрос поиска" autocomplete="off">
-          <button class="search-big__close-btn btn-reset" type="button" aria-label="Закрыть окно поиска" aria-expanded="true">
-            <span class="search-big__close-btn-line"></span>
-            <span class="search-big__close-btn-line"></span>
+          <button class="ht-search__close-btn btn-reset" type="button" aria-label="Закрыть окно поиска" aria-expanded="true">
+            <span class="ht-search__close-btn-line"></span>
+            <span class="ht-search__close-btn-line"></span>
           </button>
-        </div><!-- search-big__wrap -->
-      </div><!-- search-big -->
-    </div><!-- header-wrap -->
-  </div><!-- container -->
-</header><!-- header -->
+        </div>
+
+
+
+
+
+        <!-- <div class="header__login-wrap d-none d-xl-flex">
+          <a href="#" class="header__login-link">
+            <svg width="14" height="13" viewbox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z" fill="white"/> </svg>
+            Войти
+          </a>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+
+  <div class="header-bottom">
+    <nav class="nav__major nav-major d-none d-xl-flex">
+      <ul class="nav-major__list d-flex list-reset justify-content-between justify-content-xxl-start">
+        <li class="nav-major__item"><a class="nav-major__link" href="#about">О нас</a></li>
+        <li class="nav-major__item"><a class="nav-major__link" href="#galery">Галерея</a></li>
+        <li class="nav-major__item"><a class="nav-major__link" href="#catalog">Каталог</a></li>
+        <li class="nav-major__item"><a class="nav-major__link" href="#events">События</a></li>
+        <li class="nav-major__item"><a class="nav-major__link" href="#projects">Проекты</a></li>
+        <li class="nav-major__item"><a class="nav-major__link" href="#contacts">Контакты</a></li>
+      </ul><!-- nav-major__list -->
+    </nav><!-- nav-major -->
+    <div class="nav-bar d-none d-xl-flex">
+      <div class="container">
+        <div class="row">
+          <div class="col-10">
+            <nav>
+              <ul class="nav-bar__list d-flex list-reset align-items-center justify-content-between">
+                <li id="list-1" class="nav-bar__list-item">
+                  <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'реализм'. Открыть">Реализм</button>
+                  <div class="nav-bar__items-wrap" data-simplebar>
+                    <ul class="nav-bar__dropdown-list list-reset ">
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Тинторетто</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Фридрих</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Леонардо</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Вероккьо</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Тинторетто</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Фридрих</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Леонардо</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Вероккьо</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li id="list-2" class="nav-bar__list-item">
+                  <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'импрессионизм'. Открыть">Импрессионизм</button>
+                  <div class="nav-bar__items-wrap" data-simplebar>
+                    <ul class="nav-bar__dropdown-list list-reset ">
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Моне</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сислей</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Мане</a>
+                        </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Ренуар</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Моне</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сислей</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Мане</a>
+                        </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Ренуар</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li id="list-3" class="nav-bar__list-item">
+                  <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'постимпрессионизм'. Открыть">Постимпрессионизм</button>
+                  <div class="nav-bar__items-wrap" data-simplebar>
+                    <ul class="nav-bar__dropdown-list list-reset ">
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Ван Гог</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сезанн</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Гоген</a>
+                        </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сёра</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Ван Гог</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сезанн</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Гоген</a>
+                        </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Сёра</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li id="list-4" class="nav-bar__list-item">
+                  <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'авангард'. Открыть">Авангард</button>
+                  <div class="nav-bar__items-wrap" data-simplebar>
+                    <ul class="nav-bar__dropdown-list list-reset ">
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Кандинский</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Маринетти</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Малевич</a>
+                        </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Пикассо</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Кандинский</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Маринетти</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Малевич</a>
+                        </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Пикассо</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li id="list-5" class="nav-bar__list-item" >
+                  <button class="nav-bar__btn btn-reset" type="button" aria-label="Подменю 'Футуризм'. Открыть">Футуризм</button>
+                  <div class="nav-bar__items-wrap" data-simplebar>
+                    <ul class="nav-bar__dropdown-list list-reset ">
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Карра</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Прателла</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Северини</a>
+                        </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Балла</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Карра</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Прателла</a>
+                      </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Северини</a>
+                        </li>
+                      <li class="nav-bar__dropdown-item">
+                        <a href="#" class="nav-bar__dropdown-item-btn btn-reset">Балла</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div><!-- col -->
+          <div class="col-2 d-flex g-0 justify-content-end">
+            <div class="nav-bar__search">
+              <div class="nav-bar__search-icon">
+                <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
+              </div>
+              <input id="nav-bar__search" type="search" name="search" placeholder="Поиск по сайту" autocomplete="off">
+            </div>
+          </div><!-- nav-bar__search-->
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- nav-1920 -->
+  </div>
+
+
+  <div class="container">
+
+
+
+</header>
 
 <!-- main -->
 <main class="main">
