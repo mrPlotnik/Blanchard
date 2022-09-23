@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const burger = document.querySelector('.ht__burger');
     const closeBtn = document.querySelector('.ht-nav__close-btn');
     const menuMobile = document.querySelector('.ht__nav');
-    const links = document.querySelectorAll('.ht-nav__list-item a');
+    const links = document.querySelectorAll('.ht-nav__item a');
     // Выбираем все элементы для индекса в мобильном меню
     const elTab = document.querySelectorAll('.ht-nav__close-btn, .ht-nav__list-item a, .ht-nav__login-link');
 
@@ -65,47 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   };
 
-  // --- Выпадающее меню
-
-  dropdownMenu();
-  function dropdownMenu() {
-    const navBarBtn =  document.querySelectorAll('.nav-bar__btn');
-    const navBarDropdown = document.querySelectorAll('.nav-bar__items-wrap');
-    let isActive = null;
-
-    navBarBtn.forEach((el, index) => {
-      el.addEventListener('click', function(e) {
-        if (isActive == null) {
-          navBarDropdown[index].classList.add('nav-bar__items-wrap--active');
-          navBarDropdown[index].setAttribute("aria-hidden", "false");
-          el.classList.add('nav-bar__btn--active');
-          el.setAttribute("aria-expanded", "true");
-          isActive = e.target;
-        } else if (isActive == e.target) {
-          navBarDropdown[index].classList.remove('nav-bar__items-wrap--active');
-          navBarDropdown[index].setAttribute("aria-hidden", "true");
-          el.classList.remove('nav-bar__btn--active');
-          el.setAttribute("aria-expanded", "false");
-          isActive = null;
-        } else {
-          navBarDropdown.forEach((el) => {
-            el.classList.remove('nav-bar__items-wrap--active');
-            el.setAttribute("aria-hidden", "true");
-          });
-          navBarBtn.forEach((el) => {
-            el.classList.remove('nav-bar__btn--active');
-            el.setAttribute("aria-expanded", "false");
-          });
-          navBarDropdown[index].classList.add('nav-bar__items-wrap--active');
-          navBarDropdown[index].setAttribute("aria-hidden", "false");
-          el.classList.add('nav-bar__btn--active');
-          el.setAttribute("aria-expanded", "true");
-          isActive = e.target;
-        }
-      })
-    })
-  };
-
   // --- Поиск
 
   search ();
@@ -148,6 +107,61 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   };
 
+  // --- Выпадающее меню
+
+  dropdownMenu();
+  function dropdownMenu() {
+    const navBarBtn =  document.querySelectorAll('.hb-item__btn');
+    const navBarDropdown = document.querySelectorAll('.hb-item__wrap');
+    let isActive = null;
+
+    navBarBtn.forEach((el, index) => {
+      el.addEventListener('click', function(e) {
+        if (isActive == null) {
+          navBarDropdown[index].classList.add('hb-item__wrap--active');
+          navBarDropdown[index].setAttribute("aria-hidden", "false");
+          el.classList.add('hb-item__btn--active');
+          el.setAttribute("aria-expanded", "true");
+          isActive = e.target;
+        } else if (isActive == e.target) {
+          navBarDropdown[index].classList.remove('hb-item__wrap--active');
+          navBarDropdown[index].setAttribute("aria-hidden", "true");
+          el.classList.remove('hb-item__btn--active');
+          el.setAttribute("aria-expanded", "false");
+          isActive = null;
+        } else {
+          navBarDropdown.forEach((el) => {
+            el.classList.remove('hb-item__wrap--active');
+            el.setAttribute("aria-hidden", "true");
+          });
+          navBarBtn.forEach((el) => {
+            el.classList.remove('hb-item__btn--active');
+            el.setAttribute("aria-expanded", "false");
+          });
+          navBarDropdown[index].classList.add('hb-item__wrap--active');
+          navBarDropdown[index].setAttribute("aria-hidden", "false");
+          el.classList.add('hb-item__btn--active');
+          el.setAttribute("aria-expanded", "true");
+          isActive = e.target;
+        }
+      })
+    })
+  };
+
+  // --- SimpleBar в выпадающем меню
+
+  simplebar1();
+  function simplebar1() {
+    const bars = document.querySelectorAll('[data-simplebar]')
+    bars.forEach(el => {
+      new SimpleBar(el, {
+        ariaLabel: 'Прокручиваемая область',
+
+      })
+      // el.querySelector('.simplebar-content-wrapper').setAttribute('tabindex', '1');
+    })
+  };
+
   // --- Плавный скролл до элемента (на все ссылки)
 
   scroll();
@@ -165,6 +179,13 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     }
   };
+
+
+
+
+
+
+
 
   // --- Каталог. Вкладки
 
@@ -259,23 +280,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const el = document.querySelector('select');
     const choises = new Choices(el,{
       searchEnabled: false,
-      itemSelectText: '',
+      itemelectText: '',
     });
   }
 
-  // --- SimpleBar в выпадающем меню
 
-  simplebar1();
-  function simplebar1() {
-    const bars = document.querySelectorAll('[data-simplebar]')
-    bars.forEach(el => {
-      new SimpleBar(el, {
-        ariaLabel: 'Прокручиваемая область',
-
-      })
-      // el.querySelector('.simplebar-content-wrapper').setAttribute('tabindex', '1');
-    })
-  };
 
   // --- SimpleBar в модальных окнах
 
