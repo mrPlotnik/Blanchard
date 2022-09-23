@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
   burger();
   function burger() {
     const body = document.querySelector('body');
-    const burger = document.querySelector('.header-top__burger');
+    const burger = document.querySelector('.ht__burger');
     const closeBtn = document.querySelector('.ht-nav__close-btn');
-    const menuMobile = document.querySelector('.header-top__nav');
+    const menuMobile = document.querySelector('.ht__nav');
     const links = document.querySelectorAll('.ht-nav__list-item a');
     // Выбираем все элементы для индекса в мобильном меню
     const elTab = document.querySelectorAll('.ht-nav__close-btn, .ht-nav__list-item a, .ht-nav__login-link');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       body.classList.toggle('stop-scroll');
       burger.setAttribute("aria-expanded", "true");
-      menuMobile.classList.toggle('header-top__nav--active');
+      menuMobile.classList.toggle('ht__nav--active');
 
       // При отрытии меню сразу фокус на крестик
       // Из-за анимации свойства visibility ставим
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeBtn.addEventListener('click', function() {
       body.classList.toggle('stop-scroll');
       burger.setAttribute("aria-expanded", "false");
-      menuMobile.classList.toggle('header-top__nav--active');
+      menuMobile.classList.toggle('ht__nav--active');
       // Фокус на бургер
       burger.focus();
     })
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     links.forEach((el, index) => {
       el.addEventListener('click', function(e) {
         body.classList.toggle('stop-scroll');
-        menuMobile.classList.toggle('header-top__nav--active');
+        menuMobile.classList.toggle('ht__nav--active');
       })
     })
   };
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   search ();
   function search() {
-    const searchBtn = document.querySelector('.header__search-btn');
+    const searchBtn = document.querySelector('.ht__search-btn');
     const searchBig = document.querySelector('.ht-search');
     const searchCloseBtn = document.querySelector('.ht-search__close-btn');
     const searchInput = document.querySelector('#search');

@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* ---------- Glob ----------*/
 :root {
-  --header-top-height: 45px;
+  --ht-height: 45px;
   /* --header-bottom-height: 85px; */
   --outline-offset: 3px;
   --color-purple-1: #7943a4;
@@ -130,6 +130,7 @@ img {
   --color-bs-gutter-x: 30px;
 }
 .container {
+  max-width: 1660px;
   padding: 0 15px;
 }
 .swiper-button-next,
@@ -143,22 +144,18 @@ img {
  content: none;
 }
 
-.container {
-  padding: 0 15px;
-}
 
 /* ---------- header start ---------- */
-.header {}
-.header-top {
-  height: var(--header-top-height);
+.ht {
+  height: var(--ht-height);
   background-color: var(--color-black);
 }
-.header-top__container {
+.ht__container {
   width: 100%;
   height: inherit;
   margin: 0 auto;
 }
-.header-top__content {
+.ht__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -166,63 +163,59 @@ img {
   padding-bottom: 2px;
 }
 
-.header-top__burger {
+.ht__burger {
   position: relative;
   width: 25px;
   height: 18px;
 }
-.header-top__burger-line {
+.ht__burger-line {
   position: absolute;
   height: 2px;
   left: 0;
   background-color: var(--color-white);
   transition: .3s all ease-in-out;
 }
-.header-top__burger-line-1 {
+.ht__burger-line-1 {
   width: 100%;
   top: 0;
 }
-.header-top__burger-line-2 {
+.ht__burger-line-2 {
   width: 60%;
   top: calc(50% - 1px);
 }
-.header-top__burger-line-3 {
+.ht__burger-line-3 {
   width: 40%;
   bottom: 0;
 }
-.header-top__burger,
-.header__search-btn,
-.header__logo-wrap a {
+.ht__burger,
+.ht__search-btn,
+.ht__logo-wrap a {
   outline-offset: var(--outline-offset);
   outline: 2px solid transparent;
 }
-.header-top__burger:focus-visible,
-.header__search-btn:focus-visible,
-.header__logo-wrap a:focus-visible {
+.ht__burger:focus-visible,
+.ht__search-btn:focus-visible,
+.ht__logo-wrap a:focus-visible {
   outline-color: var(--color-purple-2);
 }
-.header-top__burger:hover .header-top__burger-line {
+.ht__burger:hover .ht__burger-line {
   background-color: var(--color-purple-2);
 }
-
-.header-top__logo-wrap {
+.ht__logo-wrap {
   width: 103px;
   height: 20px;
   padding-right: 6px;
 }
-.header-top__logo-wrap a {
+.ht__logo-wrap a {
   width: 100%;
 }
-
-.header__search-btn {
+.ht__search-btn {
   width: 18px;
 }
-.header__search-btn:hover svg path {
+.ht__search-btn:hover svg path {
   fill: var(--color-purple-3);
 }
-
-/* --- Мобильное меню --- */
-.header-top__nav {
+.ht__nav {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -239,7 +232,7 @@ img {
   transition: .3s all ease-in-out;
   transform: translateX(-100%);
 }
-.header-top__nav--active {
+.ht__nav--active {
   opacity: 1;
   visibility: visible;
   transform: none;
@@ -321,14 +314,12 @@ img {
 .ht-nav__login-link:active {
   border-color: var(--color-purple-4);
 }
-
-/* --- Search-big start --- */
 .ht-search {
   position: fixed;
   display: flex;
   align-items: center;
   width: 100%;
-  height: var(--header-top-height);
+  height: var(--ht-height);
   top: 0;
   right: 0;
   padding: 0 15px;
@@ -400,8 +391,11 @@ img {
 .ht-search__close-btn:focus-visible  {
   outline: 2px solid var(--color-purple-2);
 }
-/* --- Search-big end --- */
-/* ---------- header start ---------- */
+
+.header-bottom {
+  display: none;
+}
+
 
 /* ---------- section-hero start ---------- */
 .hero {
@@ -415,7 +409,7 @@ img {
 #swiper-hero {
   position: absolute;
   height: inherit;
-  top: calc(0 - var(--header-top-height));
+  top: calc(0 - var(--ht-height));
   left: 0;
   z-index: -1;
 }
@@ -1676,41 +1670,40 @@ a:active .ok path {
   .card__body {
     height: 220px;
   }
-  /* ---------- section events end ---------- */
 }
 
 /* sm */
 @media (min-width: 576px) {
 
   :root {
-    --header-top-height: 75px;
+    --ht-height: 75px;
+  }
+  .container {
+    padding: 0 50px;
   }
 
-  .header-top__burger  {
+  .ht__burger  {
     width: 36px;
     height: 30px;
   }
-  .header-top__burger-line {
+  .ht__burger-line {
     height: 3px;
   }
-  .header-top__burger-line-1 {
+  .ht__burger-line-1 {
     top: 3px;
   }
-  .header-top__burger-line-2 {
+  .ht__burger-line-2 {
     top: 50%;
   }
-
-  .header-top__logo-wrap {
+  .ht__logo-wrap {
     width: 195px;
-list-    height: 40px;
+    height: 40px;
     padding-right: 8px;
   }
-
-  .header__search-btn {
+  .ht__search-btn {
     width: 25px;
   }
-
-  .header-top__nav {
+  .ht__nav {
     padding: 33px 50px 51px 50px;
   }
   .ht-nav__close-btn {
@@ -1732,41 +1725,30 @@ list-    height: 40px;
     font-size: 24px;
     line-height: 64px;
   }
-
-
-
-
-
   .ht-nav__login-link svg {
     margin-top: 1px;
     width: 15px;
     height: 15px;
   }
-
-
-
-
-  .header__search-big {
-    padding: 0 18px;
+  .ht-search {
+    padding: 0 50px;
   }
-  .search-big__search-icon {
+  .ht-search__search-icon {
     width: 29px;
     height: 29px;
   }
-  .search-big__close-btn {
+  .ht-search__close-btn {
     width: 29px;
     height: 29px;
   }
-  .search-big__close-btn-line {
+  .ht-search__close-btn-line {
     height: 3px;
   }
-  .search-big input {
+  .ht-search input {
     height: 30px;
     font-size: 18px;
   }
-
-
-  .ht-nav__list-item a {
+  .ht-nav__item a {
     font-size: 23px;
     line-height: 50px;
   }
@@ -1776,6 +1758,10 @@ list-    height: 40px;
     border-radius: 30px;
     color: var(--color-white);
   }
+
+
+
+
 
   /* ---------- section hero start ---------- */
   .hero {
@@ -1814,22 +1800,9 @@ list-    height: 40px;
 /* md */
 @media (min-width: 768px) {
   :root {
-    --header-top-height: 100px;
+    --ht-height: 100px;
     --outline-offset: 6px;
   }
-  .container {
-   padding: 0 26px;
-  }
-
-
-
-
-
-
-
-
-
-
 
   .ht-nav__list-item:not(:last-child) {
     margin-bottom: 15px;
@@ -1850,30 +1823,15 @@ list-    height: 40px;
     width: 15px;
     height: 15px;
   }
-  /* ---------- nav_mobile start---------- */
+  .ht-nav__item a {
+    font-size: 24px;
+    line-height: 64px;
+  }
 
-  /* ---------- search start---------- */
-  .header__search-icon {
-    width: 29px;
-    height: 29px;
-    margin-right: 10px;
-  }
-  .header__search-close {
-    width: 29px;
-    height: 29px;
-  }
-  .header__search-btn {
-    width: 28px;
-  }
-  .header__search-big {
-    padding: 0 35px;
-    padding-left: 0;
-  }
-  .header__search-big input {
-    height: 32px;
-    font-size: 20px;
-  }
-  /* ---------- search start---------- */
+
+
+
+
 
   /* ---------- header start---------- */
   .header-wrap {
@@ -2214,36 +2172,16 @@ list-    height: 40px;
 
 /* lg */
 @media (min-width: 992px) {
-  .container {
-    padding: 0 18px;
-  }
-   /* ---------- search start---------- */
-  .nav__mobile {
-    padding: 33px 15px 33px 48px;
-  }
-  .header__search-big  {
-    width: 320px;
-  }
-  .header__search-big input {
-    height: 32px;
-    font-size: 22px;
-  }
-  /* ---------- search end---------- */
-
   /* ---------- header start---------- */
-  .header-wrap {
-    padding-top: 2px;
-  }
-  .header-top__burger {
-    width: 38px;
-  }
-  .header__search-btn {
+  .ht__search-btn {
     width: 31px;
   }
-  .header__search {
-    width: 30px;
-  }
-  /* ---------- header end ---------- */
+
+
+
+
+
+
 
   /* ---------- section hero start ---------- */
   .hero__text {
@@ -2357,13 +2295,67 @@ list-    height: 40px;
 
 /* xl */
 @media (min-width: 1200px) {
-  .header-wrap {
-    padding-top: 0px;
-    padding-bottom: 5px;
+
+  .container {
+    padding: 0 30px;
   }
-  .header__nav-wrap {
-    padding-left: 50px;
+
+  .ht__burger,
+  .ht__search,
+  .ht__search-btn,
+  .ht-nav__close-btn {
+    display: none;
   }
+
+  .ht__logo-wrap {
+    width: 181px;
+  }
+  .ht__nav {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(100% - 352px);
+    height: inherit;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .ht-nav__list {
+    flex-direction: row;
+    width: fit-content;
+    margin-right: auto;
+  }
+  .ht-nav__item:not(:last-child) {
+    margin-right: 62px;
+  }
+  .ht-nav__item a {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .ht-nav__login-link {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+  }
+  .ht-nav__login-link svg {
+    margin-top: 5px;
+  }
+  .ht-nav__login-link:hover {
+    color: var(--color-purple-3);
+    background-color: unset;
+  }
+  .ht-nav__login-link:hover svg path {
+    fill: var(--color-purple-3);
+  }
+
+
+
+
+
+
   .nav__major  {
     width: 100%;
     font-weight: 600;
@@ -2910,8 +2902,5 @@ list-    height: 40px;
 
  /* My */
 @media (min-width: 1920px) {
-  .container {
-    min-width: 1635px;
-    padding: 0 17px;
-  }
+
 }
