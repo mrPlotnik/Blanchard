@@ -34,26 +34,55 @@ body {
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
 }
-.stop-scroll {
-  overflow: hidden;
-}
-*,
-*::before,
-*::after {
+*, *::before, *::after {
 	box-sizing: inherit;
 }
-a {
-	color: inherit;
-	text-decoration: none;
+:focus, :hover, :active, :focus-visible {
+	outline: transparent;
+	outline-offset: 0;
 }
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  overflow: hidden;
+  color: var(--color-gray-20);
+}
+h2 {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 400;
+}
+h3 {
+  font-weight: 600;
+}
+svg, svg rect, svg path, svg circle,
+a, button {
+  transition: all .3s ease-in-out;
+}
+a {
+  display: inline-flex;
+  width: fit-content;
+	text-decoration: none;
+  color: inherit;
+}
+svg {
+  display: flex;
+}
+* > svg {
+  width: 100%;
+  height: 100%;
+}
+img {
+  width: 100%;
 }
 
 /* ---------- Glob ----------*/
 :root {
   --ht-height: 45px;
-  /* --header-bottom-height: 85px; */
   --outline-offset: 3px;
   --color-purple-1: #7943a4;
   --color-purple-2: #9d5cd0;
@@ -69,6 +98,9 @@ h1, h2, h3, h4, h5, h6, p {
   --color-white-transparent-2: rgba(255, 255, 255, 0.2);
   --color-black-transparent-9: rgba(0, 0, 0, 0.9);
 }
+.stop-scroll {
+  overflow: hidden;
+}
 .list-reset {
   display: flex;
   margin: 0;
@@ -80,51 +112,6 @@ h1, h2, h3, h4, h5, h6, p {
   border: none;
   cursor: pointer;
   background-color: transparent;
-}
-svg,
-svg rect,
-svg path,
-svg circle,
-a,
-button {
-  transition: all .3s ease-in-out;
-}
-a {
-  display: inline-flex;
-  width: fit-content;
-}
-svg {
-  display: flex;
-}
-* > svg {
-  width: 100%;
-  height: 100%;
-}
-:focus, :hover, :active, :focus-visible {
-	outline: transparent;
-	outline-offset: 0;
-}
-h1, h2, h3, h4 {
-  margin: 0;
-  padding: 0;
-  word-wrap: break-word;
-  overflow: hidden;
-  color: var(--color-gray-20);
-}
-h1 {
-  font-size: 3em;
-}
-h2 {
-  font-size: 28px;
-  line-height: 38px;
-  font-weight: 400;
-  max-height: 200px;
-}
-h3 {
-  font-weight: 600;
-}
-img {
-  width: 100%;
 }
 .row {
   --color-bs-gutter-x: 30px;
@@ -143,9 +130,8 @@ img {
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
- content: none;
+  content: none;
 }
-
 
 /* ---------- header start ---------- */
 .ht {
@@ -292,12 +278,9 @@ img {
 .ht-nav__item a:focus-visible:before {
   opacity: 1;
 }
-
-
 .ht-nav__item a:hover {
   color: var(--color-purple-3);
 }
-
 .ht-nav__item a:active {
   color: var(--color-purple-1);
 }
@@ -406,25 +389,20 @@ img {
 .ht-search__close-btn:focus-visible  {
   outline: 2px solid var(--color-purple-2);
 }
-
 .header-bottom {
   display: none;
 }
 
-
 /* ---------- section-hero start ---------- */
 .hero {
-  height: 310px;
-  background-size: cover;
-}
-.hero__wrap {
-  padding-top: 28px;
-  text-align: center;
+  position: relative;
 }
 #swiper-hero {
   position: absolute;
   height: inherit;
-  top: calc(0 - var(--ht-height));
+  top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   z-index: -1;
 }
@@ -443,17 +421,20 @@ img {
   background-image: url(../img/hero-1920-3.jpg);
 }
 
+.hero__wrap {
+  padding-top: 28px;
+  padding-bottom: 45px;
+  text-align: center;
+}
 .hero__header {
-  max-height: 100px;
   margin-bottom: 3px;
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
-  overflow: hidden;
   color: var(--color-white);
 }
 .hero__text {
-  min-height: 106px;
+  margin-bottom: 42px;
   padding: 0 20px;
   font-size: 12px;
   line-height: 16px;
@@ -469,8 +450,8 @@ img {
   font-size: 12px;
   line-height: 16px;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  /* text-overflow: ellipsis; */
   outline-offset: var(--outline-offset);
   outline: 2px solid transparent;
   color: var(--color-white);
@@ -486,7 +467,6 @@ img {
   border: 3px solid var(--color-purple-4);
   background-color: var(--color-purple-1);
 }
-/* ---------- section-hero end ---------- */
 
 /* ---------- section-about start---------- */
 .about__wrap {
@@ -502,9 +482,11 @@ img {
   line-height: 28px;
   color: var(--color-gray-20);
 }
-/* ---------- section-about end---------- */
 
 /* ---------- section galery start ---------- */
+
+
+
 .galery {
   background-size: cover;
   background-repeat: no-repeat;
@@ -1697,6 +1679,7 @@ a:active .ok path {
     padding: 0 50px;
   }
 
+  /* ---------- header start---------- */
   .ht__burger  {
     width: 36px;
     height: 30px;
@@ -1774,34 +1757,30 @@ a:active .ok path {
     color: var(--color-white);
   }
 
-
-
-
-
   /* ---------- section hero start ---------- */
-  .hero {
-    height: 668px;
-  }
   .hero__wrap {
     padding-top: 105px;
+    padding-bottom: 113px;
+    text-align: left;
   }
   .hero__header {
-    min-height: 196px;
-    font-size: 60px;
-    line-height: 80px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    line-height: 65px;
   }
   .hero__text {
-    margin-bottom: 87px;
+    margin-bottom: 133px;
     padding: 0;
     font-weight: 700;
     font-size: 16px;
     line-height: 30px;
   }
   .hero__btn {
-    padding: 15px 30px;
-    font-size: 16px;
-    line-height: 25px;
+    padding: 25px 33px;
+    font-size: 18px;
   }
+
+
 
   .ac__artist-list {
    column-count: 2;
@@ -1819,6 +1798,7 @@ a:active .ok path {
     --outline-offset: 6px;
   }
 
+  /* ---------- header start---------- */
   .ht-nav__list-item:not(:last-child) {
     margin-bottom: 15px;
   }
@@ -1843,30 +1823,7 @@ a:active .ok path {
     line-height: 64px;
   }
 
-
-
-
-
-
-  /* ---------- header start---------- */
-  .header-wrap {
-    height: 100px;
-    padding-bottom: 0;
-  }
-  .header__logo-wrap {
-    width: 187px;
-    height: 45px;
-    padding-top: 0;
-  }
-  .header__search {
-    width: 26px;
-  }
-  /* ---------- header end ---------- */
-
   /* ---------- section hero start ---------- */
-  .hero__wrap {
-    text-align: left;
-  }
   .hero__header {
     margin-bottom: -11px;
     font-size: 72px;
@@ -1875,11 +1832,6 @@ a:active .ok path {
   .hero__text {
     font-size: 18px;
   }
-  .hero__btn {
-    padding: 20px 33px;
-    font-size: 18px;
-  }
-  /* ---------- section hero end ---------- */
 
   /* ---------- section about start ---------- */
   .about__wrap {
@@ -1895,9 +1847,11 @@ a:active .ok path {
     font-size: 16px;
     line-height: 32px;
   }
-  /* ---------- section about end ---------- */
 
   /* ---------- section galery start ---------- */
+
+
+
   .galery__wrap {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -2192,19 +2146,12 @@ a:active .ok path {
     width: 31px;
   }
 
-
-
-
-
-
-
-  /* ---------- section hero start ---------- */
-  .hero__text {
-    padding-right: 200px;
-  }
-  /* ---------- section hero end ---------- */
-
   /* ---------- section galery start ---------- */
+
+
+
+
+
   .choices {
     margin-bottom: 113px;
   }
@@ -2310,7 +2257,6 @@ a:active .ok path {
 
 /* xl */
 @media (min-width: 1200px) {
-
   .container {
     padding: 0 30px;
   }
@@ -2449,6 +2395,7 @@ a:active .ok path {
     opacity: 0;
     background: rgba(0, 0, 0, 0.5);
     transition: .3s all ease-in-out;
+    z-index: 1;
   }
   .hb-item__wrap--active {
     opacity: 1;
@@ -2580,38 +2527,6 @@ a:active .ok path {
   .hb__search-input:focus-visible::placeholder {
     color: transparent;
   }
-
-  /* ---------- hero section start ---------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .hero {
-    height: 700px;
-    margin-top: -70px;
-  }
-  .hero__wrap {
-    padding-top: 133px;
-    padding-right: 55%;
-    padding-bottom: 122px;
-  }
-  .hero__header {
-    margin-bottom: -2px;
-  }
-  .hero__text {
-    margin-bottom: 75px;
-    padding-right: 165px;
-  }
-
   #header .simplebar-track {
     right: -20px;
   }
@@ -2634,15 +2549,33 @@ a:active .ok path {
     opacity: 1 !important;
   }
 
-  /* ---------- hero section end ---------- */
+  /* ---------- hero section start ---------- */
+  .hero {
+    margin-top: -70px;
+  }
+  .hero__wrap {
+    padding-top: 133px;
+    padding-right: 55%;
+    padding-bottom: 121px;
+  }
+  .hero__header {
+    margin-bottom: -3px;
+  }
+  .hero__text {
+    margin-bottom: 91px;
+    padding-right: 165px;
+  }
 
   /* ---------- about section start ---------- */
   .about__wrap {
     padding-right: 34%;
   }
-  /* ---------- about section end ---------- */
 
   /* ---------- galery section start ---------- */
+
+
+
+
   .galery__wrap {
     padding-bottom: 49px;
   }
@@ -2765,7 +2698,6 @@ a:active .ok path {
   #swiper-partners .swiper-button-prev {
     top: 67%;
   }
-  /* ---------- projects section end ---------- */
 
   /* ---------- footer start ---------- */
   /* ---------- contacts start ---------- */
@@ -2812,14 +2744,11 @@ a:active .ok path {
     padding-top: 3px;
     padding-left: 25px;
   }
-  /* ---------- contacts end ---------- */
 
   /* ---------- bottom start ---------- */
   .vk, .ok {
     width: 45px;
   }
-  /* ---------- bottom end ---------- */
-  /* ---------- footer end ---------- */
 
 
 
@@ -2833,12 +2762,8 @@ a:active .ok path {
   }
   .note__second-wrap {
     padding-top: 121px;
-
     padding-bottom: 121px;
-
   }
-
-
 }
 
  /* xxl */
@@ -2851,37 +2776,7 @@ a:active .ok path {
   .hb-item:not(:last-child) {
     margin-right: 98px;
   }
-
-
-
-
-  .header__logo-wrap {
-    padding-top: 5px;
-  }
-  .header__logo-wrap {
-    width: 172px;
-  }
-  .header__logo-wrap img {
-    width: 175px;
-  }
-  .header__nav-wrap {
-    padding: 0;
-  }
-  .nav__major  {
-    margin-left: 81px;
-  }
-  .nav-major__item:not(:last-child) {
-    margin-right: 52px;
-  }
-  .hb__list {
-    /* width: 1046px; */
-    /* padding-right: 0; */
-  }
-
-  /* ---------- header end ---------- */
 }
 
  /* My */
-@media (min-width: 1920px) {
-
-}
+@media (min-width: 1920px) {}
