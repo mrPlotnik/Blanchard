@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // --- Бургер
+  // --- --- HEADER --- --- //
 
+  // --- Бургер и мобильное меню
   burger();
   function burger() {
     const body = document.querySelector('body');
@@ -66,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // --- Поиск
-
   search ();
   function search() {
     const searchBtn = document.querySelector('.ht__search-btn');
@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // --- Выпадающее меню
-
   dropdownMenu();
   function dropdownMenu() {
     const navBarBtn =  document.querySelectorAll('.hb-item__btn');
@@ -149,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // --- SimpleBar в выпадающем меню
-
   simplebar1();
   function simplebar1() {
     const bars = document.querySelectorAll('[data-simplebar]')
@@ -162,23 +160,74 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   };
 
-  // --- Плавный скролл до элемента (на все ссылки)
+  // --- Первый свайпер в секции hero
+  swiper1();
+  function swiper1() {
+     const swiper1 = new Swiper('#swiper-hero', {
+       effect: 'fade',
+       autoplay: {
+         disableOnInteraction: true,
+       },
+       a11y: {
+         preventClicks: false,
+         preventClicksPropagation: false,
+         simulateTouch: false,
+       },
+     });
+  }
 
-  scroll();
-  function scroll() {
-    const links = document.querySelectorAll('a[href*="#"]')
+  // --- --- MAIN --- --- //
 
-    for (let link of links) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault()
-        const blockID = link.getAttribute('href');
-        document.querySelector(`${blockID}`).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
-      })
-    }
-  };
+  // --- choices.js в секции galery
+  choises();
+  function choises() {
+     const el = document.querySelector('select');
+     const choises = new Choices(el,{
+       searchEnabled: false,
+       itemelectText: '',
+     });
+  }
+
+  // --- Второй свайпер в секции galery
+  swiper2();
+  function swiper2() {
+    const swiper2 = new Swiper('#swiper-gallery', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 38,
+      simulateTouch: true, // Принимает события мыши, как событие касания пальцами
+      grabCursor: true,  // 'Grab' курсор для повышения юзабилити на десктопах
+      autoplay: {
+        disableOnInteraction: true, // Автоплей не останавливается после конца итереций
+      },
+      breakpoints: {
+        576: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+        1024: {
+          spaceBetween: 34,
+        },
+        1440: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 50,
+        }
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+
+
+
 
 
 
@@ -230,7 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // --- gallery modal
-
   modal();
   function modal() {
     const btn = document.querySelectorAll('#swiper-galery .swiper-slide');
@@ -273,21 +321,8 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   }
 
-  // --- Инициализация инпута choices.js в секции galery
-
-  choises();
-  function choises() {
-    const el = document.querySelector('select');
-    const choises = new Choices(el,{
-      searchEnabled: false,
-      itemelectText: '',
-    });
-  }
-
-
 
   // --- SimpleBar в модальных окнах
-
   simplebar2();
   function simplebar2() {
     Array.prototype.forEach.call(
@@ -310,8 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
     duration: 700,
   });
 
-  // input mask tel
-
+  // --- input mask tel
   inputMask();
   function inputMask() {
     const selector = document.querySelector("input[type='tel']");
@@ -320,7 +354,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // --- Validate form
-
   validate();
   function validate() {
     new window.JustValidate('#form', {
@@ -371,85 +404,16 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   }
 
-  // --- Первый свайпер в секции hero
-
-  swiper1();
-  function swiper1() {
-    const swiper1 = new Swiper('#swiper-hero', {
-      effect: 'fade',
-      // Автоплей
-      autoplay: {
-        // Автоплей не останавливается после конца итереций
-        disableOnInteraction: true,
-      },
-      a11y: {
-        preventClicks: false,
-        preventClicksPropagation: false,
-        simulateTouch: false,
-      },
-    });
-  }
-
-  // --- Второй свайпер в секции galery
-
-  swiper2();
-  function swiper2() {
-    const swiper2 = new Swiper('#swiper-galery', {
-      // preventClicksPropagation: false,
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 38,
-      // loop: true,
-      // Принимает события мыши, как событие касания пальцами
-      simulateTouch: true,
-      // 'Grab' курсор для повышения юзабилити на десктопах
-      grabCursor: true,
-      // Автоплей
-      autoplay: {
-        // Автоплей не останавливается после конца итереций
-        disableOnInteraction: true,
-      },
-      breakpoints: {
-        321: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-        },
-        1025: {
-          spaceBetween: 36,
-        },
-        1441: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 50,
-        }
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  }
-
   // --- Третий свайпер в секции events
-
   swiper3();
   function swiper3() {
     const swiper3 = new Swiper('#swiper-events', {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 35,
-      // effect: 'fade',
-      // Принимает события мыши, как событие касания пальцами
       simulateTouch: true,
-      // 'Grab' курсор для повышения юзабилити на десктопах
       grabCursor: true,
-      // Автоплей
       autoplay: {
-        // Автоплей не останавливается после конца итереций
         disableOnInteraction: true,
       },
        breakpoints: {
@@ -480,19 +444,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
    // --- Четвертый свайпер в секции projects
-
   swiper4();
   function swiper4() {
     const swiper4 = new Swiper('#swiper-partners', {
       slidesPerView: 1,
       slidesPerGroup: 1,
-      // Принимает события мыши, как событие касания пальцами
       simulateTouch: true,
-      // 'Grab' курсор для повышения юзабилити на десктопах
       grabCursor: true,
-      // Автоплей
       autoplay: {
-        // Автоплей не останавливается после конца итереций
         disableOnInteraction: true,
       },
       breakpoints: {
@@ -513,8 +472,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // --- Yandex-карты
 
+
+
+
+  // --- --- GLOBAL --- --- //
+
+  // --- Плавный скролл до элемента (на все ссылки)
+  scroll();
+  function scroll() {
+    const links = document.querySelectorAll('a[href*="#"]')
+
+    for (let link of links) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault()
+        const blockID = link.getAttribute('href');
+        document.querySelector(`${blockID}`).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      })
+    }
+  };
+
+  // --- Yandex-карты
   map();
   function map() {
     // Дождёмся загрузки API и готовности DOM

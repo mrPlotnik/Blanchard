@@ -290,94 +290,90 @@
     </div>
   </section>
 
-  <!-- section galery -->
-  <section id="gallery" class="section-galery galery">
+  <!-- section gallery -->
+  <section id="gallery" class="section-gallery gallery">
     <div class="container">
-      <div class="galery__wrap">
-        <div class="col col-lg-4 col-xxl-3 galery__custom-block-first">
-          <div class="col-12">
-            <h2 class="galery__header">Галерея</h2>
-          </div>
-          <div class="galery__filters filters">
-            <span>Фильтр:</span>
-            <select name="art">
-              <option value="">Живопись</option>
-              <option value="value-1">Рисунок</option>
-              <option value="value-2">Скульптура</option>
-            </select>
-            <div class="filters__wrap">
-              <label class="filters__check">
-                <input class="filters__input" type="checkbox" name="19_century" aria-label="Выбрать только 19 век" >
-                <span class="filters__placeholder">XIX век</span>
-                <span class="filters__checkbox"></span>
-              </label>
-              <label class="filters__check">
-                <input class="filters__input" type="checkbox" name="20_century" aria-label="Выбрать только 20 век" checked >
-                <span class="filters__placeholder">XX&nbsp;век</span>
-                <span class="filters__checkbox"></span>
-              </label>
-              <label class="filters__check">
-                <input class="filters__input" type="checkbox" name="modern" aria-label="Выбрать только современные" >
-                <span class="filters__placeholder">Современность</span>
-                <span class="filters__checkbox"></span>
-              </label>
-            </div>
+      <div class="gallery__wrap">
+
+        <div class="gallery__filters filters">
+          <h2 class="filters__header">Галерея</h2>
+          <span>Фильтр:</span>
+          <select name="art">
+            <option value="">Живопись</option>
+            <option value="value-1">Рисунок</option>
+            <option value="value-2">Скульптура</option>
+          </select>
+          <div class="filters__wrap">
+            <label class="filters__check">
+              <input class="filters__input" type="checkbox" name="19_century" aria-label="Выбрать только 19 век" >
+              <span class="filters__placeholder">XIX век</span>
+              <span class="filters__checkbox"></span>
+            </label>
+            <label class="filters__check">
+              <input class="filters__input" type="checkbox" name="20_century" aria-label="Выбрать только 20 век" checked >
+              <span class="filters__placeholder">XX&nbsp;век</span>
+              <span class="filters__checkbox"></span>
+            </label>
+            <label class="filters__check">
+              <input class="filters__input" type="checkbox" name="modern" aria-label="Выбрать только современные" >
+              <span class="filters__placeholder">Современность</span>
+              <span class="filters__checkbox"></span>
+            </label>
           </div>
         </div>
-        <div class="col col-lg-8 col-xxl-9 galery__custom-block-second">
-          <!-- Swiper -->
-          <div id="swiper-galery" class="swiper d-flex flex-column">
+
+        <!-- Swiper -->
+        <div class="gallery__swiper">
+          <div id="swiper-gallery" class="swiper">
             <div class="swiper-wrapper">
-              <a class="swiper-slide" role="group" aria-label="1 из 6">
+              <a class="swiper-slide" role="group" aria-label="1 из 5">
                 <picture>
-                  <source media="(max-width: 765px)" srcset="img/galery/320-1.jpg">
-                  <source media="(max-width: 1023px)" srcset="img/galery/768-1.jpg">
-                  <source media="(max-width: 1919)" srcset="img/galery/1024-1.jpg">
-                  <img class="swiper-slide__img" src="img/galery/1920-1.jpg" alt="Казимир Малевич, Торс &#8470;&nbsp;2">
+                  <source media="(max-width: 765px)" srcset="img/gallery/320-1.jpg">
+                  <source media="(max-width: 1023px)" srcset="img/gallery/768-1.jpg">
+                  <source media="(max-width: 1919)" srcset="img/gallery/1024-1.jpg">
+                  <img class="swiper-slide__img" src="img/gallery/1920-1.jpg" alt="Казимир Малевич, Торс &#8470;&nbsp;2">
                 </picture>
               </a>
-              <div class="swiper-slide">
-                <a class="swiper-slide" role="group" aria-label="2 из 6">
-                  <picture>
-                    <source media="(max-width: 765px)" srcset="img/galery/320-2.jpg">
-                    <source media="(max-width: 1023px)" srcset="img/galery/768-2.jpg">
-                    <source media="(max-width: 1919)" srcset="img/galery/1024-2.jpg">
-                    <img class="swiper-slide__img" src="img/galery/1920-2.jpg" alt="Казимир Малевич, Женщина с&nbsp;граблями">
-                  </picture>
-                </a>
-              </div>
-              <div class="swiper-slide">
+              <a class="swiper-slide" role="group" aria-label="2 из 5">
                 <picture>
-                  <source media="(max-width: 765px)" srcset="img/galery/320-3.jpg">
-                  <source media="(max-width: 1023px)" srcset="img/galery/768-3.jpg">
-                  <source media="(max-width: 1919)" srcset="img/galery/1024-3.jpg">
-                  <img class="swiper-slide__img" src="img/galery/1920-3.jpg" alt="Казимир Малевич, Уборка ржи">
+                  <source media="(max-width: 765px)" srcset="img/gallery/320-2.jpg">
+                  <source media="(max-width: 1023px)" srcset="img/gallery/768-2.jpg">
+                  <source media="(max-width: 1919)" srcset="img/gallery/1024-2.jpg">
+                  <img class="swiper-slide__img" src="img/gallery/1920-2.jpg" alt="Казимир Малевич, Женщина с&nbsp;граблями">
                 </picture>
-              </div>
-              <div class="swiper-slide">
+              </a>
+              <a class="swiper-slide" role="group" aria-label="3 из 5">
                 <picture>
-                  <source media="(max-width: 765px)" srcset="img/galery/320-4.jpg">
-                  <source media="(max-width: 1023px)" srcset="img/galery/768-4.jpg">
-                  <source media="(max-width: 1919)" srcset="img/galery/1024-4.jpg">
-                  <img class="swiper-slide__img" src="img/galery/1920-4.jpg" alt="Иван Клюн, Суперматизм">
+                  <source media="(max-width: 765px)" srcset="img/gallery/320-3.jpg">
+                  <source media="(max-width: 1023px)" srcset="img/gallery/768-3.jpg">
+                  <source media="(max-width: 1919)" srcset="img/gallery/1024-3.jpg">
+                  <img class="swiper-slide__img" src="img/gallery/1920-3.jpg" alt="Казимир Малевич, Уборка ржи">
                 </picture>
-              </div>
-              <div class="swiper-slide">
+              </a>
+              <a class="swiper-slide" role="group" aria-label="4 из 5">
                 <picture>
-                  <source media="(max-width: 765px)" srcset="img/galery/320-5.jpg">
-                  <source media="(max-width: 1023px)" srcset="img/galery/768-5.jpg">
-                  <source media="(max-width: 1919)" srcset="img/galery/1024-5.jpg">
-                  <img class="swiper-slide__img" src="img/galery/1920-5.jpg" alt="Казимир Малевич, Женщина с&nbsp;ведрами">
+                  <source media="(max-width: 765px)" srcset="img/gallery/320-4.jpg">
+                  <source media="(max-width: 1023px)" srcset="img/gallery/768-4.jpg">
+                  <source media="(max-width: 1919)" srcset="img/gallery/1024-4.jpg">
+                  <img class="swiper-slide__img" src="img/gallery/1920-4.jpg" alt="Иван Клюн, Суперматизм">
                 </picture>
-              </div>
+              </a>
+              <a class="swiper-slide" role="group" aria-label="5 из 5">
+                <picture>
+                  <source media="(max-width: 765px)" srcset="img/gallery/320-5.jpg">
+                  <source media="(max-width: 1023px)" srcset="img/gallery/768-5.jpg">
+                  <source media="(max-width: 1919)" srcset="img/gallery/1024-5.jpg">
+                  <img class="swiper-slide__img" src="img/gallery/1920-5.jpg" alt="Казимир Малевич, Женщина с&nbsp;ведрами">
+                </picture>
+              </a>
             </div>
             <div class="swiper-nav">
-              <div class="swiper-button-next">
+              <div class="swiper-button-prev">
               </div>
-              <div class="swiper-pagination-wrap d-flex justify-content-center align-items-center">
+              <div class="swiper-pagination-wrap">
                 <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-button-prev">
+              <div class="swiper-button-next">
               </div>
             </div>
           </div>
@@ -966,10 +962,10 @@
             <div class="col-12 col-md-6 note__first">
               <div class="note__first-wrap">
                 <picture>
-                  <source media="(max-width: 640px)" srcset="img/galery/modal-320-1.jpg">
-                  <source media="(max-width: 992px)" srcset="img/galery/modal-768-1.jpg">
-                  <source media="(max-width: 1440px)" srcset="img/galery/modal-1024-1.jpg">
-                  <img class="note__img" src="img/galery/modal-1920-1.jpg" alt="Каземир Малевич, Торс &#8470;&nbsp;2">
+                  <source media="(max-width: 640px)" srcset="img/gallery/modal-320-1.jpg">
+                  <source media="(max-width: 992px)" srcset="img/gallery/modal-768-1.jpg">
+                  <source media="(max-width: 1440px)" srcset="img/gallery/modal-1024-1.jpg">
+                  <img class="note__img" src="img/gallery/modal-1920-1.jpg" alt="Каземир Малевич, Торс &#8470;&nbsp;2">
                 </picture>
               </div>
             </div>
@@ -999,10 +995,10 @@
             <div class="col-12 col-md-6 note__first">
               <div class="note__first-wrap">
                 <picture>
-                  <source media="(max-width: 640px)" srcset="img/galery/modal-320-2.jpg">
-                  <source media="(max-width: 992px)" srcset="img/galery/modal-768-2.jpg">
-                  <source media="(max-width: 1440px)" srcset="img/galery/modal-1024-2.jpg">
-                  <img class="note__img" src="img/galery/modal-1920-2.jpg" alt="Казимир Малевич, Женщина с&nbsp;граблями">
+                  <source media="(max-width: 640px)" srcset="img/gallery/modal-320-2.jpg">
+                  <source media="(max-width: 992px)" srcset="img/gallery/modal-768-2.jpg">
+                  <source media="(max-width: 1440px)" srcset="img/gallery/modal-1024-2.jpg">
+                  <img class="note__img" src="img/gallery/modal-1920-2.jpg" alt="Казимир Малевич, Женщина с&nbsp;граблями">
                 </picture>
               </div>
             </div>
