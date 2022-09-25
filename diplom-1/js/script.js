@@ -225,18 +225,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // --- Аккордион на jQuery в сеrции catalog
+  new Accordion('#accordion', {
+    elementClass: 'ac__item',
+    triggerClass: 'ac__trigger',
+    panelClass: 'ac__panel',
+    activeClass: 'accordion--active',
+    openOnInit: [0],
+    duration: 700,
+  });
 
-
-
-
-
-
-
-
-
-
-
-  // --- Каталог. Вкладки
+  // --- Секция catalog. Вкладки
 
   bookmark();
   function bookmark() {
@@ -267,6 +266,19 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     })
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // --- projects tooltip
 
@@ -334,16 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
     );
   }
 
-  // --- Аккордион на jQuery в сеrции catalog
 
-  new Accordion('#accordion', {
-    elementClass: 'ac__item',
-    triggerClass: 'ac__trigger',
-    panelClass: 'ac__panel',
-    activeClass: 'accordion--active',
-    openOnInit: [0],
-    duration: 700,
-  });
 
   // --- input mask tel
   inputMask();
