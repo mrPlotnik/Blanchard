@@ -59,8 +59,7 @@ h2 {
 h3 {
   font-weight: 600;
 }
-svg, svg rect, svg path, svg circle,
-a, button {
+svg, svg rect, svg path, svg circle, a, button {
   transition: all .3s ease-in-out;
 }
 a {
@@ -113,24 +112,11 @@ img {
   cursor: pointer;
   background-color: transparent;
 }
-.row {
-  --color-bs-gutter-x: 30px;
-}
 .container {
   width: 100%;
   max-width: 1660px;
   margin: 0 auto;
   padding: 0 15px;
-}
-.swiper-button-next,
-.swiper-button-prev {
-  width: fit-content;
-  height: fit-content;
-  z-index: 11;
-}
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  content: none;
 }
 
 /* ---------- header ---------- */
@@ -419,7 +405,6 @@ img {
 #swiper-hero .swiper-slide--3 {
   background-image: url(../img/hero-1920-3.jpg);
 }
-
 .hero__wrap {
   padding-top: 28px;
   padding-bottom: 45px;
@@ -567,10 +552,6 @@ img {
 .choices__item--selectable {
   font-size: 16px;
 }
-/* .choices__list--dropdown > div {
-  color: var(--color-gray-60);
-  background: var(--color-white-transparent-2)
-} */
 .is-open .choices__list[aria-expanded] {
 	border-radius: 6px;
 	border: 1px solid var(--color-white);
@@ -700,7 +681,7 @@ img {
   height: 30px;
   margin: 0;
   border-radius: 100px;
-  /* border: none; */
+  border: 2px solid var(--color-gray-40);
   background-color: var(--color-gray-40);
   transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
@@ -719,6 +700,20 @@ img {
 #swiper-gallery .swiper-button-next::after {
   transform: rotate(45deg);
   margin-right: 1px;
+}
+#swiper-gallery .swiper-button-prev:hover,
+#swiper-gallery .swiper-button-next:hover {
+  border-color: var(--color-purple-2);
+  background-color: var(--color-purple-2);
+}
+#swiper-gallery .swiper-button-prev:focus-visible,
+#swiper-gallery .swiper-button-next:focus-visible {
+  border-color: var(--color-black);
+}
+#swiper-gallery .swiper-button-prev:active,
+#swiper-gallery .swiper-button-next:active {
+  background-color: var(--color-purple-1);
+  border: 2px solid var(--color-black);
 }
 #swiper-gallery .swiper-pagination-wrap {
   display: flex;
