@@ -728,10 +728,6 @@ img {
 }
 
 /* ---------- section-catalog---------- */
-
-
-
-
 .catalog__wrap {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -741,33 +737,14 @@ img {
   color: var(--color-gray-20);
 }
 .catalog__text {
+  display: none;
   font-size: 16px;
   line-height: 32px;
 }
-.catalog__date-item > span {
-  margin-right: auto;
-  transition: .3s color ease-in-out;
+.catalog__content {
+  display: flex;
+  flex-direction: column;
 }
-.catalog__artists {
-  padding: 21px 0 20px 0;
-  line-height: 31px;
-}
-.catalog__artists a {
-  border-bottom: 1px solid var(--color-white);
-  display: table;
-}
-.empty__img {
-  width: 100%;
-}
-.empty__header {
-  font-weight: 600;
-  font-size: 18px;
-}
-.empty__text {
-  line-height: 22px;
-}
-
-
 .bookmark {
   display: none;
 }
@@ -795,8 +772,6 @@ img {
   line-height: 32px;
   color: var(--color-gray-20);
 }
-
-
 .bookmark-empty__img {
   display: flex;
   justify-content: center;
@@ -858,34 +833,34 @@ img {
 .bookmark-empty__link:active {
   color: var(--color-purple-1);
 }
-
-/* --- accordion--- */
-#accordion {
+.catalog__accordion-wrap {
+  order: -1;
+}
+.ac {
+  flex-direction: column;
   margin-bottom: 50px;
 }
-.ac__link::before,
-.ac__header-text::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	background-color: var(--color-purple-2);
-	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
+.ac__item {
+  line-height: 32px;
+  color: var(--color-gray-20);
 }
-.ac__link::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 1px;
-	bottom: 0;
-	left: 0;
-	background-color: var(--color-purple-2);
-	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
+.ac__item:first-child .ac__trigger {
+  border-top: 1px solid var(--color-gray-79);
+  transition: border-color 0.3s ease-in-out;
+}
+.ac__header {
+  overflow: visible;
+  color: var(--color-gray-20);
+}
+.ac__trigger {
+  position: relative;
+  width: 100%;
+  margin-top: -1px;
+  padding: 20px 30px 20px 0;
+  text-align: left;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid var(--color-gray-79);
+  transition: border-color 0.3s ease-in-out;
 }
 .ac__trigger::before {
 	content: "";
@@ -913,28 +888,6 @@ img {
 	transform: translateY(-50%) rotate(45deg);
 	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 }
-.ac__item {
-  line-height: 32px;
-  color: var(--color-gray-20);
-}
-.ac__item:first-child .ac__trigger {
-  border-top: 1px solid var(--color-gray-79);
-  transition: border-color 0.3s ease-in-out;
-}
-.ac__header {
-  overflow: visible;
-  color: var(--color-gray-20);
-}
-.ac__trigger {
-  position: relative;
-  width: 100%;
-  margin-top: -1px;
-  padding: 20px 30px 20px 0;
-  text-align: left;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid var(--color-gray-79);
-  transition: border-color 0.3s ease-in-out;
-}
 .ac__header-text {
   position: relative;
   display: block;
@@ -951,12 +904,6 @@ img {
   border-bottom: 1px solid transparent;
   margin-top: -1px;
 }
-.accordion--active .ac__panel {
-	border-bottom-color: var(--color-gray-79);
-}
-.ac__item.accordion--active .ac__panel {
-  visibility:visible
-}
 .ac__artist-list {
   display: block;
   padding-top: 21px;
@@ -971,6 +918,42 @@ img {
 .ac__link--active {
   color: var(--color-purple-1);
 }
+.ac__link:hover {
+	color: var(--color-purple-2);
+}
+.ac__link:hover::after {
+	opacity: 1;
+}
+.ac__link:focus-visible {
+	color: var(--color-white);
+}
+.ac__link:focus-visible::before {
+	opacity: 1;
+}
+.ac__link::before,
+.ac__header-text::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-purple-2);
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+.ac__link::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--color-purple-2);
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
 .ac__article {
   position: relative;
   display: flex;
@@ -978,29 +961,20 @@ img {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  /* padding: 25px 0 25px 115px; */
   padding: 10% 0 10% 40%;
-  /* min-height: 180px; */
 }
 .ac__article::before {
   content: "";
   position: absolute;
-  /* width: 79px; */
   width: 27.5%;
-  /* height: 118px; */
   height: 61%;
   top: 20%;
-  /* left: 8px;0 */
   left: 3%;
   outline-offset: 6px;
   outline: 2px solid #B7B7B7;
   background-color: #B7B7B7;
 }
-.ac__article-header {
-  /* color: var(--color-gray-20); */
-}
 .ac__article-descr {
-  /* max-width: 275px; */
   margin-bottom: 5px;
   line-height: 22px;
 }
@@ -1008,7 +982,6 @@ img {
   font-weight: 600;
   color: var(--color-purple-2);
 }
-
 /* :hover на заголовок */
 .ac__item:first-child .ac__trigger:hover,
 .ac__trigger:hover {
@@ -1017,7 +990,6 @@ img {
 .ac__trigger:hover .ac__header-text {
   color: var(--color-purple-2);
 }
-
 /* :focus-visible на заголовок */
 .ac__trigger:focus-visible::before,
 .ac__trigger:hover::before {
@@ -1032,14 +1004,16 @@ img {
 .ac__trigger:active .ac__header-text {
 	color: var(--color-purple-1);
 }
-
 /* :active на заголовок */
 .ac__item:first-child .ac__trigger:active,
-.ac__trigger:active,
-.accordion--active.ac__item:first-child .ac__trigger,
-.accordion--active .ac__trigger {
+.ac__trigger:active {
 	border-color: var(--color-purple-1);
 }
+.ac__trigger:active:before {
+  border-color: var(--color-purple-2);
+  background-color: var(--color-purple-4);
+}
+/* .accordion--active */
 .accordion--active .ac__trigger::before {
 	background-color: var(--color-purple-4);
 	border-color: var(--color-purple-2);
@@ -1048,23 +1022,24 @@ img {
   top: 48%;
 	transform: rotate(225deg);
 }
-
-.ac__link:hover {
-	color: var(--color-purple-2);
+.accordion--active.ac__item:first-child .ac__trigger,
+.accordion--active .ac__trigger {
+	border-color: var(--color-purple-1);
 }
-.ac__link:hover::after {
-	opacity: 1;
+.accordion--active .ac__panel {
+	border-bottom-color: var(--color-gray-79);
+  visibility:visible
 }
-.ac__link:focus-visible {
-	color: var(--color-white);
+.accordion--active .ac__header-text {
+	color: var(--color-purple-1);
 }
-.ac__link:focus-visible::before {
-	opacity: 1;
-}
-/* --- accordion end--- */
-/* ---------- section-catalog end---------- */
 
 /* ---------- section events---------- */
+
+
+
+
+
 .events__wrap {
   padding-bottom: 46px;
 }
@@ -1756,7 +1731,7 @@ a:active .ok path {
   /* ---------- section hero ---------- */
   .hero__wrap {
     padding-top: 105px;
-    padding-bottom: 113px;
+    padding-bottom: 115px;
     text-align: left;
   }
   .hero__header {
@@ -1850,7 +1825,6 @@ a:active .ok path {
     padding-bottom: 80px;
   }
   .filters__header {
-    max-height: 400px;
     margin-bottom: 16px;
     font-size: 48px;
     line-height: 65px;
@@ -1877,7 +1851,6 @@ a:active .ok path {
     left: 0;
     bottom: unset;
   }
-  /* ---------- section gallery end ---------- */
 
   /* ---------- section catalog ---------- */
   .catalog__wrap {
@@ -1890,6 +1863,7 @@ a:active .ok path {
     line-height: 65px;
   }
   .catalog__text {
+    display: block;
     margin-bottom: 21px;
   }
   .ac__trigger {
@@ -1912,15 +1886,6 @@ a:active .ok path {
     padding-bottom: 25px;
     column-count: 3;
   }
-  .empty {
-    column-count: unset;
-  }
-  .catalog__date-list {
-    margin-bottom: 50px;
-  }
-  .bookmark__img img {
-    width: 100%;
-  }
   .bookmark__header {
     margin-bottom: 8px;
   }
@@ -1934,9 +1899,13 @@ a:active .ok path {
   .bookmark-empty__descr {
    max-width: 400px;
   }
-  /* ---------- section catalog end ---------- */
 
   /* ---------- section events ---------- */
+
+
+
+
+
   .events__wrap {
     padding-bottom: 77px;
   }
@@ -2168,32 +2137,46 @@ a:active .ok path {
   .catalog__text {
     margin-bottom: 40px;
   }
-  #accordion {
-    padding-left: 13px;
+  .catalog__content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .catalog__accordion-wrap {
+    flex-basis: calc(437 / 924 * 100%);
+    order: unset;
+  }
+  .catalog__descr {
+    flex-basis: calc(437 / 924 * 100%);
+    margin-right: 0;
+  }
+  .bookmark__head {
+    margin-bottom: 25px;
+  }
+  .bookmark__header {
+    margin-bottom: 11px;
+  }
+  .bookmark__date {
+    margin-bottom: 15px;
   }
   .ac__artist-list {
     column-count: 2;
-  }
-  .catalog__bookmark {
-    padding-right: 13px;
-  }
-  .catalog__date-list {
-    padding-left: 10px;
-  }
-  .bookmark__date {
-    margin-bottom: 17px;
   }
   .bookmark-empty__img {
     width: 437px;
     height: 274px;
   }
-  /* ---------- section catalog end ---------- */
+  .for-me {
+    display: none;
+  }
 
   /* ---------- section events ---------- */
+
+
+
+
   .card__body {
     padding-right: 1px;
   }
-  /* ---------- section events end ---------- */
 
   /* ---------- section projects ---------- */
   .projects__descr {
@@ -2213,7 +2196,6 @@ a:active .ok path {
   #swiper-partners .swiper-button-prev {
     top: 70%;
   }
-  /* ---------- section projects end ---------- */
 
   /* ---------- footer---------- */
   .footer__contacts-wrap {
@@ -2232,8 +2214,6 @@ a:active .ok path {
     margin-bottom: 28px;
     padding: 11px 40px;
   }
-  /* ---------- footer__contacts end ---------- */
-  /* ---------- footer end ---------- */
 
 
   .note {
@@ -2244,8 +2224,6 @@ a:active .ok path {
     padding-right: 50px;
     padding-left: 15px;
   }
-
-
 
 }
 
@@ -2590,34 +2568,26 @@ a:active .ok path {
   }
 
   /* ---------- catalog section ---------- */
+
+  .catalog__descr {
+    flex-basis: calc(750 / 1600 * 100%);
+    margin-right: 50px;
+  }
+  .catalog__accordion-wrap {
+    flex-basis: 50%;
+  }
   .catalog__text {
     padding-right: 31%;
     margin-bottom: 40px;
   }
-  #accordion {
-    padding-left: 20px;
-    margin-bottom: 49px;
-  }
   .ac__artist-list {
     column-count: 3;
-  }
-  .catalog__bookmark {
-    padding-right: 6px;
-  }
-  .catalog__custom-block-first {
-    width: 52%;
-  }
-  .catalog__custom-block-second {
-    width: 48%;
-  }
-  .catalog__date-list {
-    padding-left: 18px;
   }
   .bookmark__header {
     margin-bottom: 9px;
   }
   .bookmark__date {
-    margin-bottom: 14px;
+    margin-bottom: 15px;
   }
   .bookmark-empty__img {
     width: 750px;
@@ -2626,8 +2596,16 @@ a:active .ok path {
   .bookmark-empty__descr {
     max-width: unset;
   }
+  .for-me {
+    display: inline-block;
+  }
 
   /* ---------- events section ---------- */
+
+
+
+
+
   .events__wrap {
     padding-bottom: 0;
     padding-bottom: 37px;
