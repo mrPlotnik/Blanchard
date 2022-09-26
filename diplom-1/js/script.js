@@ -1,7 +1,67 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // --- --- HEADER --- --- //
+  // --- --- GLOBAL --- --- //
+  // --- Плавный скролл до элемента (на все ссылки)
+  // scroll();
+  // function scroll() {
+  //   const links = document.querySelectorAll('a[href*="#"]')
 
+  //   for (let link of links) {
+  //     link.addEventListener('click', function (e) {
+  //       e.preventDefault()
+  //       const blockID = link.getAttribute('href');
+  //       document.querySelector(`${blockID}`).scrollIntoView({
+  //         behavior: 'smooth',
+  //         block: 'start'
+  //       })
+  //     })
+  //   }
+  // };
+
+  // --- Yandex-карты
+  map();
+  function map() {
+    // Дождёмся загрузки API и готовности DOM
+    ymaps.ready(init);
+    function init() {
+      // Создание экземпляра карты и его привязка к контейнеру с
+      // заданным id ('map')
+      myMap = new ymaps.Map('map',
+        {
+          // Координаты центра карты
+          center: [55.760000, 37.614700],
+          // Уровень масштабирования. От 0 (весь мир) до 19
+          zoom: 14,
+          controls: ['geolocationControl', 'zoomControl']
+        },
+        {
+          zoomControlSize: "small",
+          geolocationControlPosition:  { top: "270px", right: "20px" },
+          zoomControlPosition: { top: "170px", right: "20px" }
+        }
+      );
+
+      myPlacemark = new ymaps.Placemark([55.76000, 37.614700], {}, {
+        // Опции
+        // Необходимо указать данный тип макета
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки
+        iconImageHref: '../img/map-point.svg',
+        // Размеры метки
+        iconImageSize: [20, 20],
+        // Смещение левого верхнего угла иконки относительно
+        // её 'ножки' (точки привязки)
+        iconImageOffset: [-10, -10]
+      });
+
+      // Размещение геообъекта на карте.
+      myMap.geoObjects.add(myPlacemark);
+      myMap.behaviors.disable(['scrollZoom']);
+      myMap.behaviors.disable('drag');
+    }
+  }
+
+  // --- --- HEADER --- --- //
   // --- Бургер и мобильное меню
   burger();
   function burger() {
@@ -245,7 +305,6 @@ document.addEventListener('DOMContentLoaded', function() {
     links.forEach(function (element) {
       element.addEventListener('click', function (e) {
         const way = e.target.getAttribute('href');
-        e.preventDefault();
 
         links.forEach(function (btn) {
           btn.classList.remove('ac__link--active');
@@ -259,10 +318,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         let href = document.querySelector(`${way}`);
         href.classList.add('bookmark--active');
-        href.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
+
+        e.preventDefault();
+        if (window.innerWidth < 1024) {
+          href.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
+
       })
     })
   };
@@ -478,66 +542,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  // --- --- GLOBAL --- --- //
 
-  // --- Плавный скролл до элемента (на все ссылки)
-  scroll();
-  function scroll() {
-    const links = document.querySelectorAll('a[href*="#"]')
-
-    for (let link of links) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault()
-        const blockID = link.getAttribute('href');
-        document.querySelector(`${blockID}`).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
-      })
-    }
-  };
-
-  // --- Yandex-карты
-  map();
-  function map() {
-    // Дождёмся загрузки API и готовности DOM
-    ymaps.ready(init);
-    function init() {
-      // Создание экземпляра карты и его привязка к контейнеру с
-      // заданным id ('map')
-      myMap = new ymaps.Map('map',
-        {
-          // Координаты центра карты
-          center: [55.760000, 37.614700],
-          // Уровень масштабирования. От 0 (весь мир) до 19
-          zoom: 14,
-          controls: ['geolocationControl', 'zoomControl']
-        },
-        {
-          zoomControlSize: "small",
-          geolocationControlPosition:  { top: "270px", right: "20px" },
-          zoomControlPosition: { top: "170px", right: "20px" }
-        }
-      );
-
-      myPlacemark = new ymaps.Placemark([55.76000, 37.614700], {}, {
-        // Опции
-        // Необходимо указать данный тип макета
-        iconLayout: 'default#image',
-        // Своё изображение иконки метки
-        iconImageHref: '../img/map-point.svg',
-        // Размеры метки
-        iconImageSize: [20, 20],
-        // Смещение левого верхнего угла иконки относительно
-        // её 'ножки' (точки привязки)
-        iconImageOffset: [-10, -10]
-      });
-
-      // Размещение геообъекта на карте.
-      myMap.geoObjects.add(myPlacemark);
-      myMap.behaviors.disable(['scrollZoom']);
-      myMap.behaviors.disable('drag');
-    }
-  }
 
 });

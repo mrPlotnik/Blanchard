@@ -750,11 +750,19 @@ img {
   display: flex;
   flex-direction: column;
 }
+.catalog__bookmark {
+  position: relative;
+}
 .bookmark {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s opacity ease-in-out;
 }
 .bookmark--active {
-  display: block;
+  position: static;
+  opacity: 1;
+  visibility: visible;
 }
 .bookmark__head {
   margin-bottom: 18px;
@@ -2146,7 +2154,7 @@ a:active .ok path {
     column-count: 2;
   }
   .bookmark-empty__img {
-    width: 437px;
+    width: 100%;
     height: 274px;
   }
   .for-me {
@@ -2577,7 +2585,6 @@ a:active .ok path {
     margin-bottom: 15px;
   }
   .bookmark-empty__img {
-    width: 750px;
     height: 470px;
   }
   .bookmark-empty__descr {
