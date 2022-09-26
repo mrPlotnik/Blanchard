@@ -37,7 +37,7 @@
           <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.501 12C24.501 16.9706 20.4715 21 15.501 21C10.5304 21 6.50098 16.9706 6.50098 12C6.50098 7.02944 10.5304 3 15.501 3C20.4715 3 24.501 7.02944 24.501 12ZM27.501 12C27.501 18.6274 22.1284 24 15.501 24C12.7289 24 10.1764 23.0601 8.14471 21.4815L2.62132 27.0049L0.5 24.8836L6.0229 19.3607C4.44228 17.3283 3.50098 14.7741 3.50098 12C3.50098 5.37258 8.87356 0 15.501 0C22.1284 0 27.501 5.37258 27.501 12Z" fill="white"/> </svg>
         </button>
 
-        <nav class="ht__nav">
+        <nav class="ht__nav ht-nav">
 
           <button class="ht-nav__close-btn btn-reset" type="button" aria-label="Закрыть меню">
             <span class="ht-nav__close-btn-line ht-nav__close-btn-line-1"></span>
@@ -664,95 +664,110 @@
   <!-- section events -->
   <section id="events" class="section-events events">
     <div class="container">
-      <div class="row events__wrap">
-        <div class="col">
-          <h2 class="events__header">События</h2>
-
-          <div id="swiper-events" class="swiper">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="events__card card">
-                  <div class="card__head head-1"></div>
-                  <div class="card__wrap">
-                    <div class="card__date">Музей им. Щусева<br>с 20 марта по 30 апреля</div>
-                    <div class="card__body">
-                      <h3 class="card__header">Книжная гравюра в&nbsp;живом восприятии</h3>
-                      <div class="card__text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его&nbsp;брат Давид и&nbsp;сын&nbsp;Ридольфо</div>
-                    </div>
-                    <a class="card__link" href="#"><span>Подробнее</span></a>
-                  </div>
+      <div class="events__wrap">
+        <h2 class="events__header">События</h2>
+        <div id="swiper-events" class="swiper">
+          <ul class="swiper-wrapper list-reset">
+            <li class="swiper-slide">
+              <article class="events__card card">
+                <div class="card__head">
+                  <picture>
+                    <source media="(max-width: 640px)" srcset="/img/events/320-1.jpg">
+                    <source media="(max-width: 992px)" srcset="/img/events/768-1.jpg">
+                    <source media="(max-width: 1440px)" srcset="/img/events/1024-1.jpg">
+                    <img src="/img/events/1920-1.jpg" alt="Книжная гравюра">
+                  </picture>
                 </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="events__card card">
-                  <div class="card__head head-2"></div>
-                  <div class="card__wrap">
-                    <div class="card__date">ММОМА<br>24 марта 19:00</div>
-                    <div class="card__body">
-                      <h3 class="card__header">«Открытая дискуссия». Дмитрий Петров и&nbsp;Сергей Ильин.</h3>
-                      <div class="card__text">Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта</div>
-                    </div>
-                    <a class="card__link" href="#"><span>Подробнее</span></a>
-                  </div>
+                <div class="card__wrap">
+                  <div class="card__date">Музей им. Щусева<br>с 20 марта по 30 апреля</div>
+                  <h3 class="card__header">Книжная гравюра в восприятии</h3>
+                  <div class="card__text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его&nbsp;брат Давид и&nbsp;сын&nbsp;Ридольфо</div>
+                  <a class="card__link" href="#"><span>Подробнее</span></a>
                 </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="events__card card">
-                  <div class="card__head head-3"></div>
-                  <div class="card__wrap">
-                    <div class="card__date">Еврейский музей<br>с 31 марта по 21 апреля</div>
-                    <div class="card__body">
-                      <h3 class="card__header">Выставка «Формация 2020»</h3>
-                      <div class="card__text">Идейные соображения высшего порядка, а&nbsp;также современная методология разработки играет важную роль в&nbsp;формировании глубокомысленных рассуждений</div>
-                    </div>
-                    <a class="card__link" href="#"><span>Подробнее</span></a>
-                  </div>
+              </article>
+            </li>
+            <li class="swiper-slide">
+              <article class="events__card card">
+                <div class="card__head">
+                  <picture>
+                    <source media="(max-width: 640px)" srcset="/img/events/320-2.jpg">
+                    <source media="(max-width: 992px)" srcset="/img/events/768-2.jpg">
+                    <source media="(max-width: 1440px)" srcset="/img/events/1024-2.jpg">
+                    <img src="/img/events/1920-2.jpg" alt="Открытая дискуссия">
+                  </picture>
                 </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="events__card card">
-                  <div class="card__head head-4"></div>
-                  <div class="card__wrap">
-                    <div class="card__date">ММАМ<br>с 8 апреля по 20 мая</div>
-                    <div class="card__body">
-                      <h3 class="card__header">Джон Винзор. Фотографии из серии «Метафора»</h3>
-                      <div class="card__text">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо</div>
-                    </div>
-                    <a class="card__link" href="#"><span>Подробнее</span></a>
-                  </div>
+                <div class="card__wrap">
+                  <div class="card__date">ММОМА<br>24 марта 19:00</div>
+                  <h3 class="card__header">«Открытая дискуссия». Дмитрий Петров и&nbsp;Сергей Ильин.</h3>
+                  <div class="card__text">Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта</div>
+                  <a class="card__link" href="#"><span>Подробнее</span></a>
                 </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="events__card card">
-                  <div class="card__head head-5"></div>
-                  <div class="card__wrap">
-                    <div class="card__date">Третьяковка на Крымском валу<br>с 30 марта по 30 апреля</div>
-                    <div class="card__body">
-                      <h3 class="card__header">XXIV Международная биеннале молодого искусства</h3>
-                      <div class="card__text">Внезапно, реплицированные с&nbsp;зарубежных источников, современные исследования</div>
-                    </div>
-                    <a class="card__link" href="#"><span>Подробнее</span></a>
-                  </div>
+              </article>
+            </li>
+            <li class="swiper-slide">
+              <article class="events__card card">
+                <div class="card__head ">
+                  <picture>
+                    <source media="(max-width: 640px)" srcset="/img/events/320-3.jpg">
+                    <source media="(max-width: 992px)" srcset="/img/events/768-3.jpg">
+                    <source media="(max-width: 1440px)" srcset="/img/events/1024-3.jpg">
+                    <img src="/img/events/1920-3.jpg" alt="Выставка «Формация 2020»">
+                  </picture>
                 </div>
-              </div>
-
-            </div>
-
-            <div class="swiper-button-next d-none d-xxl-flex">
-              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#666"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#666" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="#fff" fill="#666"/> </svg>
-            </div>
-            <div class="swiper-button-prev d-none d-xxl-flex">
-              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666"/> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="#666" stroke-width="2"/> <path d="M16 20L11 15L16 10" stroke="#fff" fill="#666"/> </svg>
-            </div>
-            <div class="swiper-pagination d-xxl-none"></div>
-
-          </div>
-
+                <div class="card__wrap">
+                  <div class="card__date">Еврейский музей<br>с 31 марта по 21 апреля</div>
+                  <div class="card__body">
+                    <h3 class="card__header">Выставка «Формация 2020»</h3>
+                    <div class="card__text">Идейные соображения высшего порядка, а&nbsp;также современная методология разработки играет важную роль в&nbsp;формировании глубокомысленных рассуждений</div>
+                  </div>
+                  <a class="card__link" href="#"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+            <li class="swiper-slide">
+              <article class="events__card card">
+                <div class="card__head">
+                  <picture>
+                    <source media="(max-width: 640px)" srcset="/img/events/320-4.jpg">
+                    <source media="(max-width: 992px)" srcset="/img/events/768-4.jpg">
+                    <source media="(max-width: 1440px)" srcset="/img/events/1024-4.jpg">
+                    <img src="/img/events/1920-4.jpg" alt="Джон Винзор. Фотографии из серии «Метафора»">
+                  </picture>
+                </div>
+                <div class="card__wrap">
+                  <div class="card__date">ММАМ<br>с 8 апреля по 20 мая</div>
+                  <div class="card__body">
+                    <h3 class="card__header">Джон Винзор. Фотографии из серии «Метафора метафора»</h3>
+                    <div class="card__text">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо</div>
+                  </div>
+                  <a class="card__link" href="#"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+            <li class="swiper-slide">
+              <article class="events__card card">
+                <div class="card__head">
+                  <picture>
+                    <source media="(max-width: 640px)" srcset="/img/events/320-5.jpg">
+                    <source media="(max-width: 992px)" srcset="/img/events/768-5.jpg">
+                    <source media="(max-width: 1440px)" srcset="/img/events/1024-5.jpg">
+                    <img src="/img/events/1920-5.jpg" alt="XXIV Международная биеннале молодого искусства">
+                  </picture>
+                </div>
+                <div class="card__wrap">
+                  <div class="card__date">Третьяковка на Крымском валу<br>с 30 марта по 30 апреля</div>
+                  <div class="card__body">
+                    <h3 class="card__header">XXIV Международная биеннале молодого искусства</h3>
+                    <div class="card__text">Внезапно, реплицированные с&nbsp;зарубежных источников, современные исследования</div>
+                  </div>
+                  <a class="card__link" href="#"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
@@ -761,81 +776,75 @@
   <!-- section projects -->
   <section id="projects" class="section-projects projects">
     <div class="container">
-      <div class="row row-cols-1 projects__wrap">
-        <div class="col">
-          <h2 class="projects__header">Проекты</h2>
-          <p class="projects__descr">
-            Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно&mdash;пропагандистское
-            <button class="projects__tooltip btn-reset" type="button" aria-label="Подсказка" data-tippy-content="Пример современных тенденций&nbsp;&mdash; современная методология разработки">i</button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть почти рассмотрены
-            <button class="projects__tooltip btn-reset" type="button" aria-label="Подсказка" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на&nbsp;базе аналитики выводы вызывают у&nbsp;вас эмоции">i</button> исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
-            <button class="projects__tooltip btn-reset" type="button" aria-label="Подсказка" data-tippy-content="В&nbsp;стремлении повысить качество">i</button> предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители современных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.
-            Подробнее: <a href="#" class="projects__link" aria-label="Blanchard проекты">blanchard-art.ru/projects</a>
-          </p>
-        </div>
+      <div class="projects__wrap">
+        <h2 class="projects__header">Проекты</h2>
+        <p class="projects__descr">
+          Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно&mdash;пропагандистское
+          <button class="projects__tooltip btn-reset" type="button" aria-label="Подсказка" data-tippy-content="Пример современных тенденций&nbsp;&mdash; современная методология разработки">i</button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть почти рассмотрены
+          <button class="projects__tooltip btn-reset" type="button" aria-label="Подсказка" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на&nbsp;базе аналитики выводы вызывают у&nbsp;вас эмоции">i</button> исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
+          <button class="projects__tooltip btn-reset" type="button" aria-label="Подсказка" data-tippy-content="В&nbsp;стремлении повысить качество">i</button> предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители современных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.
+          Подробнее: <a href="#" class="projects__link" aria-label="Blanchard проекты">blanchard-art.ru/projects</a>
+        </p>
+        <div class="projects__partners">
+          <h3 class="projects__partners-header">Партнёры проектов:</h3>
+          <div id="swiper-partners" class="swiper">
+            <div class="swiper-wrapper">
 
-        <div class="col">
-
-          <div class="projects__partners">
-            <h3 class="projects__partners-header">Партнёры проектов:</h3>
-            <div id="swiper-partners" class="swiper">
-              <div class="swiper-wrapper">
-
-                <div id="slide-1" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-1.svg" alt="Логотип Freelands Foundation">
-                  </a>
-                </div>
-                <div id="slide-2" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-2.svg" alt="Логотип Institute for Contemporary art">
-                  </a>
-                </div>
-                <div id="slide-3" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-3.svg" alt="Логотип Workhouse Arts Center">
-                  </a>
-                </div>
-                <div id="slide-4" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-4.svg" alt="Логотип 1849 Wine Co.">
-                  </a>
-                </div>
-                <div id="slide-5" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-5.svg" alt="Логотип HISCOX">
-                  </a>
-                </div>
-                <div id="slide-6" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-6.svg" alt="Логотип Camden Arts Centre">
-                  </a>
-                </div>
-                <div id="slide-7" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-7.svg" alt="Логотип Stassen Premium Belgian Cider">
-                  </a>
-                </div>
-                <div id="slide-8" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-8.svg" alt="Логотип Watts Gallery Artists' Village">
-                  </a>
-                </div>
-                <div id="slide-9" class="swiper-slide">
-                  <a href="#" target="_blank">
-                    <img src="img/projects/partner-9.svg" alt="Логотип ESAD">
-                  </a>
-                </div>
-
+              <div id="slide-1" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-1.svg" alt="Логотип Freelands Foundation">
+                </a>
               </div>
-              <div class="swiper-button-next">
-                <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#ececec"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#ececec" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="black" fill="#ececec"/> </svg>
+              <div id="slide-2" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-2.svg" alt="Логотип Institute for Contemporary art">
+                </a>
               </div>
-              <div class="swiper-button-prev">
-                <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#ececec"/> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="#ececec" stroke-width="2"/> <path d="M16 20L11 15L16 10" stroke="black" fill="#ececec"/> </svg>
+              <div id="slide-3" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-3.svg" alt="Логотип Workhouse Arts Center">
+                </a>
               </div>
+              <div id="slide-4" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-4.svg" alt="Логотип 1849 Wine Co.">
+                </a>
+              </div>
+              <div id="slide-5" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-5.svg" alt="Логотип HISCOX">
+                </a>
+              </div>
+              <div id="slide-6" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-6.svg" alt="Логотип Camden Arts Centre">
+                </a>
+              </div>
+              <div id="slide-7" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-7.svg" alt="Логотип Stassen Premium Belgian Cider">
+                </a>
+              </div>
+              <div id="slide-8" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-8.svg" alt="Логотип Watts Gallery Artists' Village">
+                </a>
+              </div>
+              <div id="slide-9" class="swiper-slide">
+                <a href="#" target="_blank">
+                  <img src="img/projects/partner-9.svg" alt="Логотип ESAD">
+                </a>
+              </div>
+
+            </div>
+            <div class="swiper-button-next">
+              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" fill="#ececec"/> <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" stroke="#ececec" stroke-width="2"/> <path d="M14 10L19 15L14 20" stroke="black" fill="#ececec"/> </svg>
+            </div>
+            <div class="swiper-button-prev">
+              <svg width="30" height="30" viewbox="-1 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#ececec"/> <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="#ececec" stroke-width="2"/> <path d="M16 20L11 15L16 10" stroke="black" fill="#ececec"/> </svg>
             </div>
           </div>
-
+        </div>
         </div>
       </div>
     </div>
@@ -848,16 +857,16 @@
 
   <div id="contacts" class="footer__contacts-wrap contacts">
     <div class="container">
-      <div class="row row-cols-1">
+      <div class="    -1">
         <div class="col col-xxl-2 contacts__custom-block-first">
           <h3 class="contacts__header">Шоурум &#8470;&nbsp;4</h3>
           <address>Леонтьевский переулок, дом 5/1</address>
         </div>
         <div class="col col-xxl-8 contacts__custom-block-second">
           <form id="form" class="form" autocomplete="off" action="https://jsonplaceholder.typicode.com/posts" method="POST">
-            <div class="row ">
+            <div class="  ">
               <div class="col-12 col-md-12 col-lg-7 form__inputs-wrap">
-                <div class="row">
+                <div class=" ">
                   <div class="col-12 col-md-6">
                     <div class="form__item">
                       <label>
@@ -921,7 +930,7 @@
 
   <div class="footer__bottom bottom">
     <div class="container">
-      <div class="row row-cols-1 row-cols-md-2 ">
+      <div class="    -1   -md-2 ">
         <div class="col">
           <div class="bottom__social">
             <a href="#" target="_blank" aria-label="Мы в соцсети Вконтакте">
@@ -954,7 +963,7 @@
             <span class="modal__close-btn-line modal__close-btn-line-1"></span>
             <span class="modal__close-btn-line modal__close-btn-line-2"></span>
           </button>
-          <div class="row note_wrap g-0">
+          <div class="  note_wrap g-0">
             <div class="col-12 col-md-6 note__first">
               <div class="note__first-wrap">
                 <picture>
@@ -967,7 +976,7 @@
             </div>
             <div class="col-12 col-md-6 note__second">
               <div class="note__second-wrap">
-                <div class="col note__header-wrap flex-grow-0">
+                <div class="col note__header-wrap flex-g -0">
                   <h3 class="note__header article-title">Каземир Малевич</h3>
                   <h4 class="note__subheader article-title">&laquo;Торс (Фигура с&nbsp;розовым лицом) &#8470;&nbsp;2&raquo;</h4>
                   <span class="note__date">1928-1929</span>
@@ -987,7 +996,7 @@
             <span class="modal__close-btn-line modal__close-btn-line-1"></span>
             <span class="modal__close-btn-line modal__close-btn-line-2"></span>
           </button>
-          <div class="row note_wrap g-0">
+          <div class="  note_wrap g-0">
             <div class="col-12 col-md-6 note__first">
               <div class="note__first-wrap">
                 <picture>
@@ -1000,7 +1009,7 @@
             </div>
             <div class="col-12 col-md-6 note__second">
               <div class="note__second-wrap">
-                <div class="col note__header-wrap flex-grow-0">
+                <div class="col note__header-wrap flex-g -0">
                   <h3 class="note__header article-title">Каземир Малевич</h3>
                   <h4 class="note__subheader article-title">&laquo;Женщина с&nbsp;граблями&raquo;</h4>
                   <span class="note__date">1931-1932</span>
@@ -1022,14 +1031,12 @@
 <script src="https://api-maps.yandex.ru/2.1/?apikey&lang=ru_RU"></script>
 <script src="js/libs/swiper-bundle.min.js"></script>
 <script src="js/libs/popperjs-core.min.js"></script>
+<script src="js/libs/just-validate.min.js"></script>
 <script src="js/libs/simplebar.min.js"></script>
 <script src="js/libs/accordion.min.js"></script>
 <script src="js/libs/inputmask.min.js"></script>
 <script src="js/libs/choices.min.js"></script>
 <script src="js/libs/tippy.min.js"></script>
-
-<script src="js/libs/just-validate.min.js"></script>
-
 <script src="js/script.js"></script>
 </body>
 </html>

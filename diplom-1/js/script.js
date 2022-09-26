@@ -267,6 +267,42 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   };
 
+  // --- Третий свайпер в секции events
+  swiper3();
+  function swiper3() {
+    const swiper3 = new Swiper('#swiper-events', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+      simulateTouch: true,
+      grabCursor: true,
+      autoplay: {
+        disableOnInteraction: true,
+      },
+       breakpoints: {
+        640: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 34
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 27
+        },
+        1440: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 50
+        }
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    })
+  };
+
 
 
 
@@ -407,44 +443,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   }
 
-  // --- Третий свайпер в секции events
-  swiper3();
-  function swiper3() {
-    const swiper3 = new Swiper('#swiper-events', {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 35,
-      simulateTouch: true,
-      grabCursor: true,
-      autoplay: {
-        disableOnInteraction: true,
-      },
-       breakpoints: {
-        767: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-        },
-        1001: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 28,
-        },
-        1441: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 50,
-        }
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  }
+
 
    // --- Четвертый свайпер в секции projects
   swiper4();
