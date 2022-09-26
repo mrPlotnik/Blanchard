@@ -1052,7 +1052,7 @@ img {
 
 /* ---------- section events---------- */
 .events__wrap {
-  padding-bottom: 46px;
+  padding-bottom: 45px;
 }
 .events__header {
   margin-bottom: 12px;
@@ -1173,26 +1173,16 @@ img {
 }
 
 /* ---------- section projects ---------- */
-
-
-
-
-
 .projects__wrap {
-  padding-bottom: 53px;
+  padding-bottom: 52px;
 }
 .projects__header {
   margin-bottom: 12px;
 }
 .projects__descr {
-  margin-right: 1px;
   margin-bottom: 57px;
   line-height: 32px;
   color: var(--color-gray-20);
-}
-.projects__partners-header {
-  font-size: 18px;
-  margin-bottom: 16px;
 }
 .projects__tooltip {
   width: 16px;
@@ -1227,7 +1217,6 @@ img {
   color: var(--color-white);
   background-color: var(--color-purple-2);
 }
-
 .tippy-box[data-theme~='tooltip'][data-placement^='top'] > .tippy-arrow::before {
   border-top-color: var(--color-purple-2);
 }
@@ -1241,6 +1230,10 @@ img {
   border-right-color: var(--color-purple-2);
 }
 
+.projects__partners-header {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
 #swiper-partners .swiper-slide {
   display: flex;
   justify-content: center;
@@ -1257,7 +1250,8 @@ img {
   transition: filter 0.3s ease-in-out;
 }
 #swiper-partners img {
-  max-height: 50%;
+  width: auto;
+  height: 50%;
 }
 #swiper-partners a:hover {
   filter: none;
@@ -1267,40 +1261,59 @@ img {
 }
 #swiper-partners .swiper-button-next,
 #swiper-partners .swiper-button-prev {
-  top: 60%;
+  position: absolute;
+  top: calc(80% + 2px);
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  border: 2px solid var(--color-gray-93);
+  cursor: pointer;
+  background-color: var(--color-gray-93);
+  transition: border 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 #swiper-partners .swiper-button-next {
-  right: 0;
+  right: 0px;
 }
 #swiper-partners .swiper-button-prev {
-  left: 0;
+  left: 0px;
 }
-/* ---- Псевдоклассы свайпера---- */
-#swiper-partners .swiper-button-next:hover svg path:nth-child(2n-1),
-#swiper-partners .swiper-button-prev:hover svg path:nth-child(2n-1) {
-  fill: var(--color-purple-4);
+#swiper-partners .swiper-button-next:after,
+#swiper-partners .swiper-button-prev:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid var(--color-black);
+  border-right: 1px solid var(--color-black);
 }
-#swiper-partners .swiper-button-next:hover svg path:nth-child(2n),
-#swiper-partners .swiper-button-prev:hover svg path:nth-child(2n) {
-  stroke: var(--color-purple-4);
+#swiper-partners .swiper-button-next:after {
+  transform: rotate(45deg);
+  margin-right: 2px;
 }
-#swiper-partners .swiper-button-next:focus-visible svg path:nth-child(2n),
-#swiper-partners .swiper-button-prev:focus-visible svg path:nth-child(2n) {
-  stroke: var(--color-purple-2);
+#swiper-partners .swiper-button-prev:after {
+  transform: rotate(225deg);
+  margin-left: 2px;
 }
-#swiper-partners .swiper-button-next:active svg path:nth-child(2n),
-#swiper-partners .swiper-button-prev:active svg path:nth-child(2n) {
-  stroke: var(--color-purple-2);
+#swiper-partners .swiper-button-next:hover,
+#swiper-partners .swiper-button-prev:hover {
+  border-color: var(--color-purple-4);
+  background-color: var(--color-purple-4);
 }
-#swiper-partners .swiper-button-next:active svg path:nth-child(2n-1),
-#swiper-partners .swiper-button-prev:active svg path:nth-child(2n-1) {
-  fill: var(--color-purple-4);
+#swiper-partners .swiper-button-next:focus-visible,
+#swiper-partners .swiper-button-prev:focus-visible {
+  border-color:var(--color-purple-2);
 }
-/* ---- Псевдоклассы свайпера end---- */
-/* ---------- section projects end ---------- */
-
+#swiper-partners .swiper-button-next:active,
+#swiper-partners .swiper-button-prev:active {
+  border-color: var(--color-purple-2);
+  background-color: var(--color-purple-4);
+}
 /* ---------- footer ---------- */
-/* ---- contacts ---- */
 .footer__contacts-wrap {
   padding-bottom: 15px;
 }
@@ -1330,7 +1343,6 @@ address {
   border: none;
 	border: 1px solid var(--color-gray-20);
 	border-radius: 20px;
-	font-size: 16px;
 	line-height: 19px;
 }
 .form__input::placeholder {
@@ -1379,7 +1391,6 @@ address {
 .contacts__messages a:not(:last-child) {
   margin-right: 15px;
 }
-
 .whatsapp rect {
   fill: #30bf39;
   stroke: var(--color-white);
@@ -1394,7 +1405,6 @@ a:active .whatsapp rect {
   fill: #30bf39;
   stroke: var(--color-purple-2);
 }
-
 .telegram path:nth-child(2n-1) {
   fill: #26a5e4;
   stroke: var(--color-white);
@@ -1409,9 +1419,7 @@ a:active .telegram path:nth-child(2n-1) {
   fill: #26a5e4;
   stroke: var(--color-purple-2);
 }
-/* ---- contacts end ---- */
 
-/* ---- contacts map ---- */
 #map {
   width: 100%;
   height: 320px;
@@ -1627,12 +1635,6 @@ a:active .ok path {
 #modal .simplebar-content-wrapper:focus-visible {
   background-color: rgba(0, 0, 0, 0.1 )
 }
-/* ---------- modal end ---------- */
-
-
-
-/* sm */
-@media (min-width: 450px) {}
 
 /* sm */
 @media (min-width: 576px) {
@@ -1894,7 +1896,7 @@ a:active .ok path {
   /* ---------- section events ---------- */
 
   .events__wrap {
-    padding-bottom: 75px;
+    padding-bottom: 76px;
   }
   .card__wrap {
     padding: 213px 33px 47px 33px  ;
@@ -1925,11 +1927,8 @@ a:active .ok path {
   }
 
   /* ---------- section projects ---------- */
-
-
-
   .projects__wrap {
-    padding-bottom: 82px;
+    padding-bottom: 81px;
   }
   .projects__header {
     margin-bottom: 16px;
@@ -1937,39 +1936,30 @@ a:active .ok path {
     line-height: 65px;
   }
   .projects__descr {
-    margin-bottom: 27px;
-    margin-right: 3px;
-  }
-  .projects__descr {
-    margin-right: 0px;
-  }
-  .projects__descr a {
-    display: inline-flex;
+    margin-bottom: 26px;
   }
   .projects__partners-header {
     margin-bottom: 30px;
     font-size: 24px;
     line-height: 32px;
   }
+  .projects__partners {
+    position: relative;
+  }
+  #swiper-partners {
+    position: unset;
+    width: 600px;
+  }
   #swiper-partners a {
     width: 264px;
     height: 104px;
   }
-  .projects__partners {
-    position: relative;
-  }
-  #swiper-partners  {
-    position: unset;
-    width: 600px;
-  }
-  #swiper-partners .swiper-button-next,
-  #swiper-partners .swiper-button-prev {
-    top: 73%;
-  }
   #swiper-partners img {
-    width: 70%;
+    height: 40%;
   }
-  /* ---------- section projects end ---------- */
+
+
+
 
   /* ---------- footer ---------- */
   .footer__contacts-wrap {
@@ -1987,7 +1977,6 @@ a:active .ok path {
     margin-bottom: 0;
   }
   .form__input {
-    /* width: 48.5%; */
     height: 50px;
     border-radius: 25px;
   }
@@ -2168,12 +2157,6 @@ a:active .ok path {
   }
 
   /* ---------- section projects ---------- */
-
-
-
-
-
-
   .projects__descr {
     margin-bottom: 19px;
   }
@@ -2189,15 +2172,17 @@ a:active .ok path {
   }
   #swiper-partners .swiper-button-next,
   #swiper-partners .swiper-button-prev {
-    top: 70%;
+    top: 77%;
   }
 
   /* ---------- footer---------- */
+
+
+
   .footer__contacts-wrap {
     padding-top: 41px;
     padding-bottom: 18px;
   }
-  /* ---------- footer__contacts ---------- */
   .form__custom-block-first {
     width: 61.9%;
   }
@@ -2279,7 +2264,6 @@ a:active .ok path {
   .ht-nav__login-link:hover svg path {
     fill: var(--color-purple-3);
   }
-
   .hb {
     display: flex;
     height: 70px;
@@ -2300,7 +2284,6 @@ a:active .ok path {
   }
   .hb-item {
     position: relative;
-    /* max-height: 65px; */
     word-break: break-word;
   }
   .hb-item:not(:last-child) {
@@ -2563,7 +2546,6 @@ a:active .ok path {
   }
 
   /* ---------- catalog section ---------- */
-
   .catalog__descr {
     flex-basis: calc(750 / 1600 * 100%);
     margin-right: 50px;
@@ -2595,6 +2577,9 @@ a:active .ok path {
   }
 
   /* ---------- events section ---------- */
+  .events__wrap {
+    padding-bottom: 36px;
+  }
   .card__wrap {
     padding: 313px 35px 40px 49px;
   }
@@ -2671,9 +2656,6 @@ a:active .ok path {
   }
 
   /* ---------- projects section ---------- */
-
-
-
   .projects__descr {
     padding-right: 31%;
   }
@@ -2686,11 +2668,14 @@ a:active .ok path {
   }
   #swiper-partners .swiper-button-next,
   #swiper-partners .swiper-button-prev {
-    top: 67%;
+    top: 74%;
   }
 
   /* ---------- footer ---------- */
-  /* ---------- contacts ---------- */
+
+
+
+
   .footer__contacts-wrap {
     padding-top: 35px;
     padding-bottom: 13px;
