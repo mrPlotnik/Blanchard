@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Размещение геообъекта на карте.
       myMap.geoObjects.add(myPlacemark);
       myMap.behaviors.disable(['scrollZoom']);
-      myMap.behaviors.disable('drag');
+      myMap.behaviors.disable('drag')
     }
   }
 
@@ -213,10 +213,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const bars = document.querySelectorAll('[data-simplebar]')
     bars.forEach(el => {
       new SimpleBar(el, {
-        ariaLabel: 'Прокручиваемая область',
-
+        ariaLabel: 'Прокручиваемая область'
       })
-      // el.querySelector('.simplebar-content-wrapper').setAttribute('tabindex', '1');
     })
   };
 
@@ -226,15 +224,15 @@ document.addEventListener('DOMContentLoaded', function() {
      const swiper1 = new Swiper('#swiper-hero', {
        effect: 'fade',
        autoplay: {
-         disableOnInteraction: true,
+         disableOnInteraction: true
        },
        a11y: {
          preventClicks: false,
          preventClicksPropagation: false,
-         simulateTouch: false,
-       },
-     });
-  }
+         simulateTouch: false
+       }
+     })
+  };
 
   // --- --- MAIN --- --- //
 
@@ -244,9 +242,9 @@ document.addEventListener('DOMContentLoaded', function() {
      const el = document.querySelector('select');
      const choises = new Choices(el,{
        searchEnabled: false,
-       itemelectText: '',
-     });
-  }
+       itemelectText: ''
+     })
+  };
 
   // --- Второй свайпер в секции galery
   swiper2();
@@ -258,32 +256,32 @@ document.addEventListener('DOMContentLoaded', function() {
       simulateTouch: true, // Принимает события мыши, как событие касания пальцами
       grabCursor: true,  // 'Grab' курсор для повышения юзабилити на десктопах
       autoplay: {
-        disableOnInteraction: true, // Автоплей не останавливается после конца итереций
+        disableOnInteraction: true // Автоплей не останавливается после конца итереций
       },
       breakpoints: {
         576: {
           slidesPerView: 2,
-          slidesPerGroup: 2,
+          slidesPerGroup: 2
         },
         1024: {
-          spaceBetween: 34,
+          spaceBetween: 34
         },
         1440: {
           slidesPerView: 3,
           slidesPerGroup: 3,
-          spaceBetween: 50,
+          spaceBetween: 50
         }
       },
       pagination: {
         el: '.swiper-pagination',
-        type: 'fraction',
+        type: 'fraction'
       },
       navigation: {
         nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  }
+        prevEl: '.swiper-button-prev'
+      }
+    })
+  };
 
   // --- Аккордион на jQuery в сеrции catalog
   new Accordion('#accordion', {
@@ -292,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
     panelClass: 'ac__panel',
     activeClass: 'accordion--active',
     openOnInit: [0],
-    duration: 700,
+    duration: 700
   });
 
   // --- Секция catalog. Вкладки
@@ -341,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
       simulateTouch: true,
       grabCursor: true,
       autoplay: {
-        disableOnInteraction: true,
+        disableOnInteraction: true
       },
        breakpoints: {
         640: {
@@ -362,7 +360,11 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       pagination: {
         el: '.swiper-pagination',
-        clickable: true,
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       }
     })
   };
