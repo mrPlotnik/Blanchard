@@ -235,7 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // --- --- MAIN --- --- //
-
   // --- choices.js в секции galery
   choises();
   function choises() {
@@ -369,21 +368,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   // --- projects tooltip
-
   tooltip();
   function tooltip() {
     tippy('.projects__tooltip', {
@@ -392,6 +377,97 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // --- Четвертый свайпер в секции projects
+  swiper4();
+  function swiper4() {
+    const swiper4 = new Swiper('#swiper-partners', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      simulateTouch: true,
+      grabCursor: true,
+      autoplay: {
+        disableOnInteraction: true
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 2,
+          slidesPerGroup: 2
+        },
+        1441: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 0
+        }
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    })
+  };
+
+  // --- --- FOOTER --- --- //
+  // --- input mask tel
+  inputMask();
+  function inputMask() {
+    const selector = document.querySelector("input[type='tel']");
+    const im = new Inputmask("+7(999) 999-99-99");
+    im.mask(selector);
+  }
+
+  // --- Validate form
+  validate();
+  function validate() {
+    const selector = document.querySelector("input[type='tel']");
+    new window.JustValidate('#form', {
+      rules: {
+        name: {
+          required: true,
+          minLength: 3,
+          maxLength: 30
+        },
+        tel: {
+          required: true,
+          function: () => {
+            const phone = selector.inputmask.unmaskedvalue();
+            return Number(phone) && phone.length === 10;
+          }
+        }
+      },
+      messages: {
+        name: {
+          required: 'Вы не ввели имя',
+          minLength: 'Поле должно содержать более 3 символов',
+          maxLength: 'Поле должно содержать не более 30 символов'
+        },
+        tel: {
+          required: 'Вы не ввели телефон',
+          function: 'Поле должно содержать 10 символов'
+        },
+        email: {
+          required: 'Вы не ввели e-mail',
+          email: 'Введен некорректный e-mail'
+        }
+      },
+      colorWrong: '#D11616',
+      submitHandler: function (thisForm, values, ajax) {
+        ajax({
+          url: 'https://jsonplaceholder.typicode.com/posts',
+          method: 'POST',
+          data: values,
+          async: true,
+          callback: function (response) {
+            alert('Response from server: ' + response)
+          },
+          error: function (response) {
+            alert('Response from server: ' + response)
+          }
+        })
+      }
+    })
+  };
+
+  // --- --- MODAL --- --- //
   // --- gallery modal
   modal();
   function modal() {
@@ -411,9 +487,10 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
           let activeModal = document.querySelector('.modal__item--active');
           activeModal.querySelector('.modal__close-btn').focus();
-        }, 100);
-      });
-    });
+        }, 100)
+      })
+    })
+
     exitBtn.forEach(function (btn) {
       btn.addEventListener('click', function () {
         document.body.classList.remove('stop-scroll');
@@ -433,8 +510,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.remove('modal--active');
       }
     })
-  }
-
+  };
 
   // --- SimpleBar в модальных окнах
   simplebar2();
@@ -445,105 +521,6 @@ document.addEventListener('DOMContentLoaded', function() {
         autoHide: true,
         ariaLabel: 'Прокручиваемая область',
       })
-    );
-  }
-
-
-
-  // --- input mask tel
-  inputMask();
-  function inputMask() {
-    const selector = document.querySelector("input[type='tel']");
-    const im = new Inputmask("+7(999) 999-99-99");
-    im.mask(selector);
-  }
-
-  // --- Validate form
-  validate();
-  function validate() {
-    new window.JustValidate('#form', {
-      rules: {
-        name: {
-          required: true,
-          minLength: 3,
-          maxLength: 30,
-        },
-        tel: {
-          required: true,
-          function: () => {
-            const phone = selector.inputmask.unmaskedvalue();
-            return Number(phone) && phone.length === 10;
-          }
-        }
-      },
-      messages: {
-        name: {
-          required: 'Вы не ввели имя',
-          minLength: 'Поле должно содержать более 3 символов',
-          maxLength: 'Поле должно содержать не более 30 символов',
-        },
-        tel: {
-          required: 'Вы не ввели телефон',
-          function: 'Поле должно содержать 10 символов',
-        },
-        email: {
-          required: 'Вы не ввели e-mail',
-          email: 'Введен некорректный e-mail',
-        }
-      },
-      colorWrong: '#D11616',
-      submitHandler: function (thisForm, values, ajax) {
-        ajax({
-          url: 'https://jsonplaceholder.typicode.com/posts',
-          method: 'POST',
-          data: values,
-          async: true,
-          callback: function (response) {
-            alert('Response from server: ' + response)
-          },
-          error: function (response) {
-            alert('Response from server: ' + response)
-          }
-        })
-      }
-    })
-  }
-
-
-
-   // --- Четвертый свайпер в секции projects
-  swiper4();
-  function swiper4() {
-    const swiper4 = new Swiper('#swiper-partners', {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      simulateTouch: true,
-      grabCursor: true,
-      autoplay: {
-        disableOnInteraction: true,
-      },
-      breakpoints: {
-        767: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-        },
-        1441: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 0,
-        }
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  }
-
-
-
-
-
-
-
+    )
+  };
 });
