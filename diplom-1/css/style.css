@@ -1344,23 +1344,53 @@ address {
 	border: 1px solid var(--color-gray-20);
 	border-radius: 20px;
 	line-height: 19px;
+  transition: .3s all ease-in-out;
 }
 .form__input::placeholder {
 	color: var(--color-gray-60);
 }
-.form__input:hover {
+.form__input:hover,
+.form__input:focus-visible {
 	background-color: var(--color-gray-93);
 }
 .form__btn {
+  position: relative;
 	width: fit-content;
   margin-bottom: 26px;
 	padding: 10px 33px;
   border: 2px solid var(--color-purple-2);
 	border-radius: 30px;
+  outline: 3px solid transparent;
 	font-weight: 700;
   font-size: 12px;
   line-height: 16px;
 	color: var(--color-purple-2);
+}
+.form__btn::after {
+	content: "";
+	position: absolute;
+	width: calc(100% + 14px);
+	height: calc(100% + 14px);
+	top: -7px;
+	left: -7px;
+	border-radius: 100px;
+	border: 2px solid var(--color-purple-3);
+	background-color: transparent;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+.form__btn:focus-visible::after {
+  opacity: 1;
+}
+.form__btn:hover {
+  background-color: var(--color-purple-2);
+  color: var(--color-white);
+}
+.form__btn:active {
+	background-color: var(--color-purple-1);
+	color: var(--color-white);
+	outline: 3px solid var(--color-purple-4);
+	border-color: transparent;
 }
 .form__btn--big {
   display: none;
@@ -1369,27 +1399,33 @@ address {
   position: absolute;
   z-index: -1;
   opacity: 0;
+  top: 0;
 }
 .js-validate-error-label {
 	position: absolute;
 	top: -18px;
-	left: 25px;
+	left: 18px;
 	font-size: 12px;
 	line-height: 16px;
+  opacity: 1;
+	transition: .3s all ease-in-out;
 }
-
 .contacts__messages h3 {
   margin-bottom: 13px;
   font-weight: 400;
   font-size: 18px;
   color: var(--color-gray-20);
 }
+.contacts__item {
+  display: flex;
+  height: fit-content;
+}
+.contacts__item:first-child {
+  margin-right: 20px;
+}
 .contacts__messages svg {
   width: 50px;
   height: 50px;
-}
-.contacts__messages a:not(:last-child) {
-  margin-right: 15px;
 }
 .whatsapp rect {
   fill: #30bf39;
@@ -1419,7 +1455,6 @@ a:active .telegram path:nth-child(2n-1) {
   fill: #26a5e4;
   stroke: var(--color-purple-2);
 }
-
 #map {
   width: 100%;
   height: 320px;
@@ -1430,9 +1465,7 @@ a:active .telegram path:nth-child(2n-1) {
 [class*="copyrights-pane"] {
   display: none;
 }
-/* ---- contacts map end ---- */
 
-/* ---- bottom ---- */
 .footer__bottom {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1476,8 +1509,6 @@ a:active .ok path {
 .bottom__logo img {
   width: 97px;
 }
-/* ---- bottom ---- */
-/* ---------- footer end ---------- */
 
 /* ---------- modal ---------- */
 .modal {
@@ -1751,8 +1782,6 @@ a:active .ok path {
   .ac__artist-list {
     column-count: 2;
   }
-
-
 }
 
 /* md */
@@ -1958,37 +1987,38 @@ a:active .ok path {
     height: 40%;
   }
 
-
-
-
   /* ---------- footer ---------- */
   .footer__contacts-wrap {
-    padding-top: 40px;
+    padding-top: 42px;
   }
   .contacts__header {
-    margin-bottom: 11px;
+    margin-bottom: 10px;
     font-size: 24px;
     line-height: 32px;
   }
   address {
     margin-bottom: 30px;
   }
+  .form__inputs-wrap {
+    display: flex;
+    flex-direction: row;
+  }
   .form__item {
-    margin-bottom: 0;
+    min-width: 323px;
+    margin-right: 20px;
+    margin-bottom: 12px;
   }
   .form__input {
     height: 50px;
     border-radius: 25px;
   }
-  .form__input:not(:last-child) {
-    margin-bottom: 0;
-  }
-  .form__input:not(:last-child) {
-    margin-right: 20px;
+  .form__btn-wrap {
+    display: flex;
+    padding-bottom: 31px;
   }
   .form__btn {
     margin-bottom: 0;
-    padding: 10px 41px;
+    padding: 10px 28px;
     font-size: 18px;
     line-height: 26px;
   }
@@ -1998,22 +2028,11 @@ a:active .ok path {
   .form__btn--small {
     display: none;
   }
-  .form__inputs-wrap {
-    padding-left: 13px;
-    padding-right: 5px;
-    width: 61%;
-  }
-  .form__btn-wrap {
-    display: flex;
-    justify-content: end;
-    width: 39%;
-    padding-bottom: 31px;
-  }
   .contacts__messages  {
-    margin-bottom: 22px;
+    margin-bottom: 25px;
   }
   .contacts__messages h3 {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     font-size: 25px;
   }
   .contacts__messages p {
@@ -2028,6 +2047,8 @@ a:active .ok path {
   #map {
     height: 700px;
   }
+
+
   .footer__bottom {
     padding-top: 40px;
   }
@@ -2176,33 +2197,35 @@ a:active .ok path {
   }
 
   /* ---------- footer---------- */
-
-
-
   .footer__contacts-wrap {
-    padding-top: 41px;
-    padding-bottom: 18px;
+    padding-top: 42px;
+    padding-bottom: 14px;
   }
-  .form__custom-block-first {
-    width: 61.9%;
+  .contacts__header {
+    margin-bottom: 10px;
   }
-  .form__custom-block-second {
-    width: 38.1%;
-    padding-left: 7px;
+  .form {
+    flex-direction: row;
   }
-  #contacts__form .btn {
-    margin-bottom: 28px;
-    padding: 11px 40px;
+  .form__item {
+    min-width: 270px;
+    margin-bottom: 31px;
+  }
+  .form__btn-wrap {
+    display: block;
+    padding-bottom: 0;
+  }
+  .form__btn {
+    padding: 10px 41px;
+  }
+  .contacts__messages h3 {
+    margin-bottom: 9px;
   }
 
 
   .note {
     width: 594px;
     height: 594px;
-  }
-  .note__second-wrap {
-    padding-right: 50px;
-    padding-left: 15px;
   }
 
 }
@@ -2672,60 +2695,55 @@ a:active .ok path {
   }
 
   /* ---------- footer ---------- */
-
-
-
-
+  .contacts__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .footer__contacts-wrap {
-    padding-top: 35px;
-    padding-bottom: 13px;
+    padding-top: 37px;
+    padding-bottom: 38px;
   }
   .contacts__header {
-    margin-bottom: 2px;
-    padding-top: 7px;
+    margin-bottom: 0;
   }
   address {
+    margin-bottom: 0;
     font-size: 16px;
     line-height: 32px;
   }
-  .contacts__custom-block-first {
-    width: 18%;
-  }
-  .contacts__custom-block-second {
-    width: 62%;
-  }
-  .contacts__custom-block-third {
-    width: 20%;
-  }
-  .form {
-    padding-top: 15px;
+  .contacts__form-wrap {
+    display: flex;
+    align-items: center;
   }
   .form__inputs-wrap {
-    padding-left: 55px;
-    padding-right: 8px;
-    width: 62%;
+    margin-right: 20px;
   }
-  .form__btn-wrap {
-    justify-content:;
-    width: 38%;
-    padding-bottom: 0;
+  .form__item {
+    margin-bottom: 0;
+  }
+  .form__inputs-wrap .form__item:last-child {
+    margin-right: 0;
   }
   .form__btn {
-    margin-bottom: 28px;
-    padding: 11px 34px;
+    margin: 0;
+    padding: 10px 34px;
+    line-height: 26px;
+  }
+  .contacts__messages h3 {
+    margin-bottom: 6px;
+    line-height: 32px;
   }
   .contacts__messages {
     margin-bottom: 0;
-    padding-top: 3px;
-    padding-left: 25px;
+
   }
 
-  /* ---------- bottom ---------- */
+
+
   .vk, .ok {
     width: 45px;
   }
-
-
 
   .note {
     width: 900px;
