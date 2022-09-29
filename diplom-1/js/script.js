@@ -253,7 +253,6 @@ document.addEventListener('DOMContentLoaded', function() {
       slidesPerGroup: 1,
       spaceBetween: 38,
       simulateTouch: true, // Принимает события мыши, как событие касания пальцами
-      grabCursor: true,  // 'Grab' курсор для повышения юзабилити на десктопах
       autoplay: {
         disableOnInteraction: true // Автоплей не останавливается после конца итереций
       },
@@ -375,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
       theme: 'tooltip',
       maxWidth: 264,
     });
-  }
+  };
 
   // --- Четвертый свайпер в секции projects
   swiper4();
@@ -413,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const selector = document.querySelector("input[type='tel']");
     const im = new Inputmask("+7(999) 999-99-99");
     im.mask(selector);
-  }
+  };
 
   // --- Validate form
   validate();
@@ -471,7 +470,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- gallery modal
   modal();
   function modal() {
-    const btn = document.querySelectorAll('#swiper-galery .swiper-slide');
+    const btn = document.querySelectorAll('#swiper-gallery .swiper-slide');
+    console.log(btn);
     const modal = document.querySelector('.modal');
     const notes = document.querySelectorAll('.modal__item');
     const exitBtn = document.querySelectorAll('.modal__close-btn');
