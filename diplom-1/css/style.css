@@ -40,24 +40,6 @@ body {
 	outline: transparent;
 	outline-offset: 0;
 }
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-}
-h1, h2, h3, h4 {
-  margin: 0;
-  padding: 0;
-  word-wrap: break-word;
-  overflow: hidden;
-  color: var(--color-gray-20);
-}
-h2 {
-  font-size: 28px;
-  line-height: 38px;
-  font-weight: 400;
-}
-h3 {
-  font-weight: 600;
-}
 svg, svg rect, svg path, svg circle, a, button {
   transition: all .3s ease-in-out;
 }
@@ -96,6 +78,24 @@ img {
   --color-white-transparent-2: rgba(255, 255, 255, 0.2);
   --color-black-transparent-9: rgba(0, 0, 0, 0.9);
 }
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  overflow: hidden;
+  color: var(--color-gray-20);
+}
+h2 {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 400;
+}
+h3 {
+  font-weight: 600;
+}
 .stop-scroll {
   overflow: hidden;
 }
@@ -117,6 +117,7 @@ img {
   margin: 0 auto;
   padding: 0 15px;
 }
+
 
 /* ---------- header ---------- */
 .ht {
@@ -210,6 +211,7 @@ img {
 }
 .ht-nav__close-btn {
   position: relative;
+  flex-shrink: 0;
   width: 18px;
   height: 18px;
   margin-bottom: 15px;
@@ -239,7 +241,10 @@ img {
 }
 .ht-nav__list {
   flex-direction: column;
-  white-space: nowrap;
+  height: inherit;
+  margin-bottom: 10px;
+  padding-right: 5px;
+  overflow-x: hidden;
   color: var(--color-white);
 }
 .ht-nav__item a {
@@ -271,6 +276,7 @@ img {
 }
 .ht-nav__login-link {
   display: flex;
+  align-items: center;
   margin-top: auto;
   font-weight: 600;
   font-size: 12px;
@@ -283,7 +289,7 @@ img {
   color: var(--color-white);
 }
 .ht-nav__login-link svg {
-  margin-top: 4px;
+  flex-shrink: 0;
   margin-right: 4px;
   width: 9px;
   height: 9px;
@@ -336,7 +342,7 @@ img {
   background-color: var(--color-black);
   transition: .3s all ease-in-out;
 }
-.ht-search input[type="search"]::-moz-placeholder {
+.ht-search input[type="search"]::placeholder {
   color: var(--color-white);
   opacity: .85;
 }
@@ -428,12 +434,11 @@ img {
   width: fit-content;
   max-width: 100%;
   padding: 9px 15px;
-  border-radius: 100px;
+  border-radius: 35px;
   border: 3px solid var(--color-purple-2);
   font-weight: 700;
   font-size: 12px;
   line-height: 16px;
-  overflow: hidden;
   outline-offset: var(--outline-offset);
   outline: 2px solid transparent;
   color: var(--color-white);
@@ -498,10 +503,9 @@ img {
 .choices[data-type*="select-one"]::after {
   content: "";
 	right: 16px;
-	top: 17px;
   width: 7px;
   height: 7px;
-	margin-top: 0;
+	margin-top: -5px;
 	border-style: none;
   border-top: 1px solid var(--color-white);
   border-right: 1px solid var(--color-white);
@@ -680,9 +684,8 @@ img {
   height: 30px;
   margin: 0;
   border-radius: 100px;
-  border: 2px solid var(--color-gray-40);
   background-color: var(--color-gray-40);
-  transition: border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
 }
 #swiper-gallery .swiper-button-prev::after,
 #swiper-gallery .swiper-button-next::after {
@@ -702,16 +705,12 @@ img {
 }
 #swiper-gallery .swiper-button-prev:hover,
 #swiper-gallery .swiper-button-next:hover {
-  border-color: var(--color-purple-2);
   background-color: var(--color-purple-2);
 }
 #swiper-gallery .swiper-button-prev:focus-visible,
-#swiper-gallery .swiper-button-next:focus-visible {
-  border-color: var(--color-black);
-}
+#swiper-gallery .swiper-button-next:focus-visible,
 #swiper-gallery .swiper-button-prev:active,
 #swiper-gallery .swiper-button-next:active {
-  background-color: var(--color-purple-1);
   border: 2px solid var(--color-black);
 }
 #swiper-gallery .swiper-pagination-wrap {
@@ -886,7 +885,7 @@ img {
 	position: absolute;
 	width: 7px;
 	height: 7px;
-	top: 50%;
+	top: calc(51% - 2px);
 	right: 11px;
 	border-bottom: 1px solid var(--color-black);
 	border-right: 1px solid var(--color-black);
@@ -897,7 +896,7 @@ img {
 .ac__header-text {
   position: relative;
   display: block;
-  width: max-content;
+  max-width: max-content;
   font-weight: 600;
   line-height: 32px;
   font-size: 18px;
@@ -1025,7 +1024,7 @@ img {
 	border-color: var(--color-purple-2);
 }
 .accordion--active .ac__trigger::after {
-  top: 48%;
+  top: calc(51% - 2px);
 	transform: rotate(225deg);
 }
 .accordion--active.ac__item:first-child .ac__trigger,
@@ -1264,10 +1263,9 @@ img {
   width: 30px;
   height: 30px;
   border-radius: 100px;
-  border: 2px solid var(--color-gray-93);
   cursor: pointer;
   background-color: var(--color-gray-93);
-  transition: border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
 }
 #swiper-partners .swiper-button-next {
   right: 0px;
@@ -1294,17 +1292,13 @@ img {
 }
 #swiper-partners .swiper-button-next:hover,
 #swiper-partners .swiper-button-prev:hover {
-  border-color: var(--color-purple-4);
   background-color: var(--color-purple-4);
 }
 #swiper-partners .swiper-button-next:focus-visible,
-#swiper-partners .swiper-button-prev:focus-visible {
-  border-color:var(--color-purple-2);
-}
+#swiper-partners .swiper-button-prev:focus-visible,
 #swiper-partners .swiper-button-next:active,
 #swiper-partners .swiper-button-prev:active {
-  border-color: var(--color-purple-2);
-  background-color: var(--color-purple-4);
+  border: 2px solid var(--color-purple-2);
 }
 /* ---------- footer ---------- */
 .footer__contacts-wrap {
@@ -1734,8 +1728,9 @@ a:active .ok path {
     line-height: 30px;
   }
   .hero__btn {
-    padding: 24px 33px;
+    padding: 20px 33px;
     font-size: 18px;
+    line-height: 24px;
   }
 
   /* ---------- section catalog ---------- */
@@ -1849,7 +1844,7 @@ a:active .ok path {
     margin-bottom: 21px;
   }
   .ac__trigger {
-    padding: 40px 30px 42px 0;
+    padding: 40px 60px 42px 0;
   }
   .ac__header-text {
     font-size: 24px;
@@ -1888,7 +1883,7 @@ a:active .ok path {
     padding-bottom: 76px;
   }
   .card__wrap {
-    padding: 213px 33px 47px 33px  ;
+    padding: 67% 33px 47px 33px  ;
   }
   .card__header {
     margin-bottom: 5px;
@@ -2134,6 +2129,9 @@ a:active .ok path {
   }
 
   /* ---------- section events ---------- */
+  .card__wrap {
+    padding-top: 73.5%;
+  }
   .card__date {
     margin-right: 0;
     margin-bottom: 5px;
@@ -2229,7 +2227,9 @@ a:active .ok path {
   .ht-nav__list {
     flex-direction: row;
     width: fit-content;
+    height: auto;
     margin-right: auto;
+    margin-bottom: 0;
   }
   .ht-nav__item:not(:last-child) {
     margin-right: 62px;
@@ -2274,7 +2274,6 @@ a:active .ok path {
   }
   .hb-item {
     position: relative;
-    word-break: break-word;
   }
   .hb-item:not(:last-child) {
     margin-right: 45px;
@@ -2320,7 +2319,7 @@ a:active .ok path {
     bottom: 8px;
     border-bottom: 1px solid #FFFFFF;
     border-right: 1px solid #FFFFFF;
-    rotate: 45deg;
+    transform: rotate(45deg);
     transition: all 0.3s linear;
   }
   .hb-item__btn--active.hb-item__btn::after {
@@ -2571,7 +2570,7 @@ a:active .ok path {
     padding-bottom: 36px;
   }
   .card__wrap {
-    padding: 313px 35px 40px 49px;
+    padding: 314px 35px 40px 49px;
   }
   .card__header {
     margin-bottom: 9px;
@@ -2602,10 +2601,9 @@ a:active .ok path {
     width: 50px;
     height: 50px;
     border-radius: 100px;
-    border: 2px solid var(--color-gray-93);
     cursor: pointer;
     background-color: var(--color-gray-93);
-    transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
   #swiper-events .swiper-button-next {
     right: 5px;
@@ -2632,17 +2630,14 @@ a:active .ok path {
   }
   #swiper-events .swiper-button-next:hover,
   #swiper-events .swiper-button-prev:hover {
-    border-color: var(--color-purple-4);
     background-color: var(--color-purple-4);
   }
   #swiper-events .swiper-button-next:focus-visible,
-  #swiper-events .swiper-button-prev:focus-visible {
-    border-color:var(--color-purple-2);
-  }
+  #swiper-events .swiper-button-prev:focus-visible,
   #swiper-events .swiper-button-next:active,
   #swiper-events .swiper-button-prev:active {
-    border-color: var(--color-purple-2);
-    background-color: var(--color-purple-4);
+    border: 2px solid var(--color-purple-2);
+
   }
 
   /* ---------- projects section ---------- */
@@ -2741,4 +2736,8 @@ a:active .ok path {
   .contacts__messages {
     margin-bottom: 0;
   }
+}
+
+#map {
+  display: none;
 }
