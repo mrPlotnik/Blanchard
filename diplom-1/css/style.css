@@ -1385,7 +1385,7 @@ address {
 	outline: 3px solid var(--color-purple-4);
 	border-color: transparent;
 }
-.form__btn--big {
+.form__btn-big {
   display: none;
 }
 .form__error {
@@ -1494,7 +1494,7 @@ a:active .ok path {
   display: flex;
   justify-content: center;
 }
-.bottom__logo img {
+.bottom__logo svg {
   width: 97px;
 }
 
@@ -1542,11 +1542,6 @@ a:active .ok path {
   flex-direction: column;
   padding: 20px;
   height: inherit;
-}
-.note__img {
-	/* height: 100%; */
-	/* object-fit: cover; */
-	/* object-position: center; */
 }
 .modal__close-btn {
   position: absolute;
@@ -1987,10 +1982,10 @@ a:active .ok path {
     font-size: 18px;
     line-height: 26px;
   }
-  .form__btn--big {
+  .form__btn-big {
     display: block;
   }
-  .form__btn--small {
+  .form__btn-small {
     display: none;
   }
   .contacts__messages  {
@@ -2026,8 +2021,10 @@ a:active .ok path {
   }
   .bottom__logo {
     order: -1;
-    width: 175px;
     padding-left: 1px;
+  }
+  .bottom__logo svg {
+    width: auto;
   }
   .bottom__social {
     margin: 0;
