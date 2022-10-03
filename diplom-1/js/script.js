@@ -129,17 +129,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- Поиск
   search ();
   function search() {
-    const searchBtn = document.querySelector('.ht__search-btn');
-    const searchBig = document.querySelector('.ht-search');
+    const searchmtn = document.querySelector('.ht__search-btn');
+    const searchmig = document.querySelector('.ht-search');
     const searchCloseBtn = document.querySelector('.ht-search__close-btn');
     const searchInput = document.querySelector('#search');
 
     // Что происходит после клика на лупу
-    searchBtn.addEventListener('click', function(e) {
+    searchmtn.addEventListener('click', function(e) {
       // предотвращаем поведение по умолчанию
       e.stopPropagation();
       searchCloseBtn.setAttribute("aria-expanded", "false");
-      searchBig.classList.toggle('ht-search--open');
+      searchmig.classList.toggle('ht-search--open');
       // Из-за анимации свойства visibility ставим задержку
       setTimeout(() => {searchInput.focus()},100);
     })
@@ -147,22 +147,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Что происходит после клика на крестик
     searchCloseBtn.addEventListener('click', function() {
       searchCloseBtn.setAttribute("aria-expanded", "true");
-      searchBig.classList.toggle('ht-search--open');
+      searchmig.classList.toggle('ht-search--open');
     })
 
     // Что происходит после клика вне поиска
     document.addEventListener('click', function(e) {
       // Определяю место клика
       let target = e.target;
-      // Клик был на .searchBig и его вложенные элементы или нет?
-      let itsSearch = target == searchBig || searchBig.contains(target);
-      // .searchBig открыт?
-      let searchIsActive = searchBig.classList.contains('ht-search--open');
+      // Клик был на .searchmig и его вложенные элементы или нет?
+      let itsSearch = target == searchmig || searchmig.contains(target);
+      // .searchmig открыт?
+      let searchIsActive = searchmig.classList.contains('ht-search--open');
 
-      // Если клик был вне .searchBig и .searchBig открыт, то выполняю код
+      // Если клик был вне .searchmig и .searchmig открыт, то выполняю код
       if (!itsSearch && searchIsActive) {
         searchCloseBtn.setAttribute("aria-expanded", "true");
-        searchBig.classList.toggle('ht-search--open');
+        searchmig.classList.toggle('ht-search--open');
       }
     })
   };
@@ -170,36 +170,36 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- Выпадающее меню
   dropdownMenu();
   function dropdownMenu() {
-    const navBarBtn =  document.querySelectorAll('.hb-item__btn');
-    const navBarDropdown = document.querySelectorAll('.hb-item__wrap');
+    const navBarBtn =  document.querySelectorAll('.hm-item__btn');
+    const navBarDropdown = document.querySelectorAll('.hm-item__wrap');
     let isActive = null;
 
     navBarBtn.forEach((el, index) => {
       el.addEventListener('click', function(e) {
         if (isActive == null) {
-          navBarDropdown[index].classList.add('hb-item__wrap--active');
+          navBarDropdown[index].classList.add('hm-item__wrap--active');
           navBarDropdown[index].setAttribute("aria-hidden", "false");
-          el.classList.add('hb-item__btn--active');
+          el.classList.add('hm-item__btn--active');
           el.setAttribute("aria-expanded", "true");
           isActive = e.target;
         } else if (isActive == e.target) {
-          navBarDropdown[index].classList.remove('hb-item__wrap--active');
+          navBarDropdown[index].classList.remove('hm-item__wrap--active');
           navBarDropdown[index].setAttribute("aria-hidden", "true");
-          el.classList.remove('hb-item__btn--active');
+          el.classList.remove('hm-item__btn--active');
           el.setAttribute("aria-expanded", "false");
           isActive = null;
         } else {
           navBarDropdown.forEach((el) => {
-            el.classList.remove('hb-item__wrap--active');
+            el.classList.remove('hm-item__wrap--active');
             el.setAttribute("aria-hidden", "true");
           });
           navBarBtn.forEach((el) => {
-            el.classList.remove('hb-item__btn--active');
+            el.classList.remove('hm-item__btn--active');
             el.setAttribute("aria-expanded", "false");
           });
-          navBarDropdown[index].classList.add('hb-item__wrap--active');
+          navBarDropdown[index].classList.add('hm-item__wrap--active');
           navBarDropdown[index].setAttribute("aria-hidden", "false");
-          el.classList.add('hb-item__btn--active');
+          el.classList.add('hm-item__btn--active');
           el.setAttribute("aria-expanded", "true");
           isActive = e.target;
         }
@@ -471,7 +471,6 @@ document.addEventListener('DOMContentLoaded', function() {
   modal();
   function modal() {
     const btn = document.querySelectorAll('#swiper-gallery .swiper-slide');
-    console.log(btn);
     const modal = document.querySelector('.modal');
     const notes = document.querySelectorAll('.modal__item');
     const exitBtn = document.querySelectorAll('.modal__close-btn');
