@@ -2,21 +2,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- --- GLOBAL --- --- //
   // --- Плавный скролл до элемента (на все ссылки)
-  // scroll();
-  // function scroll() {
-  //   const links = document.querySelectorAll('a[href*="#"]')
+  scroll();
+  function scroll() {
+    const links = document.querySelectorAll('a[href*="#"]')
 
-  //   for (let link of links) {
-  //     link.addEventListener('click', function (e) {
-  //       e.preventDefault()
-  //       const blockID = link.getAttribute('href');
-  //       document.querySelector(`${blockID}`).scrollIntoView({
-  //         behavior: 'smooth',
-  //         block: 'start'
-  //       })
-  //     })
-  //   }
-  // };
+    for (let link of links) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault()
+        const blockID = link.getAttribute('href');
+        document.querySelector(`${blockID}`).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      })
+    }
+  };
 
   // --- Yandex-карты
   map();
@@ -71,14 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuMobile = document.querySelector('.ht__nav');
     const links = document.querySelectorAll('.ht-nav__item a');
     // Выбираем все элементы для индекса в мобильном меню
-    const elTab = document.querySelectorAll('.ht-nav__close-btn, .ht-nav__list-item a, .ht-nav__login-link');
+    const elTab = document.querySelectorAll('.ht-nav__close-btn, .ht-nav__item a, .ht-nav__login-link');
 
     // Что происходит после нажатия на бургер
     burger.addEventListener('click', function(q) {
 
       body.classList.toggle('stop-scroll');
       burger.setAttribute("aria-expanded", "true");
-      menuMobile.classList.toggle('ht__nav--active');
+      menuMobile.classList.add('ht__nav--active');
 
       // При отрытии меню сразу фокус на крестик
       // Из-за анимации свойства visibility ставим
@@ -110,9 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Что происходит после клика на крестик
     closeBtn.addEventListener('click', function() {
-      body.classList.toggle('stop-scroll');
+      body.classList.remove('stop-scroll');
       burger.setAttribute("aria-expanded", "false");
-      menuMobile.classList.toggle('ht__nav--active');
+      menuMobile.classList.remove('ht__nav--active');
       // Фокус на бургер
       burger.focus();
     })
@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Что происходит после кликов на ссылки
     links.forEach((el, index) => {
       el.addEventListener('click', function(e) {
-        body.classList.toggle('stop-scroll');
-        menuMobile.classList.toggle('ht__nav--active');
+        body.classList.remove('stop-scroll');
+        menuMobile.classList.remove('ht__nav--active');
       })
     })
   };

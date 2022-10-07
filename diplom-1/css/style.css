@@ -40,7 +40,7 @@ body {
 	outline: transparent;
 	outline-offset: 0;
 }
-svg, svg rect, svg path, svg circle, a, button {
+svg, svg > *, a, button {
   transition: all .3s ease-in-out;
 }
 a {
@@ -199,6 +199,8 @@ h3 {
   opacity: 0;
   font-weight: 600;
   line-height: 32px;
+
+  overflow-x: hidden;
   background-color: var(--color-black-transparent-9);
   transition: .3s all ease-in-out;
   transform: translateX(-100%);
@@ -239,12 +241,18 @@ h3 {
 .ht-nav__close-btn:focus-visible {
   outline: 2px solid var(--color-purple-2);
 }
+.ht-nav__wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 5px;
+}
 .ht-nav__list {
   flex-direction: column;
-  height: inherit;
+  /* height: inherit; */
   margin-bottom: 10px;
-  padding-right: 5px;
-  overflow-x: hidden;
+  /* padding: 0 5px; */
+  /* overflow-x: hidden; */
   color: var(--color-white);
 }
 .ht-nav__item a {
@@ -256,10 +264,10 @@ h3 {
 .ht-nav__item a::before {
   content: "";
   position: absolute;
-  top: -5px;
+  top: -2px;
   left: -6px;
   width: calc(100% + 12px);
-  height: calc(100% + 10px);
+  height: calc(100% + 4px);
   background-color: var(--color-purple-2);
   opacity: 0;
   transition: opacity .3s ease-in-out;
@@ -380,9 +388,6 @@ h3 {
 .ht-search__close-btn:focus-visible  {
   outline: 2px solid var(--color-purple-2);
 }
-.header-bottom {
-  display: none;
-}
 
 /* ---------- section-hero ---------- */
 .hero {
@@ -454,6 +459,9 @@ h3 {
   border: 3px solid var(--color-purple-4);
   background-color: var(--color-purple-1);
 }
+.hero-menu {
+  display: none;
+}
 
 /* ---------- section-about---------- */
 .about__wrap {
@@ -511,7 +519,7 @@ h3 {
   border-right: 1px solid var(--color-white);
   transform: rotate(135deg);
   transform-origin: center;
-  transition: transform .3s ease-in-out;
+  transition: all .3s ease-in-out;
 	z-index: 1;
 }
 .choices[data-type*="select-one"].is-open::after{
@@ -522,13 +530,6 @@ h3 {
 }
 .is-open .choices__inner {
 	border-radius: 6px;
-}
-.choices__list--dropdown {
-  transition: .3s opacity ease-in-out;
-  opacity: 0;
-}
-.is-active {
-  opacity: 1;
 }
 .choices__list--dropdown .is-selected {
   display: none;
@@ -1465,7 +1466,7 @@ a:active .telegram path:nth-child(2n-1) {
 .bottom__social {
   display: flex;
   justify-content: center;
-  margin-bottom: 19px;
+  margin-bottom: 20px;
 }
 .bottom__social a:not(:last-child) {
   margin-right: 20px;
@@ -2207,6 +2208,9 @@ a:active .ok path {
   }
 
   /* ---------- header section ---------- */
+  .ht {
+    height: unset;
+  }
   .ht__burger,
   .ht__search,
   .ht__search-btn,
@@ -2223,7 +2227,7 @@ a:active .ok path {
     justify-content: flex-start;
     width: calc(100% - 250px);
     height: inherit;
-    padding: 0;
+    padding: 31px 0;
     opacity: 1;
     visibility: visible;
     transform: none;
@@ -2240,13 +2244,9 @@ a:active .ok path {
   .ht-nav__item {
     max-width: 115px;
     min-width: 50px;
-    /* flex-shrink: 0; */
-  }
-  .ht-nav__item:not(:last-child) {
-    /* margin-right: 62px; */
   }
   .ht-nav__item {
-    margin-right: 60px;
+    margin-right: 40px;
   }
   .ht-nav__item a {
     width: 100%;
@@ -2255,11 +2255,12 @@ a:active .ok path {
     word-break: break-all;
   }
   .ht-nav__login-link {
-    flex-basis: min-content;
+    max-width: 110px;
     border: none;
     padding: 0;
     margin: 0;
     font-weight: normal;
+    word-break: break-all;
   }
   .ht-nav__login-link svg {
     margin-top: 5px;
@@ -2295,6 +2296,8 @@ a:active .ok path {
   .hm-item {
     position: relative;
     min-width: 80px;
+    /* max-width: 150px; */
+    word-break: break-all;
   }
   .hm-item:not(:last-child) {
     margin-right: 45px;
@@ -2520,7 +2523,7 @@ a:active .ok path {
     margin-bottom: -3px;
   }
   .hero__text {
-    margin-bottom: 92px;
+    margin-bottom: 93px;
     padding-right: 165px;
   }
 
@@ -2611,7 +2614,7 @@ a:active .ok path {
   #swiper-events .swiper-button-next,
   #swiper-events .swiper-button-prev {
     position: absolute;
-    top: calc(50% + 3px);
+    top: calc(50% + 22px);
     transform: translateY(-50%);
     z-index: 10;
     display: flex;
@@ -2710,12 +2713,8 @@ a:active .ok path {
 @media (min-width: 1400px) {
 
   /* ---------- header---------- */
-  .ht {
-    height: unset;
-  }
   .ht__nav {
     width: calc(100% - 352px);
-    padding: 32px 0;
   }
   .hm-item {
     /* max-width: 160px; */
@@ -2780,10 +2779,14 @@ a:active .ok path {
   }
 }
 
-
-
 @media (min-width: 1920px) {
 
+  .ht-nav__login-link {
+    max-width: 140px;
+  }
+  .hm-item {
+    max-width: unset;
+  }
   .hm-item:not(:last-child) {
     margin-right: 98px;
   }
@@ -2791,6 +2794,7 @@ a:active .ok path {
     padding-right: 55%;
   }
 }
+
 #map {
   display: none;
 }
