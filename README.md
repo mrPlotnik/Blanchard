@@ -1,1 +1,1 @@
-# :art: :rainbow: Art gallery website "Blanchard".
+# :art: :rainbow: Art gallery "Blanchard".
